@@ -1,0 +1,69 @@
+gd  跳转到定义处
+gr 显示变量的调用
+gi 转到实现处
+<leader>g 跳转上诊断代码报错 
+<leader>t 跳转下诊断代码报错 
+
+<leader><leader> K 快速跳转
+<leader><leader> w 快速跳转单词头
+<leader><leader> a 搜索单词并跳转
+<leader><leader> s 快速跳转跳转搜索单词
+<leader> y/p 复制/粘贴到系统剪切板
+<leader> j/k 行级跳转
+<leader> h/l 行内跳转
+<leader> . 重复上一次动作
+. 快速编译d 关闭当前buff
+er 打开文件目录树
+tt 启动函数列表
+L 显示历史修改
+ei 快速在当前window打开文件
+{
+J K 快速切换
+}
+
+'g 新建悬浮终端
+'a 上一个 悬浮窗
+'d 下一个 悬浮窗
+'s 隐藏/ 终端 打开 悬浮窗
+<leader>w ^W
+<leader>z 关闭悬浮窗口
+命令 FloatermNew 新建悬浮窗口
+
+<leader>f 快速重名函数
+<leader>e/r 切换文件
+
+分屏启动Vim
+vim -On file1 file2 ...使用大写的O参数来垂直分屏。
+vim -on file1 file2 ...使用小写的o参数来水平分屏。
+注释: n是数字，表示分成几个屏。
+
+关闭分屏
+Ctrl+W c//关闭当前窗口。
+Ctrl+W q//关闭当前窗口，如果只剩最后一个了，则退出Vim。
+
+分屏
+Ctrl+W s//上下分割当前打开的文件。
+:sp filename//上下分割，并打开一个新的文件。
+Ctrl+W v//左右分割当前打开的文件。
+:vsp filename//左右分割，并打开一个新的文件。
+
+移动光标
+Vi中的光标键是h, j, k, l，要在各个屏间切换，只需要先按一下Ctrl+W
+Ctrl+W l//把光标移到右边的屏。
+Ctrl+W h//把光标移到左边的屏中。
+Ctrl+W k//把光标移到上边的屏中。
+Ctrl+W j//把光标移到下边的屏中。
+Ctrl+W w//把光标移到下一个的屏中。.
+
+移动分屏
+这个功能还是使用了Vim的光标键，只不过都是大写。当然了，如果你的分屏很乱很复杂的话，这个功能可能会出现一些非常奇怪的症状。
+Ctrl+W L//向右移动。
+Ctrl+W H//向左移动
+Ctrl+W K//向上移动
+Ctrl+W J//向下移动
+
+屏幕尺寸
+下面是改变尺寸的一些操作，主要是高度，对于宽度你可以使用Ctrl+W <或是>，但这可能需要最新的版本才支持。
+Ctrl+W =//让所有的屏都有一样的高度。
+Ctrl+W +//增加高度。
+Ctrl+W -//减少高度。
