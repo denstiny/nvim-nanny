@@ -3,9 +3,8 @@ set ts=4
 inoremap jk <ESC>
 inoremap <C-j> j<space><BS>
 inoremap <C-k> k<space><BS>
-set listchars=tab:\┆\ ,trail:.
+set listchars=tab:\┊\ ,trail:.
 filetype indent on
-"let g:python3_host_prog ="/path/to/python3/executable"
 autocmd FileType python setlocal et sta sw=4 sts=4
 noremap L :UndotreeToggle<CR>
 let g:undotree_DiffAutoOpen = 1
@@ -23,8 +22,6 @@ vmap <leader>p "+p
 " 打开文件自动定位到最后编辑的位置
 map <leader>ds /Descr<CR>:noh<CR><S-a>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-"map er :NERDTreeToggle<CR>
-"map er :CocCommand explorer<CR>
 map <leader>w <C-w>
 map er :Re<CR>
 map tt :Vista<CR>
@@ -130,45 +127,24 @@ endfunction
 
 set statusline+=%{NearestMethodOrFunction()}
 
-" By default vista.vim never run if you don't call it explicitly.
-"
-" If you want to show the nearest function in your statusline automatically,
-" you can add the following line to your vimrc
 autocmd VimEnter * call vista#RunForNearestMethodOrFunction()
 
-" How each level is indented and what to prepend.
-" This could make the display more compact or more spacious.
-" e.g., more compact: ["▸ ", ""]
-" Note: this option only works the LSP executives, doesn't work for `:Vista ctags`.
 let g:vista_icon_indent = ["╰─▸ ", "├─▸ "]
 
-" Executive used when opening vista sidebar without specifying it.
-" See all the avaliable executives via `:echo g:vista#executives`.
 let g:vista_default_executive = 'ctags'
 
-" Set the executive for some filetypes explicitly. Use the explicit executive
-" instead of the default one for these filetypes when using `:Vista` without
-" specifying the executive.
 let g:vista_executive_for = {
 			\ 'cpp': 'vim_lsp',
 			\ 'php': 'vim_lsp',
 			\ }
 
-" Declare the command including the executable and options used to generate ctags output
-" for some certain filetypes.The file path will be appened to your custom command.
-" For example:
 let g:vista_ctags_cmd = {
 			\ 'haskell': 'hasktags -x -o - -c',
 			\ }
 
-" To enable fzf's preview window set g:vista_fzf_preview.
-" The elements of g:vista_fzf_preview will be passed as arguments to fzf#vim#with_preview()
-" For example:
 let g:vista_fzf_preview = ['right:50%']
-" Ensure you have installed some decent font to show these pretty symbols, then you can enable icon for the kind.
 let g:vista#renderer#enable_icon = 1
 
-" The default icons can't be suitable for all the filetypes, you can extend it as you wish.
 let g:vista#renderer#icons = {
 			\   "function": "\uf794",
 			\   "variable": "\uf71b",
@@ -198,10 +174,6 @@ map <leader>q :bd<CR>
 map <leader>e :bp<CR>
 map <leader>r :bp<CR>
 
-"浮动设置
-
-"let g:'s && :FloatermKill<CR>
-"map <leader>h 'g nvim ~/.config/nvim/help.txt<CR>
 " 自定义命令
 command! -nargs=0 Fl :FloatermNew
 command! -nargs=0 H :FloatermNew nvim ~/.config/nvim/help.txt
@@ -222,16 +194,24 @@ let g:floaterm_keymap_next   = "'d"
 let g:floaterm_keymap_toggle = "'s"
 let g:floaterm_autoclose	 = 1
 nmap <leader>x :FloatermNew<space>
-"nmap <leader>z :FloatermKill<CR> 搜索结果闪烁 if has('timers') Blink 2 times with 50ms interval noremap <expr> <plug>(slash-after) slash#blink(2, 50)
-"endif
-"新文件自动添加注释
-"
-set relativenumber "打开相对行号
-"let g:autoHEADER_default_author="Aero" "自动插入文件头
-
 "显示文件类型图标配置
 "格式化插件配置
 map <leader>s <Plug>(EasyAlign)
 "字符串搜索
 nmap <leader><leader>a <Plug>(easymotion-overwin-f2)
+map <leader>n :set nu!<CR>
+"markdown预览 
+nmap <silent> <F8> <Plug>MarkdownPreview        " for normal mode
+imap <silent> <F8> <Plug>MarkdownPreview        " for insert mode
+nmap <silent> <F9> <Plug>StopMarkdownPreview    " for normal mode
+imap <silent> <F9> <Plug>StopMarkdownPreview    " for insert mode
+"启动界面配置
+let g:dashboard_default_header = 'commicgirl6'     "页眉
+let g:dashboard_custom_footer = ["A beautiful day By:Aerocn"]
+set nofoldenable "关闭代码折叠
+"翻译插件
+map <leader>m	:Translate<CR>
+"自动注释
+autocmd FileType c   imap // /* ✔ */<ESC> ? ✔ <CR> <DEL>i
+
 
