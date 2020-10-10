@@ -3,7 +3,7 @@ set ts=4
 inoremap jk <ESC>
 inoremap <C-j> j<space><BS>
 inoremap <C-k> k<space><BS>
-set listchars=tab:\┊\ ,trail:.
+set listchars=tab:\|\ ,trail:.
 filetype indent on
 autocmd FileType python setlocal et sta sw=4 sts=4
 noremap L :UndotreeToggle<CR>
@@ -22,10 +22,6 @@ vmap <leader>p "+p
 " 打开文件自动定位到最后编辑的位置
 map <leader>ds /Descr<CR>:noh<CR><S-a>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-map <leader>w <C-w>
-map er :Re<CR>
-map tt :Vista<CR>
-map ei :e<space>
 "
 set hidden
 " Some servers have issues with backup files, see #649.
@@ -163,6 +159,10 @@ func! CompileRunGcc()
 		exec '!time python %'
 	elseif &filetype == 'sh'
 		:!time bash %
+	elseif &filetype == 'html'
+		exec '!chromium % &'
+	elseif &filetype == 'lua'
+		exec '!time lua %'
 	endif
 endf
 "异步调用允许编译命令
@@ -201,10 +201,7 @@ map <leader>s <Plug>(EasyAlign)
 nmap <leader><leader>a <Plug>(easymotion-overwin-f2)
 map <leader>n :set nu!<CR>
 "markdown预览 
-nmap <silent> <F8> <Plug>MarkdownPreview        " for normal mode
-imap <silent> <F8> <Plug>MarkdownPreview        " for insert mode
-nmap <silent> <F9> <Plug>StopMarkdownPreview    " for normal mode
-imap <silent> <F9> <Plug>StopMarkdownPreview    " for insert mode
+autocmd FileType markdown  source ~/.config/nvim/markdown.vim
 "启动界面配置
 let g:dashboard_default_header = 'commicgirl6'     "页眉
 let g:dashboard_custom_footer = ["A beautiful day By:Aerocn"]
@@ -212,6 +209,11 @@ set nofoldenable "关闭代码折叠
 "翻译插件
 map <leader>m	:Translate<CR>
 "自动注释
-autocmd FileType c   imap // /* ✔ */<ESC> ? ✔ <CR> <DEL>i
-
-
+"autocmd FileType c   imap /. /* ✔ */<ESC> ? ✔ <CR> <DEL>i
+" 快捷键
+map <leader>w <C-w>
+map er :Re<CR>
+map tt :Vista<CR>
+map ei :e<space>
+"open terminal
+map te :sp<CR> <C-W>j :res 7<CR> :te<CR> i

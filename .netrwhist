@@ -1,5 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =6
+let g:netrw_dirhistcnt =7
+let g:netrw_dirhist_7='/home/chroot/.config/nvim'
 let g:netrw_dirhist_6='/home/chroot/.config/awesome'
 let g:netrw_dirhist_5='/home/chroot/.config/SpeekABread/File_shell'
 let g:netrw_dirhist_4='/home/chroot/.config/SpeekABread'
@@ -9,4 +10,3 @@ let g:netrw_dirhist_1='/home/chroot/.aMule'
 let g:netrw_dirhist_0='/home/chroot'
 let g:netrw_dirhist_9='/home/chroot/.emacs'
 let g:netrw_dirhist_8='/home/chroot/.emacs/var'
-let g:netrw_dirhist_7='/home/chroot/.emacs/var/auto-save-list'

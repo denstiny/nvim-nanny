@@ -1,0 +1,3 @@
+#!/bin/sh
+
+exec '/home/chroot/torch/install/bin/luajit' -e 'package.path="/home/chroot/.luarocks/share/lua/5.1/?.lua;/home/chroot/.luarocks/share/lua/5.1/?/init.lua;/home/chroot/torch/install/share/lua/5.1/?.lua;/home/chroot/torch/install/share/lua/5.1/?/init.lua;"..package.path; package.cpath="/home/chroot/.luarocks/lib/lua/5.1/?.so;/home/chroot/torch/install/lib/lua/5.1/?.so;"..package.cpath' -e 'local k,l,_=pcall(require,"luarocks.loader") _=k and l.add_context("lua-lsp","scm-2")' '/home/chroot/.config/coc/extensions/coc-lua-data/tools/lib/luarocks/rocks/lua-lsp/scm-2/bin/lua-lsp' "$@"

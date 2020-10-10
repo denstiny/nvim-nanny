@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Types xmlns="http://schemas.openxmlformats.org/package/2006/content-types">
+  <Default Extension="rels" ContentType="application/vnd.openxmlformats-package.relationships+xml" />
+  <Default Extension="psmdcp" ContentType="application/vnd.openxmlformats-package.core-properties+xml" />
+  <Default Extension="py" ContentType="application/octet" />
+  <Default Extension="so" ContentType="application/octet" />
+  <Default Extension="dll" ContentType="application/octet" />
+  <Default Extension="pdb" ContentType="application/octet" />
+  <Default Extension="LanguageServer" ContentType="application/octet" />
+  <Default Extension="json" ContentType="application/octet" />
+  <Default Extension="md" ContentType="application/octet" />
+  <Default Extension="a" ContentType="application/octet" />
+  <Default Extension="pyi" ContentType="application/octet" />
+  <Default Extension="nuspec" ContentType="application/octet" />
+  <Override PartName="/createdump" ContentType="application/octet" />
+  <Override PartName="/Typeshed/LICENSE" ContentType="application/octet" />
+</Types>

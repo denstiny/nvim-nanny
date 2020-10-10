@@ -1,0 +1,237 @@
+commands = {
+   ["lua-lsp"] = {
+      "lua-lsp/scm-2"
+   }
+}
+dependencies = {
+   dkjson = {
+      ["2.5-2"] = {
+         {
+            constraints = {
+               {
+                  op = ">=",
+                  version = {
+                     5, 1, string = "5.1"
+                  }
+               }, {
+                  op = "<",
+                  version = {
+                     5, 4, string = "5.4"
+                  }
+               }
+            },
+            name = "lua"
+         }
+      }
+   },
+   inspect = {
+      ["3.1.1-0"] = {
+         {
+            constraints = {
+               {
+                  op = ">=",
+                  version = {
+                     5, 1, string = "5.1"
+                  }
+               }
+            },
+            name = "lua"
+         }
+      }
+   },
+   lpeglabel = {
+      ["1.5.0-1"] = {
+         {
+            constraints = {
+               {
+                  op = ">=",
+                  version = {
+                     5, 1, string = "5.1"
+                  }
+               }
+            },
+            name = "lua"
+         }
+      }
+   },
+   ["lua-lsp"] = {
+      ["scm-2"] = {
+         {
+            constraints = {
+               {
+                  op = ">=",
+                  version = {
+                     5, 1, string = "5.1"
+                  }
+               }, {
+                  op = "<",
+                  version = {
+                     5, 4, string = "5.4"
+                  }
+               }
+            },
+            name = "lua"
+         }, {
+            constraints = {
+               {
+                  op = "~>",
+                  version = {
+                     2, 5, string = "2.5"
+                  }
+               }
+            },
+            name = "dkjson"
+         }, {
+            constraints = {
+               {
+                  op = "~>",
+                  version = {
+                     1, 5, string = "1.5"
+                  }
+               }
+            },
+            name = "lpeglabel"
+         }, {
+            constraints = {
+               {
+                  op = "~>",
+                  version = {
+                     3, 1, string = "3.1"
+                  }
+               }
+            },
+            name = "inspect"
+         }
+      }
+   }
+}
+modules = {
+   dkjson = {
+      "dkjson/2.5-2"
+   },
+   inspect = {
+      "inspect/3.1.1-0"
+   },
+   lpeglabel = {
+      "lpeglabel/1.5.0-1"
+   },
+   ["lua-lsp.analyze"] = {
+      "lua-lsp/scm-2"
+   },
+   ["lua-lsp.data.5_1"] = {
+      "lua-lsp/scm-2"
+   },
+   ["lua-lsp.data.5_2"] = {
+      "lua-lsp/scm-2"
+   },
+   ["lua-lsp.data.5_3"] = {
+      "lua-lsp/scm-2"
+   },
+   ["lua-lsp.data._test"] = {
+      "lua-lsp/scm-2"
+   },
+   ["lua-lsp.data.love-completions"] = {
+      "lua-lsp/scm-2"
+   },
+   ["lua-lsp.data.luajit-2_0"] = {
+      "lua-lsp/scm-2"
+   },
+   ["lua-lsp.log"] = {
+      "lua-lsp/scm-2"
+   },
+   ["lua-lsp.loop"] = {
+      "lua-lsp/scm-2"
+   },
+   ["lua-lsp.lua-parser.parser"] = {
+      "lua-lsp/scm-2"
+   },
+   ["lua-lsp.lua-parser.scope"] = {
+      "lua-lsp/scm-2"
+   },
+   ["lua-lsp.lua-parser.validator"] = {
+      "lua-lsp/scm-2"
+   },
+   ["lua-lsp.methods"] = {
+      "lua-lsp/scm-2"
+   },
+   ["lua-lsp.rpc"] = {
+      "lua-lsp/scm-2"
+   },
+   ["lua-lsp.unicode"] = {
+      "lua-lsp/scm-2"
+   },
+   relabel = {
+      "lpeglabel/1.5.0-1"
+   }
+}
+repository = {
+   dkjson = {
+      ["2.5-2"] = {
+         {
+            arch = "installed",
+            commands = {},
+            dependencies = {},
+            modules = {
+               dkjson = "dkjson.lua"
+            }
+         }
+      }
+   },
+   inspect = {
+      ["3.1.1-0"] = {
+         {
+            arch = "installed",
+            commands = {},
+            dependencies = {},
+            modules = {
+               inspect = "inspect.lua"
+            }
+         }
+      }
+   },
+   lpeglabel = {
+      ["1.5.0-1"] = {
+         {
+            arch = "installed",
+            commands = {},
+            dependencies = {},
+            modules = {
+               lpeglabel = "lpeglabel.so",
+               relabel = "relabel.lua"
+            }
+         }
+      }
+   },
+   ["lua-lsp"] = {
+      ["scm-2"] = {
+         {
+            arch = "installed",
+            commands = {
+               ["lua-lsp"] = "lua-lsp"
+            },
+            dependencies = {
+               dkjson = "2.5-2",
+               inspect = "3.1.1-0",
+               lpeglabel = "1.5.0-1"
+            },
+            modules = {
+               ["lua-lsp.analyze"] = "lua-lsp/analyze.lua",
+               ["lua-lsp.data.5_1"] = "lua-lsp/data/5_1.lua",
+               ["lua-lsp.data.5_2"] = "lua-lsp/data/5_2.lua",
+               ["lua-lsp.data.5_3"] = "lua-lsp/data/5_3.lua",
+               ["lua-lsp.data._test"] = "lua-lsp/data/_test.lua",
+               ["lua-lsp.data.love-completions"] = "lua-lsp/data/love-completions.lua",
+               ["lua-lsp.data.luajit-2_0"] = "lua-lsp/data/luajit-2_0.lua",
+               ["lua-lsp.log"] = "lua-lsp/log.lua",
+               ["lua-lsp.loop"] = "lua-lsp/loop.lua",
+               ["lua-lsp.lua-parser.parser"] = "lua-lsp/lua-parser/parser.lua",
+               ["lua-lsp.lua-parser.scope"] = "lua-lsp/lua-parser/scope.lua",
+               ["lua-lsp.lua-parser.validator"] = "lua-lsp/lua-parser/validator.lua",
+               ["lua-lsp.methods"] = "lua-lsp/methods.lua",
+               ["lua-lsp.rpc"] = "lua-lsp/rpc.lua",
+               ["lua-lsp.unicode"] = "lua-lsp/unicode.lua"
+            }
+         }
+      }
+   }
+}

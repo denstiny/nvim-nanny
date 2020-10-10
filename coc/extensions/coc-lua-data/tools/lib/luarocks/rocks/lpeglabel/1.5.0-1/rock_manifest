@@ -1,0 +1,13 @@
+rock_manifest = {
+   doc = {
+      LICENSE = "7c91c03e1609d7d2f6e21b53586af067",
+      ["README.md"] = "2bccf1029462fd9000486b3d10506c19"
+   },
+   lib = {
+      ["lpeglabel.so"] = "fb01de889b3aa1940a039a580ddcd1e9"
+   },
+   ["lpeglabel-1.5.0-1.rockspec"] = "16399a907b4808dfbd2479dac9e600c6",
+   lua = {
+      ["relabel.lua"] = "54334ca7c011804ecfbc3da5bd96d1a2"
+   }
+}
