@@ -55,6 +55,7 @@ nmap <silent> gs <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
+"nerdtree
 
 "nnoremap <silent> K :call <SID>show_documentation()<CR>
 
@@ -213,6 +214,7 @@ map <leader>m	:Translate<CR>
 " 快捷键
 map <leader>w <C-w>
 map er :Re<CR>
+map tr :NERDTree<CR>
 map tt :Vista<CR>
 map ei :e<space>
 "open terminal

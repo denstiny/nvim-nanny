@@ -15,9 +15,10 @@ Plug 'rakr/vim-one' "配色
 Plug 'godlygeek/tabular' 			
 Plug 'plasticboy/vim-markdown' 		 "markdown预览 
 Plug 'iamcco/mathjax-support-for-mkdp' 
+Plug 'preservim/nerdtree'          "vim目录树
 Plug 'iamcco/markdown-preview.vim' 	   
 Plug 'puremourning/vimspector'   		"vim调试插件
-Plug 'shanzi/autoHEADER' 				"自定插入项目头
+"Plug 'shanzi/autoHEADER' 				"自定插入项目头
 Plug 'junegunn/vim-easy-align'   " 代码格式化
 Plug 'liuchengxu/vim-clap'  "搜索工具
 Plug 'easymotion/vim-easymotion' " 字符串搜索工具
