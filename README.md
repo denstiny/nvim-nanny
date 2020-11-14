@@ -1,7 +1,7 @@
 ## my-neovim    
 
 ---
-![](https://i.bmp.ovh/imgs/2020/05/96963393c4a81d94.png)
+![](./vim.png)
 ### 使用教程
 #### Method of use    
 
@@ -25,6 +25,8 @@ gi 转到实现处
 <leader> j/k 行级跳转    
 <leader> h/l 行内跳转    
 <leader> . 重复上一次动作    
+<leader>m 翻译当前单词   
+<leader>h 查看当前单词帮助文档  
 . 快速编译    
 bd 关闭当前buff    
 er 打开文件目录树    
