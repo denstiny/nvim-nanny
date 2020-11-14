@@ -1,12 +1,12 @@
  
 {
-	"coc.preferences.hoverTarget": "preview",
-	"coc.preferences.enableFloatHighlight": true,
-	"coc.preferences.snippetStatusText": "Ⓢ ",
 	"coc.preferences.extensionUpdateCheck": "daily",
-	"suggest.detailMaxLength": 60,
 	"suggest.noselect": true,
+	"coc.preferences.enableFloatHighlight": true,
 	"suggest.enablePreselect": false,
+	"coc.preferences.hoverTarget": "preview",
+	"coc.preferences.snippetStatusText": "Ⓢ ",
+	"suggest.detailMaxLength": 60,
 	"suggest.triggerAfterInsertEnter": false,
 	"suggest.timeout": 5000,
 	"suggest.enablePreview": true,
@@ -134,5 +134,4 @@
 		"elixir": "mix_format",
 		"eelixir": "mix_format"
 	}
-
 }
