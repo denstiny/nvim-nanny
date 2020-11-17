@@ -1,5 +1,7 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =4
+let g:netrw_dirhistcnt =6
+let g:netrw_dirhist_6='/mnt/home/CocRes/school/code/one'
+let g:netrw_dirhist_5='/mnt/home/CocRes/school/code/one.c'
 let g:netrw_dirhist_4='/home/chroot/Downloads'
 let g:netrw_dirhist_3='/home/chroot/Downloads/suny/assets/yyb/assets'
 let g:netrw_dirhist_2='/home/chroot/Downloads/suny/assets/yyb'
@@ -8,5 +10,3 @@ let g:netrw_dirhist_0='/home/chroot/.config/awesome/sxhkd'
 let g:netrw_dirhist_9='/home/chroot/.config/awesome'
 let g:netrw_dirhist_8='/etc/spectrwm'
 let g:netrw_dirhist_7='/home/chroot/.config/nvim'
-let g:netrw_dirhist_6='/home/chroot/.config/awesome'
-let g:netrw_dirhist_5='/home/chroot/.config/SpeekABread/File_shell'

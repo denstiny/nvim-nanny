@@ -19,7 +19,7 @@ Plug 'iamcco/mathjax-support-for-mkdp'
 Plug 'preservim/nerdtree'          "vim目录树
 Plug 'iamcco/markdown-preview.vim' 	   
 Plug 'puremourning/vimspector'   		"vim调试插件
-"Plug 'shanzi/autoHEADER' 				"自定插入项目头
+Plug 'shanzi/autoHEADER' 				"自定插入项目头
 Plug 'junegunn/vim-easy-align'   " 代码格式化
 Plug 'liuchengxu/vim-clap'  "搜索工具
 Plug 'easymotion/vim-easymotion' " 字符串搜索工具
@@ -36,12 +36,13 @@ Plug 'joshdick/onedark.vim'   	"配色
 Plug 'jackguo380/vim-lsp-cxx-highlight',{'for':'c'}  "c语言语法高亮
 Plug 'tpope/vim-surround'  "环绕工具
 Plug 'gcmt/wildfire.vim'   "代码块选择工具 
+Plug 'luochen1990/rainbow'  "彩虹括号
 "翻译插件
 Plug 'voldikss/vim-translator' 	"异步翻译
 call plug#end()
 
 source /home/chroot/.config/nvim/init.config.vim
-source /home/chroot/.config/nvim/coc_setting.vim
+"source /home/chroot/.config/nvim/coc_setting.vim
 "配色主题
 colorscheme one
 "自定义配置
@@ -56,4 +57,3 @@ map ei :e<space>
 "set laststatus=0 "关闭状态栏和标签栏
 set showtabline=0
 source /home/chroot/.config/nvim/mycolor.vim
-

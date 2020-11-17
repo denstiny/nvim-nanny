@@ -16,9 +16,9 @@ let g:undotree_SplitWidth = 20
 se cursorline
 hi cursorline cterm=NONE ctermbg=237
 set virtualedit=block,onemore
-" 复制当前选中到系统剪切板
-map <leader>y "+y
-vmap <leader>p "+p
+"相对行号"
+set relativenumber
+set number
 " 打开文件自动定位到最后编辑的位置
 map <leader>ds /Descr<CR>:noh<CR><S-a>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
@@ -31,64 +31,64 @@ set cmdheight=2
 set updatetime=300
 set shortmess+=c
 set signcolumn=yes
-"inoremap <silent><expr> <TAB>
-"			\ pumvisible() ? "\<C-n>" :
-"			\ <SID>check_back_space() ? "\<TAB>" :
-"			\ coc#refresh()
-"inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-"
-"function! s:check_back_space() abort
-"	let col = col('.') - 1
-"	return !col || getline('.')[col - 1]  =~# '\s'
-"endfunction
-"inoremap <silent><expr> <c-space> coc#refresh()
-"if has('patch8.1.1068')
-"	inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
-"else
-"	imap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-"endif
-"
-"nmap <silent> <leader>g <Plug>(coc-diagnostic-prev)
-"nmap <silent> <leader>t <Plug>(coc-diagnostic-next)
-"
-"nmap <silent> gs <Plug>(coc-definition)
-"nmap <silent> gy <Plug>(coc-type-definition)
-"nmap <silent> gi <Plug>(coc-implementation)
-"nmap <silent> gr <Plug>(coc-references)
-""nerdtree
-"
-""nnoremap <silent> K :call <SID>show_documentation()<CR>
-"
-"function! s:show_documentation()
-"	if (index(['vim','help'], &filetype) >= 0)
-"		execute 'h '.expand('<cword>')
-"	else
-"		call CocAction('doHover')
-"	endif
-"endfunction
-""autocmd CursorHold * silent call CocActionAsync('highlight')
-"nmap <leader>f <Plug>(coc-rename) "快速重命名函数
-"augroup mygroup
-"augroup end
-"" Example: `<leader>aap` for current paragraph
-"xmap if <Plug>(coc-funcobj-i)
-"xmap af <Plug>(coc-funcobj-a)
-"omap if <Plug>(coc-funcobj-i)
-"omap af <Plug>(coc-funcobj-a)
-"nmap <silent> <TAB> <Plug>(coc-range-select)
-"xmap <silent> <TAB> <Plug>(coc-range-select)
-"command! -nargs=0 Format :call CocAction('format')
-"command! -nargs=? Fold :call     CocAction('fold', <f-args>)
-"command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
-"set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
-"nnoremap <silent> <space>a  :<C-u>CocList diagnostics<cr>
-"nnoremap <silent> <space>e  :<C-u>CocList extensions<cr>
-"nnoremap <silent> <space>c  :<C-u>CocList commands<cr>
-"nnoremap <silent> <space>o  :<C-u>CocList outline<cr>
-"nnoremap <silent> <space>s  :<C-u>CocList -I symbols<cr>
-"nnoremap <silent> <space>j  :<C-u>CocNext<CR>
-"nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
-"nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
+inoremap <silent><expr> <TAB>
+			\ pumvisible() ? "\<C-n>" :
+			\ <SID>check_back_space() ? "\<TAB>" :
+			\ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+function! s:check_back_space() abort
+	let col = col('.') - 1
+	return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+inoremap <silent><expr> <c-space> coc#refresh()
+if has('patch8.1.1068')
+	inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
+else
+	imap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+endif
+
+nmap <silent> <leader>g <Plug>(coc-diagnostic-prev)
+nmap <silent> <leader>t <Plug>(coc-diagnostic-next)
+
+nmap <silent> gs <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+"nerdtree
+
+"nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+function! s:show_documentation()
+	if (index(['vim','help'], &filetype) >= 0)
+		execute 'h '.expand('<cword>')
+	else
+		call CocAction('doHover')
+	endif
+endfunction
+"autocmd CursorHold * silent call CocActionAsync('highlight')
+nmap <leader>f <Plug>(coc-rename) "快速重命名函数
+augroup mygroup
+augroup end
+" Example: `<leader>aap` for current paragraph
+xmap if <Plug>(coc-funcobj-i)
+xmap af <Plug>(coc-funcobj-a)
+omap if <Plug>(coc-funcobj-i)
+omap af <Plug>(coc-funcobj-a)
+nmap <silent> <TAB> <Plug>(coc-range-select)
+xmap <silent> <TAB> <Plug>(coc-range-select)
+command! -nargs=0 Format :call CocAction('format')
+command! -nargs=? Fold :call     CocAction('fold', <f-args>)
+command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
+set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
+nnoremap <silent> <space>a  :<C-u>CocList diagnostics<cr>
+nnoremap <silent> <space>e  :<C-u>CocList extensions<cr>
+nnoremap <silent> <space>c  :<C-u>CocList commands<cr>
+nnoremap <silent> <space>o  :<C-u>CocList outline<cr>
+nnoremap <silent> <space>s  :<C-u>CocList -I symbols<cr>
+nnoremap <silent> <space>j  :<C-u>CocNext<CR>
+nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
+nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 
 
 "Tag"
@@ -152,18 +152,12 @@ func! CompileRunGcc()
 	exec "w"
 	if &filetype == 'c'
 		exec '!gcc -g % -o %<'
-		exec '!time ./%< && echo "\n"'
+		"exec '!time ./%< && echo "\n"'
 	elseif &filetype == 'cpp'
 		exec '!g++ -g % -o %<'
-		exec '!time ./%< && echo "\n"'
-	elseif &filetype == 'python'
-		exec '!time python % && echo "\n"'
-	elseif &filetype == 'sh'
-		:!time bash % && echo "\n"
+		"exec '!time ./%< && echo "\n"'
 	elseif &filetype == 'html'
 		exec '!chromium % &'
-	elseif &filetype == 'lua'
-		exec '!time lua % && echo "\n"'
 	endif
 endf
 "异步调用允许编译命令
@@ -210,7 +204,7 @@ let g:dashboard_default_header = 'commicgirl6'     "页眉
 let g:dashboard_custom_footer = ["A beautiful day By:Aerocn"]
 set nofoldenable "关闭代码折叠
 "翻译插件
-map <leader>m	:Translate<CR>
+map <leader>m	:TranslateW<CR>
 "自动注释
 "autocmd FileType c   imap /. /* ✔ */<ESC> ? ✔ <CR> <DEL>i
 " 快捷键
@@ -219,5 +213,5 @@ map er :Re<CR>
 map tr :NERDTree<CR>
 map tt :Vista<CR>
 map ei :e<space>
-"open terminal
-map te :sp<CR> <C-W>j :res 7<CR> :te<CR> i
+"彩虹括号
+let g:rainbow_active = 1
