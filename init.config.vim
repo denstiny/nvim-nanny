@@ -166,8 +166,9 @@ au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g
 
 "多文件编辑
 map <leader>q :bd<CR>
-map <leader>e :bp<CR>
-map <leader>r :bp<CR>
+map <leader>n :bp<CR>
+map <leader>o :bp<CR>
+
 
 " 自定义命令
 command! -nargs=0 Fl :FloatermNew
@@ -204,7 +205,6 @@ let g:dashboard_default_header = 'commicgirl6'     "页眉
 let g:dashboard_custom_footer = ["A beautiful day By:Aerocn"]
 set nofoldenable "关闭代码折叠
 "翻译插件
-map <leader>m	:TranslateW<CR>
 "自动注释
 "autocmd FileType c   imap /. /* ✔ */<ESC> ? ✔ <CR> <DEL>i
 " 快捷键
@@ -215,3 +215,18 @@ map tt :Vista<CR>
 map ei :e<space>
 "彩虹括号
 let g:rainbow_active = 1
+
+
+"Coc-translator
+
+" popup 悬浮翻译
+nmap <Leader>t <Plug>(coc-translator-p)
+vmap <Leader>t <Plug>(coc-translator-pv)
+" echo  终端回显翻译
+nmap <Leader>e <Plug>(coc-translator-e)
+vmap <Leader>e <Plug>(coc-translator-ev)
+" replace 单词替换
+nmap <Leader>r <Plug>(coc-translator-r)
+vmap <Leader>r <Plug>(coc-translator-rv)
+
+
