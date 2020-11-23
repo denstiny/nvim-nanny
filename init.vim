@@ -39,9 +39,9 @@ Plug 'jackguo380/vim-lsp-cxx-highlight',{'for':'c'}  "c语言语法高亮
 Plug 'tpope/vim-surround'  "环绕工具
 Plug 'gcmt/wildfire.vim'   "代码块选择工具 
 Plug 'luochen1990/rainbow'  "彩虹括号
-
 "翻译插件
-
+Plug 'iamcco/dict.vim'  
+Plug 'voldikss/vim-translator'
 call plug#end()
 
 source ~/.config/nvim/init.config.vim

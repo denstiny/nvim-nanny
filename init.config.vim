@@ -1,234 +1,239 @@
-set sw=4
-set ts=4
-inoremap jk <ESC>
-inoremap <C-j> j<space><BS>
-inoremap <C-k> k<space><BS>
-set listchars=tab:\|\ ,trail:.
-filetype indent on
-autocmd FileType python setlocal et sta sw=4 sts=4
-noremap L :UndotreeToggle<CR>
-let g:undotree_DiffAutoOpen = 1
-let g:undotree_SetFocusWhenToggle = 1
-let g:undotree_ShortIndicators = 1
-let g:undotree_WindowLayout = 2
-let g:undotree_DiffpanelHeight = 8
-let g:undotree_SplitWidth = 20
-se cursorline
-hi cursorline cterm=NONE ctermbg=237
-set virtualedit=block,onemore
+set             sw=4
+set             ts=4
+inoremap        jk <ESC>
+inoremap        <C-j> j<space><BS>
+inoremap        <C-k> k<space><BS>
+set             listchars=tab:\|\ ,trail:.
+filetype        indent on
+autocmd         FileType python setlocal et sta sw=4 sts=4
+noremap         L :UndotreeToggle<CR>
+let             g:undotree_DiffAutoOpen = 1
+let             g:undotree_SetFocusWhenToggle = 1
+let             g:undotree_ShortIndicators = 1
+let             g:undotree_WindowLayout = 2
+let             g:undotree_DiffpanelHeight = 8
+let             g:undotree_SplitWidth = 20
+se              cursorline
+hi              cursorline cterm=NONE ctermbg=237
+set             virtualedit=block,onemore
 "相对行号"
-set relativenumber
-set number
+set             relativenumber
+set             number
 " 打开文件自动定位到最后编辑的位置
-map <leader>ds /Descr<CR>:noh<CR><S-a>
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+autocmd         bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 "
-set hidden
+set             hidden
 " Some servers have issues with backup files, see #649.
-set nobackup
-set nowritebackup
-set cmdheight=2
-set updatetime=300
-set shortmess+=c
-set signcolumn=yes
-inoremap <silent><expr> <TAB>
-			\ pumvisible() ? "\<C-n>" :
-			\ <SID>check_back_space() ? "\<TAB>" :
-			\ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+set             nobackup
+set             nowritebackup
+set             cmdheight=2
+set             updatetime=300
+set             shortmess+=c
+set             signcolumn=yes
+inoremap        <silent><expr> <TAB>
+			\   pumvisible() ? "\<C-n>" :
+			\   <SID>check_back_space() ? "\<TAB>" :
+			\   coc#refresh()
+inoremap        <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
-function! s:check_back_space() abort
-	let col = col('.') - 1
-	return !col || getline('.')[col - 1]  =~# '\s'
+function!       s:check_back_space() abort
+	let         col = col('.') - 1
+	return      !col || getline('.')[col - 1]  =~# '\s'
 endfunction
-inoremap <silent><expr> <c-space> coc#refresh()
-if has('patch8.1.1068')
-	inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
+inoremap        <silent><expr> <c-space> coc#refresh()
+if              has('patch8.1.1068')
+	inoremap    <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
 else
-	imap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+	imap        <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 endif
 
-nmap <silent> <leader>g <Plug>(coc-diagnostic-prev)
-nmap <silent> <leader>t <Plug>(coc-diagnostic-next)
+nmap            <silent> <leader>g <Plug>(coc-diagnostic-prev)
+nmap            <silent> <leader>t <Plug>(coc-diagnostic-next)
 
-nmap <silent> gs <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
+nmap            <silent> gs <Plug>(coc-definition)
+nmap            <silent> gy <Plug>(coc-type-definition)
+nmap            <silent> gi <Plug>(coc-implementation)
+nmap            <silent> gr <Plug>(coc-references)
 "nerdtree
 
 "nnoremap <silent> K :call <SID>show_documentation()<CR>
 
-function! s:show_documentation()
-	if (index(['vim','help'], &filetype) >= 0)
+function!       s:show_documentation()
+	if          (index(['vim','help'], &filetype) >= 0)
 		execute 'h '.expand('<cword>')
 	else
-		call CocAction('doHover')
+		call    CocAction('doHover')
 	endif
 endfunction
 "autocmd CursorHold * silent call CocActionAsync('highlight')
-nmap <leader>f <Plug>(coc-rename) "快速重命名函数
-augroup mygroup
-augroup end
+nmap            <leader>f <Plug>(coc-rename) "快速重命名函数
+augroup         mygroup
+augroup         end
 " Example: `<leader>aap` for current paragraph
-xmap if <Plug>(coc-funcobj-i)
-xmap af <Plug>(coc-funcobj-a)
-omap if <Plug>(coc-funcobj-i)
-omap af <Plug>(coc-funcobj-a)
-nmap <silent> <TAB> <Plug>(coc-range-select)
-xmap <silent> <TAB> <Plug>(coc-range-select)
-command! -nargs=0 Format :call CocAction('format')
-command! -nargs=? Fold :call     CocAction('fold', <f-args>)
-command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
-set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
-nnoremap <silent> <space>a  :<C-u>CocList<cr>
-nnoremap <silent> <space>e  :<C-u>CocList extensions<cr>
-nnoremap <silent> <space>c  :<C-u>CocList commands<cr>
-nnoremap <silent> <space>o  :<C-u>CocList outline<cr>
-nnoremap <silent> <space>s  :<C-u>CocList -I symbols<cr>
-nnoremap <silent> <space>j  :<C-u>CocNext<CR>
-nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
-nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
+xmap            if <Plug>(coc-funcobj-i)
+xmap            af <Plug>(coc-funcobj-a)
+omap            if <Plug>(coc-funcobj-i)
+omap            af <Plug>(coc-funcobj-a)
+nmap            <silent> <TAB> <Plug>(coc-range-select)
+xmap            <silent> <TAB> <Plug>(coc-range-select)
+command!        -nargs=0 Format :call CocAction('format')
+command!        -nargs=? Fold :call     CocAction('fold', <f-args>)
+command!        -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
+set             statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
+nnoremap        <silent> <space>a  :<C-u>CocList<cr>
+nnoremap        <silent> <space>e  :<C-u>CocList extensions<cr>
+nnoremap        <silent> <space>c  :<C-u>CocList commands<cr>
+nnoremap        <silent> <space>o  :<C-u>CocList outline<cr>
+nnoremap        <silent> <space>s  :<C-u>CocList -I symbols<cr>
+nnoremap        <silent> <space>j  :<C-u>CocNext<CR>
+nnoremap        <silent> <space>k  :<C-u>CocPrev<CR>
+nnoremap        <silent> <space>p  :<C-u>CocListResume<CR>
 
 "Tag"
 "
 "
 " gutentags搜索工程目录的标志，碰到这些文件/目录名就停止向上一级目录递归 "
-let g:gutentags_project_root = ['.root', '.svn', '.git', '.project']
+let             g:gutentags_project_root = ['.root', '.svn', '.git', '.project']
 
 " 所生成的数据文件的名称 "
-let g:gutentags_ctags_tagfile = '.tags'
+let             g:gutentags_ctags_tagfile = '.tags'
 
 " 将自动生成的 tags 文件全部放入 ~/.cache/tags 目录中，避免污染工程目录 "
-let s:vim_tags = expand('~/.cache/tags')
-let g:gutentags_cache_dir = s:vim_tags
+let             s:vim_tags = expand('~/.cache/tags')
+let             g:gutentags_cache_dir = s:vim_tags
 " 检测 ~/.cache/tags 不存在就新建 "
-if !isdirectory(s:vim_tags)
-	silent! call mkdir(s:vim_tags, 'p')
+if              !isdirectory(s:vim_tags)
+	silent!     call mkdir(s:vim_tags, 'p')
 endif
 
 " 配置 ctags 的参数 "
-let g:gutentags_ctags_extra_args = ['--fields=+niazS', '--extra=+q']
-let g:gutentags_ctags_extra_args += ['--c++-kinds=+pxI']
-let g:gutentags_ctags_extra_args += ['--c-kinds=+px']
+let             g:gutentags_ctags_extra_args = ['--fields=+niazS', '--extra=+q']
+let             g:gutentags_ctags_extra_args += ['--c++-kinds=+pxI']
+let             g:gutentags_ctags_extra_args += ['--c-kinds=+px']
 
 
 
 
 "vista.vim 配置
 "
-function! NearestMethodOrFunction() abort
-	return get(b:, 'vista_nearest_method_or_function', '')
+function!       NearestMethodOrFunction() abort
+	return      get(b:, 'vista_nearest_method_or_function', '')
 endfunction
 
-set statusline+=%{NearestMethodOrFunction()}
+set             statusline+=%{NearestMethodOrFunction()}
 
-autocmd VimEnter * call vista#RunForNearestMethodOrFunction()
+autocmd         VimEnter * call vista#RunForNearestMethodOrFunction()
 
-let g:vista_icon_indent = ["╰─▸ ", "├─▸ "]
+let             g:vista_icon_indent = ["╰─▸ ", "├─▸ "]
 
-let g:vista_default_executive = 'ctags'
+let             g:vista_default_executive = 'ctags'
 
-let g:vista_executive_for = {
-			\ 'cpp': 'vim_lsp',
-			\ 'php': 'vim_lsp',
-			\ }
+let             g:vista_executive_for = {
+			\   'cpp': 'vim_lsp',
+			\   'php': 'vim_lsp',
+			\   }
 
-let g:vista_ctags_cmd = {
-			\ 'haskell': 'hasktags -x -o - -c',
-			\ }
+let             g:vista_ctags_cmd = {
+			\   'haskell': 'hasktags -x -o - -c',
+			\   }
 
-let g:vista_fzf_preview = ['right:50%']
-let g:vista#renderer#enable_icon = 1
+let             g:vista_fzf_preview = ['right:50%']
+let             g:vista#renderer#enable_icon = 1
 
-let g:vista#renderer#icons = {
+let             g:vista#renderer#icons = {
 			\   "function": "\uf794",
 			\   "variable": "\uf71b",
-			\  }
+			\   }
 ""一键编译
-noremap . :call CompileRunGcc()<CR>
-func! CompileRunGcc()
-	exec "w"
-	if &filetype == 'c'
-		exec '!gcc -g % -o %<'
+noremap         . :call CompileRunGcc()<CR>
+func!           CompileRunGcc()
+	exec        "w"
+	if          &filetype == 'c'
+		exec    '!gcc -g % -o %<'
 		"exec '!time ./%< && echo "\n"'
-	elseif &filetype == 'cpp'
-		exec '!g++ -g % -o %<'
+	elseif      &filetype == 'cpp'
+		exec    '!g++ -g % -o %<'
 		"exec '!time ./%< && echo "\n"'
-	elseif &filetype == 'html'
-		exec '!chromium % &'
+	elseif      &filetype == 'html'
+		exec    '!chromium % &'
 	endif
 endf
 "异步调用允许编译命令
 "自动定位上次编辑位置
-au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+au              BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
 "多文件编辑
-map <leader>q :bd<CR>
-map <leader>n :bp<CR>
-map <leader>o :bp<CR>
+map             <leader>q :bd<CR>
+map             <leader>n :bp<CR>
+map             <leader>o :bp<CR>
 
 
 " 自定义命令
-command! -nargs=0 Fl :FloatermNew
-command! -nargs=0 Apt :CocList marketplace
-command! -nargs=0 H :FloatermNew nvim ~/.config/nvim/help.txt
-command! -nargs=0 Re :FloatermNew --position=left  ranger
-command! -nargs=0 Init :source ~/.config/nvim/install.vim
-set termguicolors
+command!        -nargs=0 Fl :FloatermNew
+command!        -nargs=0 Apt :CocList marketplace
+command!        -nargs=0 H :FloatermNew nvim ~/.config/nvim/help.txt
+command!        -nargs=0 Re :FloatermNew --position=left  ranger
+command!        -nargs=0 Init :source ~/.config/nvim/install.vim
+set             termguicolors
 
 " git 插件配置
-set updatetime=50 " 设置更新时间
+set             updatetime=50 " 设置更新时间
 "悬浮
-autocmd User Startified setlocal buflisted "自定关闭遗留
+autocmd         User Startified setlocal buflisted "自定关闭遗留
 "hi FloatermBorder guifg=cyan
-let g:floaterm_position ='right'
-let g:floaterm_winblend = 5		"设置浮动窗口透明度
-let g:floaterm_keymap_new    = "'g"
-let g:floaterm_keymap_prev   = "'a"
-let g:floaterm_keymap_next   = "'d"
+let             g:floaterm_position ='right'
+let             g:floaterm_winblend = 5		"设置浮动窗口透明度
+let             g:floaterm_keymap_new    = "'g"
+let             g:floaterm_keymap_prev   = "'a"
+let             g:floaterm_keymap_next   = "'d"
 "let g:floaterm_keymap_hide   = "'w"
-let g:floaterm_keymap_toggle = "'s"
-let g:floaterm_autoclose	 = 1
-nmap <leader>x :FloatermNew<space>
+let             g:floaterm_keymap_toggle = "'s"
+let             g:floaterm_autoclose	 = 1
+nmap            <leader>x :FloatermNew<space>
 "显示文件类型图标配置
 "格式化插件配置
-map <leader>s <Plug>(EasyAlign)
+map             <leader>s <Plug>(EasyAlign)
 "字符串搜索
-nmap <leader><leader>a <Plug>(easymotion-overwin-f2)
-map <leader>n :set nu!<CR>
+nmap            <leader><leader>a <Plug>(easymotion-overwin-f2)
+"map             <leader>n :set nu!<CR>
 "markdown预览 
-autocmd FileType markdown  source ~/.config/nvim/markdown.vim
+autocmd         FileType markdown  source ~/.config/nvim/markdown.vim
 "启动界面配置
-let g:dashboard_default_header = 'commicgirl6'     "页眉
-let g:dashboard_custom_footer = ["A beautiful day By:Aerocn"]
-set nofoldenable "关闭代码折叠
-"翻译插件
-"自动注释
-"autocmd FileType c   imap /. /* ✔ */<ESC> ? ✔ <CR> <DEL>i
+let             g:dashboard_default_header = 'commicgirl6'     "页眉
+let             g:dashboard_custom_footer = ["A beautiful day By:Aerocn"]
+set             nofoldenable "关闭代码折叠
+
+
+
 " 快捷键
-map <leader>w <C-w>
-map er :Re<CR>
-map tr :NERDTree<CR>
-map tt :Vista<CR>
-map ei :e<space>
+map             <leader>w <C-w>
+map             er :Re<CR>
+map             tr :NERDTree<CR>
+map             tt :Vista<CR>
+map             ei :e<space>
+
+
+
 "彩虹括号
-let g:rainbow_active = 1
+let             g:rainbow_active = 1
 
 
-"Coc-translator
+"Plug 'voldikss/vim-translator'
+" <Leader>t 翻译光标下的文本，在命令行回显
+nmap <silent> <Leader>e <Plug>DictSearch
+vmap <silent> <Leader>e <Plug>DictVSearch
+" Leader>w 翻译光标下的文本，在窗口中显示
+nmap <silent> <Leader>t <Plug>TranslateW
+vmap <silent> <Leader>t <Plug>TranslateWV
+" Leader>r 替换光标下的文本为翻译内容
+nmap <silent> <Leader>r <Plug>TranslateR
+vmap <silent> <Leader>r <Plug>TranslateRV
 
-" popup 悬浮翻译
-nmap <Leader>t <Plug>(coc-translator-p)
-vmap <Leader>t <Plug>(coc-translator-pv)
-" echo  终端回显翻译
-nmap <Leader>e <Plug>(coc-translator-e)
-vmap <Leader>e <Plug>(coc-translator-ev)
-" replace 单词替换
-nmap <Leader>r <Plug>(coc-translator-r)
-vmap <Leader>r <Plug>(coc-translator-rv)
 
-let g:coc_global_extensions = [
+"===
+"===  coc-nvim 
+"===
+let             g:coc_global_extensions = [
 			\'coc-json',
 			\'coc-vimlsp',
 			\'coc-marketplace',
