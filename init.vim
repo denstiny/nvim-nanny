@@ -13,6 +13,7 @@ call plug#begin('~/.vim/plugged')
 "Plug 'ludovicchabant/vim-gutentags'
 Plug 'mg979/vim-visual-multi', {'branch': 'master'} "多光标
 Plug 'rakr/vim-one' "配色
+Plug 'gko/vim-coloresque'  "语言颜色
 Plug 'godlygeek/tabular' 			
 Plug 'plasticboy/vim-markdown',{'for':'md'} 		 "markdown预览 
 Plug 'iamcco/mathjax-support-for-mkdp' 
