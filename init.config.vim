@@ -1,9 +1,22 @@
+"===
+"===  coc-nvim 
+"===
+source ~/.config/nvim/coc_setting.vim
+let             g:coc_global_extensions = [
+			\'coc-json',
+			\'coc-vimlsp',
+			\'coc-marketplace',
+			\'coc-python',
+			\'coc-clangd',
+			\'coc-go',
+			\'coc-sh',
+			\'coc-html']
+
 set             sw=4
 set             ts=4
 inoremap        jk <ESC>
 inoremap        <C-j> j<space><BS>
 inoremap <C-k>      k<space><BS>
-"set listchars=tab:\|\,trail:.
 set      noswapfile "关闭交换文件
 filetype        indent on
 autocmd         FileType python setlocal et sta sw=4 sts=4
@@ -147,7 +160,7 @@ autocmd         FileType markdown  source ~/.config/nvim/markdown.vim
 "启动界面配置
 let             g:dashboard_default_header = 'commicgirl6'     "页眉
 let             g:dashboard_custom_footer = ["A beautiful day By:Aerocn"]
-set             nofoldenable "关闭代码折叠
+"set             nofoldenable "关闭代码折叠
 
 
 
@@ -176,16 +189,3 @@ nmap <silent> <Leader>r <Plug>TranslateR
 vmap <silent> <Leader>r <Plug>TranslateRV
 
 
-"===
-"===  coc-nvim 
-"===
-source ~/.config/nvim/coc_setting.vim
-let             g:coc_global_extensions = [
-			\'coc-json',
-			\'coc-vimlsp',
-			\'coc-marketplace',
-			\'coc-python',
-			\'coc-clangd',
-			\'coc-go',
-			\'coc-sh',
-			\'coc-html']

@@ -69,4 +69,13 @@ Ctrl+W =//让所有的屏都有一样的高度。
 Ctrl+W +//增加高度。
 Ctrl+W -//减少高度。
 
+ViM终端调教 
+ALT+ =：切换下面的终端。
+ALT+ SHIFT+ h：移至左侧的窗口。
+ALT+ SHIFT+ l：移至右侧的窗口。
+ALT+ SHIFT+ j：移到下面的窗口。
+ALT+ SHIFT+ k：移至上方的窗口。
+ALT+ SHIFT+ p：移至上一个窗口。
+ALT+ -：将寄存器0粘贴到端子。
+ALT+ q：切换到终端普通模式。
 

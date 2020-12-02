@@ -43,6 +43,7 @@ J K 快速切换
 <leader>w ^W    
 命令 FloatermNew 新建悬浮窗口    
      
+
 # 各个文件的作用    
 init.vim    
 主要的配置文件 存放一个插件和一些基础配置    

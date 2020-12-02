@@ -1,6 +1,6 @@
  
 {
-	"coc.preferences.extensionUpdateCheck": "daily",
+	"coc.preferences.extensionUpdateCheck": "never",
 	"suggest.noselect": true,
 	"coc.preferences.enableFloatHighlight": true,
 	"suggest.enablePreselect": false,
