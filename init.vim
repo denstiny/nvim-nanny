@@ -15,11 +15,9 @@ Plug 'mg979/vim-visual-multi', {'branch': 'master'} "多光标
 Plug 'rakr/vim-one' "配色
 Plug 'gko/vim-coloresque'  "语言颜色
 Plug 'godlygeek/tabular' 			
-Plug 'plasticboy/vim-markdown',{'for':'md'} 		 "markdown预览 
 Plug 'iamcco/mathjax-support-for-mkdp' 
 Plug 'preservim/nerdtree'          "vim目录树
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight' 
-Plug 'iamcco/markdown-preview.vim' 	   
 Plug 'skywind3000/vim-terminal-help' "vim终端辅助插件
 Plug 'puremourning/vimspector'   		"vim调试插件
 "Plug 'shanzi/autoHEADER' 				"自定插入项目头
