@@ -9,8 +9,7 @@ let             g:coc_global_extensions = [
 			\'coc-python',
 			\'coc-clangd',
 			\'coc-go',
-			\'coc-sh',
-			\'coc-html']
+			\'coc-sh']
 
 set             sw=4
 set             ts=4
@@ -133,6 +132,8 @@ command!        -nargs=0 Apt :CocList marketplace
 command!        -nargs=0 H :FloatermNew nvim ~/.config/nvim/help.txt
 command!        -nargs=0 Re :FloatermNew --position=left  ranger
 command!        -nargs=0 Init :source ~/.config/nvim/install.vim
+command!        -nargs=0 Ter :source ~/.config/nvim/ter.vim
+
 set             termguicolors
 
 " git 插件配置
@@ -172,7 +173,6 @@ map             tt :Vista<CR>
 map             ei :e<space>
 
 
-
 "彩虹括号
 let             g:rainbow_active = 1
 
@@ -189,4 +189,3 @@ nmap <silent> <Leader>r <Plug>TranslateR
 vmap <silent> <Leader>r <Plug>TranslateRV
 
 autocmd User CocGitStatusChange {command}
-set statusline^=%{get(g:,'coc_git_status','')}%{get(b:,'coc_git_status','')}%{get(b:,'coc_git_blame','')}

@@ -12,10 +12,11 @@ let g:onedark_termcolors=256
 call plug#begin('~/.vim/plugged')
 "Plug 'ludovicchabant/vim-gutentags'
 Plug 'mg979/vim-visual-multi', {'branch': 'master'} "多光标
+Plug 'tpope/vim-markdown' "makrdown插件
 Plug 'rakr/vim-one' "配色
-Plug 'gko/vim-coloresque'  "语言颜色
 Plug 'godlygeek/tabular' 			
 Plug 'iamcco/mathjax-support-for-mkdp' 
+Plug 'mbbill/undotree'      "历史记录
 Plug 'preservim/nerdtree'          "vim目录树
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight' 
 Plug 'skywind3000/vim-terminal-help' "vim终端辅助插件
@@ -33,6 +34,7 @@ Plug 'ryanoasis/vim-devicons'    " 显示文件类型
 "主题插件
 Plug 'joshdick/onedark.vim'   	"配色
 Plug 'vim-airline/vim-airline'
+Plug 'RRethy/vim-hexokinase', { 'do': 'make hexokinase' }  "异步显示文件颜色代码
 Plug 'vim-airline/vim-airline-themes'
 Plug 'jackguo380/vim-lsp-cxx-highlight',{'for':'c'}  "c语言语法高亮
 Plug 'tpope/vim-surround'  "环绕工具
@@ -42,7 +44,6 @@ Plug 'luochen1990/rainbow'  "彩虹括号
 Plug 'iamcco/dict.vim'  
 Plug 'voldikss/vim-translator'
 call plug#end()
-
 source ~/.config/nvim/init.config.vim
 "配色主题
 colorscheme one
