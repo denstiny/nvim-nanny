@@ -108,12 +108,18 @@ func!           CompileRunGcc()
 	exec        "w"
 	if          &filetype == 'c'
 		exec    '!gcc -g % -o %<'
+		exec    '!time ./%<'
 		"exec '!time ./%< && echo "\n"'
 	elseif      &filetype == 'cpp'
 		exec    '!g++ -g % -o %<'
+		exec 	'!time ./%< '
 		"exec '!time ./%< && echo "\n"'
 	elseif      &filetype == 'html'
 		exec    '!chromium % &'
+	elseif 		&filetype == 'py'
+		exec '!time python %'
+	elseif 	 	&filetype == 'sh'
+		exec	'!time bash %'
 	endif
 endf
 "异步调用允许编译命令
