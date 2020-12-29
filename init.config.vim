@@ -163,7 +163,7 @@ map             <leader>s <Plug>(EasyAlign)
 nmap            <leader><leader>a <Plug>(easymotion-overwin-f2)
 "map             <leader>n :set nu!<CR>
 "markdown预览 
-"autocmd         FileType markdown  source ~/.config/nvim/markdown.vim
+autocmd User source ~/.config/nvim/markdown.vim
 "启动界面配置
 let             g:dashboard_default_header = 'commicgirl6'     "页眉
 let             g:dashboard_custom_footer = ["A beautiful day By:Aerocn"]
