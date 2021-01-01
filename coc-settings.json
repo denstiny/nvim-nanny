@@ -1,6 +1,6 @@
  
 {
-	"coc.preferences.extensionUpdateCheck": "never",
+	"coc.preferences.extensionUpdateCheck": "daily",
 	"suggest.noselect": true,
 	"coc.preferences.enableFloatHighlight": true,
 	"suggest.enablePreselect": false,
@@ -133,5 +133,10 @@
 		"dart": "dartfmt",
 		"elixir": "mix_format",
 		"eelixir": "mix_format"
+	},
+	"todolist.monitor": {
+	 "type": "boolean",
+	  "default": true,
+	  "description": "monitor the todolist and remind you at the time"
 	}
 }

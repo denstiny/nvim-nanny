@@ -7,8 +7,6 @@
 "--------------------------------------------------------------------------------
 
 "markdown预览 
-nmap <silent> <F8> <Plug>MarkdownPreview        " for normal mode
-imap <silent> <F8> <Plug>MarkdownPreview        " for insert mode
-nmap <silent> <F9> <Plug>StopMarkdownPreview    " for normal mode
-imap <silent> <F9> <Plug>StopMarkdownPreview    " for insert mode
-nmap <silent> <leader>z za
+nmap <F7> <Plug>MarkdownPreview
+nmap <F9> <Plug>MarkdownPreviewStop
+nmap <F8> <Plug>MarkdownPreviewToggle

@@ -4,6 +4,10 @@
 source ~/.config/nvim/coc_setting.vim
 let             g:coc_global_extensions = [
 			\'coc-json',
+			\'coc-translator',
+			\'coc-pairs',
+			\'coc-todolist',
+			\'coc-bookmark',
 			\'coc-vimlsp',
 			\'coc-marketplace',
 			\'coc-python',
@@ -132,14 +136,6 @@ map             <leader>n :bp<CR>
 map             <leader>o :bp<CR>
 
 
-" 自定义命令
-command!        -nargs=0 Fl :FloatermNew
-command!        -nargs=0 Apt :CocList marketplace
-command!        -nargs=0 H :FloatermNew nvim ~/.config/nvim/help.txt
-command!        -nargs=0 Re :FloatermNew --position=left  ranger
-command!        -nargs=0 Init :source ~/.config/nvim/install.vim
-command!        -nargs=0 Ter :source ~/.config/nvim/ter.vim
-
 set             termguicolors
 
 " git 插件配置
@@ -163,7 +159,7 @@ map             <leader>s <Plug>(EasyAlign)
 nmap            <leader><leader>a <Plug>(easymotion-overwin-f2)
 "map             <leader>n :set nu!<CR>
 "markdown预览 
-autocmd User source ~/.config/nvim/markdown.vim
+source ~/.config/nvim/markdown.vim
 "启动界面配置
 let             g:dashboard_default_header = 'commicgirl6'     "页眉
 let             g:dashboard_custom_footer = ["A beautiful day By:Aerocn"]
@@ -178,6 +174,20 @@ map             tr :NERDTree<CR>
 map             tt :Vista<CR>
 map             ei :e<space>
 
+nmap 		 	<leader>bj 	<plug>(coc-bookmark-next) "上一个书签
+nmap 		 	<leader>bk 	<plug>(coc-bookmark-prev)  "下一个书签
+
+" 自定义命令
+command!        -nargs=0 Fl :FloatermNew
+command!        -nargs=0 Apt :CocList marketplace
+command!        -nargs=0 H :FloatermNew nvim ~/.config/nvim/help.txt
+command!        -nargs=0 Re :FloatermNew --position=left  ranger
+command!        -nargs=0 Init :source ~/.config/nvim/install.vim
+command!        -nargs=0 Ter :source ~/.config/nvim/ter.vim
+command! 		-nargs=0 Bc  :CocCommand bookmark.clearForCurrentFile
+command! 		-nargs=0 Ba  :CocCommand bookmark.annotate
+command! 		-nargs=0 Bt  :CocCommand bookmark.toggle
+command! 		-nargs=0 Booklist :CocList bookmark
 
 "彩虹括号
 let             g:rainbow_active = 1
@@ -185,13 +195,14 @@ let             g:rainbow_active = 1
 
 "Plug 'voldikss/vim-translator'
 " <Leader>t 翻译光标下的文本，在命令行回显
-nmap <silent> <Leader>e <Plug>DictSearch
-vmap <silent> <Leader>e <Plug>DictVSearch
+nmap <silent> <Leader>e <Plug>(coc-translator-e)
+vmap <silent> <Leader>e <Plug>(coc-translator-ev)
 " Leader>w 翻译光标下的文本，在窗口中显示
-nmap <silent> <Leader>t <Plug>TranslateW
-vmap <silent> <Leader>t <Plug>TranslateWV
+nmap <silent> <Leader>t <Plug>(coc-translator-p)
+vmap <silent> <Leader>t <Plug>(coc-translator-pv)
 " Leader>r 替换光标下的文本为翻译内容
-nmap <silent> <Leader>r <Plug>TranslateR
-vmap <silent> <Leader>r <Plug>TranslateRV
+nmap <silent> <Leader>r <Plug>(coc-translator-r)
+vmap <silent> <Leader>r <Plug>(coc-translator-rv)
 
 autocmd User CocGitStatusChange {command}
+

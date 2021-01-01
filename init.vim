@@ -13,6 +13,8 @@ call plug#begin('~/.vim/plugged')
 "Plug 'ludovicchabant/vim-gutentags'
 Plug 'mg979/vim-visual-multi', {'branch': 'master'} "多光标
 Plug 'tpope/vim-markdown' "makrdown插件
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
+Plug 'tbastos/vim-lua' 
 Plug 'rakr/vim-one' "配色
 Plug 'godlygeek/tabular' 			
 Plug 'iamcco/mathjax-support-for-mkdp' 
@@ -27,7 +29,8 @@ Plug 'liuchengxu/vim-clap'  "搜索工具
 Plug 'easymotion/vim-easymotion' " 字符串搜索工具
 Plug 'hardcoreplayers/dashboard-nvim' "head启动界面
 Plug 'junegunn/vim-slash'        " 搜索结果优化
-Plug 'liuchengxu/vista.vim'      " 函数列表 Plug 'mbbill/undotree' 			 "历史操作
+Plug 'liuchengxu/vista.vim'      " 函数列表
+Plug 'mbbill/undotree' 			 "历史操作
 Plug 'voldikss/vim-floaterm'     " 浮动终端
 Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
 Plug 'ryanoasis/vim-devicons'    " 显示文件类型
@@ -41,8 +44,8 @@ Plug 'tpope/vim-surround'  "环绕工具
 Plug 'gcmt/wildfire.vim'   "代码块选择工具 
 Plug 'luochen1990/rainbow'  "彩虹括号
 "翻译插件
-Plug 'iamcco/dict.vim'  
-Plug 'voldikss/vim-translator'
+"Plug 'iamcco/dict.vim'  
+"Plug 'voldikss/vim-translator'
 call plug#end()
 source ~/.config/nvim/init.config.vim
 "配色主题
