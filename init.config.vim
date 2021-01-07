@@ -106,7 +106,7 @@ let             g:vista#renderer#icons = {
 
 
 
-""一键编译
+""一键运行
 noremap         . :call CompileRunGcc()<CR>
 func!           CompileRunGcc()
 	exec        "w"
@@ -184,10 +184,8 @@ command!        -nargs=0 H :FloatermNew nvim ~/.config/nvim/help.txt
 command!        -nargs=0 Re :FloatermNew --position=left  ranger
 command!        -nargs=0 Init :source ~/.config/nvim/install.vim
 command!        -nargs=0 Ter :source ~/.config/nvim/ter.vim
-command! 		-nargs=0 Bc  :CocCommand bookmark.clearForCurrentFile
-command! 		-nargs=0 Ba  :CocCommand bookmark.annotate
-command! 		-nargs=0 Bt  :CocCommand bookmark.toggle
-command! 		-nargs=0 Booklist :CocList bookmark
+command! 		-nargs=0 Todo :CocList todolist
+command!        -nargs=0 Git :FloatermNew lazygit
 
 "彩虹括号
 let             g:rainbow_active = 1
