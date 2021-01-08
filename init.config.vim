@@ -199,8 +199,8 @@ vmap <silent> <Leader>e <Plug>(coc-translator-ev)
 nmap <silent> <Leader>t <Plug>(coc-translator-p)
 vmap <silent> <Leader>t <Plug>(coc-translator-pv)
 " Leader>r 替换光标下的文本为翻译内容
-nmap <silent> <Leader>r <Plug>(coc-translator-r)
-vmap <silent> <Leader>r <Plug>(coc-translator-rv)
+nmap <silent> <Leader>r <Plug>TranslateR
+vmap <silent> <Leader>r <Plug>TranslateRV
 
 autocmd User CocGitStatusChange {command}
 

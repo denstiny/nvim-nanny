@@ -31,25 +31,21 @@ Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
 Plug 'ryanoasis/vim-devicons'    " 显示文件类型
 "主题插件
 Plug 'dunstontc/vim-vscode-theme' 
-"Plug 'joshdick/onedark.vim'   	"配色
-"Plug 'vim-airline/vim-airline'
 Plug 'RRethy/vim-hexokinase', { 'do': 'make hexokinase' }  "异步显示文件颜色代码
-"Plug 'vim-airline/vim-airline-themes'
 Plug 'jackguo380/vim-lsp-cxx-highlight',{'for':'c'}  "c语言语法高亮
 Plug 'tpope/vim-surround'  "环绕工具
 Plug 'gcmt/wildfire.vim'   "代码块选择工具 
 Plug 'luochen1990/rainbow'  "彩虹括号
 
-Plug 'jackguo380/vim-lsp-cxx-highlight'
-
-
 "翻译插件
 "Plug 'iamcco/dict.vim'  
-"Plug 'voldikss/vim-translator'
+Plug 'voldikss/vim-translator'
 call plug#end()
 source ~/.config/nvim/init.config.vim
 "配色主题
 "colorscheme one
+let g:deoplete#enable_at_startup = 1
+
 source ~/.config/nvim/one.vim
 set background=dark
 "colorscheme dark_plus
