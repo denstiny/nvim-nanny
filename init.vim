@@ -43,10 +43,8 @@ Plug 'voldikss/vim-translator'
 call plug#end()
 source ~/.config/nvim/init.config.vim
 "配色主题
-"colorscheme one
+colorscheme one
 let g:deoplete#enable_at_startup = 1
-
-source ~/.config/nvim/one.vim
 set background=dark
 "colorscheme dark_plus
 source ~/.config/nvim/mycolor.vim
