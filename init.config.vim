@@ -30,6 +30,9 @@ let             g:undotree_ShortIndicators = 1
 let             g:undotree_WindowLayout = 2
 let             g:undotree_DiffpanelHeight = 8
 let             g:undotree_SplitWidth = 20
+" 如果nerdtree是剩下的唯一窗口，则退出vim。
+autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() |
+    \ quit | endif
 se              cursorline
 hi              cursorline cterm=NONE ctermbg=237
 set             virtualedit=block,onemore
@@ -120,8 +123,8 @@ func!           CompileRunGcc()
 		"exec '!time ./%< && echo "\n"'
 	elseif      &filetype == 'html'
 		exec    '!chromium % &'
-	elseif 		&filetype == 'py'
-		exec '!time python %'
+	elseif 		&filetype == 'python'
+		exec 	'!time python %'
 	elseif 	 	&filetype == 'sh'
 		exec	'!time bash %'
 	endif
