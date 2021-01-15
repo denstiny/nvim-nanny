@@ -25,6 +25,7 @@ Plug 'easymotion/vim-easymotion' " 字符串搜索工具
 Plug 'hardcoreplayers/dashboard-nvim' "head启动界面
 Plug 'junegunn/vim-slash'        " 搜索结果优化
 Plug 'liuchengxu/vista.vim'      " 函数列表
+Plug 'puremourning/vimspector'
 Plug 'mbbill/undotree' 			 "历史操作
 Plug 'voldikss/vim-floaterm'     " 浮动终端
 Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}

@@ -164,7 +164,7 @@ nmap            <leader><leader>a <Plug>(easymotion-overwin-f2)
 "markdown预览 
 source ~/.config/nvim/markdown.vim
 "启动界面配置
-let             g:dashboard_default_header = 'commicgirl6'     "页眉
+let             g:dashboard_default_header = 'commicgirl5'     "页眉
 let             g:dashboard_custom_footer = ["A beautiful day By:Aerocn"]
 "set             nofoldenable "关闭代码折叠
 
@@ -183,7 +183,7 @@ nmap 		 	<leader>bk 	<plug>(coc-bookmark-prev)  "下一个书签
 " 自定义命令
 command!        -nargs=0 Fl :FloatermNew
 command!        -nargs=0 Apt :CocList marketplace
-command!        -nargs=0 H :FloatermNew nvim ~/.config/nvim/help.txt
+command!        -nargs=0 H :FloatermNew nvim -R ~/.config/nvim/help.txt
 command!        -nargs=0 Re :FloatermNew --position=left  ranger
 command!        -nargs=0 Init :source ~/.config/nvim/install.vim
 command!        -nargs=0 Ter :source ~/.config/nvim/ter.vim
@@ -205,5 +205,29 @@ vmap <silent> <Leader>t <Plug>(coc-translator-pv)
 nmap <silent> <Leader>r <Plug>TranslateR
 vmap <silent> <Leader>r <Plug>TranslateRV
 
+
+
+""" vimspector
+
+
+let g:vimspector_enable_mappings = 'HUMAN'
+function! s:read_template_into_buffer(template)
+    " has to be a function to avoid the extra space fzf#run insers otherwise
+    execute '0r ~/.config/nvim/vimspector-json/'.a:template
+endfunction
+command! -bang -nargs=* LoadVimSpectorJsonTemplate call fzf#run({
+            \   'source': 'ls -1 ~/.config/nvim/vimspector-json',
+            \   'down': 20,
+            \   'sink': function('<sid>read_template_into_buffer')
+            \ })
+nnoremap <LEADER>vs :tabe .vimspector.json<CR>:LoadVimSpectorJsonTemplate<CR>
+nnoremap <F1> :call vimspector#StepInto()<CR>
+nnoremap <F7> :call vimspector#Reset()<CR>
+
+
+
+
+
 autocmd User CocGitStatusChange {command}
+
 
