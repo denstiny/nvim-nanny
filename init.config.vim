@@ -223,11 +223,17 @@ command! -bang -nargs=* LoadVimSpectorJsonTemplate call fzf#run({
 nnoremap <LEADER>vs :tabe .vimspector.json<CR>:LoadVimSpectorJsonTemplate<CR>
 nnoremap <F1> :call vimspector#StepInto()<CR>
 nnoremap <F7> :call vimspector#Reset()<CR>
+let g:vimspector_sidebar_width = 50 		"设置变量窗口的宽
+let g:vimspector_bottombar_height = 17 		"设置变量窗口的高
+let g:vimspector_terminal_minwidth = 40   "设置输出窗口大小
 
 
-
-
-
+let g:vimspector_install_gadgets = [ 
+			\'debugpy',
+			\'vscode-cpptools', 
+			\'CodeLLDB' ]
 autocmd User CocGitStatusChange {command}
 
+" line 
+"
 

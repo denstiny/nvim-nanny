@@ -1,10 +1,8 @@
 let mapleader = ";"
-filetype on              " 设置开启文件类型侦测
-set encoding=UTF-8
-
-
-
 call plug#begin('~/.vim/plugged')
+
+
+
 "Plug 'ludovicchabant/vim-gutentags'
 Plug 'mg979/vim-visual-multi', {'branch': 'master'} "多光标
 Plug 'tpope/vim-markdown' "makrdown插件
@@ -25,11 +23,13 @@ Plug 'easymotion/vim-easymotion' " 字符串搜索工具
 Plug 'hardcoreplayers/dashboard-nvim' "head启动界面
 Plug 'junegunn/vim-slash'        " 搜索结果优化
 Plug 'liuchengxu/vista.vim'      " 函数列表
-Plug 'puremourning/vimspector'
 Plug 'mbbill/undotree' 			 "历史操作
 Plug 'voldikss/vim-floaterm'     " 浮动终端
 Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
 Plug 'ryanoasis/vim-devicons'    " 显示文件类型
+
+
+
 "主题插件
 Plug 'dunstontc/vim-vscode-theme' 
 Plug 'RRethy/vim-hexokinase', { 'do': 'make hexokinase' }  "异步显示文件颜色代码
@@ -42,14 +42,24 @@ Plug 'luochen1990/rainbow'  "彩虹括号
 "Plug 'iamcco/dict.vim'  
 Plug 'voldikss/vim-translator'
 call plug#end()
-source ~/.config/nvim/init.config.vim
+
+
+
+
 "配色主题
 colorscheme one
 let g:deoplete#enable_at_startup = 1
 set background=dark
 "colorscheme dark_plus
 source ~/.config/nvim/mycolor.vim
+
+
+
 "自定义配置
+source ~/.config/nvim/init.config.vim
+
+
+
 " 复制当前选中到系统剪切板
 map <leader>y "+y
 vmap <leader>p "+p
@@ -58,7 +68,13 @@ map er :Re<CR>
 map tt :Vista<CR>
 map ei :e<space>
 set showtabline=0
+set laststatus=2
 set nofoldenable
-
 set ignorecase
-
+"设置空闲行数
+set scrolloff=10
+set encoding=UTF-8
+filetype on              " 设置开启文件类型侦测
+au BufEnter set statusline=%=FILE=%f
+set statusline=%=Path=%f
+"hi StatusLine guibg=NONE ctermfg=NONE
