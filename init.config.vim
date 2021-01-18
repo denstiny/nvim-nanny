@@ -7,7 +7,6 @@ let             g:coc_global_extensions = [
 			\'coc-translator',
 			\'coc-pairs',
 			\'coc-todolist',
-			\'coc-bookmark',
 			\'coc-vimlsp',
 			\'coc-marketplace',
 			\'coc-python',
@@ -37,8 +36,10 @@ se              cursorline
 hi              cursorline cterm=NONE ctermbg=237
 set             virtualedit=block,onemore
 "相对行号"
-set             relativenumber
-set             number
+"set             relativenumber
+"set             number
+
+nmap <leader>m :set nu!<CR>
 " 打开文件自动定位到最后编辑的位置
 autocmd         bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 "
@@ -177,9 +178,6 @@ map             tr :NERDTree<CR>
 map             tt :Vista<CR>
 map             ei :e<space>
 
-nmap 		 	<leader>bj 	<plug>(coc-bookmark-next) "上一个书签
-nmap 		 	<leader>bk 	<plug>(coc-bookmark-prev)  "下一个书签
-
 " 自定义命令
 command!        -nargs=0 Fl :FloatermNew
 command!        -nargs=0 Apt :CocList marketplace
@@ -236,4 +234,3 @@ autocmd User CocGitStatusChange {command}
 
 " line 
 "
-
