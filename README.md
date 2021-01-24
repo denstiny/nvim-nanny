@@ -5,6 +5,17 @@
 ### 使用教程
 #### Method of use    
 
+#### main分支将不再更新
+#### main1 从2021 1月 25日开始不支持低于5.0版本neovim  
+*  更新
+	* 使用 `onebuddy` 配色
+	* 使用 `nvim-treesitter` 调整语法高亮
+	* 删除 vim-one 
+	* 删除 vim-c-xxx.vim
+
+<BR>  
+<br>  
+<BR>
 - 这是我的neovim配置，使用的coc.nvim 进行补全,拷贝到你的配置目录，执行`:source ~/.config/nvim/install.vim` or `:Init`      
 - This is my neovim configuration, the use of the coc. Nvim for completion,Copy to your configuration file directory, open the neovim execution     
 - `PlugInstall`
@@ -12,36 +23,7 @@
     
     
 - 快捷键设置    
-    
-    
-gs  跳转到定义处    
-gr 显示变量的调用    
-gi 转到实现处    
-]g 诊断代码报错    
-<leader><leader> K 快速跳转    
-<leader><leader> a 快速跳转    
-<leader><leader> w 快速跳转单词头    
-<leader><leader> s 快速跳转跳转搜索单词    
-<leader> j/k 行级跳转    
-<leader> h/l 行内跳转    
-<leader> . 重复上一次动作    
-<leader>m 翻译当前单词   
-<leader>h 查看当前单词帮助文档  
-. 快速编译    
-bd 关闭当前buff    
-er 打开文件目录树    
-tt 启动函数列表    
-L 显示历史修改    
-{    
-J K 快速切换    
-}    
-    
-'g 新建悬浮终端  
-'a 上一个 悬浮窗    
-'d 下一个 悬浮窗    
-'s 隐藏/ 终端 打开 悬浮窗    
-<leader>w ^W    
-命令 FloatermNew 新建悬浮窗口    
+:H 将调出帮助
      
 
 # 各个文件的作用    

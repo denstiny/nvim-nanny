@@ -8,7 +8,6 @@ Plug 'mg979/vim-visual-multi', {'branch': 'master'} "多光标
 Plug 'tpope/vim-markdown' "makrdown插件
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 Plug 'tbastos/vim-lua' 
-Plug 'rakr/vim-one' "配色
 Plug 'godlygeek/tabular' 			
 Plug 'iamcco/mathjax-support-for-mkdp' 
 Plug 'mbbill/undotree'      "历史记录
@@ -16,7 +15,6 @@ Plug 'preservim/nerdtree'          "vim目录树
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight' 
 Plug 'skywind3000/vim-terminal-help' "vim终端辅助插件
 Plug 'puremourning/vimspector'   		"vim调试插件
-"Plug 'shanzi/autoHEADER' 				"自定插入项目头
 Plug 'junegunn/vim-easy-align'   " 代码格式化
 Plug 'liuchengxu/vim-clap'  "搜索工具
 Plug 'easymotion/vim-easymotion' " 字符串搜索工具
@@ -29,11 +27,20 @@ Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
 Plug 'ryanoasis/vim-devicons'    " 显示文件类型
 
 
+"  treesitter 全家通
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  
+Plug 'nvim-treesitter/nvim-treesitter-refactor'
+Plug 'nvim-treesitter/playground'
+
+
 
 "主题插件
-Plug 'dunstontc/vim-vscode-theme' 
+Plug 'tjdevries/colorbuddy.vim' "配色
+Plug 'Th3Whit3Wolf/onebuddy' 
+Plug 'wfxr/minimap.vim', {'do': ':!cargo install --locked code-minimap'}  	"显示代码地图
+
+
 Plug 'RRethy/vim-hexokinase', { 'do': 'make hexokinase' }  "异步显示文件颜色代码
-Plug 'jackguo380/vim-lsp-cxx-highlight',{'for':'c'}  "c语言语法高亮
 Plug 'tpope/vim-surround'  "环绕工具
 Plug 'gcmt/wildfire.vim'   "代码块选择工具 
 Plug 'luochen1990/rainbow'  "彩虹括号
@@ -45,12 +52,12 @@ call plug#end()
 
 
 
-
 "配色主题
-colorscheme one
+"colorscheme one
 let g:deoplete#enable_at_startup = 1
 set background=dark
 "colorscheme dark_plus
+lua require('colorbuddy').colorscheme('onebuddy')
 source ~/.config/nvim/mycolor.vim
 
 

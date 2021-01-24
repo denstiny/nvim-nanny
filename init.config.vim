@@ -232,5 +232,91 @@ let g:vimspector_install_gadgets = [
 			\'CodeLLDB' ]
 autocmd User CocGitStatusChange {command}
 
-" line 
-"
+" treesitter-modules
+
+autocmd CursorMoved * :echo nvim_treesitter#statusline(90)  
+" 显示 当前的函数
+
+
+lua <<EOF
+
+-- 代码高亮
+require'nvim-treesitter.configs'.setup {
+  ensure_installed = "maintained", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
+  highlight = {
+    enable = true,              -- false将禁用整个扩展
+    -- disable = { "c", "rust" },  -- 将被禁用的语言列表
+  },
+}
+
+-- 代码缩进
+require'nvim-treesitter.configs'.setup {
+    indent = {
+      enable = true
+    },
+  }
+
+-- 高亮显示光标下符号的定义
+require'nvim-treesitter.configs'.setup {
+  refactor = {
+    highlight_definitions = { enable = true },
+  },
+}
+
+-- 高亮当前范围
+require'nvim-treesitter.configs'.setup {
+  refactor = {
+    highlight_current_scope = { enable = false },
+  },
+}
+
+-- 智能重命名
+require'nvim-treesitter.configs'.setup {
+  refactor = {
+    smart_rename = {
+      enable = true,
+      keymaps = {
+        smart_rename = "grr", -- 设置快捷键为 grr
+      },
+    },
+  },
+}
+
+-- 转到定义
+ require'nvim-treesitter.configs'.setup {
+   refactor = {
+     navigation = {
+       enable = false,
+       keymaps = {
+         goto_definition = "gnd",
+         list_definitions = "gnD",
+         list_definitions_toc = "gO",
+         goto_next_usage = "<a-*>",
+         goto_previous_usage = "<a-#>",
+       },
+     },
+   },
+ }
+
+-- 游乐园
+require "nvim-treesitter.configs".setup {
+  query_linter = {
+    enable = true,
+    use_virtual_text = true,
+    lint_events = {"BufWrite", "CursorHold"},
+  },
+}
+
+EOF
+
+" vim 小地图
+let g:minimap_width = 10
+hi MinimapCurrentLine ctermfg=Green guifg=#50FA7B guibg=#2E373A
+let g:minimap_highlight = 'MinimapCurrentLine'
+let g:minimap_auto_start=0
+
+" Hexokinase_highlighters 
+
+let g:Hexokinase_highlighters = ['backgroundfull']
+
+

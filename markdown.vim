@@ -7,6 +7,6 @@
 "--------------------------------------------------------------------------------
 
 "markdown预览 
-nmap <F7> <Plug>MarkdownPreview
-nmap <F9> <Plug>MarkdownPreviewStop
-nmap <F8> <Plug>MarkdownPreviewToggle
+nmap <leader><F7> <Plug>MarkdownPreview
+nmap <leader><F9> <Plug>MarkdownPreviewStop
+nmap <leader><F8> <Plug>MarkdownPreviewToggle
