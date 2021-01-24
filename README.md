@@ -16,18 +16,18 @@
 	* 删除 vim-one 
 	* 删除 vim-c-xxx.vim
 	* 需要依赖 code-minimap <u>如果不想安装可以去除init.vim end init.config.vim 中的 vim-minimap相关配置</u>
-
-<BR>  
 <br>  
-<BR>
-- 这是我的neovim配置，使用的coc.nvim 进行补全,拷贝到你的配置目录，执行`:source ~/.config/nvim/install.vim` or `:Init`      
-- This is my neovim configuration, the use of the coc. Nvim for completion,Copy to your configuration file directory, open the neovim execution     
-- `PlugInstall`
+<br>  
+<br>  
+<br>  
+* 这是我的neovim配置，使用的coc.nvim 进行补全,拷贝到你的配置目录，执行`:source ~/.config/nvim/install.vim` or `:Init`   <br>     
+* This is my neovim configuration, the use of the coc. Nvim for completion,Copy to your configuration file directory, open the neovim execution     
+* `PlugInstall`
     
     
     
 - 快捷键设置    
-:H 将调出帮助
+`:H 将调出帮助`
      
 
 # 各个文件的作用    
