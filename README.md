@@ -1,7 +1,10 @@
 ## my-neovim    
 
 ---
-![](./vim.png)
+> `vimlsp`
+![image.png](https://i.loli.net/2021/01/25/nWs7Jr64RQbUcYM.png)
+> `c/c++`
+![image.png](https://i.loli.net/2021/01/25/TALRiyaOSoBGmDW.png)
 ### 使用教程
 #### Method of use    
 
@@ -12,6 +15,7 @@
 	* 使用 `nvim-treesitter` 调整语法高亮
 	* 删除 vim-one 
 	* 删除 vim-c-xxx.vim
+	* 需要依赖 code-minimap <u>如果不想安装可以去除init.vim end init.config.vim 中的 vim-minimap相关配置</u>
 
 <BR>  
 <br>  
