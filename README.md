@@ -11,12 +11,15 @@
 
 #### main分支将不再更新
 #### main1 从2021 1月 25日开始不支持低于5.0版本neovim  
-*  更新
-	* 使用 `onebuddy` 配色
-	* 使用 `nvim-treesitter` 调整语法高亮
-	* 删除 vim-one 
-	* 删除 vim-c-xxx.vim
-	* 需要依赖 code-minimap <u>如果不想安装可以去除init.vim end init.config.vim 中的 vim-minimap相关配置</u>
+*  更新日志
+	* 2021 1-26
+		* 删除neovim 启动的header
+	* 2021 1-25
+		* 使用 `onebuddy` 配色
+		* 使用 `nvim-treesitter` 调整语法高亮
+		* 删除 vim-one 
+		* 删除 vim-c-xxx.vim
+		* 需要依赖 code-minimap <u>如果不想安装可以去除init.vim end init.config.vim 中的 vim-minimap相关配置</u>
 <br>  
 <br>  
 <br>  

@@ -18,7 +18,6 @@ Plug 'puremourning/vimspector'   		"vim调试插件
 Plug 'junegunn/vim-easy-align'   " 代码格式化
 Plug 'liuchengxu/vim-clap'  "搜索工具
 Plug 'easymotion/vim-easymotion' " 字符串搜索工具
-Plug 'hardcoreplayers/dashboard-nvim' "head启动界面
 Plug 'junegunn/vim-slash'        " 搜索结果优化
 Plug 'liuchengxu/vista.vim'      " 函数列表
 Plug 'mbbill/undotree' 			 "历史操作

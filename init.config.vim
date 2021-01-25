@@ -164,10 +164,6 @@ nmap            <leader><leader>a <Plug>(easymotion-overwin-f2)
 "map             <leader>n :set nu!<CR>
 "markdown预览 
 source ~/.config/nvim/markdown.vim
-"启动界面配置
-let             g:dashboard_default_header = 'commicgirl5'     "页眉
-let             g:dashboard_custom_footer = ["A beautiful day By:Aerocn"]
-"set             nofoldenable "关闭代码折叠
 
 
 
@@ -314,12 +310,13 @@ EOF
 let g:minimap_width = 15
 hi MinimapCurrentLine ctermfg=Green guifg=#50FA7B guibg=#2E373A
 let g:minimap_highlight = 'MinimapCurrentLine'
-
-autocmd FileType c :Minimap
-autocmd FileType cpp :Minimap
-autocmd filetype sh :Minimap
-autocmd filetype lua :Minimap
-autocmd filetype vim :Minimap
+" 自动启动
+"autocmd FileType c :Minimap
+"autocmd FileType cpp :Minimap
+"autocmd filetype sh :Minimap
+"autocmd filetype lua :Minimap
+"autocmd filetype vim :Minimap
+" 手动启动使用Minimap 命令
 
 " Hexokinase_highlighters 
 
