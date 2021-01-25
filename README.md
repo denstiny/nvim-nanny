@@ -38,6 +38,8 @@ init.config.vim  主要的配置文件
 其他文件    
 其他文件大部分都是配色    
 可以在init.vim修改启动的配色插件    
+<br>
+<div>
+	<iframe height="400" width="600" src="//player.bilibili.com/player.html?aid=543871200&bvid=BV16v4y1f7kV&cid=287296670&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
 
-<iframe height="400" width="600" src="//player.bilibili.com/player.html?aid=543871200&bvid=BV16v4y1f7kV&cid=287296670&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
-
+</div>
