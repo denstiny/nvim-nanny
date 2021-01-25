@@ -41,6 +41,6 @@ init.config.vim  主要的配置文件
 
 
 ## 演示视频
- <a href="https://www.bilibili.com/video/BV16v4y1f7kV">  <span>  <img border="0" src="./b.png" height="450" width="100%"/>
+ <a href="https://www.bilibili.com/video/BV16v4y1f7kV">  <span>  <img border="0" src="./src/b.png" height="450" width="100%"/>
   </a>
 
