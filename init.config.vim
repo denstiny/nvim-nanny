@@ -252,7 +252,7 @@ require'nvim-treesitter.configs'.setup {
 -- 代码缩进
 require'nvim-treesitter.configs'.setup {
     indent = {
-      enable = true
+      enable = false
     },
   }
 
@@ -266,7 +266,7 @@ require'nvim-treesitter.configs'.setup {
 -- 高亮当前范围
 require'nvim-treesitter.configs'.setup {
   refactor = {
-    highlight_current_scope = { enable = false },
+    highlight_current_scope = { enable = true },
   },
 }
 
@@ -310,13 +310,18 @@ require "nvim-treesitter.configs".setup {
 EOF
 
 " vim 小地图
-let g:minimap_width = 10
+
+let g:minimap_width = 15
 hi MinimapCurrentLine ctermfg=Green guifg=#50FA7B guibg=#2E373A
 let g:minimap_highlight = 'MinimapCurrentLine'
-let g:minimap_auto_start=0
+
+autocmd FileType c :Minimap
+autocmd FileType cpp :Minimap
+autocmd filetype sh :Minimap
+autocmd filetype lua :Minimap
+autocmd filetype vim :Minimap
 
 " Hexokinase_highlighters 
 
 let g:Hexokinase_highlighters = ['backgroundfull']
-
 

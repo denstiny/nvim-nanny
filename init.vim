@@ -79,7 +79,7 @@ set laststatus=2
 set nofoldenable
 set ignorecase
 "设置空闲行数
-set scrolloff=10
+set scrolloff=5
 set encoding=UTF-8
 filetype on              " 设置开启文件类型侦测
 au BufEnter set statusline=%=FILE=%f
