@@ -134,8 +134,7 @@ endf
 "自动定位上次编辑位置
 au              BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
-"多文件编辑
-map             <leader>q :bd<CR>
+"多文件编辑 map             <leader>q :bd<CR>
 map             <leader>n :bp<CR>
 map             <leader>o :bp<CR>
 
@@ -321,4 +320,10 @@ let g:minimap_highlight = 'MinimapCurrentLine'
 " Hexokinase_highlighters 
 
 let g:Hexokinase_highlighters = ['backgroundfull']
+
+" spaceline.vim
+let g:spaceline_git_branch_icon=''
+let g:spaceline_seperate_style = 'curve'
+let g:spaceline_colorscheme = 'space'
+let g:spaceline_custom_vim_status =  {"n": "🅝 ","V":"🅥 ","v":"🅥 ","\<C-v>": "🅥 ","i":"🅘 ","R":"🅡 ","s":"🅢 ","t":"🅣 ","c":"🅒 ","!":"SE"}
 

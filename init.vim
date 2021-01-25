@@ -25,6 +25,8 @@ Plug 'voldikss/vim-floaterm'     " 浮动终端
 Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
 Plug 'ryanoasis/vim-devicons'    " 显示文件类型
 
+" 状态栏
+Plug 'glepnir/spaceline.vim'
 
 "  treesitter 全家通
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  
@@ -81,6 +83,6 @@ set ignorecase
 set scrolloff=5
 set encoding=UTF-8
 filetype on              " 设置开启文件类型侦测
-au BufEnter set statusline=%=FILE=%f
-set statusline=%=Path=%f
+"au BufEnter set statusline=%=FILE=%f
+"set statusline=%=Path=%f
 "hi StatusLine guibg=NONE ctermfg=NONE
