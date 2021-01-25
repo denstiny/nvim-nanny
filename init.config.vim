@@ -229,8 +229,6 @@ autocmd User CocGitStatusChange {command}
 
 " treesitter-modules
 
-autocmd CursorMoved * :echo nvim_treesitter#statusline(90)  
-" 显示 当前的函数
 
 
 lua <<EOF
@@ -317,12 +315,14 @@ let g:minimap_highlight = 'MinimapCurrentLine'
 "autocmd filetype vim :Minimap
 " 手动启动使用Minimap 命令
 
+" 显示 当前的函数
+"autocmd filetype,CursorMoved *,c :echo nvim_treesitter#statusline(90)  
 " Hexokinase_highlighters 
 
 let g:Hexokinase_highlighters = ['backgroundfull']
 
 " spaceline.vim
-let g:spaceline_git_branch_icon=''
+let g:spaceline_git_branch_icon='🔃'
 let g:spaceline_seperate_style = 'curve'
 let g:spaceline_colorscheme = 'space'
 let g:spaceline_custom_vim_status =  {"n": "🅝 ","V":"🅥 ","v":"🅥 ","\<C-v>": "🅥 ","i":"🅘 ","R":"🅡 ","s":"🅢 ","t":"🅣 ","c":"🅒 ","!":"SE"}

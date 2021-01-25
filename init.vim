@@ -28,10 +28,11 @@ Plug 'ryanoasis/vim-devicons'    " 显示文件类型
 " 状态栏
 Plug 'glepnir/spaceline.vim'
 
-"  treesitter 全家通
+"  treesitter 全家桶
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  
 Plug 'nvim-treesitter/nvim-treesitter-refactor'
 Plug 'nvim-treesitter/playground'
+Plug 'romgrk/nvim-treesitter-context' 
 
 
 

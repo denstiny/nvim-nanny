@@ -5,7 +5,10 @@ se cursorline
 highlight clear SignColumn
 "hi Normal guibg=#282C34  "背景色
 hi CursorLine cterm=NONE ctermbg=darkred ctermfg=white guibg=NONE guifg=NONE gui=bold
+hi CocFloating guibg=none guifg=none "设置coc的浮动窗口背景颜色
+hi NormalFloat guibg=none guifg=none "设置默认的浮动窗口颜色
 
+"highlight floatHighlight guibg=None ctermbg=none cterm=None
 "let g:airline_theme='one'
 "hi Normal guibg=NONE ctermbg=NONE  "背景
 "缩进指示线"
