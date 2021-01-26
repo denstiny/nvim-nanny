@@ -24,15 +24,22 @@
 <br>  
 <br>  
 <br>  
-* 这是我的neovim配置，使用的coc.nvim 进行补全,拷贝到你的配置目录，执行`:source ~/.config/nvim/install.vim` or `:Init`   <br>     
+* 这是我的neovim配置，使用的coc.nvim 进行补全,拷贝到你的配置目录，执行`:source ~/.config/nvim/install.vim` or `:Init`   
+<font size=1> 由于国内网络原因，可能一次无法执行成功，如果出现故障请使用`PlugInstall`重来</font>
 * This is my neovim configuration, the use of the coc. Nvim for completion,Copy to your configuration file directory, open the neovim execution     
+
+
 * `PlugInstall`
     
-    
-    
-- 快捷键设置    
 `:H 将调出帮助`
-     
+- 快捷键设置 下面`or`意思是或者  
+- `<F5>` 启动调试 `详情查看 init.config.vim 中的 vimspector块` 
+新项目需要先使用`<leader>vs`  添加调试文件
+- `'s or <ALT>+` 打开终端 <font size=2 >`<ALT>+q` 退出终端的写入模式</font>
+- `tr or er ` 打开文件管理器
+- `<leader>wq` 关闭当前缓冲区
+- `<leader>t or <leader>e or <leader>r`  翻译
+- `<leader>o or <leader>n` 切换buf
 
 # 各个文件的作用    
 init.vim    
