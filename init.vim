@@ -39,8 +39,8 @@ Plug 'romgrk/nvim-treesitter-context'
 "主题插件
 Plug 'tjdevries/colorbuddy.vim' "配色
 Plug 'Th3Whit3Wolf/onebuddy' 
-Plug 'wfxr/minimap.vim', {'do': ':!cargo install --locked code-minimap'}  	"显示代码地图
-
+"显示代码地图
+Plug 'wfxr/minimap.vim', {'do': ':!cargo install --locked code-minimap'}  	
 
 Plug 'RRethy/vim-hexokinase', { 'do': 'make hexokinase' }  "异步显示文件颜色代码
 Plug 'tpope/vim-surround'  "环绕工具

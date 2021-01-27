@@ -20,7 +20,6 @@ set             ts=4
 inoremap        jk <ESC>
 inoremap        <C-j> j<space><BS>
 inoremap <C-k>      k<space><BS>
-set      noswapfile "关闭交换文件
 filetype        indent on
 autocmd         FileType python setlocal et sta sw=4 sts=4
 noremap         L :UndotreeToggle<CR>
@@ -48,6 +47,7 @@ set             hidden
 " Some servers have issues with backup files, see #649.
 set             nobackup
 set             nowritebackup
+set      		noswapfile "关闭交换文件
 set             cmdheight=2
 set             updatetime=300
 set             shortmess+=c
