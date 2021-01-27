@@ -5,8 +5,26 @@ se cursorline
 highlight clear SignColumn
 "hi Normal guibg=#282C34  "背景色
 hi CursorLine cterm=NONE ctermbg=darkred ctermfg=white guibg=NONE guifg=NONE gui=bold
-hi CocFloating guibg=none guifg=none "设置coc的浮动窗口背景颜色
-hi NormalFloat guibg=none guifg=none "设置默认的浮动窗口颜色
+
+
+"Set the coc floating window background color
+hi CocFloating guibg=none guifg=none 
+
+hi NormalFloat guibg=none guifg=none 
+"Set the default color floating window
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 "highlight floatHighlight guibg=None ctermbg=none cterm=None
 "let g:airline_theme='one'

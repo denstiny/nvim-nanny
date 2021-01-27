@@ -29,7 +29,6 @@
 * This is my neovim configuration, the use of the coc. Nvim for completion,Copy to your configuration file directory, open the neovim execution     
 
 
-* `PlugInstall`
     
 `:H 将调出帮助`
 - 快捷键设置 下面`or`意思是或者  

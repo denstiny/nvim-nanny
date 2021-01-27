@@ -8,6 +8,7 @@ let             g:coc_global_extensions = [
 			\'coc-pairs',
 			\'coc-todolist',
 			\'coc-vimlsp',
+			\'coc-snippets',
 			\'coc-marketplace',
 			\'coc-python',
 			\'coc-clangd',
@@ -92,8 +93,6 @@ let             g:vista_icon_indent = ["╰─▸ ", "├─▸ "]
 let             g:vista_default_executive = 'ctags'
 
 let             g:vista_executive_for = {
-			\   'cpp': 'vim_lsp',
-			\   'php': 'vim_lsp',
 			\   }
 
 let             g:vista_ctags_cmd = {
@@ -327,3 +326,30 @@ let g:spaceline_seperate_style = 'curve'
 let g:spaceline_colorscheme = 'space'
 let g:spaceline_custom_vim_status =  {"n": " ","V":"🅥 ","v":"🅥 ","\<C-v>": "🅥 ","i":"🅘 ","R":"🅡 ","s":"🅢 ","t":"🅣 ","c":"🅒 ","!":"SE"}
 
+" coc-snippets 代码片段
+imap <C-l> <Plug>(coc-snippets-expand)
+
+" 使用<c-j>为代码段的可视占位符选择文本。
+vmap <C-j> <Plug>(coc-snippets-select)
+
+" 使用<c-j>跳转到下一个占位符，默认为coc.nvim
+let g:coc_snippet_next = '<c-j>'
+
+" 使用<c-k>跳转到上一个占位符，默认为coc.nvim
+let g:coc_snippet_prev = '<c-k>'
+" 对扩展和跳转都使用<c-j>（使扩展具有更高的优先级。）
+imap <C-j> <Plug>(coc-snippets-expand-jump)
+" 使用<leader> x将可视的选定代码转换为代码段
+xmap <leader>x  <Plug>(coc-convert-snippet)
+
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? coc#_select_confirm() :
+      \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+let g:coc_snippet_next = '<tab>'

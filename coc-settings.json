@@ -43,15 +43,15 @@
 		"variable": "\ue71b"
 	},
 	"diagnostic.signOffset": 1,
-	"diagnostic.errorSign": "✗",
-	"diagnostic.warningSign": "⚠",
-	"diagnostic.infoSign": "ღ",
+	"diagnostic.errorSign": "◉",
+	"diagnostic.warningSign": "⦿",
+	"diagnostic.infoSign": "◉",
 	"diagnostic.hintSign": "ஐ",
 	"diagnostic.displayByAle": false,
 	"diagnostic.refreshOnInsertMode": false,
 	"diagnostic.refreshAfterSave": false,
 	"diagnostic.checkCurrentLine": true,
-	"diagnostic.virtualTextPrefix": " ➜ ",
+	"diagnostic.virtualTextPrefix": " ◉ ",
 	"diagnostic.virtualText": true,
 	"codeLens.enable": false,
 	"list.previewHighlightGroup": "Statement",
@@ -94,8 +94,8 @@
 	"git.removedSign.hlGroup": "GitGutterDelete",
 	"git.topRemovedSign.hlGroup": "GitGutterDelete",
 	"git.changeRemovedSign.hlGroup": "GitGutterChangeDelete",
-	"git.addedSign.text":"▎",
-	"git.changedSign.text":"▏",
+	"git.addedSign.text":"⬮",
+	"git.changedSign.text":"⬮",
 	"git.removedSign.text":"░",
 	"git.topRemovedSign.text": "▔",
 	"git.changeRemovedSign.text": "▒",
@@ -138,5 +138,8 @@
 	 "type": "boolean",
 	  "default": true,
 	  "description": "monitor the todolist and remind you at the time"
-	}
+	},
+	"snippets.userSnippetsDirectory": "~/.config/nvim/snips",
+	"snippets.loadFromExtensions":true
+
 }
