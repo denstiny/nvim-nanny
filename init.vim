@@ -36,7 +36,6 @@ Plug 'tpope/vim-surround'  "环绕工具
 Plug 'gcmt/wildfire.vim'   "代码块选择工具 
 
 "翻译插件
-Plug 'iamcco/dict.vim'  
 Plug 'voldikss/vim-translator'
 call plug#end()
 

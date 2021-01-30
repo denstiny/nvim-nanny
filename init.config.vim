@@ -41,7 +41,7 @@ set             virtualedit=block,onemore
 "set             relativenumber
 "set             number
 
-nmap <leader>m :set nu!<CR>
+nmap <silent> <leader>m :set nu!<CR>
 " 打开文件自动定位到最后编辑的位置
 autocmd         bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 "
@@ -136,8 +136,8 @@ endf
 au              BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
 "多文件编辑 map             <leader>q :bd<CR>
-map             <leader>n :bp<CR>
-map             <leader>o :bp<CR>
+map      <silent>       <leader>n :bp<CR>
+map      <silent>       <leader>o :bp<CR>
 
 
 set             termguicolors
@@ -168,11 +168,11 @@ source ~/.config/nvim/markdown.vim
 
 
 " 快捷键
-map             <leader>w <C-w>
-map             er :Re<CR>
-map             tr :NERDTree<CR>
-map             tt :Vista<CR>
-map             ei :e<space>
+map  <silent>           <leader>w <C-w>
+map  <silent>           er :Re<CR>
+map  <silent>           tr :NERDTree<CR>
+map  <silent>           tt :Vista<CR>
+map  <silent>           ei :e<space>
 
 " 自定义命令
 command!        -nargs=0 Fl :FloatermNew
@@ -188,16 +188,24 @@ command!        -nargs=0 Git :FloatermNew lazygit
 let             g:rainbow_active = 1
 
 
+"===
+"=== 翻译
+"===
+
 "Plug 'voldikss/vim-translator'
 " <Leader>t 翻译光标下的文本，在命令行回显
-nmap <silent> <Leader>e <Plug>(coc-translator-e)
-vmap <silent> <Leader>e <Plug>(coc-translator-ev)
-" Leader>w 翻译光标下的文本，在窗口中显示
-nmap <silent> <Leader>t <Plug>(coc-translator-p)
-vmap <silent> <Leader>t <Plug>(coc-translator-pv)
-" Leader>r 替换光标下的文本为翻译内容
+let g:translator_default_engines=['bing']
+
+nmap <silent> <Leader>e <Plug>Translate
+vmap <silent> <Leader>e <Plug>TranslateV
+" 在窗口中显示翻译
+nmap <silent> <Leader>t <Plug>TranslateW
+vmap <silent> <Leader>t <Plug>TranslateWV
+" 用翻译替换文本
 nmap <silent> <Leader>r <Plug>TranslateR
 vmap <silent> <Leader>r <Plug>TranslateRV
+" 翻译剪贴板中的文本
+nmap <silent> <Leader>x <Plug>TranslateX
 
 
 
@@ -303,24 +311,7 @@ require "nvim-treesitter.configs".setup {
 
 EOF
 
-" vim 小地图
 
-let g:minimap_width = 15
-hi MinimapCurrentLine ctermfg=Green guifg=#50FA7B guibg=#2E373A
-let g:minimap_highlight = 'MinimapCurrentLine'
-" 自动启动
-"autocmd FileType c :Minimap
-"autocmd FileType cpp :Minimap
-"autocmd filetype sh :Minimap
-"autocmd filetype lua :Minimap
-"autocmd filetype vim :Minimap
-" 手动启动使用Minimap 命令
-
-" 显示 当前的函数
-"autocmd filetype,CursorMoved *,c :echo nvim_treesitter#statusline(90)  
-" Hexokinase_highlighters 
-
-let g:Hexokinase_highlighters = ['backgroundfull']
 
 " spaceline.vim
 let g:spaceline_git_branch_icon=' '
