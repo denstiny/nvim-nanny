@@ -3,10 +3,10 @@ hi comment ctermfg=6
 se cursorline
 "hi cursorline cterm=NONE ctermbg=NONE
 highlight clear SignColumn
-"hi Normal guibg=#282C34  "背景色
+hi Normal guibg=#282C34  "背景色
 hi CursorLine cterm=NONE ctermbg=darkred ctermfg=white guibg=NONE guifg=NONE gui=bold
 " 取消vim空行的波浪 '~'
-set fillchars=fold:\ ,vert:\│,eob:\ ,msgsep:‾ 
+set fillchars=fold:\ ,vert:\│,eob:\   ",msgsep:-
 
 
 "Set the coc floating window background color
@@ -19,6 +19,12 @@ hi NormalFloat guibg=none guifg=none
 
 
 
+"===
+"=== spaceemacs color config
+"===
+
+hi Comment cterm=italic
+hi Comment guifg=#5C6370 ctermfg=59
 
 
 

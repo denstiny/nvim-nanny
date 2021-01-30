@@ -6,6 +6,7 @@ let             g:coc_global_extensions = [
 			\'coc-json',
 			\'coc-translator',
 			\'coc-pairs',
+			\'coc-picgo',
 			\'coc-todolist',
 			\'coc-vimlsp',
 			\'coc-snippets',
@@ -15,8 +16,9 @@ let             g:coc_global_extensions = [
 			\'coc-go',
 			\'coc-sh']
 
-set             sw=4
-set             ts=4
+set             sw=3
+set             ts=3
+set clipboard=unnamed
 inoremap        jk <ESC>
 inoremap        <C-j> j<space><BS>
 inoremap <C-k>      k<space><BS>
@@ -324,7 +326,7 @@ let g:Hexokinase_highlighters = ['backgroundfull']
 let g:spaceline_git_branch_icon=' '
 let g:spaceline_seperate_style = 'curve'
 let g:spaceline_colorscheme = 'space'
-let g:spaceline_custom_vim_status =  {"n": " ","V":"🅥 ","v":"🅥 ","\<C-v>": "🅥 ","i":"🅘 ","R":"🅡 ","s":"🅢 ","t":"🅣 ","c":"🅒 ","!":"SE"}
+let g:spaceline_custom_vim_status =  {"n": " ","V":" ","v":" ","\<C-v>": "ףּ ","i":" ","R":" ","s":"ﴣ ","t":"ﴪ ","c":" ","!":"SE"}
 
 " coc-snippets 代码片段
 imap <C-l> <Plug>(coc-snippets-expand)
@@ -353,3 +355,9 @@ function! s:check_back_space() abort
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 let g:coc_snippet_next = '<tab>'
+
+"===
+"=== vim折行
+"===
+set linebreak
+set showbreak=↪\ 

@@ -25,14 +25,16 @@ nmap            <silent> gi <Plug>(coc-implementation)
 nmap            <silent> gr <Plug>(coc-references)
 "nerdtree
 
-"nnoremap <silent> K :call <SID>show_documentation()<CR>
+nnoremap <silent> K :call <SID>show_documentation()<CR>
 
-function!       s:show_documentation()
-	if          (index(['vim','help'], &filetype) >= 0)
-		execute 'h '.expand('<cword>')
-	else
-		call    CocAction('doHover')
-	endif
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  elseif (coc#rpc#ready())
+    call CocActionAsync('doHover')
+  else
+    execute '!' . &keywordprg . " " . expand('<cword>')
+  endif
 endfunction
 "autocmd CursorHold * silent call CocActionAsync('highlight')
 nmap            <leader>f <Plug>(coc-rename) "快速重命名函数
@@ -57,4 +59,3 @@ nnoremap        <silent> <space>s  :<C-u>CocList -I symbols<cr>
 nnoremap        <silent> <space>j  :<C-u>CocNext<CR>
 nnoremap        <silent> <space>k  :<C-u>CocPrev<CR>
 nnoremap        <silent> <space>p  :<C-u>CocListResume<CR>
-
