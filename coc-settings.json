@@ -140,6 +140,17 @@
 	  "description": "monitor the todolist and remind you at the time"
 	},
 	"snippets.userSnippetsDirectory": "~/.config/nvim/snips",
-	"snippets.loadFromExtensions":true
-
+	"snippets.loadFromExtensions":true,
+	"jedi.enable": true,
+	"jedi.startupMessage": "messages",
+	"jedi.markupKindPreferred": "plaintext",
+	"jedi.trace.server": true,
+	"jedi.jediSettings.autoImportModules": [],
+	"jedi.executable.command": "jedi-language-server",
+	"jedi.executable.args": [],
+	"jedi.completion.disableSnippets": false,
+	"jedi.diagnostics.enable": true,
+	"jedi.diagnostics.didOpen": true,
+	"jedi.diagnostics.didChange": true,
+	"jedi.diagnostics.didSave": true
 }

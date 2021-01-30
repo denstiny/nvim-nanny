@@ -11,7 +11,6 @@ let             g:coc_global_extensions = [
 			\'coc-vimlsp',
 			\'coc-snippets',
 			\'coc-marketplace',
-			\'coc-python',
 			\'coc-clangd',
 			\'coc-go',
 			\'coc-sh']
@@ -191,9 +190,6 @@ let             g:rainbow_active = 1
 "===
 "=== 翻译
 "===
-
-"Plug 'voldikss/vim-translator'
-" <Leader>t 翻译光标下的文本，在命令行回显
 let g:translator_default_engines=['bing']
 
 nmap <silent> <Leader>e <Plug>Translate
@@ -350,5 +346,6 @@ let g:coc_snippet_next = '<tab>'
 "===
 "=== vim折行
 "===
-set linebreak
-set showbreak=↪\ 
+	set linebreak
+	set showbreak=↪\ 
+
