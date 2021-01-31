@@ -10,7 +10,7 @@ set fillchars=fold:\ ,vert:\│,eob:\   ",msgsep:-
 
 
 "Set the coc floating window background color
-hi CocFloating guibg=none guifg=none 
+hi CocFloating guibg=#333841 guifg=none 
 
 hi NormalFloat guibg=none guifg=none 
 "Set the default color floating window

@@ -6,7 +6,7 @@ let             g:coc_global_extensions = [
 			\'coc-json',
 			\'coc-translator',
 			\'coc-pairs',
-			\'coc-picgo',
+			\'coc-picgo', 
 			\'coc-todolist',
 			\'coc-vimlsp',
 			\'coc-snippets',
@@ -14,7 +14,7 @@ let             g:coc_global_extensions = [
 			\'coc-clangd',
 			\'coc-go',
 			\'coc-sh']
-
+"coc-picgo  markdown工具，负责上传剪切版图片到图床
 set             sw=3
 set             ts=3
 set clipboard=unnamed
@@ -33,7 +33,9 @@ let             g:undotree_SplitWidth = 20
 " 如果nerdtree是剩下的唯一窗口，则退出vim。
 autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() |
     \ quit | endif
-se              cursorline
+let g:NERDTreeDirArrowExpandable = '▸'
+let g:NERDTreeDirArrowCollapsible = '▾'
+set              cursorline
 hi              cursorline cterm=NONE ctermbg=237
 set             virtualedit=block,onemore
 "相对行号"

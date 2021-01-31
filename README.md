@@ -12,6 +12,22 @@
 #### `master`分支将不再更新
 #### `main1` 从2021 1月 25日开始不支持低于5.0版本neovim  
 *  更新日志
+	* 2021.01.31
+		> bug
+		![20210131181939](https://i.loli.net/2021/01/31/9JMWnYZiHN7vdmR.png)
+		> 解决办法  
+		编辑`/usr/share/nvim/runtime/lua/vim/treesitter/highlighter.lua` 152行添加下面的内容
+		```lua
+		    if hl and end_row >= line then
+			a.nvim_buf_set_extmark(buf, ns, start_row, start_col,
+			{ end_line = end_row, end_col = end_col,
+			hl_group = hl,
+			ephemeral = true, 
+		 })
+		 else 
+			return 
+		 end
+		```
 	* 2021 1-26
 		* 删除neovim 启动的header
 	* 2021 1-25
