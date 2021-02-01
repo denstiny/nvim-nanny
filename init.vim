@@ -9,7 +9,6 @@ Plug 'mbbill/undotree'      "历史记录
 Plug 'preservim/nerdtree'          "vim目录树
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight' 
 Plug 'skywind3000/vim-terminal-help' "vim终端辅助插件
-Plug 'puremourning/vimspector'   		"vim调试插件
 Plug 'junegunn/vim-easy-align'   " 代码格式化
 Plug 'liuchengxu/vim-clap'  "搜索工具
 Plug 'easymotion/vim-easymotion' " 字符串搜索工具
@@ -37,7 +36,30 @@ Plug 'gcmt/wildfire.vim'   "代码块选择工具
 
 "翻译插件
 Plug 'voldikss/vim-translator'
+
+"===
+"=== vim 调试插件
+"===
+
+
+
+"===
+"=== vim 调试插件
+"===
+
+Plug 'puremourning/vimspector'
+
+"===
+"===
+
+
+
 call plug#end()
+
+
+
+
+
 
 
 

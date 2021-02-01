@@ -231,7 +231,9 @@ let g:vimspector_terminal_minwidth = 40   "设置输出窗口大小
 let g:vimspector_install_gadgets = [ 
 			\'debugpy',
 			\'vscode-cpptools', 
-			\'CodeLLDB' ]
+			\'CodeLLDB',
+			\'vscode-bash-debug',
+			\'	vscode-go']
 autocmd User CocGitStatusChange {command}
 
 " treesitter-modules
@@ -309,6 +311,9 @@ require "nvim-treesitter.configs".setup {
 
 EOF
 
+
+
+let g:dap_virtual_text=v:true
 
 
 " spaceline.vim
