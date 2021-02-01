@@ -41,13 +41,7 @@ Plug 'voldikss/vim-translator'
 "=== vim 调试插件
 "===
 
-
-
-"===
-"=== vim 调试插件
-"===
-
-Plug 'puremourning/vimspector'
+Plug 'puremourning/vimspector',{ 'do': 'python3 install_gadget.py --all'}
 
 "===
 "===
