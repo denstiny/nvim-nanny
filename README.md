@@ -1,18 +1,32 @@
-## my-neovim    
-
+# neovim nvim-nanny
 ---
-> `vimlsp`
+* [演示](#演示)
+	* [`vimlsp`](#vimlsp)
+	* [`c/c++`](#c%2Fc%2B%2B)
+* [使用](#method-of-use)  
+	* [安装](#安装配置)
+		* [arch](#arch-linux)
+		* [其他linux](#其他linux自行clone编译安装)
+	* [更新日志](#update-log)
+* [文件分布](#文件分布)
+* [依存关系](#依存关系)
+## 演示  
+<br> 
+
+> ###### `vimlsp`
 ![image.png](https://i.loli.net/2021/01/25/nWs7Jr64RQbUcYM.png)
-> `c/c++`
+> ###### `c/c++`
 ![image.png](https://i.loli.net/2021/01/25/TALRiyaOSoBGmDW.png)
 
 ## Method of use    
 先安装neovim的5.0版本  
+#### arch linux
 `arch/manjaro linux`
 ```shell
 yay -S neovim-nightly-git # 直接安装neovim 5.0预览版本
 ```
 ####   <u>其他linux自行clone编译安装</u>
+#### 安装配置
 ```shell
 git clone https://github.com/denstiny/nvim-nanny.git ~/.config/nvim
 ```

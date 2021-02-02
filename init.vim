@@ -1,7 +1,6 @@
 let mapleader = ";"
 call plug#begin('~/.vim/plugged')
 Plug 'mg979/vim-visual-multi', {'branch': 'master'} "多光标
-Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 Plug 'tbastos/vim-lua' 
 Plug 'godlygeek/tabular' 			
 Plug 'iamcco/mathjax-support-for-mkdp' 
@@ -44,7 +43,10 @@ Plug 'voldikss/vim-translator'
 Plug 'puremourning/vimspector',{ 'do': 'python3 install_gadget.py --all'}
 
 "===
-"===
+"=== markdown 插件 
+"=== 
+
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 
 
 

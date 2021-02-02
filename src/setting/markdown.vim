@@ -7,6 +7,7 @@
 "--------------------------------------------------------------------------------
 
 "markdown预览 
+let g:vmt_auto_update_on_save = 0
 nmap <leader><F7> <Plug>MarkdownPreview
 nmap <leader><F9> <Plug>MarkdownPreviewStop
 nmap <leader><F8> <Plug>MarkdownPreviewToggle
