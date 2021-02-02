@@ -6,11 +6,20 @@
 > `c/c++`
 ![image.png](https://i.loli.net/2021/01/25/TALRiyaOSoBGmDW.png)
 
-### 使用教程
-#### Method of use    
+## Method of use    
+先安装neovim的5.0版本  
+`arch/manjaro linux`
+```shell
+yay -S neovim-nightly-git # 直接安装neovim 5.0预览版本
+```
+####   <u>其他linux自行clone编译安装</u>
+```shell
+git clone https://github.com/denstiny/nvim-nanny.git ~/.config/nvim
+```
 
+## Update log
 #### `master`分支将不再更新
-#### `main1` 从2021 1月 25日开始不支持低于5.0版本neovim  
+#### `main1` 从2021年1月 25日开始不支持低于5.0版本neovim  
 *  更新日志
 	* 2021.01.31
 		> bug
@@ -66,6 +75,6 @@ init.config.vim  主要的配置文件
 
 
 ## 演示视频
- <a href="https://www.bilibili.com/video/BV16v4y1f7kV">  <span>  <img border="0" src="./src/b.png" height="450" width="100%"/>
+ <a href="https://www.bilibili.com/video/BV16v4y1f7kV">  <span>  <img border="0" src="https://i.loli.net/2021/02/01/YtXQaW4GPigSxqT.png" height="450" width="100%"/>
   </a>
 

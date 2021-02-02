@@ -59,10 +59,10 @@ call plug#end()
 
 "配色主题
 lua require('colorbuddy').colorscheme('onebuddy')
-source ~/.config/nvim/mycolor.vim
+source ~/.config/nvim/src/color/mycolor.vim
 
 "自定义配置
-source ~/.config/nvim/init.config.vim
+source ~/.config/nvim/src/setting/init.config.vim
 
 
 

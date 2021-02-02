@@ -1,7 +1,7 @@
 "===
 "===  coc-nvim 
 "===
-source ~/.config/nvim/coc_setting.vim
+source ~/.config/nvim/src/setting/coc_setting.vim
 let             g:coc_global_extensions = [
 			\'coc-json',
 			\'coc-translator',
@@ -164,7 +164,7 @@ map             <leader>s <Plug>(EasyAlign)
 nmap            <leader><leader>a <Plug>(easymotion-overwin-f2)
 "map             <leader>n :set nu!<CR>
 "markdown预览 
-source ~/.config/nvim/markdown.vim
+autocmd filetype markdown source ~/.config/nvim/src/setting/markdown.vim
 
 
 
@@ -178,7 +178,7 @@ map  <silent>           ei :e<space>
 " 自定义命令
 command!        -nargs=0 Fl :FloatermNew
 command!        -nargs=0 Apt :CocList marketplace
-command!        -nargs=0 H :FloatermNew nvim -R ~/.config/nvim/help.txt
+command!        -nargs=0 H :FloatermNew nvim -R ~/.config/nvim/src/help/help.txt
 command!        -nargs=0 Re :FloatermNew --position=left  ranger
 command!        -nargs=0 Init :source ~/.config/nvim/install.vim
 command!        -nargs=0 Ter :source ~/.config/nvim/ter.vim
