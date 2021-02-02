@@ -21,6 +21,16 @@ git clone https://github.com/denstiny/nvim-nanny.git ~/.config/nvim
 #### `master`分支将不再更新
 #### `main1` 从2021年1月 25日开始不支持低于5.0版本neovim  
 *  更新日志
+	* 2021.02.02
+	> coc-picgo
+	markdown 图片自动上传图床工具
+	```sh
+	# 以下命令未作快捷键映射，感觉快捷键太多有点繁琐
+	:CocCommand picgo.uploadImageFromClipboard
+	上传剪切版截图
+	:CocCommand picgo.uploadImageFromInputBox 
+	上传指定位置截图
+	```
 	* 2021.01.31
 		> bug
 		![20210131181939](https://i.loli.net/2021/01/31/9JMWnYZiHN7vdmR.png)
@@ -65,13 +75,45 @@ git clone https://github.com/denstiny/nvim-nanny.git ~/.config/nvim
 - `<leader>t or <leader>e or <leader>r`  翻译
 - `<leader>o or <leader>n` 切换buf
 
-# 各个文件的作用    
-init.vim    
-主要的配置文件 存放一个插件和一些基础配置    
-init.config.vim  主要的配置文件    
-其他文件    
-其他文件大部分都是配色    
-可以在init.vim修改启动的配色插件    
+# 文件分布
+```sh
+.
+├── README.md
+├── autoload
+│   ├── plug.vim
+│   └── plug.vim.old
+├── coc-settings.json
+├── init.vim
+├── snips
+│   ├── all.snippets
+│   ├── c.snippets
+│   ├── cpp.snippets
+│   ├── lisp.snippets
+│   ├── make.snippets
+│   ├── markdown.snippets
+│   ├── python.snippets
+│   ├── snippets.snippets
+│   └── vim.snippets
+├── src
+│   ├── color
+│   │   └── mycolor.vim
+│   ├── help
+│   │   └── help.txt
+│   ├── install.vim
+│   ├── markdown.vim
+│   └── setting
+│       ├── coc_setting.vim
+│       ├── init.config.vim
+│       └── markdown.vim
+└── vimspector-json
+    ├── cpp.json
+    ├── go.json
+    └── python.json
+
+```
+## 依存关系
+`nodejs` coc-nvim  
+`go`  vim-hexokinase  
 
 
 ## 演示视频
