@@ -91,6 +91,14 @@ git clone https://github.com/denstiny/nvim-nanny.git ~/.config/nvim
 - `<leader>t or <leader>e or <leader>r`  翻译
 - `<leader>o or <leader>n` 切换buf
 
+## 依存关系
+|软件|插件|描述|
+|:-|:-:|:-|
+|ndoejs|coc-nvim|现代补全插件
+|go|vim-hexokinase|异步显示代码颜色插件
+|python|vimspector|代码调试插件
+|ctags|vim-vista|代码地图
+
 # 文件分布
 ```sh
 .
@@ -127,9 +135,6 @@ git clone https://github.com/denstiny/nvim-nanny.git ~/.config/nvim
     └── python.json
 
 ```
-## 依存关系
-`nodejs` coc-nvim  
-`go`  vim-hexokinase  
 
 
 ## 演示视频
