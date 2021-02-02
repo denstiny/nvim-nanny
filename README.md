@@ -27,10 +27,12 @@ git clone https://github.com/denstiny/nvim-nanny.git ~/.config/nvim
 	```sh
 	# 以下命令未作快捷键映射，感觉快捷键太多有点繁琐
 	:CocCommand picgo.uploadImageFromClipboard
-	上传剪切版截图
+	上传剪切板图片
 	:CocCommand picgo.uploadImageFromInputBox 
-	上传指定位置截图
+	上传指定位置图片
 	```
+	> 效果
+	![20210202120908](https://i.loli.net/2021/02/02/k1OVB3wduzDHMhj.png)
 	* 2021.01.31
 		> bug
 		![20210131181939](https://i.loli.net/2021/01/31/9JMWnYZiHN7vdmR.png)
