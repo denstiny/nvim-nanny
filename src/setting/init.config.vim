@@ -174,6 +174,7 @@ map  <silent>           er :Re<CR>
 map  <silent>           tr :NERDTree<CR>
 map  <silent>           tt :Vista<CR>
 map  <silent>           ei :e<space>
+noremap <silent> 			<C-f> :FZF<cr>
 
 " 自定义命令
 command!        -nargs=0 Fl :FloatermNew

@@ -9,14 +9,12 @@ Plug 'preservim/nerdtree'          "vim目录树
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight' 
 Plug 'skywind3000/vim-terminal-help' "vim终端辅助插件
 Plug 'junegunn/vim-easy-align'   " 代码格式化
-Plug 'liuchengxu/vim-clap'  "搜索工具
 Plug 'easymotion/vim-easymotion' " 字符串搜索工具
 Plug 'junegunn/vim-slash'        " 搜索结果优化
 Plug 'liuchengxu/vista.vim'      " 函数列表
 Plug 'voldikss/vim-floaterm'     " 浮动终端
 Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
-Plug 'ryanoasis/vim-devicons'    " 显示文件类型
-
+Plug 'ryanoasis/vim-devicons'  "显示文件的图标
 " 状态栏
 Plug 'denstiny/spaceline.vim'
 
@@ -47,8 +45,6 @@ Plug 'puremourning/vimspector',{ 'do': 'python3 install_gadget.py --all'}
 "=== 
 
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
-
-
 
 call plug#end()
 
