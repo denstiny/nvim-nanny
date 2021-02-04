@@ -10,3 +10,7 @@
 nmap <leader><F7> <Plug>MarkdownPreview
 nmap <leader><F9> <Plug>MarkdownPreviewStop
 nmap <leader><F8> <Plug>MarkdownPreviewToggle
+
+
+
+

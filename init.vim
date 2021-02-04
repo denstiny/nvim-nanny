@@ -31,9 +31,6 @@ Plug 'RRethy/vim-hexokinase', { 'do': 'make hexokinase' }  "异步显示文件�
 Plug 'tpope/vim-surround'  "环绕工具
 Plug 'gcmt/wildfire.vim'   "代码块选择工具 
 
-"翻译插件
-Plug 'voldikss/vim-translator'
-
 "===
 "=== vim 调试插件
 "===
@@ -44,7 +41,11 @@ Plug 'puremourning/vimspector',{ 'do': 'python3 install_gadget.py --all'}
 "=== markdown 插件 
 "=== 
 
+" markdown预览
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
+
+" markdown生成目录
+Plug 'mzlogin/vim-markdown-toc'  
 
 call plug#end()
 

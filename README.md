@@ -19,7 +19,7 @@
 ![image.png](https://i.loli.net/2021/01/25/TALRiyaOSoBGmDW.png)
 
 ## Method of use    
-先安装neovim的5.0版本  
+先安装neovim的0.5版本  
 #### arch linux
 `arch/manjaro linux`
 ```shell

@@ -12,6 +12,7 @@ let             g:coc_global_extensions = [
 			\'coc-snippets',
 			\'coc-marketplace',
 			\'coc-clangd',
+			\'coc-translator',
 			\'coc-go',
 			\'coc-sh']
 "coc-picgo  markdown工具，负责上传剪切版图片到图床
@@ -165,6 +166,7 @@ nmap            <leader><leader>a <Plug>(easymotion-overwin-f2)
 "map             <leader>n :set nu!<CR>
 "markdown预览 
 autocmd filetype markdown source ~/.config/nvim/src/setting/markdown.vim
+autocmd filetype html source ~/.config/nvim/src/setting/markdown.vim
 
 
 
@@ -193,19 +195,15 @@ let             g:rainbow_active = 1
 "===
 "=== 翻译
 "===
-let g:translator_default_engines=['bing']
 
-nmap <silent> <Leader>e <Plug>Translate
-vmap <silent> <Leader>e <Plug>TranslateV
-" 在窗口中显示翻译
-nmap <silent> <Leader>t <Plug>TranslateW
-vmap <silent> <Leader>t <Plug>TranslateWV
-" 用翻译替换文本
-nmap <silent> <Leader>r <Plug>TranslateR
-vmap <silent> <Leader>r <Plug>TranslateRV
-" 翻译剪贴板中的文本
-nmap <silent> <Leader>x <Plug>TranslateX
-
+nmap <Leader>t <Plug>(coc-translator-p)
+vmap <Leader>t <Plug>(coc-translator-pv)
+" echo
+nmap <Leader>e <Plug>(coc-translator-e)
+vmap <Leader>e <Plug>(coc-translator-ev)
+" replace
+nmap <Leader>r <Plug>(coc-translator-r)
+vmap <Leader>r <Plug>(coc-translator-rv)
 
 
 """ vimspector
@@ -350,10 +348,9 @@ function! s:check_back_space() abort
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 let g:coc_snippet_next = '<tab>'
-
 "===
 "=== vim折行
 "===
-	set linebreak
 	set showbreak=↪\ 
-
+	nmap j gj
+	nmap k gk

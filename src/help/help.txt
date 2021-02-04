@@ -107,4 +107,9 @@ FZF 文件
 # 依赖 bat // 预览文件内容
 <C-f> 打开文件搜索
 :FZF 打开文件搜索
-
+Markdown 
+<leader><F7> 预览当前文件
+:CocCommand picgo.uploadImageFromClipboard<cr>  粘贴剪切板图片
+:CocCommand picgo.uploadImageFromInputBox<cr>       使用文件夹图片,输入地址即可
+在光标处使用GenTocGFM 可以为当前文档生成GFM风格目录
+在光标处使用GenTocRedcarpet可以为当前文档生成电子书风格目录
