@@ -40,7 +40,7 @@ set             virtualedit=block,onemore
 "set             relativenumber
 "set             number
 
-nmap <silent> <leader>m :set nu!<CR>
+nmap <silent> <leader>m :set nu!<cr>
 " 打开文件自动定位到最后编辑的位置
 autocmd         bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 "
@@ -351,5 +351,6 @@ let g:coc_snippet_next = '<tab>'
 "=== vim折行
 "===
 	set showbreak=↪\ 
-	""	nmap j gj
-	""	nmap k gk
+  nmap j gj
+  nmap k gk
+
