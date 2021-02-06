@@ -16,9 +16,6 @@ let             g:coc_global_extensions = [
 			\'coc-go',
 			\'coc-sh']
 "coc-picgo  markdown工具，负责上传剪切版图片到图床
-set             sw=3
-set             ts=3
-set clipboard=unnamed
 inoremap        jk <ESC>
 inoremap        <C-j> j<space><BS>
 inoremap <C-k>      k<space><BS>
@@ -47,15 +44,17 @@ nmap <silent> <leader>m :set nu!<CR>
 " 打开文件自动定位到最后编辑的位置
 autocmd         bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 "
-set             hidden
-" Some servers have issues with backup files, see #649.
-set             nobackup
-set             nowritebackup
-set      		noswapfile "关闭交换文件
-set             cmdheight=2
-set             updatetime=300
-set             shortmess+=c
-set             signcolumn=yes
+set hidden
+set nobackup
+set nowritebackup
+set noswapfile 
+set cmdheight=2
+set updatetime=300
+set shortmess+=c
+set signcolumn=yes
+set sw=3
+set ts=2
+set clipboard=unnamed
 "
 "Tag"
 "
@@ -352,5 +351,5 @@ let g:coc_snippet_next = '<tab>'
 "=== vim折行
 "===
 	set showbreak=↪\ 
-	nmap j gj
-	nmap k gk
+	""	nmap j gj
+	""	nmap k gk
