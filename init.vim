@@ -47,6 +47,16 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 " markdown生成目录
 Plug 'mzlogin/vim-markdown-toc'  
 
+
+
+"===
+"=== vim 翻译
+"===
+
+Plug 'voldikss/vim-translator'
+
+
+
 call plug#end()
 
 

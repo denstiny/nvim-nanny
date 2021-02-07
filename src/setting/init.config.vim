@@ -4,15 +4,14 @@
 source ~/.config/nvim/src/setting/coc_setting.vim
 let             g:coc_global_extensions = [
 			\'coc-json',
-			\'coc-translator',
 			\'coc-pairs',
+			\'coc-jedi',
 			\'coc-picgo', 
 			\'coc-todolist',
 			\'coc-vimlsp',
 			\'coc-snippets',
 			\'coc-marketplace',
 			\'coc-clangd',
-			\'coc-translator',
 			\'coc-go',
 			\'coc-sh']
 "coc-picgo  markdown工具，负责上传剪切版图片到图床
@@ -20,7 +19,6 @@ inoremap        jk <ESC>
 inoremap        <C-j> j<space><BS>
 inoremap <C-k>      k<space><BS>
 filetype        indent on
-autocmd         FileType python setlocal et sta sw=4 sts=4
 noremap         L :UndotreeToggle<CR>
 let             g:undotree_DiffAutoOpen = 1
 let             g:undotree_SetFocusWhenToggle = 1
@@ -40,7 +38,7 @@ set             virtualedit=block,onemore
 "set             relativenumber
 "set             number
 
-nmap <silent> <leader>m :set nu!<cr>
+nmap <silent> <leader>m :setlocal nu!<cr>
 " 打开文件自动定位到最后编辑的位置
 autocmd         bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 "
@@ -195,17 +193,28 @@ let             g:rainbow_active = 1
 "=== 翻译
 "===
 
-nmap <Leader>t <Plug>(coc-translator-p)
-vmap <Leader>t <Plug>(coc-translator-pv)
-" echo
-nmap <Leader>e <Plug>(coc-translator-e)
-vmap <Leader>e <Plug>(coc-translator-ev)
-" replace
-nmap <Leader>r <Plug>(coc-translator-r)
-vmap <Leader>r <Plug>(coc-translator-rv)
+" 设置翻译的服务端
+let g:translator_default_engines = ['haici','youdao']
+" 在命令行显示翻译
+nmap <silent> <Leader>e <Plug>Translate
+vmap <silent> <Leader>e <Plug>TranslateV
+" 在窗口中显示翻译
+nmap <silent> <Leader>t <Plug>TranslateW
+vmap <silent> <Leader>t <Plug>TranslateWV
+" 用翻译替换文本
+nmap <silent> <Leader>r <Plug>TranslateR
+vmap <silent> <Leader>r <Plug>TranslateRV
+
+" 翻译剪贴板中的文本
+nmap <silent> <Leader>x <Plug>TranslateX
+" 翻页
+nnoremap <silent><expr> <M-f> translator#window#float#has_scroll() ?
+                            \ translator#window#float#scroll(1) : "\<M-f>"
+nnoremap <silent><expr> <M-b> translator#window#float#has_scroll() ?
+                            \ translator#window#float#scroll(0) : "\<M-f>"
 
 
-""" vimspector
+""" vimspector 调试插件
 
 
 let g:vimspector_enable_mappings = 'HUMAN'
@@ -353,4 +362,5 @@ let g:coc_snippet_next = '<tab>'
 	set showbreak=↪\ 
   nmap j gj
   nmap k gk
+
 

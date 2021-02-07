@@ -94,7 +94,7 @@ git clone https://github.com/denstiny/nvim-nanny.git ~/.config/nvim
 ## 依存关系
 |软件|插件|描述|
 |:-|:-:|:-|
-|ndoejs|coc-nvim|现代补全插件
+|nodejs|coc-nvim|现代补全插件
 |go|vim-hexokinase|异步显示代码颜色插件
 |python|vimspector|代码调试插件
 |ctags|vim-vista|代码地图
