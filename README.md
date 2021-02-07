@@ -48,7 +48,7 @@ git clone https://github.com/denstiny/nvim-nanny.git ~/.config/nvim
 	> 效果
 	![20210202120908](https://i.loli.net/2021/02/02/k1OVB3wduzDHMhj.png)
 	* 2021.01.31
-		> bug
+	 > bug
 		![20210131181939](https://i.loli.net/2021/01/31/9JMWnYZiHN7vdmR.png)
 		> 解决办法  
 		编辑`/usr/share/nvim/runtime/lua/vim/treesitter/highlighter.lua` 152行添加下面的内容
