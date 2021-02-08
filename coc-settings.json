@@ -2,8 +2,8 @@
 {
 	"coc.preferences.extensionUpdateCheck": "daily",
 	"suggest.noselect": true,
-	"diagnostic.messageTarget": "echo",
-	"signature.target": "echo",
+	"diagnostic.messageTarget": "float",
+	"signature.target": "float",
 	"suggest.floatEnable": false,
 	"coc.preferences.hoverTarget": "float",
 	"coc.preferences.enableFloatHighlight": true,
@@ -44,14 +44,12 @@
 		"value": "\uf89f",
 		"variable": "\ue71b"
 	},
-	"diagnostic.signOffset": 1,
 	"diagnostic.errorSign": "◉",
 	"diagnostic.warningSign": "⦿",
 	"diagnostic.infoSign": "◉",
 	"diagnostic.hintSign": "◉",
-	"diagnostic.displayByAle": false,
+	"diagnostic.displayByAle": true,
 	"diagnostic.refreshOnInsertMode": false,
-	"diagnostic.refreshAfterSave": false,
 	"diagnostic.checkCurrentLine": true,
 	"diagnostic.virtualTextPrefix": " ◉ ",
 	"diagnostic.virtualText": true,
@@ -66,25 +64,6 @@
 		"python",
 		"dart"
 	],
-	"yank.enableCompletion" : false,
-	"explorer.width": 38,
-	"explorer.quitOnOpen": true,
-	"explorer.sources": [
-		{
-			"name": "buffer",
-			"expand": false
-		},
-		{
-			"name": "file",
-			"expand": true
-		}
-	],
-	"explorer.file.column.indent.indentLine": true,
-	"explorer.file.showHiddenFiles": true,
-	"explorer.icon.enableNerdfont": true,
-	"explorer.file.column.git.showIgnored": true,
-	"explorer.keyMappingMode": "none",
-	"explorer.buffer.showHiddenBuffers": false,
 	"git.enableGutters": true,
 	"git.branchCharacter":"\uf408",
 	"git.addGBlameToBufferVar": false,
@@ -95,57 +74,18 @@
 	"git.removedSign.hlGroup": "GitGutterDelete",
 	"git.topRemovedSign.hlGroup": "GitGutterDelete",
 	"git.changeRemovedSign.hlGroup": "GitGutterChangeDelete",
-	"git.addedSign.text":"⬮",
-	"git.changedSign.text":"⬮",
-	"git.removedSign.text":"⬮",
+	"git.addedSign.text":"▔",
+	"git.changedSign.text":"▔",
+	"git.removedSign.text":"▔",
 	"git.topRemovedSign.text": "▔",
-	"git.changeRemovedSign.text": "⬮",
+	"git.changeRemovedSign.text": "▔",
 	"git.enableGlobalStatus": false,
-	"git.signOffset": 2,
-	"tslint.autoFixOnSave": true,
-	"python.autoComplete.addBrackets": true,
-	"python.jediEnabled": false,
-	"python.formatting.provider": "yapf",
-	"python.formatting.yapfArgs": [
-		"--style",
-		"{SPACES_AROUND_POWER_OPERATOR: True, SPACES_BEFORE_COMMENT: 1}"
-	],
 	"html.format.enable": true,
-	"javascript.referencesCodeLens.enable": true,
-	"javascript.showUnused": true,
-	"javascript.suggest.names": true,
-	"javascript.suggestionActions.enabled": true,
 	"json.format.enable": true,
-	"todolist.autoUpload": true,
-	"todolist.promptForReminder":false,
-	"coc-actions.hideCursor": false,
-	"coc-actions.showActionKind": true,
-	"diagnostic-languageserver.filetypes": {
-		"vim": "vint",
-		"email": "languagetool",
-		"markdown": [ "write-good", "markdownlint" ],
-		"sh": "shellcheck",
-		"elixir": ["mix_credo", "mix_credo_compile"],
-		"eelixir": ["mix_credo", "mix_credo_compile"],
-		"php": ["phpstan", "psalm"],
-		"dart": "dartfmt"
-	},
-	"diagnostic-languageserver.formatFiletypes": {
-		"dart": "dartfmt",
-		"elixir": "mix_format",
-		"eelixir": "mix_format"
-	},
-	"todolist.monitor": {
-	 "type": "boolean",
-	  "default": true,
-	  "description": "monitor the todolist and remind you at the time"
-	},
 	"snippets.userSnippetsDirectory": "~/.config/nvim/snips",
 	"snippets.loadFromExtensions":true,
 	"jedi.enable": true,
-	"jedi.startupMessage": "messages",
 	"jedi.markupKindPreferred": "plaintext",
-	"jedi.trace.server": true,
 	"jedi.jediSettings.autoImportModules": [],
 	"jedi.executable.command": "jedi-language-server",
 	"jedi.executable.args": [],
@@ -153,5 +93,6 @@
 	"jedi.diagnostics.enable": true,
 	"jedi.diagnostics.didOpen": true,
 	"jedi.diagnostics.didChange": true,
-	"jedi.diagnostics.didSave": true
+	"jedi.diagnostics.didSave": true,
+	"clangd.disableDiagnostics":true
 }

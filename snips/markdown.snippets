@@ -29,7 +29,7 @@ ${2:codeing}
 \`\`\`
 
 endsnippet
-snippet '(?<!\\)([0-9])([0-9])tb' "new table" r
+snippet '([0-9])([0-9])tb' "new table" r
 $1`!p 
 x=match.group(1)
 y=match.group(2)
@@ -649,9 +649,6 @@ endsnippet
 
 priority 80
 context "nomath()"
-snippet + "*" Ai
-*$1*$0
-endsnippet
 
 priority 80
 context "nomath()" 

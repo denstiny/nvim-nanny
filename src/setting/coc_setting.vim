@@ -1,7 +1,10 @@
 
-inoremap        <silent><expr> <TAB>
+" 设置触发补全
+set updatetime=100
+
+inoremap        <silent><expr> <C-n>
 			\   pumvisible() ? "\<C-n>" :
-			\   <SID>check_back_space() ? "\<TAB>" :
+			\   <SID>check_back_space() ? "\<C-n>" :  " 设置触发补全  
 			\   coc#refresh()
 inoremap        <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
@@ -16,14 +19,9 @@ else
 	imap        <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 endif
 
-nmap            <silent> <leader>g <Plug>(coc-diagnostic-prev)
-nmap            <silent> <leader>t <Plug>(coc-diagnostic-next)
-
 nmap            <silent> gs <Plug>(coc-definition)
-nmap            <silent> gy <Plug>(coc-type-definition)
-nmap            <silent> gi <Plug>(coc-implementation)
 nmap            <silent> gr <Plug>(coc-references)
-"nerdtree
+
 
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 

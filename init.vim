@@ -13,7 +13,6 @@ Plug 'easymotion/vim-easymotion' " 字符串搜索工具
 Plug 'junegunn/vim-slash'        " 搜索结果优化
 Plug 'liuchengxu/vista.vim'      " 函数列表
 Plug 'voldikss/vim-floaterm'     " 浮动终端
-Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
 Plug 'ryanoasis/vim-devicons'  "显示文件的图标
 " 状态栏
 Plug 'denstiny/spaceline.vim'
@@ -27,15 +26,19 @@ Plug 'romgrk/nvim-treesitter-context'
 "主题插件
 Plug 'tjdevries/colorbuddy.vim'
 Plug 'Th3Whit3Wolf/onebuddy'
+
+
 Plug 'RRethy/vim-hexokinase', { 'do': 'make hexokinase' }  "异步显示文件颜色代码
 Plug 'tpope/vim-surround'  "环绕工具
 Plug 'gcmt/wildfire.vim'   "代码块选择工具 
 
 "===
-"=== vim 调试插件
+"=== 开发工具 
 "===
 
+Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
 Plug 'puremourning/vimspector',{ 'do': 'python3 install_gadget.py --all'}
+Plug 'dense-analysis/ale'  " 语法服务器
 
 "===
 "=== markdown 插件 

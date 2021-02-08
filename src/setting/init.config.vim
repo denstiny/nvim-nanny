@@ -16,7 +16,6 @@ let             g:coc_global_extensions = [
 			\'coc-sh']
 "coc-picgo  markdown工具，负责上传剪切版图片到图床
 inoremap        jk <ESC>
-inoremap        <C-j> j<space><BS>
 inoremap <C-k>      k<space><BS>
 filetype        indent on
 noremap         L :UndotreeToggle<CR>
@@ -46,7 +45,7 @@ set hidden
 set nobackup
 set nowritebackup
 set noswapfile 
-set cmdheight=2
+set cmdheight=1
 set updatetime=300
 set shortmess+=c
 set signcolumn=yes
@@ -100,13 +99,13 @@ let             g:vista_ctags_cmd = {
 			\   'haskell': 'hasktags -x -o - -c',
 			\   }
 
-let             g:vista_fzf_preview = ['right:100%']
 let             g:vista#renderer#enable_icon = 1
 
 let             g:vista#renderer#icons = {
 			\   "function": "\uf794",
 			\   "variable": "\uf71b",
 			\   }
+let g:vista_fzf_preview = ['right:50%']
 
 
 
@@ -154,7 +153,6 @@ let             g:floaterm_keymap_next   = "'d"
 "let g:floaterm_keymap_hide   = "'w"
 let             g:floaterm_keymap_toggle = "'s"
 let             g:floaterm_autoclose	 = 1
-nmap            <leader>x :FloatermNew<space>
 "显示文件类型图标配置
 "格式化插件配置
 map             <leader>s <Plug>(EasyAlign)
@@ -168,7 +166,7 @@ nmap            <leader><leader>a <Plug>(easymotion-overwin-f2)
 map  <silent>           <leader>w <C-w>
 map  <silent>           er :Re<CR>
 map  <silent>           tr :NERDTree<CR>
-map  <silent>           tt :Vista<CR>
+map  <silent>           tt :Vista!<CR>
 map  <silent>           ei :e<space>
 noremap <silent> 			<C-f> :FZF<cr>
 
@@ -265,7 +263,7 @@ require'nvim-treesitter.configs'.setup {
 -- 高亮显示光标下符号的定义
 require'nvim-treesitter.configs'.setup {
   refactor = {
-    highlight_definitions = { enable = true },
+    highlight_definitions = { enable = false },
   },
 }
 
@@ -280,7 +278,7 @@ require'nvim-treesitter.configs'.setup {
 require'nvim-treesitter.configs'.setup {
   refactor = {
     smart_rename = {
-      enable = true,
+      enable = false,
       keymaps = {
         smart_rename = "grr", -- 设置快捷键为 grr
       },
@@ -372,3 +370,14 @@ nmap <leader><F7> <Plug>MarkdownPreview
 nmap <leader><F8> <Plug>MarkdownPreviewStop
 nmap <C-p> <Plug>MarkdownPreviewToggle
 
+
+
+"===
+"=== ale 代码诊断
+"===
+let g:ale_sign_error = '◉-'
+let g:ale_sign_warning = '◉-'
+nmap <silent> <leader>u <Plug>(ale_previous_wrap)
+nmap <silent> <leader>g <Plug>(ale_next_wrap)
+let g:ale_completion_autoimport = 1
+let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
