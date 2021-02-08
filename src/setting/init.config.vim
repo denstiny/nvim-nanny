@@ -161,9 +161,6 @@ map             <leader>s <Plug>(EasyAlign)
 "字符串搜索
 nmap            <leader><leader>a <Plug>(easymotion-overwin-f2)
 "map             <leader>n :set nu!<CR>
-"markdown预览 
-autocmd filetype markdown source ~/.config/nvim/src/setting/markdown.vim
-autocmd filetype html source ~/.config/nvim/src/setting/markdown.vim
 
 
 
@@ -275,7 +272,7 @@ require'nvim-treesitter.configs'.setup {
 -- 高亮当前范围
 require'nvim-treesitter.configs'.setup {
   refactor = {
-    highlight_current_scope = { enable = true },
+    highlight_current_scope = { enable = false },
   },
 }
 
@@ -363,4 +360,15 @@ let g:coc_snippet_next = '<tab>'
   nmap j gj
   nmap k gk
 
+
+
+
+"===
+"=== markdown预览工具
+"===
+
+source ~/.config/nvim/src/setting/markdown.vim
+nmap <leader><F7> <Plug>MarkdownPreview
+nmap <leader><F8> <Plug>MarkdownPreviewStop
+nmap <C-p> <Plug>MarkdownPreviewToggle
 

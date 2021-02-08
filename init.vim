@@ -42,7 +42,7 @@ Plug 'puremourning/vimspector',{ 'do': 'python3 install_gadget.py --all'}
 "=== 
 
 " markdown预览
-Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
+Plug 'iamcco/markdown-preview.nvim'
 
 " markdown生成目录
 Plug 'mzlogin/vim-markdown-toc'  

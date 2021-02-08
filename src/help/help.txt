@@ -19,7 +19,7 @@ ei 快速在当前window打开文件
 {
 	J K 快速切换
 }
-<leader>m 翻译快捷键
+<leader>m 打开数字栏
 
 'g 新建悬浮终端
 'a 上一个 悬浮窗
@@ -109,6 +109,8 @@ FZF 文件
 :FZF 打开文件搜索
 Markdown 
 <leader><F7> 预览当前文件
+<leader><F8> 结束预览
+<C-p> 重新预览
 :CocCommand picgo.uploadImageFromClipboard<cr>  粘贴剪切板图片
 :CocCommand picgo.uploadImageFromInputBox<cr>       使用文件夹图片,输入地址即可
 在光标处使用GenTocGFM 可以为当前文档生成GFM风格目录
