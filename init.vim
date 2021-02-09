@@ -16,7 +16,6 @@ Plug 'voldikss/vim-floaterm'     " 浮动终端
 Plug 'ryanoasis/vim-devicons'  "显示文件的图标
 " 状态栏
 Plug 'denstiny/spaceline.vim'
-
 "  treesitter 全家桶
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  
 Plug 'nvim-treesitter/nvim-treesitter-refactor'
@@ -38,7 +37,7 @@ Plug 'gcmt/wildfire.vim'   "代码块选择工具
 
 Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
 Plug 'puremourning/vimspector',{ 'do': 'python3 install_gadget.py --all'}
-Plug 'dense-analysis/ale'  " 语法服务器
+"Plug 'dense-analysis/ale'  " 语法服务器
 
 "===
 "=== markdown 插件 
@@ -85,7 +84,7 @@ map er :Re<CR>
 map tt :Vista<CR>
 map ei :e<space>
 set showtabline=0
-set laststatus=2
+
 set nofoldenable
 set ignorecase
 "设置空闲行数

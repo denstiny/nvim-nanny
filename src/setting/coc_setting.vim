@@ -2,9 +2,9 @@
 " 设置触发补全
 set updatetime=100
 
-inoremap        <silent><expr> <C-n>
+inoremap        <silent><expr> <TAB>
 			\   pumvisible() ? "\<C-n>" :
-			\   <SID>check_back_space() ? "\<C-n>" :  " 设置触发补全  
+			\   <SID>check_back_space() ? "\<TAB>" :  " 设置触发补全  
 			\   coc#refresh()
 inoremap        <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 

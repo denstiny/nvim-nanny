@@ -2,7 +2,7 @@
 {
 	"coc.preferences.extensionUpdateCheck": "daily",
 	"suggest.noselect": true,
-	"diagnostic.messageTarget": "float",
+	"diagnostic.messageTarget": "echo",
 	"signature.target": "float",
 	"suggest.floatEnable": false,
 	"coc.preferences.hoverTarget": "float",
@@ -48,7 +48,7 @@
 	"diagnostic.warningSign": "⦿",
 	"diagnostic.infoSign": "◉",
 	"diagnostic.hintSign": "◉",
-	"diagnostic.displayByAle": true,
+	"diagnostic.displayByAle": false,
 	"diagnostic.refreshOnInsertMode": false,
 	"diagnostic.checkCurrentLine": true,
 	"diagnostic.virtualTextPrefix": " ◉ ",
@@ -80,7 +80,6 @@
 	"git.topRemovedSign.text": "▔",
 	"git.changeRemovedSign.text": "▔",
 	"git.enableGlobalStatus": false,
-	"html.format.enable": true,
 	"json.format.enable": true,
 	"snippets.userSnippetsDirectory": "~/.config/nvim/snips",
 	"snippets.loadFromExtensions":true,
@@ -94,5 +93,5 @@
 	"jedi.diagnostics.didOpen": true,
 	"jedi.diagnostics.didChange": true,
 	"jedi.diagnostics.didSave": true,
-	"clangd.disableDiagnostics":true
+	"clangd.disableDiagnostics":false
 }

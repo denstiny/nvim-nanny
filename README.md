@@ -98,6 +98,8 @@ git clone https://github.com/denstiny/nvim-nanny.git ~/.config/nvim
 |go|vim-hexokinase|异步显示代码颜色插件
 |python|vimspector|代码调试插件
 |ctags|vim-vista|代码地图
+|pynvim|coc-nvim|
+|clangd|coc-nvim| 补全
 
 # 文件分布
 ```sh

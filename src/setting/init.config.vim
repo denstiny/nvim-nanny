@@ -2,9 +2,11 @@
 "===  coc-nvim 
 "===
 source ~/.config/nvim/src/setting/coc_setting.vim
+let g:ale_echo_msg_format = '[%linter%] %code: %%s'
 let             g:coc_global_extensions = [
 			\'coc-json',
 			\'coc-pairs',
+			\'coc-git',
 			\'coc-jedi',
 			\'coc-picgo', 
 			\'coc-todolist',
@@ -158,7 +160,6 @@ let             g:floaterm_autoclose	 = 1
 map             <leader>s <Plug>(EasyAlign)
 "字符串搜索
 nmap            <leader><leader>a <Plug>(easymotion-overwin-f2)
-"map             <leader>n :set nu!<CR>
 
 
 
@@ -319,11 +320,16 @@ let g:dap_virtual_text=v:true
 
 
 " spaceline.vim
+
+
+set statusline=1
 let g:spaceline_git_branch_icon=' '
 let g:spaceline_seperate_style = 'curve'
 let g:spaceline_colorscheme = 'space'
 let g:spaceline_custom_vim_status =  {"n": " ","V":" ","v":" ","\<C-v>": "ףּ ","i":" ","R":" ","s":"ﴣ ","t":"ﴪ ","c":" ","!":"SE"}
 
+
+"
 " coc-snippets 代码片段
 imap <C-l> <Plug>(coc-snippets-expand)
 
@@ -375,9 +381,9 @@ nmap <C-p> <Plug>MarkdownPreviewToggle
 "===
 "=== ale 代码诊断
 "===
-let g:ale_sign_error = '◉-'
-let g:ale_sign_warning = '◉-'
-nmap <silent> <leader>u <Plug>(ale_previous_wrap)
-nmap <silent> <leader>g <Plug>(ale_next_wrap)
-let g:ale_completion_autoimport = 1
-let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
+"let g:ale_sign_error = '◉-'
+"let g:ale_sign_warning = '◉-'
+"nmap <silent> <leader>u <Plug>(ale_previous_wrap)
+"nmap <silent> <leader>g <Plug>(ale_next_wrap)
+"let g:ale_completion_autoimport = 1
+"let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
