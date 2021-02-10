@@ -100,6 +100,7 @@ git clone https://github.com/denstiny/nvim-nanny.git ~/.config/nvim
 |ctags|vim-vista|代码地图
 |pynvim|coc-nvim|
 |clangd|coc-nvim| 补全
+|yarn|markdown-preview 预览插件需要
 
 # 文件分布
 ```sh
