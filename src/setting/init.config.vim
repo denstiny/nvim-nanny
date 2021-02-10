@@ -9,7 +9,6 @@ let             g:coc_global_extensions = [
 			\'coc-git',
 			\'coc-jedi',
 			\'coc-picgo', 
-			\'coc-todolist',
 			\'coc-vimlsp',
 			\'coc-snippets',
 			\'coc-marketplace',
@@ -264,18 +263,19 @@ require'nvim-treesitter.configs'.setup {
 -- 高亮显示光标下符号的定义
 require'nvim-treesitter.configs'.setup {
   refactor = {
-    highlight_definitions = { enable = false },
+    highlight_definitions = { enable = true },
   },
 }
 
--- 高亮当前范围
+-- 高亮当前函数范围
 require'nvim-treesitter.configs'.setup {
   refactor = {
-    highlight_current_scope = { enable = false },
+    highlight_current_scope = { enable = true },
   },
 }
 
 -- 智能重命名
+-- 因为coc已经有了这个功能，所以暂且关掉
 require'nvim-treesitter.configs'.setup {
   refactor = {
     smart_rename = {
@@ -288,6 +288,7 @@ require'nvim-treesitter.configs'.setup {
 }
 
 -- 转到定义
+-- 和coc功能重复，关掉
  require'nvim-treesitter.configs'.setup {
    refactor = {
      navigation = {
@@ -375,5 +376,15 @@ source ~/.config/nvim/src/setting/markdown.vim
 nmap <leader><F7> <Plug>MarkdownPreview
 nmap <leader><F8> <Plug>MarkdownPreviewStop
 nmap <C-p> <Plug>MarkdownPreviewToggle
+
+
+
+
+"===
+"=== picgo 快捷键
+"===
+
+au BufRead,BufNewFile *.md nmap <leader>p :CocCommand picgo.uploadImageFromClipboard<cr>
+
 
 
