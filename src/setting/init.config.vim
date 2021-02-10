@@ -377,13 +377,3 @@ nmap <leader><F8> <Plug>MarkdownPreviewStop
 nmap <C-p> <Plug>MarkdownPreviewToggle
 
 
-
-"===
-"=== ale 代码诊断
-"===
-"let g:ale_sign_error = '◉-'
-"let g:ale_sign_warning = '◉-'
-"nmap <silent> <leader>u <Plug>(ale_previous_wrap)
-"nmap <silent> <leader>g <Plug>(ale_next_wrap)
-"let g:ale_completion_autoimport = 1
-"let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
