@@ -101,6 +101,7 @@ git clone https://github.com/denstiny/nvim-nanny.git ~/.config/nvim
 |pynvim|coc-nvim|
 |clangd|coc-nvim| 补全
 |yarn|markdown-preview 预览插件需要
+|jedi-language-server|coc-jedi|python语言服务器
 
 # 文件分布
 ```sh
