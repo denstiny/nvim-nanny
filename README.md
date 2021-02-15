@@ -81,7 +81,7 @@ git clone https://github.com/denstiny/nvim-nanny.git ~/.config/nvim
 
 
     
-`:H 将调出帮助`
+`:HK 将调出快捷键帮助`
 - 快捷键设置 下面`or`意思是或者  
 - `<F5>` 启动调试 `详情查看 init.config.vim 中的 vimspector块` 
 新项目需要先使用`<leader>vs`  添加调试文件

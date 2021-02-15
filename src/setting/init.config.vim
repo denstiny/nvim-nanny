@@ -17,7 +17,6 @@ let             g:coc_global_extensions = [
 			\'coc-sh']
 "coc-picgo  markdown工具，负责上传剪切版图片到图床
 inoremap        jk <ESC>
-inoremap <C-k>      k<space><BS>
 filetype        indent on
 noremap         L :UndotreeToggle<CR>
 let             g:undotree_DiffAutoOpen = 1
@@ -50,8 +49,9 @@ set cmdheight=1
 set updatetime=300
 set shortmess+=c
 set signcolumn=yes
-set sw=3
+set sw=2
 set ts=2
+set tabstop=2
 set clipboard=unnamed
 "
 "Tag"
@@ -173,7 +173,7 @@ noremap <silent> 			<C-f> :FZF<cr>
 " 自定义命令
 command!        -nargs=0 Fl :FloatermNew
 command!        -nargs=0 Apt :CocList marketplace
-command!        -nargs=0 H :FloatermNew nvim -R ~/.config/nvim/src/help/help.txt
+command!        -nargs=0 HK :FloatermNew nvim -R ~/.config/nvim/src/help/help.txt
 command!        -nargs=0 Re :FloatermNew --position=left  ranger
 command!        -nargs=0 Init :source ~/.config/nvim/install.vim
 command!        -nargs=0 Ter :source ~/.config/nvim/ter.vim
@@ -256,7 +256,7 @@ require'nvim-treesitter.configs'.setup {
 -- 代码缩进
 require'nvim-treesitter.configs'.setup {
     indent = {
-      enable = false
+      enable = true
     },
   }
 

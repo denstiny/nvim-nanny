@@ -83,10 +83,6 @@ map <leader>w <C-w>
 map er :Re<CR>
 map tt :Vista<CR>
 map ei :e<space>
-set showtabline=0
-
-set nofoldenable
-set ignorecase
 "设置空闲行数
 set scrolloff=5
 set encoding=UTF-8
