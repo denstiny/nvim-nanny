@@ -115,22 +115,24 @@ let g:vista_fzf_preview = ['right:50%']
 
 
 ""一键运行
-noremap         . :call CompileRunGcc()<CR>
-func!           CompileRunGcc()
-	exec        "w"
-	if          &filetype == 'c'
-		exec    '!gcc -g % -o %<'
-		exec    '!time ./%<'
-		"exec '!time ./%< && echo "\n"'
-	elseif      &filetype == 'cpp'
-		exec    '!g++ -g % -o %<'
-		exec 	'!time ./%< '
-		"exec '!time ./%< && echo "\n"'
-	elseif      &filetype == 'html'
-		exec    '!chromium % &'
-	elseif 		&filetype == 'python'
-		exec 	'!time python %'
-	elseif 	 	&filetype == 'sh'
+noremap . :call CompileRunGcc()<CR>
+func!     CompileRunGcc()
+	exec    "w"
+	if      &filetype ==    'c'
+		exec  '!gcc -g % -o %<'
+		exec  '!time ./%<'
+		exec  '!rm %<'
+		"exec '!time    ./%<  && echo "\n"'
+	elseif  &filetype ==    'cpp'
+		exec  '!g++ -g % -o %<'
+		exec  '!time ./%< '
+		exec  '!rm %<'
+		"exec '!time    ./%<  && echo "\n"'
+	elseif  &filetype ==    'html'
+		exec  '!chromium % &'
+	elseif  &filetype ==    'python'
+		exec  '!time python %'
+	elseif  &filetype ==    'sh'
 		exec	'!time bash %'
 	endif
 endf
