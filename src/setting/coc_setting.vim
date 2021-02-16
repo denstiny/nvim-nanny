@@ -57,3 +57,7 @@ nnoremap        <silent> <space>s  :<C-u>CocList -I symbols<cr>
 nnoremap        <silent> <space>j  :<C-u>CocNext<CR>
 nnoremap        <silent> <space>k  :<C-u>CocPrev<CR>
 nnoremap        <silent> <space>p  :<C-u>CocListResume<CR>
+
+" 使用 `;g` 和 `;g` 瀏覽診斷
+nmap <silent> <leader>d <Plug>(coc-diagnostic-prev)
+nmap <silent> <leader>g <Plug>(coc-diagnostic-next)

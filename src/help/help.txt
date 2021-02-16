@@ -1,6 +1,8 @@
 gd  跳转到定义处
 gr 显示变量的调用
 gi 转到实现处
+<leader>f 变量重命名
+
 <leader>g 跳转上诊断代码报错 
 <leader>t 跳转下诊断代码报错 
 

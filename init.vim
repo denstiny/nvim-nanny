@@ -3,9 +3,15 @@ call plug#begin('~/.vim/plugged')
 Plug 'mg979/vim-visual-multi', {'branch': 'master'} "多光标
 Plug 'tbastos/vim-lua' 
 Plug 'godlygeek/tabular' 			
+
+
+Plug 'dstein64/vim-startuptime'  " vim查看启动速度 使用命令StartupTime
+
+
+
 Plug 'iamcco/mathjax-support-for-mkdp' 
 Plug 'mbbill/undotree'      "历史记录
-Plug 'preservim/nerdtree'          "vim目录树
+Plug 'preservim/nerdtree', { 'on': 'NERDTreeToggle' }    "vim目录树
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight' 
 Plug 'skywind3000/vim-terminal-help' "vim终端辅助插件
 Plug 'junegunn/vim-easy-align'   " 代码格式化
@@ -24,6 +30,7 @@ Plug 'romgrk/nvim-treesitter-context'
 
 "主题插件
 Plug 'tjdevries/colorbuddy.vim'
+
 Plug 'Th3Whit3Wolf/onebuddy'
 
 
@@ -36,6 +43,8 @@ Plug 'gcmt/wildfire.vim'   "代码块选择工具
 "===
 
 Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
+
+
 Plug 'puremourning/vimspector',{ 'do': 'python3 install_gadget.py --all'}
 "Plug 'dense-analysis/ale'  " 语法服务器
 
@@ -44,10 +53,10 @@ Plug 'puremourning/vimspector',{ 'do': 'python3 install_gadget.py --all'}
 "=== 
 
 " markdown预览
-Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install','for':['markdown','html']  }
 
 " markdown生成目录
-Plug 'mzlogin/vim-markdown-toc'  
+Plug 'mzlogin/vim-markdown-toc',{'for':'markdown'}
 
 
 
@@ -70,6 +79,7 @@ call plug#end()
 
 "配色主题
 lua require('colorbuddy').colorscheme('onebuddy')
+
 source ~/.config/nvim/src/color/mycolor.vim
 
 "自定义配置

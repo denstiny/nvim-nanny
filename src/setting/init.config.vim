@@ -1,6 +1,7 @@
 "===
 "===  coc-nvim 
 "===
+
 source ~/.config/nvim/src/setting/coc_setting.vim
 let g:ale_echo_msg_format = '[%linter%] %code: %%s'
 let             g:coc_global_extensions = [
@@ -16,6 +17,9 @@ let             g:coc_global_extensions = [
 			\'coc-go',
 			\'coc-sh']
 "coc-picgo  markdown工具，负责上传剪切版图片到图床
+"coc-rime vim 的输入法 确保安装 依赖librime
+
+
 inoremap        jk <ESC>
 filetype        indent on
 noremap         L :UndotreeToggle<CR>
@@ -256,7 +260,7 @@ require'nvim-treesitter.configs'.setup {
 -- 代码缩进
 require'nvim-treesitter.configs'.setup {
     indent = {
-      enable = true
+      enable = false  -- 奇怪的缩进 弃用
     },
   }
 
@@ -270,7 +274,7 @@ require'nvim-treesitter.configs'.setup {
 -- 高亮当前函数范围
 require'nvim-treesitter.configs'.setup {
   refactor = {
-    highlight_current_scope = { enable = true },
+    highlight_current_scope = { enable = false },
   },
 }
 

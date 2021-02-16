@@ -16,9 +16,6 @@ hi NormalFloat guibg=none guifg=none
 "Set the default color floating window
 
 
-
-
-
 "===
 "=== spaceemacs color config
 "===
