@@ -2,7 +2,7 @@
 {
 	"coc.preferences.extensionUpdateCheck": "daily",
 	"suggest.noselect": true,
-	"diagnostic.messageTarget": "echo",
+	"diagnostic.messageTarget": "float",
 	"signature.target": "float",
 	"suggest.floatEnable": false,
 	"coc.preferences.hoverTarget": "preview",
