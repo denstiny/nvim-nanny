@@ -1,5 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =2
+let g:netrw_dirhistcnt =3
+let g:netrw_dirhist_3='/home/aercn/.config/nvim/src/help'
 let g:netrw_dirhist_2='/mnt/home/code/c++/neteawork/src'
 let g:netrw_dirhist_1='/mnt/home/code/c++/neteawork'
 let g:netrw_dirhist_0='/home/aercn/.config/nvim'
@@ -9,4 +10,3 @@ let g:netrw_dirhist_7='/mnt/home/CocRes/c++/Flast'
 let g:netrw_dirhist_6='/mnt/home/CocRes/school/code/one'
 let g:netrw_dirhist_5='/mnt/home/CocRes/school/code/one.c'
 let g:netrw_dirhist_4='/home/chroot/Downloads'
-let g:netrw_dirhist_3='/home/chroot/Downloads/suny/assets/yyb/assets'

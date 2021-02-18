@@ -4,15 +4,13 @@ gi 转到实现处
 <leader>f 变量重命名
 
 <leader>g 跳转上诊断代码报错 
-<leader>t 跳转下诊断代码报错 
+<leader>d 跳转下诊断代码报错 
 
 <leader><leader> K 快速跳转
 <leader><leader> w 快速跳转单词头
 <leader><leader> a 搜索单词并跳转
 <leader><leader> s 快速跳转跳转搜索单词
 <leader> y/p 复制/粘贴到系统剪切板
-<leader> j/k 行级跳转
-<leader> h/l 行内跳转
 . 快速编译
 er 打开文件目录树
 tt 启动函数列表
@@ -56,6 +54,8 @@ Ctrl+W h //把光标移到左边的屏中。
 Ctrl+W k //把光标移到上边的屏中。
 Ctrl+W j //把光标移到下边的屏中。
 Ctrl+W w //把光标移到下一个的屏中。.
+Ctrl+l/h // 窗口宽度调整
+Ctrl+j/k // 窗口高度调整
 
 移动分屏
 这个功能还是使用了Vim的光标键，只不过都是大写。当然了，如果你的分屏很乱很复杂的话，这个功能可能会出现一些非常奇怪的症状。
