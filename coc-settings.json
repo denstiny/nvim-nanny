@@ -1,6 +1,6 @@
  
 {
-	"coc.preferences.extensionUpdateCheck": "daily",
+	"coc.preferences.extensionUpdateCheck": "never",
 	"suggest.noselect": true,
 	"diagnostic.messageTarget": "float",
 	"signature.target": "float",

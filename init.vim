@@ -56,7 +56,7 @@ Plug 'puremourning/vimspector',{ 'do': 'python3 install_gadget.py --all'}
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install','for':['markdown','html']  }
 
 " markdown生成目录
-Plug 'mzlogin/vim-markdown-toc',{'for':'markdown'}
+Plug 'mzlogin/vim-markdown-toc',{'for':'markdown'} " 使用GenTocGFm 创建
 
 
 
@@ -66,6 +66,7 @@ Plug 'mzlogin/vim-markdown-toc',{'for':'markdown'}
 
 Plug 'voldikss/vim-translator'
 
+"Plug 'ianva/vim-youdao-translater' 
 
 
 call plug#end()

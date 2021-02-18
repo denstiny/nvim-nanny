@@ -1,12 +1,12 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =8
+let g:netrw_dirhistcnt =2
+let g:netrw_dirhist_2='/mnt/home/code/c++/neteawork/src'
+let g:netrw_dirhist_1='/mnt/home/code/c++/neteawork'
+let g:netrw_dirhist_0='/home/aercn/.config/nvim'
+let g:netrw_dirhist_9='/home/aercn/.emacs.d/auto-save-list'
 let g:netrw_dirhist_8='/home/aerocn/.config/nvim'
 let g:netrw_dirhist_7='/mnt/home/CocRes/c++/Flast'
 let g:netrw_dirhist_6='/mnt/home/CocRes/school/code/one'
 let g:netrw_dirhist_5='/mnt/home/CocRes/school/code/one.c'
 let g:netrw_dirhist_4='/home/chroot/Downloads'
 let g:netrw_dirhist_3='/home/chroot/Downloads/suny/assets/yyb/assets'
-let g:netrw_dirhist_2='/home/chroot/Downloads/suny/assets/yyb'
-let g:netrw_dirhist_1='/home/chroot/.config/nvim'
-let g:netrw_dirhist_0='/home/chroot/.config/awesome/sxhkd'
-let g:netrw_dirhist_9='/home/chroot/.config/awesome'

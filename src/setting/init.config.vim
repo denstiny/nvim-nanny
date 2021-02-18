@@ -57,6 +57,8 @@ set sw=2
 set ts=2
 set tabstop=2
 set clipboard=unnamed
+set foldcolumn=0 "设置边框的边度 
+set signcolumn=yes  "是否关闭边框
 "
 "Tag"
 "
@@ -174,6 +176,10 @@ map  <silent>           er :Re<CR>
 map  <silent>           tr :NERDTree<CR>
 map  <silent>           tt :Vista!<CR>
 map  <silent>           ei :e<space>
+nmap  <silent>           <C-l> :vertical res +5<cr>
+nmap  <silent>           <C-h> :vertical res -5<cr>
+nmap  <silent> 					<C-j> :res +5<cr>
+nmap  <silent> 					<C-k> :res -5<cr>
 noremap <silent> 			<C-f> :FZF<cr>
 
 " 自定义命令
@@ -195,7 +201,7 @@ let             g:rainbow_active = 1
 "===
 
 " 设置翻译的服务端
-let g:translator_default_engines = ['haici','youdao']
+"let g:translator_default_engines = ['haici','youdao']
 " 在命令行显示翻译
 nmap <silent> <Leader>e <Plug>Translate
 vmap <silent> <Leader>e <Plug>TranslateV
@@ -208,7 +214,7 @@ vmap <silent> <Leader>r <Plug>TranslateRV
 
 " 翻译剪贴板中的文本
 nmap <silent> <Leader>x <Plug>TranslateX
-" 翻页
+ ""翻页
 nnoremap <silent><expr> <M-f> translator#window#float#has_scroll() ?
                             \ translator#window#float#scroll(1) : "\<M-f>"
 nnoremap <silent><expr> <M-b> translator#window#float#has_scroll() ?
