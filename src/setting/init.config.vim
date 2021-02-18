@@ -404,21 +404,19 @@ au BufRead,BufNewFile *.md nmap <leader>p :CocCommand picgo.uploadImageFromClipb
 "=== vim 最大话当前窗口
 "===
 
-function! Zoom ()
-    " check if is the zoomed state (tabnumber > 1 && window == 1)
-    if tabpagenr('$') > 1 && tabpagewinnr(tabpagenr(), '$') == 1
-        let l:cur_winview = winsaveview()
-        let l:cur_bufname = bufname('')
-        tabclose
-
-        " restore the view
-        if l:cur_bufname == bufname('')
-            call winrestview(cur_winview)
-        endif
-    else
-        tab split
-    endif
+function! MaximizeToggle()
+  if exists("s:maximize_session")
+    exec "source " . s:maximize_session
+    call delete(s:maximize_session)
+    unlet s:maximize_session
+    let &hidden=s:maximize_hidden_save
+    unlet s:maximize_hidden_save
+  else
+    let s:maximize_hidden_save = &hidden
+    let s:maximize_session = tempname()
+    set hidden
+    exec "mksession! " . s:maximize_session
+    only
+  endif
 endfunction
-
-nmap <silent> <leader>z :call Zoom()<CR>
-
+nmap <silent> <leader>z :call MaximizeToggle()<CR>
