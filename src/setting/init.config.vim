@@ -171,6 +171,11 @@ nmap            <leader><leader>a <Plug>(easymotion-overwin-f2)
 
 
 " 快捷键
+map <leader>y "+y
+map <leader>w <C-w>
+map er :Re<CR>
+map tt :Vista<CR>
+map ei :e<space>
 map  <silent>           <leader>w <C-w>
 map  <silent>           er :Re<CR>
 map  <silent>           tr :NERDTree<CR>
