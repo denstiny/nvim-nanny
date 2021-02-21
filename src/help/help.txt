@@ -118,3 +118,6 @@ Markdown
 :CocCommand picgo.uploadImageFromInputBox<cr>       使用文件夹图片,输入地址即可
 在光标处使用GenTocGFM 可以为当前文档生成GFM风格目录
 在光标处使用GenTocRedcarpet可以为当前文档生成电子书风格目录
+
+rime 輸入法配置
+<A-\> 打开输入法

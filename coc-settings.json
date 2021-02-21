@@ -44,8 +44,8 @@
 		"value": "\uf89f",
 		"variable": "\ue71b"
 	},
-	"diagnostic.errorSign": "⦾",
-	"diagnostic.warningSign": "⦿",
+	"diagnostic.errorSign": "●",
+	"diagnostic.warningSign": "◯",
 	"diagnostic.infoSign": "◉",
 	"diagnostic.hintSign": "◉",
 	"diagnostic.displayByAle": false,
@@ -81,8 +81,6 @@
 	"git.changeRemovedSign.text": "⏽",
 	"git.enableGlobalStatus": false,
 	"json.format.enable": true,
-	"snippets.userSnippetsDirectory": "~/.config/nvim/snips",
-	"snippets.loadFromExtensions":true,
 	"jedi.enable": true,
 	"jedi.markupKindPreferred": "plaintext",
 	"jedi.jediSettings.autoImportModules": [],
@@ -93,5 +91,11 @@
 	"jedi.diagnostics.didOpen": true,
 	"jedi.diagnostics.didChange": true,
 	"jedi.diagnostics.didSave": true,
-	"clangd.disableDiagnostics":false
+	"clangd.disableDiagnostics":false,
+	"snippets.priority":99,
+	"snippets.userSnippetsDirectory":"~/.config/nvim/snips",
+	"snippets.loadFromExtensions":true,
+	"rime.enabled":false,
+	"rime.schemaId":"luna_pinyin_simp",
+	"rime.priority": 0
 }

@@ -2,14 +2,10 @@ let mapleader = ";"
 call plug#begin('~/.vim/plugged')
 Plug 'mg979/vim-visual-multi', {'branch': 'master'} "多光标
 Plug 'tbastos/vim-lua' 
-Plug 'godlygeek/tabular' 			
 
 
 Plug 'dstein64/vim-startuptime'  " vim查看启动速度 使用命令StartupTime
 
-
-
-Plug 'iamcco/mathjax-support-for-mkdp' 
 Plug 'mbbill/undotree'      "历史记录
 Plug 'preservim/nerdtree', { 'on': 'NERDTreeToggle' }    "vim目录树
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight' 
@@ -42,11 +38,10 @@ Plug 'gcmt/wildfire.vim'   "代码块选择工具
 "=== 开发工具 
 "===
 
-Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile','branch': 'master'}
 
 
 Plug 'puremourning/vimspector',{ 'do': 'python3 install_gadget.py --all'}
-"Plug 'dense-analysis/ale'  " 语法服务器
 
 "===
 "=== markdown 插件 
@@ -66,7 +61,6 @@ Plug 'mzlogin/vim-markdown-toc',{'for':'markdown'} " 使用GenTocGFm 创建
 
 Plug 'voldikss/vim-translator'
 
-"Plug 'ianva/vim-youdao-translater' 
 
 
 call plug#end()
