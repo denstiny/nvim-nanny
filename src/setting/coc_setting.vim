@@ -109,7 +109,7 @@ imap <C-j> <Plug>(coc-snippets-expand-jump)
 " 使用<leader> x将可视的选定代码转换为代码段
 xmap <leader>x  <Plug>(coc-convert-snippet)
 
-inoremap <silent><expr> <C-l>
+inoremap <silent><expr> <TAB>
       \ pumvisible() ? coc#_select_confirm() :
       \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
       \ <SID>check_back_space() ? "\<TAB>" :
@@ -120,4 +120,4 @@ function! s:check_back_space() abort
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
-"let g:coc_snippet_next = '<tab>'
+let g:coc_snippet_next = '<tab>'

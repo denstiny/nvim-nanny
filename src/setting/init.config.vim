@@ -37,6 +37,7 @@ let g:NERDTreeDirArrowCollapsible = '▾'
 set              cursorline
 hi              cursorline cterm=NONE ctermbg=237
 set             virtualedit=block,onemore
+set showtabline=0
 "相对行号"
 "set             relativenumber
 "set             number
@@ -173,6 +174,7 @@ nmap            <leader><leader>a <Plug>(easymotion-overwin-f2)
 " 快捷键
 map <leader>y "+y
 map <leader>w <C-w>
+nmap <silent> <leader>q :tabclose<cr>
 map er :Re<CR>
 map tt :Vista<CR>
 map ei :e<space>
@@ -243,10 +245,12 @@ command! -bang -nargs=* LoadVimSpectorJsonTemplate call fzf#run({
 nnoremap <LEADER>vs :tabe .vimspector.json<CR>:LoadVimSpectorJsonTemplate<CR>
 nnoremap <F1> :call vimspector#StepInto()<CR>
 nnoremap <F7> :call vimspector#Reset()<CR>
-let g:vimspector_sidebar_width = 50 		"设置变量窗口的宽
-let g:vimspector_bottombar_height = 17 		"设置变量窗口的高
-let g:vimspector_terminal_minwidth = 40   "设置输出窗口大小
 
+let g:vimspector_bottombar_height=6
+let g:vimspector_sidebar_width=6
+let g:vimspector_code_minwidth = 50
+let g:vimspector_terminal_maxwidth = 75
+let g:vimspector_terminal_minwidth = 20
 
 let g:vimspector_install_gadgets = [ 
 			\'debugpy',
