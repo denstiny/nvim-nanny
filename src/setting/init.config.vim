@@ -38,15 +38,15 @@ set              cursorline
 hi              cursorline cterm=NONE ctermbg=237
 set             virtualedit=block,onemore
 set showtabline=0
-"相对行号"
-"set             relativenumber
-"set             number
 
-nmap <silent> <leader>m :setlocal nu!<cr>
 " 打开文件自动定位到最后编辑的位置
 autocmd         bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 "
 set hidden
+"设置空闲行数
+set scrolloff=5
+set encoding=UTF-8
+filetype on              " 设置开启文件类型侦测
 set nobackup
 set nowritebackup
 set noswapfile 
@@ -124,13 +124,13 @@ func!     CompileRunGcc()
 	if      &filetype ==    'c'
 		exec  '!gcc -g % -o %<'
 		exec  '!time ./%<'
-		exec  '!rm %< &> /dev/null'
-		"exec '!time    ./%<  && echo "\n"'
+		autocmd ExitPre * exec '!rm %< &> /dev/null'
+"		exec  '!rm %< &> /dev/null'
 	elseif  &filetype ==    'cpp'
 		exec  '!g++ -g % -o %<'
 		exec  '!time ./%< '
-		exec  '!rm %< &> /dev/null'
-		"exec '!time    ./%<  && echo "\n"'
+		autocmd ExitPre * exec '!rm %< &> /dev/null'
+"		exec  '!rm %< &> /dev/null'
 	elseif  &filetype ==    'html'
 		exec  '!chromium % &'
 	elseif  &filetype ==    'python'
@@ -139,13 +139,10 @@ func!     CompileRunGcc()
 		exec	'!time bash %'
 	endif
 endf
-"异步调用允许编译命令
+
 "自动定位上次编辑位置
 au              BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
-"多文件编辑 map             <leader>q :bd<CR>
-map      <silent>       <leader>n :bp<CR>
-map      <silent>       <leader>o :bp<CR>
 
 
 set             termguicolors
@@ -164,30 +161,28 @@ let             g:floaterm_keymap_next   = "'d"
 let             g:floaterm_keymap_toggle = "'s"
 let             g:floaterm_autoclose	 = 1
 "显示文件类型图标配置
-"格式化插件配置
-map             <leader>s <Plug>(EasyAlign)
-"字符串搜索
-nmap            <leader><leader>a <Plug>(easymotion-overwin-f2)
 
 
 
 " 快捷键
-map <leader>y "+y
-map <leader>w <C-w>
-nmap <silent> <leader>q :tabclose<cr>
-map er :Re<CR>
-map tt :Vista<CR>
-map ei :e<space>
-map  <silent>           <leader>w <C-w>
-map  <silent>           er :Re<CR>
-map  <silent>           tr :NERDTree<CR>
-map  <silent>           tt :Vista!<CR>
-map  <silent>           ei :e<space>
-nmap  <silent>           <C-l> :vertical res +5<cr>
-nmap  <silent>           <C-h> :vertical res -5<cr>
-nmap  <silent> 					<C-j> :res +5<cr>
-nmap  <silent> 					<C-k> :res -5<cr>
-noremap <silent> 			<C-f> :FZF<cr>
+nmap <silent> tt :Vista<cr>
+map     <leader>s         <Plug>(EasyAlign)
+nmap    <leader><leader>a <Plug>(easymotion-overwin-f2)
+map     <silent>          <leader>n :bp<CR>
+map     <silent>          <leader>o :bp<CR>
+map     <leader>y         "+y
+map     <leader>w         <C-w>
+nmap <silent> <leader>m :setlocal rnu!<cr>
+nmap    <silent>          <leader>q :tabclose<cr>
+map     <silent>          <leader>w <C-w>
+map     <silent>          er        :Re<CR>
+map     <silent>          tr        :NERDTree<CR>
+map     <silent>          ei        :e<space>
+nmap    <silent>          <C-l>     :vertical res +5<cr>
+nmap    <silent>          <C-h>     :vertical res -5<cr>
+nmap    <silent>          <C-j>     :res      +5<cr>
+nmap    <silent>          <C-k>     :res      -5<cr>
+noremap <silent>          <C-f>     :FZF<cr>
 
 
 " 自定义命令
@@ -247,7 +242,7 @@ nnoremap <F1> :call vimspector#StepInto()<CR>
 nnoremap <F7> :call vimspector#Reset()<CR>
 
 let g:vimspector_bottombar_height=6
-let g:vimspector_sidebar_width=6
+let g:vimspector_sidebar_width=40
 let g:vimspector_code_minwidth = 50
 let g:vimspector_terminal_maxwidth = 75
 let g:vimspector_terminal_minwidth = 20
@@ -351,7 +346,6 @@ let g:spaceline_seperate_style = 'curve'
 let g:spaceline_colorscheme = 'space'
 let g:spaceline_custom_vim_status =  {"n": " ","V":" ","v":" ","\<C-v>": "ףּ ","i":"👴 ","R":" ","s":"ﴣ ","t":"ﴪ ","c":" ","!":"SE"}
 
-
 "===
 "=== vim折行
 "===
@@ -409,3 +403,4 @@ nmap <silent> <leader>z :call MaximizeToggle()<CR>
 
 set list
 set listchars=eol:\ ,tab:\|\ ,trail:-,extends:>,precedes:<
+autocmd InsertEnter,BufEnter * set formatoptions=vt

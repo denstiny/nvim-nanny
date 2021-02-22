@@ -29,8 +29,6 @@ hi Comment guifg=#5C6370 ctermfg=59
 
 
 
-
-
 "highlight floatHighlight guibg=None ctermbg=none cterm=None
 "let g:airline_theme='one'
 "hi Normal guibg=NONE ctermbg=NONE  "背景
@@ -38,9 +36,9 @@ hi Comment guifg=#5C6370 ctermfg=59
 "if !exists('g:airline_symbols')
 "    let g:airline_symbols = {}
 "endif
-"let g:airline_left_sep = ''
+"let g:airline_left_sep = ''
 "let g:airline_left_alt_sep = ''
-"let g:airline_right_sep = ''
+"let g:airline_right_sep = ''
 "let g:airline_right_alt_sep = ''
 
 "set laststatus=0 "关闭状态栏和标签栏
