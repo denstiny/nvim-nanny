@@ -182,7 +182,7 @@ gls.left[6] = {
   FileSize = {
     provider = {'FileSize'},
     condition = buffer_not_empty,
-    highlight = {colors.green,colors.line_bg}
+    highlight = {colors.cocColor,colors.line_bg}
   }
 }
 
@@ -290,30 +290,12 @@ gls.left[17] = {
   }
 }
 
---gls.right[1]= {
---  FileFormat = {
---    provider = 'FileFormat',
---    separator = ' ',
---
---    separator_highlight = {colors.bg,colors.line_bg},
---    highlight = {colors.fg,colors.line_bg,'bold'},
---  }
---}
 gls.right[1] = {
   LineInfo = {
     provider = 'LineColumn',
     highlight = {colors.fg,colors.line_bg},
   },
 }
---gls.right[5] = {
---  PerCent = {
---    provider = 'LinePercent',
---    separator = ' ',
---    separator_highlight = {colors.line_bg,colors.line_bg},
---    highlight = {colors.cyan,colors.darkblue,'bold'},
---  }
---}
-
  gls.right[4] = {
    ScrollBar = {
      provider = 'ScrollBar',
@@ -323,16 +305,7 @@ gls.right[1] = {
    }
  }
 
--- gls.right[3] = {
---   Vista = {
---     provider = VistaPlugin,
---     separator = ' ',
---     separator_highlight = {colors.bg,colors.line_bg},
---     highlight = {colors.fg,colors.line_bg,'bold'},
---   }
--- }
-
-gls.short_line_left[2] = {
+gls.short_line_left[3] = {
   BufferType = {
     provider = 'FileTypeName',
     separator = '',
@@ -341,7 +314,15 @@ gls.short_line_left[2] = {
     highlight = {colors.fg,colors.purple}
   }
 }
-
+gls.short_line_left[2] = {
+	BOOLNS = {
+    provider = function()
+		end,
+		separator = '',
+    condition = buffer_not_empty,
+    separator_highlight = {colors.NameColor,colors.bg}
+	}
+}
 gls.short_line_left[1] = {
   ViMode = {
     provider = function()
@@ -390,7 +371,7 @@ gls.short_line_left[1] = {
 gls.short_line_right[1] = {
   BufferIcon = {
     provider= 'BufferIcon',
-    separator = '',
+    separator = '█',
     condition = has_file_type,
     separator_highlight = {colors.purple,colors.bg},
     highlight = {colors.fg,colors.purple}
