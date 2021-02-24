@@ -165,7 +165,7 @@ map     <silent>          <leader>n :bp<CR>
 map     <silent>          <leader>o :bp<CR>
 map     <leader>y         "+y
 map     <leader>w         <C-w>
-nmap <silent> <leader>m :setlocal rnu!<cr>
+nmap <silent> <leader>m :setlocal rnu!<cr>:setlocal nu!<cr>
 nmap    <silent>          <leader>q :tabclose<cr>
 map     <silent>          <leader>w <C-w>
 map     <silent>          er        :Re<CR>
@@ -405,3 +405,13 @@ nmap <silent> <leader>z :call MaximizeToggle()<CR>
 set list
 set listchars=eol:\ ,tab:\|\ ,trail:-,extends:>,precedes:<
 autocmd InsertEnter,BufEnter * set formatoptions=vt
+
+
+
+"===
+"=== 信标
+"===
+let g:beacon_enable = 0
+autocmd  InsertLeave * Beacon
+autocmd FocusGained * Beacon
+autocmd CursorHold * Beacon

@@ -4,18 +4,30 @@ Plug 'mg979/vim-visual-multi', {'branch': 'master'} "多光标
 Plug 'tbastos/vim-lua' 
 
 
-Plug 'dstein64/vim-startuptime'  " vim查看启动速度 使用命令StartupTime
-
-Plug 'mbbill/undotree'      "历史记录
-Plug 'preservim/nerdtree', { 'on': 'NERDTreeToggle' }    "vim目录树
+" 信标
+Plug 'danilamihailov/beacon.nvim'
+" vim查看启动速度 使用命令StartupTime
+Plug 'dstein64/vim-startuptime'
+"历史记录
+Plug 'mbbill/undotree'      
+"vim目录树
+Plug 'preservim/nerdtree', { 'on': 'NERDTreeToggle' }    
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight' 
-Plug 'skywind3000/vim-terminal-help' "vim终端辅助插件
-Plug 'junegunn/vim-easy-align'   " 代码格式化
-Plug 'easymotion/vim-easymotion' " 字符串搜索工具
-Plug 'junegunn/vim-slash'        " 搜索结果优化
-Plug 'liuchengxu/vista.vim'      " 函数列表
-Plug 'voldikss/vim-floaterm'     " 浮动终端
-Plug 'ryanoasis/vim-devicons'  "显示文件的图标
+"vim终端辅助插件
+Plug 'skywind3000/vim-terminal-help' 
+" 代码格式化 
+Plug 'junegunn/vim-easy-align'   
+" 字符串搜索工具 
+Plug 'easymotion/vim-easymotion' 
+" 搜索结果优化 
+Plug 'junegunn/vim-slash'        
+" 函数列表 
+Plug 'liuchengxu/vista.vim'      
+" 浮动终端 
+Plug 'voldikss/vim-floaterm'     
+"显示文件的图标 
+Plug 'ryanoasis/vim-devicons'  
+
 "  treesitter 全家桶
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  
 Plug 'nvim-treesitter/nvim-treesitter-refactor'
@@ -24,7 +36,6 @@ Plug 'romgrk/nvim-treesitter-context'
 
 "主题插件
 Plug 'tjdevries/colorbuddy.vim'
-
 Plug 'Th3Whit3Wolf/onebuddy'
 
 " 状态栏

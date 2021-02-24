@@ -1,5 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =2
+let g:netrw_dirhistcnt =3
+let g:netrw_dirhist_3='/mnt/home/code/c++/class'
 let g:netrw_dirhist_2='/home/aercn/.config/nvim/src/setting'
 let g:netrw_dirhist_1='/home/aercn/usb'
 let g:netrw_dirhist_0='/home/aercn'
@@ -9,4 +10,3 @@ let g:netrw_dirhist_7='/home/aercn/.config/nvim/snips'
 let g:netrw_dirhist_6='/home/aercn/.config/nvim'
 let g:netrw_dirhist_5='/mnt/home/code'
 let g:netrw_dirhist_4='/mnt/home/code/c++'
-let g:netrw_dirhist_3='/home/aercn/.config/nvim/src/help'
