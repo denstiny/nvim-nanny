@@ -28,11 +28,19 @@ Plug 'tjdevries/colorbuddy.vim'
 Plug 'Th3Whit3Wolf/onebuddy'
 
 " 状态栏
-Plug 'glepnir/spaceline.vim'
+Plug 'glepnir/galaxyline.nvim' , {'branch': 'main'}
 
-Plug 'RRethy/vim-hexokinase', { 'do': 'make hexokinase' }  "异步显示文件颜色代码
-Plug 'tpope/vim-surround'  "环绕工具
-Plug 'gcmt/wildfire.vim'   "代码块选择工具 
+" 显示图标
+"Plug 'kyazdani42/nvim-web-devicons' " lua
+"Plug 'ryanoasis/vim-devicons' " vimscript
+
+" 显示代码颜色
+Plug 'RRethy/vim-hexokinase', { 'do': 'make hexokinase' }
+
+" 代码环绕工具
+Plug 'tpope/vim-surround'  
+" 代码块选择工具
+Plug 'gcmt/wildfire.vim' 
 
 "===
 "=== 开发工具 
@@ -80,7 +88,7 @@ source ~/.config/nvim/src/color/mycolor.vim
 "自定义配置
 source ~/.config/nvim/src/setting/init.config.vim
 
-
-
-" 复制当前选中到系统剪切板
-"hi StatusLine guibg=NONE ctermfg=NONE
+" 状态栏主题
+lua << EOF
+require('aeroline')
+EOF

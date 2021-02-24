@@ -60,10 +60,7 @@ set tabstop=2
 set clipboard=unnamed
 set foldcolumn=0 "设置边框的边度 
 set signcolumn=yes  "是否关闭边框
-"
-"Tag"
-"
-"
+
 " gutentags搜索工程目录的标志，碰到这些文件/目录名就停止向上一级目录递归 "
 let             g:gutentags_project_root = ['.root', '.svn', '.git', '.project']
 
@@ -142,11 +139,7 @@ endf
 
 "自动定位上次编辑位置
 au              BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
-
-
-
 set             termguicolors
-
 " git 插件配置
 set             updatetime=50 " 设置更新时间
 "悬浮
@@ -205,6 +198,7 @@ let             g:rainbow_active = 1
 
 " 设置翻译的服务端
 "let g:translator_default_engines = ['haici','youdao']
+
 " 在命令行显示翻译
 nmap <silent> <Leader>e <Plug>Translate
 vmap <silent> <Leader>e <Plug>TranslateV
@@ -224,8 +218,11 @@ nnoremap <silent><expr> <M-b> translator#window#float#has_scroll() ?
                             \ translator#window#float#scroll(0) : "\<M-f>"
 
 
-""" vimspector 调试插件
 
+
+"===
+"=== vimspector 代码调试 
+"===
 
 let g:vimspector_enable_mappings = 'HUMAN'
 function! s:read_template_into_buffer(template)
@@ -255,8 +252,12 @@ let g:vimspector_install_gadgets = [
 			\'	vscode-go']
 autocmd User CocGitStatusChange {command}
 
-" treesitter-modules
 
+
+
+"===
+"=== vim配色插件
+"===
 
 
 lua <<EOF
@@ -340,11 +341,11 @@ let g:dap_virtual_text=v:true
 " spaceline.vim
 
 
-set statusline=1
-let g:spaceline_git_branch_icon=' '
-let g:spaceline_seperate_style = 'curve'
-let g:spaceline_colorscheme = 'space'
-let g:spaceline_custom_vim_status =  {"n": " ","V":" ","v":" ","\<C-v>": "ףּ ","i":"👴 ","R":" ","s":"ﴣ ","t":"ﴪ ","c":" ","!":"SE"}
+"set statusline=1
+"let g:spaceline_git_branch_icon=' '
+"let g:spaceline_seperate_style = 'curve'
+"let g:spaceline_colorscheme = 'space'
+"let g:spaceline_custom_vim_status =  {"n": " ","V":" ","v":" ","\<C-v>": "ףּ ","i":"👴 ","R":" ","s":"ﴣ ","t":"ﴪ ","c":" ","!":"SE"}
 
 "===
 "=== vim折行
