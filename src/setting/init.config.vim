@@ -57,7 +57,6 @@ set signcolumn=yes
 set sw=2
 set ts=2
 set tabstop=2
-set mouse=a
 set clipboard=unnamed
 set foldcolumn=0 "设置边框的边度 
 set signcolumn=yes  "是否关闭边框
@@ -170,7 +169,7 @@ nmap <silent> <leader>m :setlocal rnu!<cr>:setlocal nu!<cr>
 nmap    <silent>          <leader>q :tabclose<cr>
 map     <silent>          <leader>w <C-w>
 map     <silent>          er        :Re<CR>
-map     <silent>          tr        :NERDTree<CR>
+map     <silent>          tr        :NERDTreeToggle<CR>
 map     <silent>          ei        :e<space>
 nmap    <silent>          <C-l>     :vertical res +5<cr>
 nmap    <silent>          <C-h>     :vertical res -5<cr>
@@ -286,7 +285,7 @@ require'nvim-treesitter.configs'.setup {
   },
 }
 
--- 高亮当前函数范围
+-- 高亮当前函数范围 有点烦人我关了
 require'nvim-treesitter.configs'.setup {
   refactor = {
     highlight_current_scope = { enable = false },
@@ -404,7 +403,7 @@ nmap <silent> <leader>z :call MaximizeToggle()<CR>
 "===
 
 set list
-set listchars=eol:\ ,tab:\|\ ,trail:-,extends:>,precedes:<
+set listchars=eol:\ ,tab:\|\ ,trail:∘,extends:>,precedes:<
 autocmd InsertEnter,BufEnter * set formatoptions=vt
 
 
@@ -441,3 +440,6 @@ endfunction
 "set timeoutlen=150
 autocmd InsertLeave * call FcitxAercn()
 autocmd InsertEnter * call FcitxChinese()
+
+
+

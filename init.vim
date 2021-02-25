@@ -71,8 +71,6 @@ Plug 'mzlogin/vim-markdown-toc',{'for':'markdown'} " 使用GenTocGFm 创建
 "=== vim 翻译
 Plug 'voldikss/vim-translator'
 
-
-
 call plug#end()
 
 

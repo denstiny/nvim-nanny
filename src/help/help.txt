@@ -110,6 +110,7 @@ FZF 文件
 # 依赖 bat // 预览文件内容
 <C-f> 打开文件搜索
 :FZF 打开文件搜索
+
 Markdown 
 <leader><F7> 预览当前文件
 <leader><F8> 结束预览
@@ -119,5 +120,4 @@ Markdown
 在光标处使用GenTocGFM 可以为当前文档生成GFM风格目录
 在光标处使用GenTocRedcarpet可以为当前文档生成电子书风格目录
 
-rime 輸入法配置
-<A-\> 打开输入法
+

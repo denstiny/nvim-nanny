@@ -3,9 +3,9 @@
 	"coc.preferences.extensionUpdateCheck": "never",
 	"suggest.noselect": true,
 	"diagnostic.messageTarget": "float",
-	"signature.target": "float",
+	"signature.target": "echo",
 	"suggest.floatEnable": false,
-	"coc.preferences.hoverTarget": "preview",
+	"coc.preferences.hoverTarget": "float",
 	"coc.preferences.enableFloatHighlight": true,
 	"suggest.enablePreselect": false,
 	"coc.preferences.snippetStatusText": "Ⓢ ",
@@ -94,8 +94,5 @@
 	"clangd.disableDiagnostics":false,
 	"snippets.priority":99,
 	"snippets.userSnippetsDirectory":"~/.config/nvim/snips",
-	"snippets.loadFromExtensions":true,
-	"rime.enabled":false,
-	"rime.schemaId":"luna_pinyin_simp",
-	"rime.priority": 0
+	"snippets.loadFromExtensions":true
 }
