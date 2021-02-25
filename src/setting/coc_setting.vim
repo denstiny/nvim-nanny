@@ -83,7 +83,8 @@ nmap <silent> <leader>g <Plug>(coc-diagnostic-next)
 "=== coc-rime 配置
 "===
 " 切换 coc开关状态 
-imap <silent> <A-\> <ESC>:CocCommand rime.toggle<cr>a
+"imap <silent> <A-\> <ESC>:CocCommand rime.toggle<cr>a
+"nmap <silent> <A-\> :CocCommand rime.toggle<cr>
 
 
 

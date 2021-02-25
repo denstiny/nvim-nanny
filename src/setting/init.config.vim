@@ -57,6 +57,7 @@ set signcolumn=yes
 set sw=2
 set ts=2
 set tabstop=2
+set mouse=a
 set clipboard=unnamed
 set foldcolumn=0 "设置边框的边度 
 set signcolumn=yes  "是否关闭边框
@@ -119,12 +120,12 @@ noremap . :call CompileRunGcc()<CR>
 func!     CompileRunGcc()
 	exec    "w"
 	if      &filetype ==    'c'
-		exec  '!gcc -g % -o %<'
+		exec  '!gcc -g -w % -o %<'
 		exec  '!time ./%<'
 		autocmd ExitPre * exec '!rm %< &> /dev/null'
 "		exec  '!rm %< &> /dev/null'
 	elseif  &filetype ==    'cpp'
-		exec  '!g++ -g % -o %<'
+		exec  '!g++ -g -w % -o %<'
 		exec  '!time ./%< '
 		autocmd ExitPre * exec '!rm %< &> /dev/null'
 "		exec  '!rm %< &> /dev/null'
@@ -200,11 +201,11 @@ let             g:rainbow_active = 1
 "let g:translator_default_engines = ['haici','youdao']
 
 " 在命令行显示翻译
-nmap <silent> <Leader>e <Plug>Translate
-vmap <silent> <Leader>e <Plug>TranslateV
+nmap <silent> <leader>e <Plug>Translate
+vmap <silent> <leader>e <Plug>TranslateV
 " 在窗口中显示翻译
-nmap <silent> <Leader>t <Plug>TranslateW
-vmap <silent> <Leader>t <Plug>TranslateWV
+nmap <silent> <leader>t <Plug>TranslateW
+vmap <silent> <leader>t <Plug>TranslateWV
 " 用翻译替换文本
 nmap <silent> <Leader>r <Plug>TranslateR
 vmap <silent> <Leader>r <Plug>TranslateRV
@@ -239,8 +240,8 @@ nnoremap <F1> :call vimspector#StepInto()<CR>
 nnoremap <F7> :call vimspector#Reset()<CR>
 
 let g:vimspector_bottombar_height=6
-let g:vimspector_sidebar_width=40
-let g:vimspector_code_minwidth = 50
+let g:vimspector_sidebar_width=50
+let g:vimspector_code_minwidth = 77
 let g:vimspector_terminal_maxwidth = 75
 let g:vimspector_terminal_minwidth = 20
 
@@ -411,7 +412,32 @@ autocmd InsertEnter,BufEnter * set formatoptions=vt
 "===
 "=== 信标
 "===
-let g:beacon_enable = 0
-autocmd  InsertLeave * Beacon
+let g:beacon_minimal_jump = 3
 autocmd FocusGained * Beacon
-autocmd CursorHold * Beacon
+
+
+
+"===
+"=== fcitx 输入法 
+"===
+
+let g:input_toggle = 0
+function! FcitxAercn()
+   let s:input_status = system("fcitx5-remote")
+   if s:input_status == 2
+      let g:input_toggle = 1
+      let l:a = system("fcitx5-remote -c")
+   endif
+endfunction
+
+function! FcitxChinese()
+   let s:input_status = system("fcitx5-remote")
+   if s:input_status != 2 && g:input_toggle == 1
+      let l:a = system("fcitx5-remote -o")
+      let g:input_toggle = 0
+   endif
+endfunction
+
+"set timeoutlen=150
+autocmd InsertLeave * call FcitxAercn()
+autocmd InsertEnter * call FcitxChinese()

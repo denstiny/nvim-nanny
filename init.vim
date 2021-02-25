@@ -1,9 +1,10 @@
 let mapleader = ";"
+
 call plug#begin('~/.vim/plugged')
-Plug 'mg979/vim-visual-multi', {'branch': 'master'} "多光标
+
+"多光标
+Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'tbastos/vim-lua' 
-
-
 " 信标
 Plug 'danilamihailov/beacon.nvim'
 " vim查看启动速度 使用命令StartupTime
@@ -59,12 +60,7 @@ Plug 'gcmt/wildfire.vim'
 
 Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile','branch': 'master'}
 
-
 Plug 'puremourning/vimspector',{ 'do': 'python3 install_gadget.py --all'}
-
-"===
-"=== markdown 插件 
-"=== 
 
 " markdown预览
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install','for':['markdown','html']  }
@@ -72,21 +68,12 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install','for':['ma
 " markdown生成目录
 Plug 'mzlogin/vim-markdown-toc',{'for':'markdown'} " 使用GenTocGFm 创建
 
-
-
-"===
 "=== vim 翻译
-"===
-
 Plug 'voldikss/vim-translator'
 
 
 
 call plug#end()
-
-
-
-
 
 
 
@@ -100,6 +87,7 @@ source ~/.config/nvim/src/color/mycolor.vim
 source ~/.config/nvim/src/setting/init.config.vim
 
 " 状态栏主题
+
 lua << EOF
 require('aeroline')
 EOF
