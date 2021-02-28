@@ -274,15 +274,15 @@ gls.left[16] = {
 
 
 -- coc 语言服务器状态
---gls.left[15] = {
---    CocStatus = {
---     provider = CocStatus,
---     highlight = {colors.cocColor,colors.bg},
---     icon = '  🗱'
---    }
---}
-
 gls.left[17] = {
+    CocStatus = {
+     provider = CocStatus,
+     highlight = {colors.cocColor,colors.bg},
+     icon = '  🗱'
+    }
+}
+
+gls.left[18] = {
   CocFunc = {
     provider = CocFunc,
     icon = '  λ ',

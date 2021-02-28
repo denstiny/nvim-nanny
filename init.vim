@@ -41,10 +41,8 @@ Plug 'Th3Whit3Wolf/onebuddy'
 
 " 状态栏
 Plug 'glepnir/galaxyline.nvim' , {'branch': 'main'}
-
-" 显示图标
-"Plug 'kyazdani42/nvim-web-devicons' " lua
-"Plug 'ryanoasis/vim-devicons' " vimscript
+Plug 'kyazdani42/nvim-web-devicons' " lua
+Plug 'ryanoasis/vim-devicons' " vimscript
 
 " 显示代码颜色
 Plug 'RRethy/vim-hexokinase', { 'do': 'make hexokinase' }
@@ -71,6 +69,9 @@ Plug 'mzlogin/vim-markdown-toc',{'for':'markdown'} " 使用GenTocGFm 创建
 "=== vim 翻译
 Plug 'voldikss/vim-translator'
 
+"=== python自动完成
+"Plug 'davidhalter/jedi-vim'
+
 call plug#end()
 
 
@@ -87,5 +88,8 @@ source ~/.config/nvim/src/setting/init.config.vim
 " 状态栏主题
 
 lua << EOF
+-- 状态栏
 require('aeroline')
+-- 代码高亮
+require('treesitter')
 EOF
