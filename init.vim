@@ -4,15 +4,16 @@ call plug#begin('~/.vim/plugged')
 
 "多光标
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
+"信标
+Plug 'DanilaMihailov/beacon.nvim'
 Plug 'tbastos/vim-lua' 
-" 信标
-Plug 'danilamihailov/beacon.nvim'
 " vim查看启动速度 使用命令StartupTime
 Plug 'dstein64/vim-startuptime'
 "历史记录
 Plug 'mbbill/undotree'      
 "vim目录树
-Plug 'preservim/nerdtree', { 'on': 'NERDTreeToggle' }    
+Plug 'preservim/nerdtree' ", { 'on': 'NERDTreeToggle' }    
+Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight' 
 "vim终端辅助插件
 Plug 'skywind3000/vim-terminal-help' 
@@ -26,9 +27,8 @@ Plug 'junegunn/vim-slash'
 Plug 'liuchengxu/vista.vim'      
 " 浮动终端 
 Plug 'voldikss/vim-floaterm'     
-"显示文件的图标 
-Plug 'ryanoasis/vim-devicons'  
-
+" 历史打开文件
+Plug 'Pavoljuhas/oldfilesearch.vim'
 "  treesitter 全家桶
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  
 Plug 'nvim-treesitter/nvim-treesitter-refactor'
@@ -38,6 +38,9 @@ Plug 'romgrk/nvim-treesitter-context'
 "主题插件
 Plug 'tjdevries/colorbuddy.vim'
 Plug 'Th3Whit3Wolf/onebuddy'
+
+" 显示光标
+Plug 'itchyny/vim-cursorword' 
 
 " 状态栏
 Plug 'glepnir/galaxyline.nvim' , {'branch': 'main'}
@@ -59,6 +62,10 @@ Plug 'gcmt/wildfire.vim'
 Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile','branch': 'master'}
 
 Plug 'puremourning/vimspector',{ 'do': 'python3 install_gadget.py --all'}
+
+"vim 自动化任务
+Plug 'skywind3000/asynctasks.vim'
+Plug 'skywind3000/asyncrun.vim'
 
 " markdown预览
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install','for':['markdown','html']  }

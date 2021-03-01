@@ -6,7 +6,7 @@ highlight clear SignColumn
 hi Normal guibg=#282A36  "背景色
 hi CursorLine cterm=NONE ctermbg=darkred ctermfg=white guibg=NONE guifg=NONE gui=bold
 " 取消vim空行的波浪 '~'
-set fillchars=fold:\ ,vert:\ ,eob:\   ",msgsep:-
+set fillchars=fold:\ ,vert:\|,eob:\   ",msgsep:-
 
 
 "Set the coc floating window background color

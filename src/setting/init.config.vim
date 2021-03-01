@@ -32,8 +32,9 @@ let             g:undotree_SplitWidth = 20
 " 如果nerdtree是剩下的唯一窗口，则退出vim。
 autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() |
     \ quit | endif
-let g:NERDTreeDirArrowExpandable = '▸'
-let g:NERDTreeDirArrowCollapsible = '▾'
+let g:NERDTreeDirArrowExpandable = '◉'
+let g:NERDTreeDirArrowCollapsible = '◯'
+let NERDTreeShowHidden=1
 set              cursorline
 hi              cursorline cterm=NONE ctermbg=237
 set             virtualedit=block,onemore
@@ -114,28 +115,15 @@ let g:vista_fzf_preview = ['right:50%']
 
 
 
-""一键运行
-noremap . :call CompileRunGcc()<CR>
-func!     CompileRunGcc()
-	exec    "w"
-	if      &filetype ==    'c'
-		exec  '!gcc -g -w % -o %<'
-		exec  '!time ./%<'
-		autocmd ExitPre * exec '!rm %< &> /dev/null'
-"		exec  '!rm %< &> /dev/null'
-	elseif  &filetype ==    'cpp'
-		exec  '!g++ -g -w % -o %<'
-		exec  '!time ./%< '
-		autocmd ExitPre * exec '!rm %< &> /dev/null'
-"		exec  '!rm %< &> /dev/null'
-	elseif  &filetype ==    'html'
-		exec  '!chromium % &'
-	elseif  &filetype ==    'python'
-		exec  '!time python %'
-	elseif  &filetype ==    'sh'
-		exec	'!time bash %'
-	endif
-endf
+""快速运行
+noremap <silent>. :AsyncTask file-run<cr>
+noremap <silent><leader>. :AsyncTask file-build<cr>
+let g:asyncrun_open = 10
+let g:asynctasks_config_name = ['.tasks', '.git/tasks.ini', '.svn/tasks.ini']
+let g:asynctasks_term_pos = 'bottom'
+let g:asynctasks_term_rows = 10    " 设置纵向切割时，高度为 10
+
+
 
 "自动定位上次编辑位置
 au              BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
@@ -169,7 +157,7 @@ nmap <silent> <leader>m :setlocal rnu!<cr>:setlocal nu!<cr>
 nmap    <silent>          <leader>q :tabclose<cr>
 map     <silent>          <leader>w <C-w>
 map     <silent>          er        :Re<CR>
-map     <silent>          tr        :NERDTreeToggle<CR>
+map     <silent>          tr        :NERDTreeCWD<CR>
 map     <silent>          ei        :e<space>
 nmap    <silent>          <C-l>     :vertical res +5<cr>
 nmap    <silent>          <C-h>     :vertical res -5<cr>
@@ -182,7 +170,7 @@ noremap <silent>          <C-f>     :FZF<cr>
 command!        -nargs=0 Fl :FloatermNew
 command!        -nargs=0 Apt :CocList marketplace
 command!        -nargs=0 HK :FloatermNew nvim -R ~/.config/nvim/src/help/help.txt
-command!        -nargs=0 Re :FloatermNew --position=left  ranger
+command!        -nargs=0 Re :FloatermNew --position=right  ranger
 command!        -nargs=0 Init :source ~/.config/nvim/install.vim
 command!        -nargs=0 Ter :source ~/.config/nvim/ter.vim
 command! 		-nargs=0 Todo :CocList todolist
@@ -349,3 +337,16 @@ autocmd InsertEnter * call FcitxChinese()
 
 
 
+"===
+"=== oldfile 文件
+"===
+
+let &viminfo = substitute(&viminfo, "'\\zs\\d*", "10", "")
+
+
+
+
+
+"=== vim 高亮光标下单词
+
+let g:cursorword_delay = 400

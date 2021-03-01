@@ -95,5 +95,7 @@
 	"clangd.disableDiagnostics":false,
 	"snippets.priority":99,
 	"snippets.userSnippetsDirectory":"~/.config/nvim/snips",
-	"snippets.loadFromExtensions":true
+	"snippets.loadFromExtensions":true,
+	"explorer.icon.enableNerdfont": true
+
 }
