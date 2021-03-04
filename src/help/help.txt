@@ -120,4 +120,21 @@ Markdown
 在光标处使用GenTocGFM 可以为当前文档生成GFM风格目录
 在光标处使用GenTocRedcarpet可以为当前文档生成电子书风格目录
 
+添加作者信息
 
+添加标题
+
+:AddHeader   添加简短的作者信息或更新（如果存在）
+:AddMinHeader  添加作者信息的精简版
+
+
+添加许可证
+
+:AddMITLicense  添加MIT许可证
+:AddApacheLicense  添加Apache许可证
+:AddGNULicense  添加了GNU GP许可证v3
+:AddAGPLicense  添加了GNU Affero GP许可证v3
+:AddLGPLLicense  增加了GNU Lesser GP许可证
+:AddMPLLicense  添加Mozilla公共许可证
+:AddWTFPLLicense 添加WTFPL许可证
+:AddZlibLicense  添加zlib许可证

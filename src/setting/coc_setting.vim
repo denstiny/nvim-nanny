@@ -4,7 +4,7 @@ set hidden
 set shortmess+=c
 
 if has("patch-8.1.1564")
-  " Recently vim can merge signcolumn and number column into one
+  " 最近vim可以将signcolumn和number列合并为一个
   set signcolumn=number
 else
   set signcolumn=yes
@@ -48,8 +48,8 @@ function! s:show_documentation()
     execute '!' . &keywordprg . " " . expand('<cword>')
   endif
 endfunction
-"autocmd CursorHold * silent call CocActionAsync('highlight')
-nmap            <leader>f <Plug>(coc-rename) "快速重命名函数
+"autocmd光标保持*静默调用coc操作async（'highlight'）
+"nmap            <leader>f <Plug>(coc-rename) "快速重命名函数
 augroup         mygroup
 augroup         end
 " Example: `<leader>aap` for current paragraph

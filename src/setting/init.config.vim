@@ -1,3 +1,20 @@
+" File              : init.config.vim
+" Author            : denstiny Anonymity <2254228017@qq.com>
+" Date              : 04.03.2021
+" Last Modified Date: 04.03.2021
+" Last Modified By  : denstiny Anonymity <2254228017@qq.com>
+" File              : init.config.vim
+" Date              : 04.03.2021
+" Last Modified Date: 04.03.2021
+" File              : init.config.vim
+" Date              : 04.03.2021
+" Last Modified Date: 04.03.2021
+" File              : init.config.vim
+" Date              : 04.03.2021
+" Last Modified Date: 04.03.2021
+" File              : init.config.vim
+" Date              : 04.03.2021
+" Last Modified Date: 04.03.2021
 "===
 "===  coc-nvim 
 "===
@@ -133,7 +150,7 @@ set             updatetime=50 " 设置更新时间
 "悬浮
 autocmd         User Startified setlocal buflisted "自定关闭遗留
 "hi FloatermBorder guifg=cyan
-let             g:floaterm_position ='right'
+let             g:floaterm_position ='center'
 let             g:floaterm_winblend = 5		"设置浮动窗口透明度
 let             g:floaterm_keymap_new    = "'g"
 let             g:floaterm_keymap_prev   = "'a"
@@ -350,3 +367,8 @@ let &viminfo = substitute(&viminfo, "'\\zs\\d*", "10", "")
 "=== vim 高亮光标下单词
 
 let g:cursorword_delay = 400
+
+"=== 数据库
+let g:dbs = {
+\  'dev': 'postgres://postgres:mypassword@localhost:5432/my-dev-db'
+\ }

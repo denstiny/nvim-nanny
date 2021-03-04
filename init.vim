@@ -1,3 +1,8 @@
+" File              : init.vim
+" Author            : denstiny Anonymity <2254228017@qq.com>
+" Date              : 04.03.2021
+" Last Modified Date: 04.03.2021
+" Last Modified By  : denstiny Anonymity <2254228017@qq.com>
 let mapleader = ";"
 
 call plug#begin('~/.vim/plugged')
@@ -76,8 +81,11 @@ Plug 'mzlogin/vim-markdown-toc',{'for':'markdown'} " 使用GenTocGFm 创建
 "=== vim 翻译
 Plug 'voldikss/vim-translator'
 
-"=== python自动完成
-"Plug 'davidhalter/jedi-vim'
+
+
+"Plug 'kristijanhusak/vim-packager', { 'type': 'opt' }
+Plug 'tpope/vim-dadbod'
+Plug 'kristijanhusak/vim-dadbod-ui'
 
 call plug#end()
 

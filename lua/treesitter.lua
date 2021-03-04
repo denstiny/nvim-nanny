@@ -1,3 +1,10 @@
+--[[--
+File              : treesitter.lua
+Author            : denstiny Anonymity <2254228017@qq.com>
+Date              : 04.03.2021
+Last Modified Date: 04.03.2021
+Last Modified By  : denstiny Anonymity <2254228017@qq.com>
+--]]--
 
 require'nvim-treesitter.configs'.setup {
   ensure_installed = "all", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
