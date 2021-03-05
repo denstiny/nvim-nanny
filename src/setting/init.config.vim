@@ -1,24 +1,3 @@
-" File              : init.config.vim
-" Author            : denstiny Anonymity <2254228017@qq.com>
-" Date              : 04.03.2021
-" Last Modified Date: 04.03.2021
-" Last Modified By  : denstiny Anonymity <2254228017@qq.com>
-" File              : init.config.vim
-" Date              : 04.03.2021
-" Last Modified Date: 04.03.2021
-" File              : init.config.vim
-" Date              : 04.03.2021
-" Last Modified Date: 04.03.2021
-" File              : init.config.vim
-" Date              : 04.03.2021
-" Last Modified Date: 04.03.2021
-" File              : init.config.vim
-" Date              : 04.03.2021
-" Last Modified Date: 04.03.2021
-"===
-"===  coc-nvim 
-"===
-
 source ~/.config/nvim/src/setting/coc_setting.vim
 let g:ale_echo_msg_format = '[%linter%] %code: %%s'
 let             g:coc_global_extensions = [
@@ -72,9 +51,9 @@ set cmdheight=1
 set updatetime=300
 set shortmess+=c
 set signcolumn=yes
-set sw=2
-set ts=2
-set tabstop=2
+set sw=3
+set ts=3
+set tabstop=3
 set clipboard=unnamed
 set foldcolumn=0 "设置边框的边度 
 set signcolumn=yes  "是否关闭边框
@@ -369,6 +348,7 @@ let &viminfo = substitute(&viminfo, "'\\zs\\d*", "10", "")
 let g:cursorword_delay = 400
 
 "=== 数据库
-let g:dbs = {
-\  'dev': 'postgres://postgres:mypassword@localhost:5432/my-dev-db'
-\ }
+let g:header_field_author = 'denstiny Anonymity'
+let g:header_field_author_email = '2254228017@qq.com'
+let g:header_auto_add_header=0
+

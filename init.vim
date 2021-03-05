@@ -82,10 +82,12 @@ Plug 'mzlogin/vim-markdown-toc',{'for':'markdown'} " 使用GenTocGFm 创建
 Plug 'voldikss/vim-translator'
 
 
-
-"Plug 'kristijanhusak/vim-packager', { 'type': 'opt' }
+"=== vim数据库
 Plug 'tpope/vim-dadbod'
-Plug 'kristijanhusak/vim-dadbod-ui'
+Plug 'kristijanhusak/vim-dadbod-ui',{'on':['DBUIToggle', 'DBUIAddConnection', 'DBUI', 'DBUIFindBuffer', 'DBUIRenameBuffer']}
+
+"===  添加作者信息和开源凭证 
+Plug 'alpertuna/vim-header'
 
 call plug#end()
 
