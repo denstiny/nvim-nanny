@@ -240,7 +240,7 @@ let g:vimspector_install_gadgets = [
 "===
 "=== vim折行
 "===
-	set showbreak=↪\ 
+	let &showbreak=" ↪  "
   nmap j gj
   nmap k gk
 
