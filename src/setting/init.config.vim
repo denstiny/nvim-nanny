@@ -51,9 +51,9 @@ set cmdheight=1
 set updatetime=300
 set shortmess+=c
 set signcolumn=yes
-set sw=3
-set ts=3
-set tabstop=3
+set sw=4
+set ts=4
+set tabstop=4
 set clipboard=unnamed
 set foldcolumn=0 "设置边框的边度 
 set signcolumn=yes  "是否关闭边框
@@ -234,7 +234,7 @@ let g:vimspector_install_gadgets = [
 			\'CodeLLDB',
 			\'vscode-bash-debug',
 			\'	vscode-go']
-autocmd User CocGitStatusChange {command}
+"autocmd User CocGitStatusChange {command}
 
 
 "===
@@ -310,28 +310,26 @@ autocmd FocusGained * Beacon
 "=== fcitx 输入法 
 "===
 
-let g:input_toggle = 0
-function! FcitxAercn()
-   let s:input_status = system("fcitx5-remote")
-   if s:input_status == 2
-      let g:input_toggle = 1
-      let l:a = system("fcitx5-remote -c")
-   endif
+let g:FcitxState = 0 " 0 为英文，1为中文
+function! SwapEnglish() 
+	let g:FcitxState = system("fcitx5-remote")-1
+	let s:Editor = system("fcitx5-remote -c") " 切换英文
 endfunction
 
-function! FcitxChinese()
-   let s:input_status = system("fcitx5-remote")
-   if s:input_status != 2 && g:input_toggle == 1
-      let l:a = system("fcitx5-remote -o")
-      let g:input_toggle = 0
-   endif
+function! SwapChinese() 
+	let s:LineChar =  getline(".")[col(".")-2]
+	if g:FcitxState == 1
+		let s:Editor = system("fcitx5-remote -o")
+	elseif s:LineChar > '~'
+		let s:Editor = system("fcitx5-remote -o") "切换中文
+		let g:FcitxState = 1
+	elseif s:LineChar <= '~'
+		let s:Editor = system("fcitx5-remote -c") 
+	endif
 endfunction
 
-"set timeoutlen=150
-autocmd InsertLeave * call FcitxAercn()
-autocmd InsertEnter * call FcitxChinese()
-
-
+autocmd InsertEnter * call SwapChinese()
+autocmd InsertLeave * call SwapEnglish()
 
 "===
 "=== oldfile 文件
@@ -347,7 +345,6 @@ let &viminfo = substitute(&viminfo, "'\\zs\\d*", "10", "")
 
 let g:cursorword_delay = 400
 
-"=== 数据库
 let g:header_field_author = 'denstiny Anonymity'
 let g:header_field_author_email = '2254228017@qq.com'
 let g:header_auto_add_header=0

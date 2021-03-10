@@ -17,7 +17,7 @@ Plug 'dstein64/vim-startuptime'
 "历史记录
 Plug 'mbbill/undotree'      
 "vim目录树
-Plug 'preservim/nerdtree' ", { 'on': 'NERDTreeToggle' }    
+Plug 'preservim/nerdtree' ", { 'on': 'NERDTreeToggle' }
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight' 
 "vim终端辅助插件
@@ -83,9 +83,9 @@ Plug 'voldikss/vim-translator'
 
 
 "=== vim数据库
-Plug 'tpope/vim-dadbod'
-Plug 'kristijanhusak/vim-dadbod-ui',{'on':['DBUIToggle', 'DBUIAddConnection', 'DBUI', 'DBUIFindBuffer', 'DBUIRenameBuffer']}
-
+"Plug 'tpope/vim-dadbod'
+"Plug 'kristijanhusak/vim-dadbod-ui',{'on':['DBUIToggle', 'DBUIAddConnection', 'DBUI', 'DBUIFindBuffer', 'DBUIRenameBuffer']}
+"
 "===  添加作者信息和开源凭证 
 Plug 'alpertuna/vim-header'
 
