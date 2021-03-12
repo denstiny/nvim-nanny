@@ -160,8 +160,6 @@ nmap    <silent>          <C-h>     :vertical res -5<cr>
 nmap    <silent>          <C-j>     :res      +5<cr>
 nmap    <silent>          <C-k>     :res      -5<cr>
 noremap <silent>          <C-f>     :FZF<cr>
-map <silent> <Leader>z <Plug>Sniprun<cr>
-nmap <silent> <leader>c :SnipReplMemoryClean<CR>
 
 " 自定义命令
 command!        -nargs=0 Fl :FloatermNew
