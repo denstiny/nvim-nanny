@@ -81,13 +81,15 @@ Plug 'mzlogin/vim-markdown-toc',{'for':'markdown'} " 使用GenTocGFm 创建
 "=== vim 翻译
 Plug 'voldikss/vim-translator'
 
+"=== code run
+Plug 'michaelb/sniprun',{'do':'cargo build --release'}
 
-"=== vim数据库
-"Plug 'tpope/vim-dadbod'
-"Plug 'kristijanhusak/vim-dadbod-ui',{'on':['DBUIToggle', 'DBUIAddConnection', 'DBUI', 'DBUIFindBuffer', 'DBUIRenameBuffer']}
-"
 "===  添加作者信息和开源凭证 
 Plug 'alpertuna/vim-header'
+
+"=== python completeopt
+"Plug 'pappasam/coc-jedi', { 'do': 'yarn install --frozen-lockfile && yarn build' }
+
 
 call plug#end()
 

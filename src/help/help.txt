@@ -138,3 +138,10 @@ Markdown
 :AddMPLLicense  添加Mozilla公共许可证
 :AddWTFPLLicense 添加WTFPL许可证
 :AddZlibLicense  添加zlib许可证
+
+代码块选择运行
+命令
+:SnipRun  运行
+:<,'>SnipRun 运行
+:SnipReset 停止运行
+:SnipReplMemoryClean 停止运行

@@ -160,7 +160,8 @@ nmap    <silent>          <C-h>     :vertical res -5<cr>
 nmap    <silent>          <C-j>     :res      +5<cr>
 nmap    <silent>          <C-k>     :res      -5<cr>
 noremap <silent>          <C-f>     :FZF<cr>
-
+map <silent> <Leader>z <Plug>Sniprun<cr>
+nmap <silent> <leader>c :SnipReplMemoryClean<CR>
 
 " 自定义命令
 command!        -nargs=0 Fl :FloatermNew
@@ -240,9 +241,9 @@ let g:vimspector_install_gadgets = [
 "===
 "=== vim折行
 "===
-	let &showbreak=" ↪  "
-  nmap j gj
-  nmap k gk
+  let &showbreak=" ↪  "
+  nmap <silent> j gj
+  nmap <silent> k gk
 
 
 
@@ -312,7 +313,9 @@ autocmd FocusGained * Beacon
 
 let g:FcitxState = 0 " 0 为英文，1为中文
 function! SwapEnglish() 
+	if g:FcitxState != 3
 	let g:FcitxState = system("fcitx5-remote")-1
+endif
 	let s:Editor = system("fcitx5-remote -c") " 切换英文
 endfunction
 
@@ -320,9 +323,11 @@ function! SwapChinese()
 	let s:LineChar =  getline(".")[col(".")-2]
 	if g:FcitxState == 1
 		let s:Editor = system("fcitx5-remote -o")
+	elseif g:FcitxState == 3 
+		let g:FcitxState = 1
 	elseif s:LineChar > '~'
 		let s:Editor = system("fcitx5-remote -o") "切换中文
-		let g:FcitxState = 1
+		let g:FcitxState = 3
 	elseif s:LineChar <= '~'
 		let s:Editor = system("fcitx5-remote -c") 
 	endif

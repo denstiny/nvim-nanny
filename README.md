@@ -35,6 +35,15 @@ git clone https://github.com/denstiny/nvim-nanny.git ~/.config/nvim
 #### `master`分支将不再更新
 #### `main1` 从2021年1月 25日开始不支持低于5.0版本neovim  
 *  更新日志
+	* 2021-03-13  
+	添加块选择运行代码
+	![20210313000933](https://i.loli.net/2021/03/13/jH9AFvcQMEaYItb.png)	
+	![20210313000958](https://i.loli.net/2021/03/13/nD4QFqpJAUORskB.png)
+	
+	`命令：`  
+	`:SnipRun` or `:<,'>SnipRun`
+	
+	
 	* 2021.02.02
 	> coc-picgo
 	markdown 图片自动上传图床工具
