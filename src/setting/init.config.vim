@@ -294,8 +294,8 @@ nmap <silent> <leader>z :call MaximizeToggle()<CR>
 set list
 set listchars=eol:\ ,tab:\|\ ,trail:∘,extends:>,precedes:<
 autocmd InsertEnter,BufEnter * set formatoptions=vt
-
-
+imap <cr> <cr><space><bs>
+nmap o o<space><bs>
 
 "===
 "=== 信标
@@ -352,3 +352,8 @@ let g:header_field_author = 'denstiny Anonymity'
 let g:header_field_author_email = '2254228017@qq.com'
 let g:header_auto_add_header=0
 
+
+
+"=== vim sniprun plugin
+
+let g:SnipRun_inline_messages=1
