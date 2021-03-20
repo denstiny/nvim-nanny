@@ -145,3 +145,11 @@ Markdown
 :<,'>SnipRun 运行
 :SnipReset 停止运行
 :SnipReplMemoryClean 停止运行
+
+
+对象文本
+ci('')  替换对象 不包括区别符号
+ca('')  替换对象 包括区别符号
+vi('')  选中文本 不包括区别符号
+va('')  选中文本 包括区别符号
+

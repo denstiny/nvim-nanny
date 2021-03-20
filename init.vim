@@ -82,17 +82,23 @@ Plug 'mzlogin/vim-markdown-toc',{'for':'markdown'} " 使用GenTocGFm 创建
 Plug 'voldikss/vim-translator'
 
 "=== code run
-Plug 'michaelb/sniprun',{'do':'cargo build --release'}
+"Plug 'michaelb/sniprun'
 
 "===  添加作者信息和开源凭证 
 Plug 'alpertuna/vim-header'
+"=== 标签栏
+Plug 'gcmt/taboo.vim'
 
-"=== python completeopt
-"Plug 'pappasam/coc-jedi', { 'do': 'yarn install --frozen-lockfile && yarn build' }
+"=== 对象文本
+Plug 'wellle/targets.vim'
 
+"=== 逃离插入模式
+Plug 'jdhao/better-escape.vim'
+
+"=== 平滑滚动
+Plug 'psliwka/vim-smoothie'
 
 call plug#end()
-
 
 
 
@@ -112,3 +118,6 @@ require('aeroline')
 -- 代码高亮
 require('treesitter')
 EOF
+let g:better_escape_interval = 100
+let g:better_escape_shortcut = 'jk'
+

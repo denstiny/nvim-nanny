@@ -4,6 +4,7 @@ let             g:coc_global_extensions = [
 			\'coc-json',
 			\'coc-pairs',
 			\'coc-git',
+			\'coc-pyright',
 			\'coc-jedi',
 			\'coc-picgo', 
 			\'coc-vimlsp',
@@ -16,8 +17,6 @@ let             g:coc_global_extensions = [
 "coc-rime vim 的输入法 确保安装 依赖librime
 
 
-inoremap        jk <ESC>
-filetype        indent on
 noremap         L :UndotreeToggle<CR>
 let             g:undotree_DiffAutoOpen = 1
 let             g:undotree_SetFocusWhenToggle = 1
@@ -34,7 +33,7 @@ let NERDTreeShowHidden=1
 set              cursorline
 hi              cursorline cterm=NONE ctermbg=237
 set             virtualedit=block,onemore
-set showtabline=0
+set showtabline=2
 
 " 打开文件自动定位到最后编辑的位置
 autocmd         bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
@@ -112,8 +111,8 @@ let g:vista_fzf_preview = ['right:50%']
 
 
 ""快速运行
-noremap <silent>. :AsyncTask file-run<cr>
-noremap <silent><leader>. :AsyncTask file-build<cr>
+noremap <silent><space>r :AsyncTask file-run<cr>
+noremap <silent><space>d :AsyncTask file-build<cr>
 let g:asyncrun_open = 10
 let g:asynctasks_config_name = ['.tasks', '.git/tasks.ini', '.svn/tasks.ini']
 let g:asynctasks_term_pos = 'bottom'
@@ -140,16 +139,26 @@ let             g:floaterm_autoclose	 = 1
 "显示文件类型图标配置
 
 
+let g:RNnumberBool = 1
+function! g:RNnumber() 
+	if g:RNnumberBool == 1
+		:RltvNmbr
+		let g:RNnumberBool=2
+	else
+		let g:RNnumberBool=1
+		:RltvNmbr!
+	endif
+endfunction
 
 " 快捷键
 nmap <silent> tt :Vista<cr>
 map     <leader>s         <Plug>(EasyAlign)
-nmap    <leader><leader>a <Plug>(easymotion-overwin-f2)
+map  , <Plug>(easymotion-bd-f)
 map     <silent>          <leader>n :bp<CR>
 map     <silent>          <leader>o :bp<CR>
 map     <leader>y         "+y
 map     <leader>w         <C-w>
-nmap <silent> <leader>m :setlocal rnu!<cr>:setlocal nu!<cr>
+nmap <silent> <leader>m :set nu!<cr>
 nmap    <silent>          <leader>q :tabclose<cr>
 map     <silent>          <leader>w <C-w>
 map     <silent>          er        :Re<CR>
@@ -312,22 +321,22 @@ autocmd FocusGained * Beacon
 let g:FcitxState = 0 " 0 为英文，1为中文
 function! SwapEnglish() 
 	if g:FcitxState != 3
-	let g:FcitxState = system("fcitx5-remote")-1
+	let g:FcitxState = system("fcitx-remote")-1
 endif
-	let s:Editor = system("fcitx5-remote -c") " 切换英文
+	let s:Editor = system("fcitx-remote -c") " 切换英文
 endfunction
 
 function! SwapChinese() 
 	let s:LineChar =  getline(".")[col(".")-2]
 	if g:FcitxState == 1
-		let s:Editor = system("fcitx5-remote -o")
+		let s:Editor = system("fcitx-remote -o")
 	elseif g:FcitxState == 3 
 		let g:FcitxState = 1
 	elseif s:LineChar > '~'
-		let s:Editor = system("fcitx5-remote -o") "切换中文
+		let s:Editor = system("fcitx-remote -o") "切换中文
 		let g:FcitxState = 3
 	elseif s:LineChar <= '~'
-		let s:Editor = system("fcitx5-remote -c") 
+		let s:Editor = system("fcitx-remote -c") 
 	endif
 endfunction
 
@@ -347,13 +356,7 @@ let &viminfo = substitute(&viminfo, "'\\zs\\d*", "10", "")
 "=== vim 高亮光标下单词
 
 let g:cursorword_delay = 400
-
 let g:header_field_author = 'denstiny Anonymity'
 let g:header_field_author_email = '2254228017@qq.com'
 let g:header_auto_add_header=0
 
-
-
-"=== vim sniprun plugin
-
-let g:SnipRun_inline_messages=1

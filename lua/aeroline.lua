@@ -229,7 +229,7 @@ gls.left[11] = {
   DiffRemove = {
     provider = 'DiffRemove',
     condition = checkwidth,
-    icon = ' ',
+    icon = '  ',
     highlight = {colors.red,colors.line_bg},
   }
 }
@@ -247,7 +247,7 @@ gls.left[12] = {
 gls.left[13] = {
     TrailingWhiteSpace = {
      provider = TrailingWhiteSpace,
-     icon = '  ',
+     icon = '   ',
      highlight = {colors.yellow,colors.bg},
     }
 }
@@ -255,7 +255,7 @@ gls.left[13] = {
 gls.left[14] = {
   DiagnosticError = {
     provider = 'DiagnosticError',
-    icon = '  ',
+    icon = '   ',
     highlight = {colors.red,colors.bg}
   }
 }
@@ -267,7 +267,7 @@ gls.left[15] = {
 gls.left[16] = {
   DiagnosticWarn = {
     provider = 'DiagnosticWarn',
-    icon = '  ',
+    icon = '   ',
     highlight = {colors.yellow,colors.bg},
   }
 }

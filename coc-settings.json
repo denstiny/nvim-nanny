@@ -8,7 +8,7 @@
 	"coc.preferences.hoverTarget": "float",
 	"coc.preferences.enableFloatHighlight": true,
 	"suggest.enablePreselect": false,
-	"coc.preferences.snippetStatusText": "Ⓢ ",
+	"coc.preferences.snippetStatusText": " - ",
 	"suggest.detailMaxLength": 60,
 	"suggest.triggerAfterInsertEnter": false,
 	"suggest.timeout": 5000,
@@ -95,5 +95,5 @@
 	"clangd.disableDiagnostics":false,
 	"snippets.priority":99,
 	"snippets.userSnippetsDirectory":"~/.config/nvim/snips",
-	"snippets.loadFromExtensions":true
+	"snippets.loadFromExtensions": true
 }
