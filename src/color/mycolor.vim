@@ -4,8 +4,12 @@ se cursorline
 "hi cursorline cterm=NONE ctermbg=NONE
 highlight clear SignColumn
 hi Normal guibg=#282A36  "背景色
+
 hi CursorLine cterm=NONE ctermbg=darkred ctermfg=white guibg=NONE guifg=NONE gui=bold
+"hi CursorLine gui=bold
 " 取消vim空行的波浪 '~'
+
+
 set fillchars=fold:\ ,vert:\|,eob:\   ",msgsep:-
 
 
@@ -57,7 +61,7 @@ fun! NotEmptySplit()
 	return
 endf
 
-let g:taboo_modified_tab_flag="%5*🔴%*"
+let g:taboo_modified_tab_flag="%5*⬤ %*"
 
 
 
@@ -65,11 +69,11 @@ fun! SystemTabline()
 	let g:s = &columns
 	let l:sn = 0
 	let l:Tabestr = "%4*" . g:DateTime() . "%*"
-	while l:sn < (g:s-17)
+	while l:sn < (g:s-30)
 		let l:sn += 1
 		let l:Tabestr = l:Tabestr ." "
 	endwhile
-	let l:Tabestr= l:Tabestr . " %3* Anonymit  %m %*"
+	let l:Tabestr= l:Tabestr . " %3*                    %m %*"
 	let l:Tabestr= l:Tabestr
 	let g:taboo_tab_format=l:Tabestr
 endf
@@ -77,31 +81,31 @@ endf
 fun! g:DateTime() 
     let l:sas = system("echo `date +%H`")
 	let l:Tabest = ""
-	if l:sas > '06' && l:s < '18'
+	if l:sas > '06' && l:sas < '18'
 		let l:Tabest = "🌞"
 	endif
-	if l:sas < '06' || l:sas > '08'
+	if l:sas < '06' || l:sas > '20'
 		let l:Tabest = "🌙"
 		endif
 	let l:sdf = "%1" . l:Tabest
 	return l:Tabest
 endf
 
+
 hi User1 guifg=#eea040 guibg=None
 hi User2 guifg=#dd3333 guibg=none
-hi User3 guifg=#ff66ff guibg=none
+hi User3 guifg=#70778a  guibg=none
 hi User4 guifg=#a0ee40 guibg=none
 hi User5 guifg=#eeee40 guibg=none
 
-autocmd  CursorMovedI * call NotEmptySplit()
-autocmd BufEnter * call NotEmptySplit()
-autocmd BufEnter * call SystemTabline()
-autocmd VimResized * call SystemTabline()
-
+autocmd  CursorMovedI * silent call NotEmptySplit()
+autocmd BufEnter *  silent! call NotEmptySplit()
+autocmd BufEnter * silent! call SystemTabline()
+autocmd VimResized * silent! call SystemTabline()
 
 
 "=== guivim
-set guifont=FiraCode\ Nerd\ Font\ Mono,Unifont,Gulim,Yu\ Mincho,NSimSun:h20
-let g:neovide_cursor_vfx_mode = "pixiedust"
+"set guifont=FiraCode\ Nerd\ Font\ Mono,Unifont,Gulim,Yu\ Mincho,NSimSun:h20
+"let g:neovide_cursor_vfx_mode = "pixiedust"
 
 

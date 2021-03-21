@@ -1,4 +1,3 @@
-let mapleader = ";"
 
 call plug#begin('~/.vim/plugged')
 
@@ -36,7 +35,6 @@ Plug 'romgrk/nvim-treesitter-context'
 "主题插件
 Plug 'tjdevries/colorbuddy.vim'
 Plug 'Th3Whit3Wolf/onebuddy'
-
 
 " 显示光标
 Plug 'itchyny/vim-cursorword' 
@@ -95,41 +93,4 @@ Plug 'psliwka/vim-smoothie'
 "=== 签名回显
 Plug 'Shougo/echodoc.vim'
 
-"=== 聚光灯
-Plug 'junegunn/limelight.vim'
-
 call plug#end()
-
-
-"配色主题
-
-
-set background=dark
-lua require('colorbuddy').colorscheme('onebuddy')
-
-
-function! Dot(path)
-	return "~/.config/nvim/" . a:path
-endfunction
-
-
-
-" 状态栏主题
-
-lua << EOF
--- 状态栏
-require('aeroline')
--- 代码高亮
-require('treesitter')
-EOF
-let g:better_escape_interval = 100
-let g:better_escape_shortcut = 'jk'
-
-for file in split(glob(Dot('src/setting/*.vim')),'\n')
-	exe 'source' file
-endfor
-
-for file in split(glob(Dot('src/color/*.vim')),'\n')
-	exe 'source' file
-endfor
-

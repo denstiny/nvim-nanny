@@ -1,4 +1,3 @@
-source ~/.config/nvim/src/setting/coc_setting.vim
 let g:ale_echo_msg_format = '[%linter%] %code: %%s'
 let             g:coc_global_extensions = [
 			\'coc-json',
@@ -17,7 +16,7 @@ let             g:coc_global_extensions = [
 "coc-rime vim 的输入法 确保安装 依赖librime
 
 
-noremap         L :UndotreeToggle<CR>
+noremap        <silent> L :MundoToggle<CR>
 let             g:undotree_DiffAutoOpen = 1
 let             g:undotree_SetFocusWhenToggle = 1
 let             g:undotree_ShortIndicators = 1
@@ -31,9 +30,9 @@ let g:NERDTreeDirArrowExpandable = '◉'
 let g:NERDTreeDirArrowCollapsible = '◯'
 let NERDTreeShowHidden=1
 set              cursorline
-hi              cursorline cterm=NONE ctermbg=237
 set             virtualedit=block,onemore
 set showtabline=2
+set autoindent
 
 " 打开文件自动定位到最后编辑的位置
 autocmd         bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
@@ -56,59 +55,6 @@ set tabstop=4
 set clipboard=unnamed
 set foldcolumn=0 "设置边框的边度 
 set signcolumn=yes  "是否关闭边框
-
-" gutentags搜索工程目录的标志，碰到这些文件/目录名就停止向上一级目录递归 "
-let             g:gutentags_project_root = ['.root', '.svn', '.git', '.project']
-
-" 所生成的数据文件的名称 "
-let             g:gutentags_ctags_tagfile = '.tags'
-
-" 将自动生成的 tags 文件全部放入 ~/.cache/tags 目录中，避免污染工程目录 "
-let             s:vim_tags = expand('~/.cache/tags')
-let             g:gutentags_cache_dir = s:vim_tags
-" 检测 ~/.cache/tags 不存在就新建 "
-if              !isdirectory(s:vim_tags)
-	silent!     call mkdir(s:vim_tags, 'p')
-endif
-
-" 配置 ctags 的参数 "
-let             g:gutentags_ctags_extra_args = ['--fields=+niazS', '--extra=+q']
-let             g:gutentags_ctags_extra_args += ['--c++-kinds=+pxI']
-let             g:gutentags_ctags_extra_args += ['--c-kinds=+px']
-
-
-
-
-"vista.vim 配置
-"
-function!       NearestMethodOrFunction() abort
-	return      get(b:, 'vista_nearest_method_or_function', '')
-endfunction
-
-set             statusline+=%{NearestMethodOrFunction()}
-
-autocmd         VimEnter * call vista#RunForNearestMethodOrFunction()
-
-let             g:vista_icon_indent = ["╰─▸ ", "├─▸ "]
-
-let             g:vista_default_executive = 'ctags'
-
-let             g:vista_executive_for = {
-			\   }
-
-let             g:vista_ctags_cmd = {
-			\   'haskell': 'hasktags -x -o - -c',
-			\   }
-
-let             g:vista#renderer#enable_icon = 1
-
-let             g:vista#renderer#icons = {
-			\   "function": "\uf794",
-			\   "variable": "\uf71b",
-			\   }
-let g:vista_fzf_preview = ['right:50%']
-
-
 
 ""快速运行
 noremap <silent><space>r :AsyncTask file-run<cr>
@@ -176,7 +122,6 @@ command!        -nargs=0 Apt :CocList marketplace
 command!        -nargs=0 HK :FloatermNew nvim -R ~/.config/nvim/src/help/help.txt
 command!        -nargs=0 Re :FloatermNew --position=right  ranger
 command!        -nargs=0 Init :source ~/.config/nvim/install.vim
-command!        -nargs=0 Ter :source ~/.config/nvim/ter.vim
 command! 		-nargs=0 Todo :CocList todolist
 command!        -nargs=0 Git :FloatermNew lazygit
 
@@ -259,7 +204,6 @@ let g:vimspector_install_gadgets = [
 "=== markdown预览工具
 "===
 
-source ~/.config/nvim/src/setting/markdown.vim
 nmap <leader><F7> <Plug>MarkdownPreview
 nmap <leader><F8> <Plug>MarkdownPreviewStop
 nmap <C-p> <Plug>MarkdownPreviewToggle
@@ -301,10 +245,10 @@ nmap <silent> <leader>z :call MaximizeToggle()<CR>
 "===
 
 set list
-set listchars=eol:\ ,tab:\|\ ,trail:∘,extends:>,precedes:<
+set listchars=eol:\ ,tab:\ \ ,trail:∘,extends:>,precedes:<
 autocmd InsertEnter,BufEnter * set formatoptions=vt
-imap <cr> <cr><space><bs>
-nmap o o<space><bs>
+"imap <cr> <cr><space><bs>
+"nmap o o<space><bs>
 
 "===
 "=== 信标
@@ -355,8 +299,18 @@ let &viminfo = substitute(&viminfo, "'\\zs\\d*", "10", "")
 
 "=== vim 高亮光标下单词
 
-let g:cursorword_delay = 400
+"let g:cursorword_delay = 400
 let g:header_field_author = 'denstiny Anonymity'
 let g:header_field_author_email = '2254228017@qq.com'
 let g:header_auto_add_header=0
 
+"=== undofile
+set undofile
+set undodir=~/.vim/undo
+
+
+"=== echodoc
+" Or, you could disable showmode alltogether.
+let g:echodoc#type = "noshowmode"
+set noshowmode
+let g:echodoc_enable_at_startup = 1
