@@ -95,5 +95,11 @@
 	"clangd.disableDiagnostics":false,
 	"snippets.priority":99,
 	"snippets.userSnippetsDirectory":"~/.config/nvim/snips",
-	"snippets.loadFromExtensions": true
+	"snippets.loadFromExtensions": true,
+	"java.imports.gradle.wrapper.checksums": [
+    {
+        "sha256": "41c8aa7a337a44af18d8cda0d632ebba469aef34f3041827624ef5c1a4e4419d",
+        "allowed": true
+    }
+]
 }

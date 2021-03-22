@@ -83,7 +83,7 @@ nmap <silent> <leader>g <Plug>(coc-diagnostic-next)
 "=== coc-snippets 配置
 "===
 " 使用<c-l>进行触发代码段扩展。
-imap <C-l> <Plug>(coc-snippets-expand)
+imap <C-j> <Plug>(coc-snippets-expand)
 
 " Use <C-j> for select text for visual placeholder of snippet.
 vmap <C-j> <Plug>(coc-snippets-select)
@@ -110,7 +110,7 @@ function! s:check_back_space() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
-let g:coc_snippet_next = '<C-l>'
+let g:coc_snippet_next = '<C-k>'
 
 
 "=== coc 打开大文件自动禁用
@@ -128,3 +128,13 @@ augroup hugefile
         \ endif |
         \ unlet size
 augroup END
+
+function! LoadJavaContent(uri)
+    setfiletype java
+    let content = CocRequest('java', 'java/classFileContents', {'uri': 'jdt:/' . a:uri})
+    call setline(1, split(content, "\n"))
+    setl nomod
+    setl readonly
+endfunction
+
+autocmd! BufReadPre,BufReadCmd,FileReadCmd,SourceCmd *.class call LoadJavaContent(expand("<amatch>"))<CR>

@@ -97,15 +97,14 @@ function! g:RNnumber()
 endfunction
 
 " 快捷键
-nmap <silent> tt :Vista<cr>
+nmap    <silent>          tt        :Vista<cr>
 map     <leader>s         <Plug>(EasyAlign)
-map  , <Plug>(easymotion-bd-f)
+map     ,                 <Plug>(easymotion-bd-f)
 map     <silent>          <leader>n :bp<CR>
 map     <silent>          <leader>o :bp<CR>
-map     <leader>y         "+y
-map     <leader>w         <C-w>
-nmap <silent> <leader>m :set nu!<cr>
-nmap    <silent>          <leader>q :tabclose<cr>
+map     <silent><leader>y "+y
+nmap    <silent>          <leader>m :set      nu!<cr>
+nmap    <silent>          <leader>q :bunload<cr>
 map     <silent>          <leader>w <C-w>
 map     <silent>          er        :Re<CR>
 map     <silent>          tr        :NERDTreeCWD<CR>

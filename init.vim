@@ -29,8 +29,6 @@ Plug 'voldikss/vim-floaterm'
 Plug 'Pavoljuhas/oldfilesearch.vim',{'on':'Oldfile'}
 "  treesitter 全家桶
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  
-Plug 'nvim-treesitter/nvim-treesitter-refactor'
-Plug 'nvim-treesitter/playground'
 Plug 'romgrk/nvim-treesitter-context' 
 
 "主题插件
@@ -54,10 +52,9 @@ Plug 'tpope/vim-surround'
 " 代码块选择工具
 Plug 'gcmt/wildfire.vim' 
 
-"===
-"=== 开发工具 
-"===
 
+
+"=== 开发工具 
 Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile','branch': 'master'}
 
 Plug 'puremourning/vimspector',{ 'do': 'python3 install_gadget.py --all'}
