@@ -33,6 +33,21 @@ set              cursorline
 set             virtualedit=block,onemore
 set showtabline=2
 set autoindent
+let g:NERDTreeGitStatusIndicatorMapCustom = {
+                \ 'Modified'  :'✹ ',
+                \ 'Staged'    :'✚ ',
+                \ 'Untracked' :'✭ ',
+                \ 'Renamed'   :'➜ ',
+                \ 'Unmerged'  :'═ ',
+                \ 'Deleted'   :'✖ ',
+                \ 'Dirty'     :'✗ ',
+                \ 'Ignored'   :'☒ ',
+                \ 'Clean'     :'✔︎ ',
+                \ 'Unknown'   :'?',
+                \ }
+
+
+
 
 " 打开文件自动定位到最后编辑的位置
 autocmd         bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
@@ -97,7 +112,6 @@ function! g:RNnumber()
 endfunction
 
 " 快捷键
-nmap    <silent>          tt        :Vista<cr>
 map     <leader>s         <Plug>(EasyAlign)
 map     ,                 <Plug>(easymotion-bd-f)
 map     <silent>          <leader>n :bp<CR>
@@ -173,19 +187,19 @@ command! -bang -nargs=* LoadVimSpectorJsonTemplate call fzf#run({
 nnoremap <LEADER>vs :tabe .vimspector.json<CR>:LoadVimSpectorJsonTemplate<CR>
 nnoremap <F1> :call vimspector#StepInto()<CR>
 nnoremap <F7> :call vimspector#Reset()<CR>
-
-let g:vimspector_bottombar_height=6
-let g:vimspector_sidebar_width=50
-let g:vimspector_code_minwidth = 77
-let g:vimspector_terminal_maxwidth = 75
-let g:vimspector_terminal_minwidth = 20
-
-let g:vimspector_install_gadgets = [ 
-			\'debugpy',
-			\'vscode-cpptools', 
-			\'CodeLLDB',
-			\'vscode-bash-debug',
-			\'	vscode-go']
+"
+"let g:vimspector_bottombar_height=6
+"let g:vimspector_sidebar_width=50
+"let g:vimspector_code_minwidth = 77
+"let g:vimspector_terminal_maxwidth = 75
+"let g:vimspector_terminal_minwidth = 20
+"
+"let g:vimspector_install_gadgets = [ 
+"			\'debugpy',
+"			\'vscode-cpptools', 
+"			\'CodeLLDB',
+"			\'vscode-bash-debug',
+"			\'	vscode-go']
 "autocmd User CocGitStatusChange {command}
 
 
