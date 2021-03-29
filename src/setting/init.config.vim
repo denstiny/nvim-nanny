@@ -327,3 +327,5 @@ set undodir=~/.vim/undo
 let g:echodoc#type = "noshowmode"
 set noshowmode
 let g:echodoc_enable_at_startup = 1
+
+

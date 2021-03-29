@@ -1,3 +1,4 @@
+
  
 {
 	"coc.preferences.extensionUpdateCheck": "never",
@@ -101,5 +102,11 @@
         "sha256": "41c8aa7a337a44af18d8cda0d632ebba469aef34f3041827624ef5c1a4e4419d",
         "allowed": true
     }
-]
+],
+
+  "java.referencesCodeLens.enabled": true,
+  "java.implementationsCodeLens.enabled": true,
+  "java.completion.enabled": true,
+  "java.completion.overwrite": false,
+  "java.completion.guessMethodArguments": true
 }
