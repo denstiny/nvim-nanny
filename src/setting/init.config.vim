@@ -31,7 +31,6 @@ let g:NERDTreeDirArrowCollapsible = '◯'
 let NERDTreeShowHidden=1
 set              cursorline
 set             virtualedit=block,onemore
-set showtabline=0
 set autoindent
 let g:NERDTreeGitStatusIndicatorMapCustom = {
                 \ 'Modified'  :'✹ ',
@@ -278,22 +277,22 @@ autocmd FocusGained * Beacon
 let g:FcitxState = 0 " 0 为英文，1为中文
 function! SwapEnglish() 
 	if g:FcitxState != 3
-	let g:FcitxState = system("fcitx-remote")-1
+	let g:FcitxState = system("fcitx5-remote")-1
 endif
-	let s:Editor = system("fcitx-remote -c") " 切换英文
+	let s:Editor = system("fcitx5-remote -c") " 切换英文
 endfunction
 
 function! SwapChinese() 
 	let s:LineChar =  getline(".")[col(".")-2]
 	if g:FcitxState == 1
-		let s:Editor = system("fcitx-remote -o")
+		let s:Editor = system("fcitx5-remote -o")
 	elseif g:FcitxState == 3 
 		let g:FcitxState = 1
 	elseif s:LineChar > '~'
-		let s:Editor = system("fcitx-remote -o") "切换中文
+		let s:Editor = system("fcitx5-remote -o") "切换中文
 		let g:FcitxState = 3
 	elseif s:LineChar <= '~'
-		let s:Editor = system("fcitx-remote -c") 
+		let s:Editor = system("fcitx5-remote -c") 
 	endif
 endfunction
 
