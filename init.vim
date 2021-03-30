@@ -73,12 +73,11 @@ Plug 'mzlogin/vim-markdown-toc',{'for':'markdown'} " 使用GenTocGFm 创建
 Plug 'voldikss/vim-translator'
 
 "=== code run
-Plug 'michaelb/sniprun'
+Plug 'michaelb/sniprun', {'do': 'bash install.sh'}
+
 
 "===  添加作者信息和开源凭证 
 Plug 'alpertuna/vim-header'
-"=== 标签栏
-Plug 'gcmt/taboo.vim'
 
 "=== 对象文本
 Plug 'wellle/targets.vim'
@@ -95,8 +94,12 @@ Plug 'Shougo/echodoc.vim'
 "=== 聚光灯
 Plug 'junegunn/limelight.vim'
 
-call plug#end()
+"=== 快速运行
+Plug 'thinca/vim-quickrun'
 
+
+
+call plug#end()
 
 "配色主题
 
