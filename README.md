@@ -13,9 +13,16 @@
 ## 演示  
 <br> 
 
+> ###### `启动界面`     
+
+![20210331091316](https://i.loli.net/2021/03/31/5NiOtJLVM71QPDd.png)  
+
 > ###### `vimlsp`
-![image.png](https://i.loli.net/2021/01/25/nWs7Jr64RQbUcYM.png)
+
+![20210331091522](https://i.loli.net/2021/03/31/VdtlyufepHRNWqX.png)
+
 > ###### `c/c++`
+
 ![image.png](https://i.loli.net/2021/01/25/TALRiyaOSoBGmDW.png)
 
 ## Method of use    
@@ -107,12 +114,15 @@ git clone https://github.com/denstiny/nvim-nanny.git ~/.config/nvim
 |go|vim-hexokinase|异步显示代码颜色插件
 |python|vimspector|代码调试插件
 |ctags|vim-vista|代码地图
-|pynvim|coc-nvim|
-|clangd|coc-nvim| 补全
+|pynvim|coc-nvim|必须
+|clang|coc-nvim| c/c++ 代码完成
 | rust | sniprun| 代码块运行
 |yarn|markdown-preview 预览插件需要
-|jedi-language-server|coc-jedi|python语言服务器
-
+|~~~jedi-language-server~~~|~~~coc-jedi~~~|~~~python语言服务器~~~
+```sh
+sudo pacman -S go nodejs python ctags clang rust yarn
+pip install pynvim
+```
 # 文件分布
 ```sh
 .

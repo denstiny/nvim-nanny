@@ -14,7 +14,7 @@ fun! g:DateTime()
 		let l:Tabest = "%2*" . l:Tabest
 	endif
 	if l:sas < '06' || l:sas > '18'
-		let l:Tabest = " "
+		let l:Tabest = " ﯑"
 		let l:Tabest = "%1*" . l:Tabest
 		endif
 	"let l:sdf = "%1*" . l:Tabest
@@ -37,3 +37,6 @@ hi User2 guifg=#FF1493 guibg=none
 hi User3 guifg=#70778a  guibg=none
 hi User4 guifg=#a0ee40 guibg=none
 hi User5 guifg=#eeee40 guibg=none
+
+
+
