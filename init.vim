@@ -97,8 +97,6 @@ Plug 'junegunn/limelight.vim'
 "=== 快速运行
 Plug 'thinca/vim-quickrun'
 
-
-
 call plug#end()
 
 "配色主题

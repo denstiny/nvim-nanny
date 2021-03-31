@@ -32,6 +32,7 @@ let NERDTreeShowHidden=1
 set              cursorline
 set             virtualedit=block,onemore
 set autoindent
+set numberwidth=1
 let g:NERDTreeGitStatusIndicatorMapCustom = {
                 \ 'Modified'  :'✹ ',
                 \ 'Staged'    :'✚ ',
