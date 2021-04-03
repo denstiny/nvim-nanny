@@ -4,8 +4,6 @@ call plug#begin('~/.vim/plugged')
 
 "多光标
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
-"信标
-Plug 'DanilaMihailov/beacon.nvim'
 Plug 'tbastos/vim-lua' 
 " vim查看启动速度 使用命令StartupTime
 Plug 'dstein64/vim-startuptime'
@@ -30,30 +28,19 @@ Plug 'Pavoljuhas/oldfilesearch.vim',{'on':'Oldfile'}
 "  treesitter 全家桶
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  
 Plug 'romgrk/nvim-treesitter-context' 
-
 "主题插件
 Plug 'tjdevries/colorbuddy.vim'
 Plug 'Th3Whit3Wolf/onebuddy'
-
-
-" 显示光标
-Plug 'itchyny/vim-cursorword' 
-
 " 状态栏
 Plug 'glepnir/galaxyline.nvim' , {'branch': 'main'}
 Plug 'kyazdani42/nvim-web-devicons' " lua
 Plug 'ryanoasis/vim-devicons' " vimscript
-
 " 显示代码颜色
 Plug 'RRethy/vim-hexokinase', { 'do': 'make hexokinase' }
-
 " 代码环绕工具
 Plug 'tpope/vim-surround'  
 " 代码块选择工具
 Plug 'gcmt/wildfire.vim' 
-
-
-
 "=== 开发工具 
 Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile','branch': 'master'}
 
@@ -75,7 +62,6 @@ Plug 'voldikss/vim-translator'
 "=== code run
 Plug 'michaelb/sniprun', {'do': 'bash install.sh'}
 
-
 "===  添加作者信息和开源凭证 
 Plug 'alpertuna/vim-header'
 
@@ -87,9 +73,6 @@ Plug 'jdhao/better-escape.vim'
 
 "=== 平滑滚动
 Plug 'psliwka/vim-smoothie'
-
-"=== 签名回显
-Plug 'Shougo/echodoc.vim'
 
 "=== 聚光灯
 Plug 'junegunn/limelight.vim'
@@ -126,8 +109,7 @@ let g:better_escape_shortcut = 'jk'
 for file in split(glob(Dot('src/setting/*.vim')),'\n')
 	exe 'source' file
 endfor
-
+"
 for file in split(glob(Dot('src/color/*.vim')),'\n')
 	exe 'source' file
 endfor
-

@@ -94,7 +94,6 @@ let             g:floaterm_winblend = 5		"设置浮动窗口透明度
 let             g:floaterm_keymap_new    = "'g"
 let             g:floaterm_keymap_prev   = "'a"
 let             g:floaterm_keymap_next   = "'d"
-"let g:floaterm_keymap_hide   = "'w"
 let             g:floaterm_keymap_toggle = "'s"
 let             g:floaterm_autoclose	 = 1
 "显示文件类型图标配置
@@ -137,6 +136,8 @@ command!        -nargs=0 Re :FloatermNew --position=right  ranger
 command!        -nargs=0 Init :source ~/.config/nvim/install.vim
 command! 		-nargs=0 Todo :CocList todolist
 command!        -nargs=0 Git :FloatermNew lazygit
+command! 				 Openall lua require"monolithic".open()
+
 
 "彩虹括号
 let             g:rainbow_active = 1
@@ -207,8 +208,8 @@ let g:vimspector_install_gadgets = [
 "=== vim折行
 "===
   let &showbreak=" ↪  "
-  nmap <silent> j gj
-  nmap <silent> k gk
+"  nmap <silent> j gj
+"  nmap <silent> k gk
 
 
 
@@ -283,6 +284,8 @@ endif
 	let s:Editor = system("fcitx5-remote -c") " 切换英文
 endfunction
 
+
+"  判断插入的光标的前一个字符是否为中文,如果是中文则切换中文输入法
 function! SwapChinese() 
 	let s:LineChar =  getline(".")[col(".")-2]
 	if g:FcitxState == 1
