@@ -4,7 +4,6 @@ let             g:coc_global_extensions = [
 			\'coc-pairs',
 			\'coc-git',
 			\'coc-pyright',
-			\'coc-jedi',
 			\'coc-picgo', 
 			\'coc-vimlsp',
 			\'coc-snippets',
@@ -208,8 +207,8 @@ let g:vimspector_install_gadgets = [
 "=== vim折行
 "===
   let &showbreak=" ↪  "
-"  nmap <silent> j gj
-"  nmap <silent> k gk
+  nmap <silent> j gj
+  nmap <silent> k gk
 
 
 
@@ -264,13 +263,6 @@ autocmd InsertEnter,BufEnter * set formatoptions=vt
 "imap <cr> <cr><space><bs>
 "nmap o o<space><bs>
 
-"===
-"=== 信标
-"===
-let g:beacon_minimal_jump = 3
-autocmd FocusGained * Beacon
-
-
 
 "===
 "=== fcitx 输入法 
@@ -324,11 +316,5 @@ let g:header_auto_add_header=0
 set undofile
 set undodir=~/.vim/undo
 
-
-"=== echodoc
-" Or, you could disable showmode alltogether.
-let g:echodoc#type = "noshowmode"
-set noshowmode
-let g:echodoc_enable_at_startup = 1
 
 

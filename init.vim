@@ -2,48 +2,59 @@ let mapleader = ";"
 
 call plug#begin('~/.vim/plugged')
 
-"多光标
+"=== 多光标
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
-Plug 'tbastos/vim-lua' 
-" vim查看启动速度 使用命令StartupTime
+
+"=== vim查看启动速度 使用命令StartupTime
 Plug 'dstein64/vim-startuptime'
-"历史记录
+
+"=== 历史记录
 Plug 'simnalamburt/vim-mundo'
-"vim目录树
+
+"=== vim目录树
 Plug 'preservim/nerdtree' ", { 'on': 'NERDTreeToggle' }
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight' 
-"vim终端辅助插件
+
+"===vim终端辅助插件
 Plug 'skywind3000/vim-terminal-help' 
-" 代码格式化 
-Plug 'junegunn/vim-easy-align'   
-" 字符串搜索工具 
+
+"=== 代码格式化 
+Plug 'junegunn/vim-easy-align',{'for':'python'}
+
+"=== 字符串搜索工具 
 Plug 'easymotion/vim-easymotion' 
-" 搜索结果优化 
+
+"=== 搜索结果优化 
 Plug 'junegunn/vim-slash'        
-" 浮动终端 
+
+"=== 浮动终端 
 Plug 'voldikss/vim-floaterm'     
-" 历史打开文件
-Plug 'Pavoljuhas/oldfilesearch.vim',{'on':'Oldfile'}
-"  treesitter 全家桶
+
+"===  treesitter 全家桶
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  
 Plug 'romgrk/nvim-treesitter-context' 
-"主题插件
+
+"=== 主题插件
 Plug 'tjdevries/colorbuddy.vim'
 Plug 'Th3Whit3Wolf/onebuddy'
-" 状态栏
+
+"=== 状态栏
 Plug 'glepnir/galaxyline.nvim' , {'branch': 'main'}
 Plug 'kyazdani42/nvim-web-devicons' " lua
 Plug 'ryanoasis/vim-devicons' " vimscript
-" 显示代码颜色
+
+"=== 显示代码颜色
 Plug 'RRethy/vim-hexokinase', { 'do': 'make hexokinase' }
-" 代码环绕工具
+
+"=== 代码环绕工具
 Plug 'tpope/vim-surround'  
-" 代码块选择工具
+
+"=== 代码块选择工具
 Plug 'gcmt/wildfire.vim' 
+
 "=== 开发工具 
 Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile','branch': 'master'}
-
 Plug 'puremourning/vimspector',{ 'do': 'python3 install_gadget.py --all'}
 
 "vim 自动化任务
@@ -70,9 +81,6 @@ Plug 'wellle/targets.vim'
 
 "=== 逃离插入模式
 Plug 'jdhao/better-escape.vim'
-
-"=== 平滑滚动
-Plug 'psliwka/vim-smoothie'
 
 "=== 聚光灯
 Plug 'junegunn/limelight.vim'
