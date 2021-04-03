@@ -42,7 +42,7 @@ endfunction
 
 
 set tabline=%!MyTabLine()
-"autocmd CursorMoved * set tabline=%!Tablie()
+autocmd CursorMoved * set tabline=%!Tablie()
 
 
 

@@ -9,7 +9,7 @@ Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'dstein64/vim-startuptime'
 
 "=== 历史记录
-Plug 'simnalamburt/vim-mundo'
+Plug 'mbbill/undotree'
 
 "=== vim目录树
 Plug 'preservim/nerdtree' ", { 'on': 'NERDTreeToggle' }
@@ -24,9 +24,6 @@ Plug 'junegunn/vim-easy-align',{'for':'python'}
 
 "=== 字符串搜索工具 
 Plug 'easymotion/vim-easymotion' 
-
-"=== 搜索结果优化 
-Plug 'junegunn/vim-slash'        
 
 "=== 浮动终端 
 Plug 'voldikss/vim-floaterm'     
@@ -111,8 +108,6 @@ require('aeroline')
 -- 代码高亮
 require('treesitter')
 EOF
-let g:better_escape_interval = 100
-let g:better_escape_shortcut = 'jk'
 
 for file in split(glob(Dot('src/setting/*.vim')),'\n')
 	exe 'source' file

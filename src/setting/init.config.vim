@@ -1,4 +1,4 @@
-let g:ale_echo_msg_format = '[%linter%] %code: %%s'
+"let g:ale_echo_msg_format = '[%linter%] %code: %%s'
 let             g:coc_global_extensions = [
 			\'coc-json',
 			\'coc-pairs',
@@ -15,23 +15,20 @@ let             g:coc_global_extensions = [
 "coc-rime vim 的输入法 确保安装 依赖librime
 
 
-noremap        <silent> L :MundoToggle<CR>
+noremap        <silent> L :UndotreeToggle<CR>
 let             g:undotree_DiffAutoOpen = 1
 let             g:undotree_SetFocusWhenToggle = 1
 let             g:undotree_ShortIndicators = 1
 let             g:undotree_WindowLayout = 2
 let             g:undotree_DiffpanelHeight = 8
 let             g:undotree_SplitWidth = 20
+
 " 如果nerdtree是剩下的唯一窗口，则退出vim。
 autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() |
     \ quit | endif
 let g:NERDTreeDirArrowExpandable = '◉'
 let g:NERDTreeDirArrowCollapsible = '◯'
 let NERDTreeShowHidden=1
-set              cursorline
-set             virtualedit=block,onemore
-set autoindent
-set numberwidth=1
 let g:NERDTreeGitStatusIndicatorMapCustom = {
                 \ 'Modified'  :'✹ ',
                 \ 'Staged'    :'✚ ',
@@ -69,6 +66,11 @@ set tabstop=4
 set clipboard=unnamed
 set foldcolumn=0 "设置边框的边度 
 set signcolumn=yes  "是否关闭边框
+set              cursorline
+set             virtualedit=block,onemore
+set autoindent
+set numberwidth=1
+set nu
 
 ""快速运行
 noremap <silent><space>r :AsyncTask file-run<cr>
@@ -98,16 +100,6 @@ let             g:floaterm_autoclose	 = 1
 "显示文件类型图标配置
 
 
-let g:RNnumberBool = 1
-function! g:RNnumber() 
-	if g:RNnumberBool == 1
-		:RltvNmbr
-		let g:RNnumberBool=2
-	else
-		let g:RNnumberBool=1
-		:RltvNmbr!
-	endif
-endfunction
 
 " 快捷键
 map     <leader>s         <Plug>(EasyAlign)
@@ -115,7 +107,6 @@ map     ,                 <Plug>(easymotion-bd-f)
 map     <silent>          <leader>n :bp<CR>
 map     <silent>          <leader>o :bp<CR>
 map     <silent><leader>y "+y
-nmap    <silent>          <leader>m :set      nu!<cr>
 nmap    <silent>          <leader>q :bunload<cr>
 map     <silent>          <leader>w <C-w>
 map     <silent>          er        :Re<CR>
@@ -126,16 +117,13 @@ nmap    <silent>          <C-h>     :vertical res -5<cr>
 nmap    <silent>          <C-j>     :res      +5<cr>
 nmap    <silent>          <C-k>     :res      -5<cr>
 noremap <silent>          <C-f>     :FZF<cr>
+nmap <silent>          <esc><esc>     :nohlsearch<cr>
 
 " 自定义命令
-command!        -nargs=0 Fl :FloatermNew
 command!        -nargs=0 Apt :CocList marketplace
 command!        -nargs=0 HK :FloatermNew nvim -R ~/.config/nvim/src/help/help.txt
-command!        -nargs=0 Re :FloatermNew --position=right  ranger
-command!        -nargs=0 Init :source ~/.config/nvim/install.vim
 command! 		-nargs=0 Todo :CocList todolist
 command!        -nargs=0 Git :FloatermNew lazygit
-command! 				 Openall lua require"monolithic".open()
 
 
 "彩虹括号
@@ -209,7 +197,6 @@ let g:vimspector_install_gadgets = [
   let &showbreak=" ↪  "
   nmap <silent> j gj
   nmap <silent> k gk
-
 
 
 
@@ -312,9 +299,10 @@ let g:header_field_author = 'denstiny Anonymity'
 let g:header_field_author_email = '2254228017@qq.com'
 let g:header_auto_add_header=0
 
-"=== undofile
-set undofile
-set undodir=~/.vim/undo
 
 
+"=== 逃离 esc
+
+let g:better_escape_interval = 100
+let g:better_escape_shortcut = 'jk'
 
