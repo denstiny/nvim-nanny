@@ -1,9 +1,9 @@
 set showtabline=2
 
 
-hi TabLineFill guifg=#282A36 guibg=#282A36 ctermbg=None ctermfg=NONE
-hi TabLineSel guifg=#70778a  guibg=#282A36 cterm=bold gui=bold
-hi Tabline guifg=#282A36  guibg=#282A36
+hi TabLineFill guifg=#282C34 guibg=#282C34 ctermbg=None ctermfg=NONE
+hi TabLineSel guifg=#70778a  guibg=#282C34 cterm=bold gui=bold
+hi Tabline guifg=#282C34  guibg=#282C34
 
 
 let g:Tabest = ""

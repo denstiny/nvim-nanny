@@ -1,4 +1,3 @@
-"let g:ale_echo_msg_format = '[%linter%] %code: %%s'
 let             g:coc_global_extensions = [
 			\'coc-json',
 			\'coc-pairs',
@@ -117,7 +116,7 @@ nmap    <silent>          <C-h>     :vertical res -5<cr>
 nmap    <silent>          <C-j>     :res      +5<cr>
 nmap    <silent>          <C-k>     :res      -5<cr>
 noremap <silent>          <C-f>     :FZF<cr>
-nmap <silent>          <esc><esc>     :nohlsearch<cr>
+nmap <silent>          <esc>     :nohlsearch<cr>
 
 " 自定义命令
 command!        -nargs=0 Apt :CocList marketplace
@@ -290,19 +289,16 @@ let &viminfo = substitute(&viminfo, "'\\zs\\d*", "10", "")
 
 
 
-
-
-"=== vim 高亮光标下单词
-
-"let g:cursorword_delay = 400
-let g:header_field_author = 'denstiny Anonymity'
-let g:header_field_author_email = '2254228017@qq.com'
-let g:header_auto_add_header=0
-
-
-
 "=== 逃离 esc
 
 let g:better_escape_interval = 100
 let g:better_escape_shortcut = 'jk'
 
+
+
+
+"=== header 
+let g:header_auto_add_header = 0
+let g:header_field_author = 'denstiny'
+let g:header_field_author_email = '2254228017@qq.com'
+let g:header_field_filename_path = 1
