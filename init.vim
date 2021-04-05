@@ -6,7 +6,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 
 "=== vim查看启动速度 使用命令StartupTime
-Plug 'dstein64/vim-startuptime'
+Plug 'dstein64/vim-startuptime',{'on':'StartupTime'}
 
 "=== 历史记录
 Plug 'mbbill/undotree'
@@ -28,6 +28,12 @@ Plug 'easymotion/vim-easymotion'
 "=== 浮动终端 
 Plug 'voldikss/vim-floaterm'     
 
+"===搜索优化
+Plug 'junegunn/vim-slash'        
+
+"=== 平滑滚动
+Plug 'psliwka/vim-smoothie'
+
 "===  treesitter 全家桶
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  
 Plug 'romgrk/nvim-treesitter-context' 
@@ -36,13 +42,8 @@ Plug 'romgrk/nvim-treesitter-context'
 Plug 'tjdevries/colorbuddy.vim'
 Plug 'Th3Whit3Wolf/onebuddy'
 
-"=== 状态栏
-Plug 'glepnir/galaxyline.nvim' , {'branch': 'main'}
-Plug 'kyazdani42/nvim-web-devicons' " lua
-Plug 'ryanoasis/vim-devicons' " vimscript
-
 "=== 显示代码颜色
-Plug 'RRethy/vim-hexokinase', { 'do': 'make hexokinase' }
+Plug 'RRethy/vim-hexokinase', { 'do': 'make hexokinase','on':'HexokinaseToggle' }
 
 "=== 代码环绕工具
 Plug 'tpope/vim-surround'  
@@ -100,14 +101,13 @@ endfunction
 
 
 
-" 状态栏主题
-
 lua << EOF
--- 状态栏
-require('aeroline')
 -- 代码高亮
 require('treesitter')
 EOF
+
+
+
 
 for file in split(glob(Dot('src/setting/*.vim')),'\n')
 	exe 'source' file

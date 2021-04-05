@@ -1,3 +1,6 @@
+" File              : init.config.vim
+" Date              : 05.04.2021
+" Last Modified Date: 05.04.2021
 let             g:coc_global_extensions = [
 			\'coc-json',
 			\'coc-pairs',
@@ -70,6 +73,7 @@ set             virtualedit=block,onemore
 set autoindent
 set numberwidth=1
 set nu
+set laststatus=0
 
 ""快速运行
 noremap <silent><space>r :AsyncTask file-run<cr>
