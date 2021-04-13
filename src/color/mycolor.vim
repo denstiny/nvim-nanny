@@ -1,5 +1,6 @@
 highlight Comment gui=italic "设置批注斜体"
 hi comment ctermfg=6
+set laststatus=0
 se cursorline
 "hi cursorline cterm=NONE ctermbg=NONE
 highlight clear SignColumn
@@ -7,11 +8,11 @@ highlight clear SignColumn
 hi CursorLine cterm=NONE ctermbg=darkred ctermfg=white guibg=NONE guifg=NONE gui=bold
 " 取消vim空行的波浪 '~'
 set fillchars=fold:\ ,vert:\ ,eob:\   ",msgsep:-
-hi VertSplit  term=none  cterm=none  gui=none  guibg=#35363F  guifg=none
+hi VertSplit  term=none  cterm=none  gui=none  guibg=#3B3836  guifg=none
 
 
 "Set the coc floating window background color
-hi CocFloating guibg=#333841 guifg=none 
+hi CocFloating guibg=#3B3836 guifg=none 
 
 hi NormalFloat guibg=none guifg=none 
 "Set the default color floating window
@@ -39,5 +40,7 @@ endfunction
 
 augroup cmd_msg_cls
     autocmd!
-    autocmd CmdlineLeave :  call timer_start(5000, funcref('s:empty_message'))
+    autocmd CmdlineLeave :  call timer_start(10000, funcref('s:empty_message'))
 augroup END
+
+

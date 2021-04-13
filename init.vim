@@ -11,10 +11,10 @@ Plug 'dstein64/vim-startuptime',{'on':'StartupTime'}
 "=== 历史记录
 Plug 'mbbill/undotree'
 
+
 "=== vim目录树
-Plug 'preservim/nerdtree' ", { 'on': 'NERDTreeToggle' }
-Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight' 
+Plug 'preservim/nerdtree'
+Plug 'ryanoasis/vim-devicons'
 
 "===vim终端辅助插件
 Plug 'skywind3000/vim-terminal-help' 
@@ -35,15 +35,17 @@ Plug 'junegunn/vim-slash'
 Plug 'psliwka/vim-smoothie'
 
 "===  treesitter 全家桶
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  
-Plug 'romgrk/nvim-treesitter-context' 
+"Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  
+"Plug 'romgrk/nvim-treesitter-context' 
+
+"=== statline
+"Plug 'glepnir/galaxyline.nvim' , {'branch': 'main'}
+"Plug 'kyazdani42/nvim-web-devicons' " lua
 
 "=== 主题插件
-Plug 'tjdevries/colorbuddy.vim'
-Plug 'Th3Whit3Wolf/onebuddy'
-
-"=== 显示代码颜色
-Plug 'RRethy/vim-hexokinase', { 'do': 'make hexokinase','on':'HexokinaseToggle' }
+Plug 'morhetz/gruvbox'
+"Plug 'tjdevries/colorbuddy.vim'
+"Plug 'Th3Whit3Wolf/onebuddy'
 
 "=== 代码环绕工具
 Plug 'tpope/vim-surround'  
@@ -54,8 +56,7 @@ Plug 'gcmt/wildfire.vim'
 "=== 开发工具 
 Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile','branch': 'master'}
 Plug 'puremourning/vimspector',{ 'do': 'python3 install_gadget.py --all'}
-
-"vim 自动化任务
+Plug 'w0rp/ale',{'for':'java'}
 Plug 'skywind3000/asynctasks.vim',{'on':'AsyncTask'}
 Plug 'skywind3000/asyncrun.vim'
 
@@ -86,14 +87,17 @@ Plug 'junegunn/limelight.vim'
 "=== 快速运行
 Plug 'thinca/vim-quickrun'
 
+"=== 对其插件
+Plug 'godlygeek/tabular'
+
 call plug#end()
 
 "配色主题
 
 
 set background=dark
-lua require('colorbuddy').colorscheme('onebuddy')
-
+"lua require('colorbuddy').colorscheme('onebuddy')
+colorscheme gruvbox
 
 function! Dot(path)
 	return "~/.config/nvim/" . a:path
@@ -102,8 +106,10 @@ endfunction
 
 
 lua << EOF
+-- line
+--require('aeroline')
 -- 代码高亮
-require('treesitter')
+--require('treesitter')
 EOF
 
 

@@ -23,3 +23,39 @@
 #		endsnippet
 #
 # Online reference: https://github.com/SirVer/ultisnips/blob/master/doc/UltiSnips.txt
+snippet init "file-build" b
+
+# vim: set fenc=utf-8 ft=dosini:
+
+# define a new task named "file-build"
+[file-build]
+
+# shell command, use quotation for filenames containing spaces
+# check ":AsyncTaskMacro" to see available macros
+command=g++ "$(VIM_FILEPATH)" -o -g "$(VIM_FILEDIR)/$(VIM_FILENOEXT)"
+
+# working directory, can change to $(VIM_ROOT) for project root
+cwd=$(VIM_FILEDIR)
+
+# output mode, can be one of quickfix and terminal
+# - quickfix: output to quickfix window
+# - terminal: run the command in the internal terminal
+output=quickfix
+
+# this is for output=quickfix only
+# 如果省略，将使用vim当前的错误格式。
+errorformat=%f:%l:%m
+
+# save file before execute
+[file-run]
+command="$(VIM_FILEPATH)"
+command:c,cpp="$(VIM_PATHNOEXT)"
+command:go="$(VIM_PATHNOEXT)"
+command:python=python "$(VIM_FILENAME)"
+command:javascript=node "$(VIM_FILENAME)"
+command:sh=sh "$(VIM_FILENAME)"
+command:lua=lua "$(VIM_FILENAME)"
+command:perl=perl "$(VIM_FILENAME)"
+command:ruby=ruby "$(VIM_FILENAME)"
+
+endsnippet

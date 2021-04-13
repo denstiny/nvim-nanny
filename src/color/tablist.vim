@@ -1,9 +1,9 @@
 set showtabline=2
 
 
-hi TabLineFill guifg=#282C34 guibg=#282C34 ctermbg=None ctermfg=NONE
-hi TabLineSel guifg=#70778a  guibg=#282C34 cterm=bold gui=bold
-hi Tabline guifg=#282C34  guibg=#282C34
+hi TabLineFill guifg=#282C34 guibg=#292929 ctermbg=None ctermfg=NONE
+hi TabLineSel guifg=#70778a  guibg=#292929 cterm=bold gui=bold
+hi Tabline guifg=#292929  guibg=#282C34
 
 
 let g:Tabest = ""
@@ -43,7 +43,6 @@ endfunction
 
 set tabline=%!MyTabLine()
 autocmd CursorMoved * set tabline=%!Tablie()
-
 
 
 

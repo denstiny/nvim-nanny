@@ -4,7 +4,9 @@
 let             g:coc_global_extensions = [
 			\'coc-json',
 			\'coc-pairs',
+			\'coc-highlight',
 			\'coc-git',
+			\'coc-tabnine',
 			\'coc-pyright',
 			\'coc-picgo', 
 			\'coc-vimlsp',
@@ -46,7 +48,6 @@ let g:NERDTreeGitStatusIndicatorMapCustom = {
 
 
 
-
 " 打开文件自动定位到最后编辑的位置
 autocmd         bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 "
@@ -60,7 +61,7 @@ set nowritebackup
 set noswapfile 
 set cmdheight=1
 set updatetime=300
-set shortmess+=c
+"set shortmess+=c
 set signcolumn=yes
 set sw=4
 set ts=4
@@ -73,15 +74,6 @@ set             virtualedit=block,onemore
 set autoindent
 set numberwidth=1
 set nu
-set laststatus=0
-
-""快速运行
-noremap <silent><space>r :AsyncTask file-run<cr>
-noremap <silent><space>d :AsyncTask file-build<cr>
-let g:asyncrun_open = 10
-let g:asynctasks_config_name = ['.tasks', '.git/tasks.ini', '.svn/tasks.ini']
-let g:asynctasks_term_pos = 'bottom'
-let g:asynctasks_term_rows = 10    " 设置纵向切割时，高度为 10
 
 
 
@@ -300,9 +292,12 @@ let g:better_escape_shortcut = 'jk'
 
 
 
-
 "=== header 
 let g:header_auto_add_header = 0
 let g:header_field_author = 'denstiny'
 let g:header_field_author_email = '2254228017@qq.com'
 let g:header_field_filename_path = 1
+
+"=== java ale
+let g:ale_sign_error = '●'
+let g:ale_sign_warning = '◉'
