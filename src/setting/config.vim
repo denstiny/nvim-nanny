@@ -4,7 +4,6 @@
 let             g:coc_global_extensions = [
 			\'coc-json',
 			\'coc-pairs',
-			\'coc-highlight',
 			\'coc-git',
 			\'coc-tabnine',
 			\'coc-pyright',
@@ -31,7 +30,7 @@ let             g:undotree_SplitWidth = 20
 autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() |
     \ quit | endif
 let g:NERDTreeDirArrowExpandable = '◉'
-let g:NERDTreeDirArrowCollapsible = '◯'
+let g:NERDTreeDirArrowCollapsible = '○'
 let NERDTreeShowHidden=1
 let g:NERDTreeGitStatusIndicatorMapCustom = {
                 \ 'Modified'  :'✹ ',
@@ -56,6 +55,7 @@ set hidden
 set scrolloff=5
 set encoding=UTF-8
 filetype on              " 设置开启文件类型侦测
+set foldmethod=manual
 set nobackup
 set nowritebackup
 set noswapfile 
@@ -218,6 +218,7 @@ au BufRead,BufNewFile *.md nmap <leader>p :CocCommand picgo.uploadImageFromClipb
 "===
 
 function! MaximizeToggle()
+	NERDTreeClose
   if exists("s:maximize_session")
     exec "source " . s:maximize_session
     call delete(s:maximize_session)
@@ -240,7 +241,7 @@ nmap <silent> <leader>z :call MaximizeToggle()<CR>
 "===
 
 set list
-set listchars=eol:\ ,tab:\ \ ,trail:∘,extends:>,precedes:<
+set listchars=eol:\ ,tab:\ \ ,trail:\ ,extends:>,precedes:<
 autocmd InsertEnter,BufEnter * set formatoptions=vt
 "imap <cr> <cr><space><bs>
 "nmap o o<space><bs>
@@ -301,3 +302,6 @@ let g:header_field_filename_path = 1
 "=== java ale
 let g:ale_sign_error = '●'
 let g:ale_sign_warning = '◉'
+
+"=== ctags
+let g:vista_icon_indent = ["╰─▸ ", "├─▸ "]

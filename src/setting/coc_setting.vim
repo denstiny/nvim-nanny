@@ -35,6 +35,7 @@ endif
 
 nmap            <silent> gs <Plug>(coc-definition)
 nmap            <silent> gr <Plug>(coc-references)
+nmap 			<silent> <leader>rn <Plug>(coc-rename)
 
 
 nnoremap <silent> K :call <SID>show_documentation()<CR>
