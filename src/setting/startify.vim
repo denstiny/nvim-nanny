@@ -56,11 +56,6 @@ let g:startify_skiplist = [
 
 
 
-
-
-
-
-
 " 设置 header
 let g:startify_custom_header = [
 			\'                █████╗ ███████╗██████╗  ██████╗ ███╗   ██╗██╗   ██╗██╗███╗   ███╗',

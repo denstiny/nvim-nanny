@@ -1,41 +1,24 @@
 {
+  "adapters": {
+    "java-debug-server": {
+      "name": "vscode-java",
+      "port": "${AdapterPort}"
+    }
+  },
   "configurations": {
-    "Java Launch": {
-      "adapter": "vscode-java",
-      "configuration": {
-        "request": "launch",
-        "mainClass": "com.vimspector.test.TestApplication",
-        "sourcePaths": [ "${workspaceRoot}/src/main/java" ],
-        "classPaths": [ "${workspaceRoot}/target/classes" ],
-        "args": "hello world!",
-        "stopOnEntry": true,
-        "console": "integratedTerminal",
-        "stepFilters": {
-          "skipClasses": [ "$$JDK" ]
-        }
-      }
-    },
     "Java Attach": {
-      "adapter": "vscode-java",
+      "default": true,
+      "adapter": "java-debug-server",
       "configuration": {
         "request": "attach",
-        "sourcePaths": [ "${workspaceRoot}/src/main/java" ],
-        "stopOnEntry": true,
-        "hostName": "localhost",
-        "port": "${JVMDebugPort}",
-        "stepFilters": {
-          "skipClasses": [ "$$JDK" ]
+        "host": "127.0.0.1",
+        "port": "5005"
+      },
+      "breakpoints": {
+        "exception": {
+          "caught": "N",
+          "uncaught": "N"
         }
-      }
-    },
-    "Attach with vscode-javac": {
-      "adapter": "vscode-javac",
-      "configuration": {
-        "request": "attach",
-        "port": "${debugPort}",
-        "sourceRoots": [
-          "${workspaceRoot}/src/main/java"
-        ]
       }
     }
   }

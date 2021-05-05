@@ -1,13 +1,11 @@
 " File              : init.config.vim
-" Date              : 05.04.2021
-" Last Modified Date: 05.04.2021
-let             g:coc_global_extensions = [
+let         g:coc_global_extensions = [
 			\'coc-json',
 			\'coc-pairs',
 			\'coc-git',
 			\'coc-tabnine',
 			\'coc-pyright',
-			\'coc-picgo', 
+			\'coc-picgo',
 			\'coc-vimlsp',
 			\'coc-snippets',
 			\'coc-marketplace',
@@ -15,7 +13,6 @@ let             g:coc_global_extensions = [
 			\'coc-go',
 			\'coc-sh']
 "coc-picgo  markdown工具，负责上传剪切版图片到图床
-"coc-rime vim 的输入法 确保安装 依赖librime
 
 
 noremap        <silent> L :UndotreeToggle<CR>
@@ -58,7 +55,7 @@ filetype on              " 设置开启文件类型侦测
 set foldmethod=manual
 set nobackup
 set nowritebackup
-set noswapfile 
+set noswapfile
 set cmdheight=1
 set updatetime=300
 "set shortmess+=c
@@ -67,7 +64,7 @@ set sw=4
 set ts=4
 set tabstop=4
 set clipboard=unnamed
-set foldcolumn=0 "设置边框的边度 
+set foldcolumn=0 "设置边框的边度
 set signcolumn=yes  "是否关闭边框
 set              cursorline
 set             virtualedit=block,onemore
@@ -154,7 +151,7 @@ nnoremap <silent><expr> <M-b> translator#window#float#has_scroll() ?
 
 
 "===
-"=== vimspector 代码调试 
+"=== vimspector 代码调试
 "===
 
 let g:vimspector_enable_mappings = 'HUMAN'
@@ -177,9 +174,9 @@ let g:vimspector_code_minwidth = 77
 let g:vimspector_terminal_maxwidth = 75
 let g:vimspector_terminal_minwidth = 20
 "
-let g:vimspector_install_gadgets = [ 
+let g:vimspector_install_gadgets = [
 			\'debugpy',
-			\'vscode-cpptools', 
+			\'vscode-cpptools',
 			\'CodeLLDB',
 			\'vscode-bash-debug',
 			\'	vscode-go']
@@ -248,11 +245,11 @@ autocmd InsertEnter,BufEnter * set formatoptions=vt
 
 
 "===
-"=== fcitx 输入法 
+"=== fcitx 输入法
 "===
 
 let g:FcitxState = 0 " 0 为英文，1为中文
-function! SwapEnglish() 
+function! SwapEnglish()
 	if g:FcitxState != 3
 	let g:FcitxState = system("fcitx5-remote")-1
 endif
@@ -261,17 +258,17 @@ endfunction
 
 
 "  判断插入的光标的前一个字符是否为中文,如果是中文则切换中文输入法
-function! SwapChinese() 
+function! SwapChinese()
 	let s:LineChar =  getline(".")[col(".")-2]
 	if g:FcitxState == 1
 		let s:Editor = system("fcitx5-remote -o")
-	elseif g:FcitxState == 3 
+	elseif g:FcitxState == 3
 		let g:FcitxState = 1
 	elseif s:LineChar > '~'
 		let s:Editor = system("fcitx5-remote -o") "切换中文
 		let g:FcitxState = 3
 	elseif s:LineChar <= '~'
-		let s:Editor = system("fcitx5-remote -c") 
+		let s:Editor = system("fcitx5-remote -c")
 	endif
 endfunction
 
@@ -293,7 +290,7 @@ let g:better_escape_shortcut = 'jk'
 
 
 
-"=== header 
+"=== header
 let g:header_auto_add_header = 0
 let g:header_field_author = 'denstiny'
 let g:header_field_author_email = '2254228017@qq.com'

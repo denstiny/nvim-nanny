@@ -1,4 +1,3 @@
-
 " 设置触发补全
 set hidden
 set shortmess+=c

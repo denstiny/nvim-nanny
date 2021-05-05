@@ -85,5 +85,7 @@
 	"clangd.disableDiagnostics":false,
 	"snippets.priority":99,
 	"snippets.userSnippetsDirectory":"~/.config/nvim/snips",
-	"snippets.loadFromExtensions": true
+	"snippets.loadFromExtensions": true,
+  "java.home": "/usr/lib/jvm/java-11-openjdk",
+  "java.errors.incompleteClasspath.severity": "ignore"
 }
