@@ -9,7 +9,7 @@ hi CursorLine cterm=NONE ctermbg=darkred ctermfg=white guibg=NONE guifg=NONE gui
 " 取消vim空行的波浪 '~'
 set fillchars=fold:\ ,vert:\ ,eob:\   ",msgsep:-
 hi VertSplit  term=none  cterm=none  gui=none  guibg=#2C323C  guifg=none
-
+hi Normal guibg=NONE ctermbg=NONE 
 
 "Set the coc floating window background color
 hi CocFloating guibg=#242832 guifg=none 
