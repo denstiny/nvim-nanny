@@ -1,7 +1,10 @@
-highlight Comment gui=italic "设置批注斜体"
-hi comment ctermfg=6
+" 设置批注斜体
+highlight Comment gui=italic 
+" 设置关键字斜体
+hi Identifier cterm=italic gui=italic 
+
 set laststatus=2
-se cursorline
+"se cursorline
 "hi cursorline cterm=NONE ctermbg=NONE
 highlight clear SignColumn
 
@@ -13,7 +16,6 @@ hi Normal guibg=NONE ctermbg=NONE
 
 "Set the coc floating window background color
 hi CocFloating guibg=#242832 guifg=none 
-
 hi NormalFloat guibg=none guifg=none 
 "Set the default color floating window
 
@@ -42,5 +44,4 @@ augroup cmd_msg_cls
     autocmd!
     autocmd CmdlineLeave :  call timer_start(10000, funcref('s:empty_message'))
 augroup END
-
 

@@ -362,7 +362,7 @@ gls.short_line_left[1] = {
       }
       local vim_mode = vim.fn.mode()
       vim.api.nvim_command('hi GalaxyViMode guifg='..mode_color[vim_mode])
-      return alias[vim_mode] .. '  '
+      return alias[vim_mode] .. ' '
     end,
     highlight = {colors.red,colors.line_bg,'bold'},
   },

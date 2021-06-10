@@ -113,28 +113,26 @@ endfunction
 let g:coc_snippet_next = '<C-k>'
 
 
-"=== coc 打开大文件自动禁用
-let g:trigger_size = 0.5 * 1048576
 
-augroup hugefile
-  autocmd!
-  autocmd BufReadPre *
-        \ let size = getfsize(expand('<afile>')) |
-        \ if (size > g:trigger_size) || (size == -2) |
-        \   echohl WarningMsg | echomsg 'WARNING: altering options for this huge file!' | echohl None |
-        \   exec 'CocDisable' |
-        \ else |
-        \   exec 'CocEnable' |
-        \ endif |
-        \ unlet size
-augroup END
-
-function! LoadJavaContent(uri)
-    setfiletype java
-    let content = CocRequest('java', 'java/classFileContents', {'uri': 'jdt:/' . a:uri})
-    call setline(1, split(content, "\n"))
-    setl nomod
-    setl readonly
-endfunction
-
-autocmd! BufReadPre,BufReadCmd,FileReadCmd,SourceCmd *.class call LoadJavaContent(expand("<amatch>"))<CR>
+" augroup hugefile
+"   autocmd!
+"   autocmd BufReadPre *
+"         \ let size = getfsize(expand('<afile>')) |
+"         \ if (size > g:trigger_size) || (size == -2) |
+"         \   echohl WarningMsg | echomsg 'WARNING: altering options for this huge file!' | echohl None |
+"         \   exec 'CocDisable' |
+"         \ else |
+"         \   exec 'CocEnable' |
+"         \ endif |
+"         \ unlet size
+" augroup END
+" 
+" function! LoadJavaContent(uri)
+"     setfiletype java
+"     let content = CocRequest('java', 'java/classFileContents', {'uri': 'jdt:/' . a:uri})
+"     call setline(1, split(content, "\n"))
+"     setl nomod
+"     setl readonly
+" endfunction
+" 
+" autocmd! BufReadPre,BufReadCmd,FileReadCmd,SourceCmd *.class call LoadJavaContent(expand("<amatch>"))<CR>

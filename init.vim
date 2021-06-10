@@ -43,9 +43,8 @@ Plug 'glepnir/galaxyline.nvim' , {'branch': 'main'}
 Plug 'kyazdani42/nvim-web-devicons' " lua
 
 "=== 主题插件
-"Plug 'morhetz/gruvbox'
-Plug 'tjdevries/colorbuddy.vim'
-Plug 'Th3Whit3Wolf/onebuddy'
+"Plug 'tjdevries/colorbuddy.vim'
+"Plug 'Th3Whit3Wolf/onebuddy'
 
 "=== 代码环绕工具
 Plug 'tpope/vim-surround'
@@ -100,18 +99,17 @@ Plug 'hrj/vim-DrawIt'
 Plug 'mfussenegger/nvim-dap'
 Plug 'rcarriga/nvim-dap-ui'
 Plug 'theHamsta/nvim-dap-virtual-text'
-"=== 文本折叠
-Plug 'scr1pt0r/crease.vim'
 
 "=== 颜色显示
 Plug 'norcalli/nvim-colorizer.lua'
 
 Plug 'mhinz/vim-startify'
+
 call plug#end()
 
 "配色主题
-set background=dark
-lua require('colorbuddy').colorscheme('onebuddy')
+"set background=dark
+"lua require('colorbuddy').colorscheme('onebuddy')
 "colorscheme gruvbox
 
 function! Dot(path)
@@ -119,16 +117,19 @@ function! Dot(path)
 endfunction
 
 
-
 lua << EOF
+
+-- packer
+require('use-packer')
 -- line
 require('aeroline')
 -- 代码高亮
 require('treesitter')
 -- dap config
 require('dap-config')
--- colorizzer
-require('colorizer').setup()
+
+vim.o.background = 'dark'
+vim.g.colors_name = 'onedark_nvim'
 EOF
 
 
@@ -139,5 +140,3 @@ endfor
 for file in split(glob(Dot('src/color/*.vim')),'\n')
 	exe 'source' file
 endfor
-
-

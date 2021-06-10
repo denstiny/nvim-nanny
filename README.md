@@ -165,3 +165,23 @@ pip install pynvim
  <a href="https://www.bilibili.com/video/BV16v4y1f7kV">  <span>  <img border="0" src="https://i.loli.net/2021/02/01/YtXQaW4GPigSxqT.png" height="450" width="100%"/>
   </a>
 
+## The problem
+<font size=5><b>
+`Error executing vim.schedule lua callback: ~/local/share/nvim/site/pack/packer/start/packer.nvim/lua/packer/display.lua : 152 : Invalid Key 'noautocmd'     `
+</b></font>  
+1. open that file, comment line 149 and save and exit neovim:
+```vim
+--    noautocmd = true, -- comment this line
+  }
+```
+  `local win = api.nvim_open_win(buf, false, opts) -- the issue raises from this line (line number 152)  
+  local check = vim.loop.new_prepare()`    
+     
+2. open neovim and then run:
+```sh
+PackerCompile
+PackerInstall
+PackerClean
+```
+3. and then uncomment that line 149 again, and everything will work.
+

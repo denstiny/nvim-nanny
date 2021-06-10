@@ -232,16 +232,6 @@ endfunction
 
 nmap <silent> <leader>z :call MaximizeToggle()<CR>
 
-"===
-"=== vim 缩进线
-"===
-
-set list
-set listchars=eol:\ ,tab:\ \ ,trail:\ ,extends:>,precedes:<
-autocmd InsertEnter,BufEnter * set formatoptions=vt
-"imap <cr> <cr><space><bs>
-"nmap o o<space><bs>
-
 
 "===
 "=== fcitx 输入法
