@@ -14,17 +14,11 @@
 <br> 
 
 > ###### `启动界面`     
-
-![20210331091316](https://i.loli.net/2021/03/31/5NiOtJLVM71QPDd.png)  
-
-> ###### `vimlsp`
-
-![20210331091522](https://i.loli.net/2021/03/31/VdtlyufepHRNWqX.png)
-
+![20210613155534](https://i.loli.net/2021/06/13/N9L4VGgKqBPJsiR.png)
 > ###### `c/c++`
-
-![image.png](https://i.loli.net/2021/01/25/TALRiyaOSoBGmDW.png)
-
+![20210613155444](https://i.loli.net/2021/06/13/rLlIuiT1eRDhcQd.png)
+> ###### `java`
+![20210613154727](https://i.loli.net/2021/06/13/EBHSrwxeX24WVIo.png)
 ## Method of use    
 先安装neovim的0.5版本  
 #### arch linux

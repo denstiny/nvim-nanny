@@ -1,6 +1,8 @@
 let mapleader = ";"
 
 call plug#begin('~/.vim/plugged')
+"=== 自动代码格式化
+Plug 'Chiel92/vim-autoformat'
 
 "=== 多光标
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
@@ -37,14 +39,19 @@ Plug 'psliwka/vim-smoothie'
 "===  treesitter 全家桶
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'romgrk/nvim-treesitter-context'
+Plug 'nvim-treesitter/nvim-treesitter-refactor'
+
 
 "=== statline
 Plug 'glepnir/galaxyline.nvim' , {'branch': 'main'}
 Plug 'kyazdani42/nvim-web-devicons' " lua
 
 "=== 主题插件
-"Plug 'tjdevries/colorbuddy.vim'
-"Plug 'Th3Whit3Wolf/onebuddy'
+Plug 'tjdevries/colorbuddy.vim'
+Plug 'Th3Whit3Wolf/onebuddy'
+
+"=== 缩进线
+Plug 'lukas-reineke/indent-blankline.nvim', { 'branch': 'lua' }
 
 "=== 代码环绕工具
 Plug 'tpope/vim-surround'
@@ -102,14 +109,13 @@ Plug 'theHamsta/nvim-dap-virtual-text'
 
 "=== 颜色显示
 Plug 'norcalli/nvim-colorizer.lua'
-
-Plug 'mhinz/vim-startify'
+Plug 'mhinz/vim-startify',{'branch': 'center'}
 
 call plug#end()
 
 "配色主题
-"set background=dark
-"lua require('colorbuddy').colorscheme('onebuddy')
+set background=dark
+lua require('colorbuddy').colorscheme('onebuddy')
 "colorscheme gruvbox
 
 function! Dot(path)
@@ -127,11 +133,9 @@ require('aeroline')
 require('treesitter')
 -- dap config
 require('dap-config')
-
-vim.o.background = 'dark'
-vim.g.colors_name = 'onedark_nvim'
+-- theme
+require('theme')
 EOF
-
 
 for file in split(glob(Dot('src/setting/*.vim')),'\n')
 	exe 'source' file
@@ -140,3 +144,5 @@ endfor
 for file in split(glob(Dot('src/color/*.vim')),'\n')
 	exe 'source' file
 endfor
+
+

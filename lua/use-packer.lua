@@ -17,22 +17,7 @@ packer.init({
 --- startup and add configure plugins ----
 packer.startup(function()
 	local use = use
-	-- 主题
-	use {
-		'olimorris/onedark.nvim',
-		requires = 'rktjmp/lush.nvim'
-	}
 	-- 彩虹括号
 	use {'p00f/nvim-ts-rainbow'}
 end)
 
-
-vim.o.background = 'dark'
-vim.g.colors_name = 'onedark_nvim'
-
-
-vim.g.onedark_settings = {
-    bold = false,
-    italic = false,
-    underline = false
-}

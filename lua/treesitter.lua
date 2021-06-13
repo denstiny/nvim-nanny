@@ -28,10 +28,10 @@ require'nvim-treesitter.configs'.setup {
   },
 }
 
--- 高亮当前函数范围 有点烦人我关了
+-- 高亮当前函数范围 
 require'nvim-treesitter.configs'.setup {
   refactor = {
-    highlight_current_scope = { enable = true },
+    highlight_current_scope = { enable = false },
   },
 }
 
