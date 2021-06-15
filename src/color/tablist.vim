@@ -42,7 +42,6 @@ endfunction
 set tabline=%!MyTabLine()
 autocmd CursorMoved * set tabline=%!Tablie()
 autocmd InsertEnter * set tabline=%!MyTabLine()
-"autocmd VimEnter * set tabline=%!MyTabLine()
 
 
 

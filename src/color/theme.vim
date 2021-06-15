@@ -6,9 +6,13 @@ hi Identifier cterm=italic gui=italic
 set laststatus=2
 highlight clear SignColumn
 
-hi CursorLine cterm=NONE ctermbg=darkred ctermfg=white guibg=NONE guifg=NONE gui=bold
+"hi CursorLine cterm=NONE ctermbg=darkred ctermfg=darkred guibg=#2C323C guifg=NONE gui=bold
+hi CursorLine cterm=NONE ctermbg=darkred ctermfg=darkred guibg=#2C323C guifg=NONE
 " 取消vim空行的波浪 '~'
 set fillchars=fold:\ ,vert:\ ,eob:\   ",msgsep:-
+
+
+
 hi VertSplit  term=none  cterm=none  gui=none  guibg=#2C323C  guifg=none
 hi Normal guibg=none ctermbg=NONE 
 
@@ -48,3 +52,13 @@ augroup cmd_msg_cls
     autocmd CmdlineLeave :  call timer_start(10000, funcref('s:empty_message'))
 augroup END
 
+"== 缩进线
+hi IndentBlanklineChar guifg=#3C4049
+hi IndentBlanklineContextChar guifg=#888888
+
+"== 高亮指定列
+if exists('+colorcolumn')
+  set colorcolumn=135
+else
+  au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>135v.\+', -1)
+endif

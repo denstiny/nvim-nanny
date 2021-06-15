@@ -11,13 +11,13 @@ endfunction
 
 let g:startify_lists = [
         \ { 'type': 'files',     'header': ['']            },
-        \ { 'type': 'dir',       'header': [''] },
-        \ { 'type': 'sessions',  'header': ['']       },
-        \ { 'type': 'bookmarks', 'header': ['']      },
         \ { 'type': function('s:gitModified'),  'header': ['']},
-        \ { 'type': function('s:gitUntracked'), 'header': ['']},
-        \ { 'type': 'commands',  'header': ['   Commands']       },
+        \ { 'type': 'dir',       'header': [''] },
         \ ]
+    	""\ { 'type': 'sessions',  'header': ['']       },
+       "" \ { 'type': 'bookmarks', 'header': ['']      },
+       "" \ { 'type': function('s:gitUntracked'), 'header': ['']},
+       "" \ { 'type': 'commands',  'header': ['   Commands']       },
 
 
 " 设置书签
@@ -29,7 +29,7 @@ let g:startify_bookmarks            = [
 let g:startify_files_number = 30
 
 " 是否自动加载目录下的Session.vim, 很好用
-let g:startify_session_autoload = 1
+let g:startify_session_autoload = 0
 
 " 过滤列表，支持正则表达式
 let g:startify_skiplist = [

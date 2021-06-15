@@ -145,4 +145,3 @@ for file in split(glob(Dot('src/color/*.vim')),'\n')
 	exe 'source' file
 endfor
 
-
