@@ -53,12 +53,16 @@ augroup cmd_msg_cls
 augroup END
 
 "== 缩进线
+" 背景色
 hi IndentBlanklineChar guifg=#3C4049
-hi IndentBlanklineContextChar guifg=#888888
+" 前景色
+hi IndentBlanklineContextChar guifg=#7987A0
 
 "== 高亮指定列
-if exists('+colorcolumn')
-  set colorcolumn=135
-else
-  au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>135v.\+', -1)
-endif
+"if exists('+colorcolumn')
+"  set colorcolumn=135
+"else
+"  au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>135v.\+', -1)
+"endif
+
+

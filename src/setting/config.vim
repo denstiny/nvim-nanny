@@ -80,6 +80,7 @@ set             termguicolors
 set             updatetime=50 " 设置更新时间
 "悬浮
 autocmd         User Startified setlocal buflisted "自定关闭遗留
+autocmd InsertEnter,BufEnter * set formatoptions=vt "删除遗留
 "hi FloatermBorder guifg=cyan
 let             g:floaterm_position ='center'
 let             g:floaterm_winblend = 5		"设置浮动窗口透明度
@@ -93,6 +94,7 @@ let             g:floaterm_autoclose	 = 1
 
 
 " 快捷键
+nmap    <silent><F2> 	      :Startify<cr>
 map     <leader>s         <Plug>(EasyAlign)
 map     ,                 <Plug>(easymotion-bd-f)
 map     <silent>          <leader>n :bp<CR>
@@ -185,9 +187,7 @@ let g:vimspector_install_gadgets = [
 "===
 "=== vim折行
 "===
-  let &showbreak=" ↪  "
-  nmap <silent> j gj
-  nmap <silent> k gk
+let &showbreak=" ↪  "
 
 
 
@@ -277,13 +277,6 @@ let &viminfo = substitute(&viminfo, "'\\zs\\d*", "10", "")
 let g:better_escape_interval = 100
 let g:better_escape_shortcut = 'jk'
 
-
-
-"=== header
-let g:header_auto_add_header = 0
-let g:header_field_author = 'denstiny'
-let g:header_field_author_email = '2254228017@qq.com'
-let g:header_field_filename_path = 1
 
 "=== java ale
 let g:ale_sign_error = '●'

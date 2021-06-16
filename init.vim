@@ -3,7 +3,6 @@ let mapleader = ";"
 call plug#begin('~/.vim/plugged')
 "=== 自动代码格式化
 Plug 'Chiel92/vim-autoformat'
-
 "=== 多光标
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 
@@ -12,7 +11,6 @@ Plug 'dstein64/vim-startuptime',{'on':'StartupTime'}
 
 "=== 历史记录
 Plug 'mbbill/undotree'
-
 
 "=== vim目录树
 Plug 'preservim/nerdtree'
@@ -44,7 +42,6 @@ Plug 'nvim-treesitter/nvim-treesitter-refactor'
 
 "=== statline
 Plug 'glepnir/galaxyline.nvim' , {'branch': 'main'}
-Plug 'kyazdani42/nvim-web-devicons' " lua
 
 "=== 主题插件
 Plug 'tjdevries/colorbuddy.vim'
@@ -61,7 +58,7 @@ Plug 'gcmt/wildfire.vim'
 
 "=== 开发工具
 Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile','branch': 'master'}
-Plug 'puremourning/vimspector',{ 'do': 'python3 install_gadget.py --all'}
+Plug 'puremourning/vimspector',{ 'do': 'python3 install_gadget.py --all','for':['c','cpp','h','python']}
 Plug 'w0rp/ale',{'for':'java'}
 Plug 'skywind3000/asynctasks.vim',{'on':'AsyncTask'}
 Plug 'skywind3000/asyncrun.vim'
@@ -80,9 +77,6 @@ Plug 'voldikss/vim-translator'
 "=== code run
 Plug 'michaelb/sniprun', {'do': 'bash install.sh'}
 
-"===  添加作者信息和开源凭证
-Plug 'alpertuna/vim-header'
-
 "=== 对象文本
 Plug 'wellle/targets.vim'
 
@@ -98,17 +92,6 @@ Plug 'godlygeek/tabular'
 "=== ctags
 Plug 'liuchengxu/vista.vim'
 
-"=== ascli map
-Plug 'gyim/vim-boxdraw'
-Plug 'hrj/vim-DrawIt'
-
-"=== dap
-Plug 'mfussenegger/nvim-dap'
-Plug 'rcarriga/nvim-dap-ui'
-Plug 'theHamsta/nvim-dap-virtual-text'
-
-"=== 颜色显示
-Plug 'norcalli/nvim-colorizer.lua'
 Plug 'mhinz/vim-startify',{'branch': 'center'}
 
 call plug#end()
@@ -122,7 +105,6 @@ function! Dot(path)
 	return "~/.config/nvim/" . a:path
 endfunction
 
-
 lua << EOF
 
 -- packer
@@ -131,8 +113,6 @@ require('use-packer')
 require('aeroline')
 -- 代码高亮
 require('treesitter')
--- dap config
-require('dap-config')
 -- theme
 require('theme')
 EOF

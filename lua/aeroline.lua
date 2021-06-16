@@ -2,13 +2,13 @@ local gl = require('galaxyline')
 local gls = gl.section
 local extension = require('galaxyline.provider_extensions')
 
--- This is Denstiny write 
+-- This is Denstiny write
 -- My home page https://github.com/denstiny
 
 gl.short_line_list = {
     'LuaTree',
     'vista',
-		'floaterm',
+    'floaterm',
     'dbui',
     'startify',
     'term',

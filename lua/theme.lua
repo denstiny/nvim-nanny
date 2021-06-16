@@ -25,4 +25,3 @@ vim.g.indent_blankline_char = '│'
 -- 设置特定缓冲区不起用
 vim.g.indent_blankline_filetype_exclude = {'help','startify','nerdtree'}
 
-

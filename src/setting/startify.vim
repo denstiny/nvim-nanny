@@ -1,19 +1,19 @@
-function! s:gitModified()
-    let files = systemlist('git ls-files -m 2>/dev/null')
-    return map(files, "{'line': v:val, 'path': v:val}")
-endfunction
+"function! s:gitModified()
+"    let files = systemlist('git ls-files -m 2>/dev/null')
+"    return map(files, "{'line': v:val, 'path': v:val}")
+"endfunction
 
 " same as above, but show untracked files, honouring .gitignore
-function! s:gitUntracked()
-    let files = systemlist('git ls-files -o --exclude-standard 2>/dev/null')
-    return map(files, "{'line': v:val, 'path': v:val}")
-endfunction
+"function! s:gitUntracked()
+"    let files = systemlist('git ls-files -o --exclude-standard 2>/dev/null')
+"    return map(files, "{'line': v:val, 'path': v:val}")
+"endfunction
 
-let g:startify_lists = [
-        \ { 'type': 'files',     'header': ['']            },
-        \ { 'type': function('s:gitModified'),  'header': ['']},
-        \ { 'type': 'dir',       'header': [''] },
-        \ ]
+"let g:startify_lists = [
+"        \ { 'type': 'files',     'header': ['']            },
+"        \ { 'type': function('s:gitModified'),  'header': ['']},
+"        \ { 'type': 'dir',       'header': [''] },
+"        \ ]
     	""\ { 'type': 'sessions',  'header': ['']       },
        "" \ { 'type': 'bookmarks', 'header': ['']      },
        "" \ { 'type': function('s:gitUntracked'), 'header': ['']},
