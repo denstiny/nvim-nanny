@@ -62,7 +62,7 @@ xmap            <silent> <TAB> <Plug>(coc-range-select)
 command!        -nargs=0 Format :call CocAction('format')
 command!        -nargs=? Fold :call     CocAction('fold', <f-args>)
 command!        -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
-set             statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
+"set             statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 nnoremap        <silent> <space>a  :<C-u>CocList<cr>
 nnoremap        <silent> <space>e  :<C-u>CocList extensions<cr>
 nnoremap        <silent> <space>c  :<C-u>CocList commands<cr>

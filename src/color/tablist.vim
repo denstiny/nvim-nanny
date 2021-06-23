@@ -10,7 +10,7 @@ let g:Tabest = ""
 fun! g:DateTime() 
     let l:sas = system("echo `date +%H`")
 	if l:sas > '06' && l:sas <= '18'
-		let g:Tabest = "  _ "
+		let g:Tabest = " "
 		let g:Tabest = "%2*" . g:Tabest
 	endif
 	if l:sas < '06' || l:sas > '18'
@@ -26,7 +26,7 @@ fun! Tablie()
 	let l:Tabest = ""
 	if g:sa > 2
 		let g:sa = 0
-		let l:Tabest = "  _ "
+		let l:Tabest = " "
 		let l:Tabest = "%2*" . l:Tabest . "%*"
 	endif
 	return l:Tabest
@@ -46,7 +46,7 @@ autocmd InsertEnter * set tabline=%!MyTabLine()
 
 
 hi User1 guifg=#7FFFD4 guibg=None
-hi User2 guifg=#FF1493 guibg=none
+hi User2 guifg=#FF1493 guibg=none gui=bold
 hi User3 guifg=#70778a  guibg=none
 hi User4 guifg=#a0ee40 guibg=none
 hi User5 guifg=#eeee40 guibg=none

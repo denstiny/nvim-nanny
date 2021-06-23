@@ -47,4 +47,4 @@ let g:startify_custom_header_quotes = [
 			\['手指有多快，分贝就有多高',' ——贝多芬'],
 			\[' 我不佩服第一个打通隧道的人，我佩服扩宽隧道的人',' ——中铁一局']
 			\ ]
-let g:startify_center = 60
+let g:startify_center = 40

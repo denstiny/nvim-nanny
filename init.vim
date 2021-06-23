@@ -13,9 +13,10 @@ Plug 'dstein64/vim-startuptime',{'on':'StartupTime'}
 Plug 'mbbill/undotree'
 
 "=== vim目录树
-Plug 'preservim/nerdtree'
-Plug 'ryanoasis/vim-devicons'
-
+"Plug 'preservim/nerdtree'
+"Plug 'ryanoasis/vim-devicons'
+Plug 'kyazdani42/nvim-tree.lua'
+Plug 'kyazdani42/nvim-web-devicons'
 "===vim终端辅助插件
 Plug 'skywind3000/vim-terminal-help'
 
@@ -91,8 +92,16 @@ Plug 'godlygeek/tabular'
 
 "=== ctags
 Plug 'liuchengxu/vista.vim'
-
 Plug 'mhinz/vim-startify',{'branch': 'center'}
+"=== 只需要一次tab
+Plug 'pta2002/intellitab.nvim'
+"=== 中文移动
+Plug 'ZSaberLv0/vim-easymotion-chs'
+
+"=== 显示光标
+Plug 'edluffy/specs.nvim'
+"=== 状态栏
+Plug 'tamton-aquib/staline.nvim'
 
 call plug#end()
 
@@ -124,4 +133,3 @@ endfor
 for file in split(glob(Dot('src/color/*.vim')),'\n')
 	exe 'source' file
 endfor
-
