@@ -37,7 +37,7 @@ autocmd InsertLeave * set guicursor=i:ver35-Cursor
 autocmd VimLeave  * set gcr=n-v-c:ver25-Cursor/lCursor,ve:ver35-Cursor,o:hor50-Cursor,i-ci:ver25-Cursor/lCursor,a:blinkon1
 
 "=== 设置模式颜色
-hi ModeMsg guifg=#B2C1CE
+hi ModeMsg guifg=none
 
 
 "== 自动清空命令输出

@@ -1,45 +1,3 @@
-" File              : init.config.vim
-let         g:coc_global_extensions = [
-			\'coc-json',
-			\'coc-pairs',
-			\'coc-git',
-			\'coc-pyright',
-			\'coc-picgo',
-			\'coc-vimlsp',
-			\'coc-snippets',
-			\'coc-marketplace',
-			\'coc-clangd',
-			\'coc-go',
-			\'coc-sh']
-"coc-picgo  markdown工具，负责上传剪切版图片到图床
-
-
-noremap        <silent> L :UndotreeToggle<CR>
-let             g:undotree_DiffAutoOpen = 1
-let             g:undotree_SetFocusWhenToggle = 1
-let             g:undotree_ShortIndicators = 1
-let             g:undotree_WindowLayout = 2
-let             g:undotree_DiffpanelHeight = 8
-let             g:undotree_SplitWidth = 20
-
-" 如果nerdtree是剩下的唯一窗口，则退出vim。
-"autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() |
-"    \ quit | endif
-"let g:NERDTreeDirArrowExpandable = '◉'
-"let g:NERDTreeDirArrowCollapsible = '○'
-"let NERDTreeShowHidden=1
-"let g:NERDTreeGitStatusIndicatorMapCustom = {
-"                \ 'Modified'  :'✹ ',
-"                \ 'Staged'    :'✚ ',
-"                \ 'Untracked' :'✭ ',
-"                \ 'Renamed'   :'➜ ',
-"                \ 'Unmerged'  :'═ ',
-"                \ 'Deleted'   :'✖ ',
-"                \ 'Dirty'     :'✗ ',
-"                \ 'Ignored'   :'☒ ',
-"                \ 'Clean'     :'✔︎ ',
-"                \ 'Unknown'   :'?',
-"                \ }
 set hidden
 "设置空闲行数
 set scrolloff=5
@@ -64,15 +22,31 @@ set             virtualedit=block,onemore
 set autoindent
 set numberwidth=1
 set nu
-
-
-
-"自动定位上次编辑位置
-au              BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+set hidden
+set shortmess+=c
+set updatetime=100
 set             termguicolors
-" git 插件配置
 set             updatetime=50 " 设置更新时间
-"悬浮
+
+"coc-picgo  markdown工具，负责上传剪切版图片到图床
+
+"=== undotree
+let             g:undotree_DiffAutoOpen = 1
+let             g:undotree_SetFocusWhenToggle = 1
+let             g:undotree_ShortIndicators = 1
+let             g:undotree_WindowLayout = 2
+let             g:undotree_DiffpanelHeight = 8
+let             g:undotree_SplitWidth = 20
+
+
+
+"=== 自动定位上次编辑位置
+au              BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+
+
+
+
+"=== floaterm
 autocmd         User Startified setlocal buflisted "自定关闭遗留
 autocmd InsertEnter,BufEnter * set formatoptions=vt "删除遗留
 "hi FloatermBorder guifg=cyan
@@ -83,65 +57,16 @@ let             g:floaterm_keymap_prev   = "'a"
 let             g:floaterm_keymap_next   = "'d"
 let             g:floaterm_keymap_toggle = "'s"
 let             g:floaterm_autoclose	 = 1
-"显示文件类型图标配置
 
 
 
-" 快捷键
-nmap    <silent><F2> 	      :Startify<cr>
-map     <leader>s         <Plug>(EasyAlign)
-map     ,                 <Plug>(easymotion-bd-f)
-map     <silent>          <leader>n :bp<CR>
-map     <silent>          <leader>o :bp<CR>
-map     <silent><leader>y "+y
-nmap    <silent>          <leader>q :bunload<cr>
-map     <silent>          <leader>w <C-w>
-map     <silent>          er        :Re<CR>
-map     <silent>          tr        :NvimTreeToggle<CR>
-map     <silent>          ei        :e<space>
-nmap    <silent>          <C-l>     :vertical res +5<cr>
-nmap    <silent>          <C-h>     :vertical res -5<cr>
-nmap    <silent>          <C-j>     :res      +5<cr>
-nmap    <silent>          <C-k>     :res      -5<cr>
-noremap <silent>          <C-f>     :FZF<cr>
-nmap <silent>          <esc>     :nohlsearch<cr>
-
-" 自定义命令
+"=== 自定义命令
 command!        -nargs=0 Apt :CocList marketplace
-command!        -nargs=0 HK :FloatermNew nvim -R ~/.config/nvim/src/help/help.txt
-command! 		-nargs=0 Todo :CocList todolist
-command!        -nargs=0 Git :FloatermNew lazygit
 
 
-"彩虹括号
+
+"=== 彩虹括号
 let             g:rainbow_active = 1
-
-
-"===
-"=== 翻译
-"===
-
-" 设置翻译的服务端
-"let g:translator_default_engines = ['haici','youdao']
-
-" 在命令行显示翻译
-nmap <silent> <leader>e <Plug>Translate
-vmap <silent> <leader>e <Plug>TranslateV
-" 在窗口中显示翻译
-nmap <silent> <leader>t <Plug>TranslateW
-vmap <silent> <leader>t <Plug>TranslateWV
-" 用翻译替换文本
-nmap <silent> <Leader>r <Plug>TranslateR
-vmap <silent> <Leader>r <Plug>TranslateRV
-
-" 翻译剪贴板中的文本
-nmap <silent> <Leader>x <Plug>TranslateX
- ""翻页
-nnoremap <silent><expr> <M-f> translator#window#float#has_scroll() ?
-                            \ translator#window#float#scroll(1) : "\<M-f>"
-nnoremap <silent><expr> <M-b> translator#window#float#has_scroll() ?
-                            \ translator#window#float#scroll(0) : "\<M-f>"
-
 
 
 
@@ -159,9 +84,6 @@ command! -bang -nargs=* LoadVimSpectorJsonTemplate call fzf#run({
             \   'down': 20,
             \   'sink': function('<sid>read_template_into_buffer')
             \ })
-nnoremap <LEADER>vs :tabe .vimspector.json<CR>:LoadVimSpectorJsonTemplate<CR>
-nnoremap <F1> :call vimspector#StepInto()<CR>
-nnoremap <F7> :call vimspector#Reset()<CR>
 "
 let g:vimspector_bottombar_height=6
 let g:vimspector_sidebar_width=50
@@ -185,45 +107,6 @@ let &showbreak=" ↪  "
 
 
 
-"===
-"=== markdown预览工具
-"===
-
-nmap <leader><F7> <Plug>MarkdownPreview
-nmap <leader><F8> <Plug>MarkdownPreviewStop
-nmap <C-p> <Plug>MarkdownPreviewToggle
-
-
-
-
-"===
-"=== picgo 快捷键
-"===
-au BufRead,BufNewFile *.md nmap <leader>p :CocCommand picgo.uploadImageFromClipboard<cr>
-
-
-
-"===
-"=== vim 最大话当前窗口
-"===
-
-function! MaximizeToggle()
-  if exists("s:maximize_session")
-    exec "source " . s:maximize_session
-    call delete(s:maximize_session)
-    unlet s:maximize_session
-    let &hidden=s:maximize_hidden_save
-    unlet s:maximize_hidden_save
-  else
-    let s:maximize_hidden_save = &hidden
-    let s:maximize_session = tempname()
-    set hidden
-    exec "mksession! " . s:maximize_session
-    only
-  endif
-endfunction
-
-nmap <silent> <leader>z :call MaximizeToggle()<CR>
 
 
 "===
@@ -277,7 +160,6 @@ let g:ale_sign_warning = '◉'
 
 "=== ctags
 let g:vista_icon_indent = ["╰─▸ ", "├─▸ "]
-nmap <silent> tt :Vista!!<cr>
 
 
 "=== 文件管理器

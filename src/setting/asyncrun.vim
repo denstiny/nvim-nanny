@@ -1,6 +1,3 @@
-""快速运行
-noremap <silent><space>r :AsyncTask file-run<cr>
-noremap <silent><space>d :AsyncTask file-build<cr>
 let g:asyncrun_open = 10
 let g:asynctasks_config_name = ['.tasks', '.git/tasks.ini', '.svn/tasks.ini']
 let g:asynctasks_term_pos = 'tab'
