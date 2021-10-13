@@ -135,3 +135,15 @@ function! s:check_back_space() abort
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 let g:coc_snippet_next = '<C-k>'
+
+" translation configuration 
+nmap <silent> <Leader>e <Plug>Translate
+vmap <silent> <Leader>e <Plug>TranslateV
+nmap <silent> <Leader>t <Plug>TranslateW
+vmap <silent> <Leader>t <Plug>TranslateWV
+nmap <silent> <Leader>r <Plug>TranslateR
+vmap <silent> <Leader>r <Plug>TranslateRV
+nmap <silent> <Leader>x <Plug>TranslateX
+
+
+
