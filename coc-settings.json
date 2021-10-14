@@ -3,7 +3,6 @@
 {
 	"coc.preferences.extensionUpdateCheck": "never",
 	"suggest.noselect": true,
-	"diagnostic.messageTarget": "float",
 	"signature.target": "echo",
 	"suggest.floatEnable": false,
 	"coc.preferences.hoverTarget": "float",
@@ -53,7 +52,8 @@
 	"diagnostic.refreshOnInsertMode": false,
 	"diagnostic.checkCurrentLine": true,
 	"diagnostic.virtualTextPrefix": " ◉ ",
-	"diagnostic.virtualText": true,
+	"diagnostic.virtualText": false,
+	"diagnostic.messageTarget": "float",
 	"codeLens.enable": false,
 	"list.previewHighlightGroup": "Statement",
 	"list.nextKeymap": "<C-e>",

@@ -13,7 +13,7 @@ map     <silent><leader>y "+y
 nmap    <silent>          <leader>q :bunload<cr>
 map     <silent>          <leader>w <C-w>
 map     <silent>          er        :Re<CR>
-map     <silent>          tr        :NvimTreeToggle<CR>
+map     <silent>          tr 		:NERDTreeToggle<CR>
 map     <silent>          ei        :e<space>
 nmap    <silent>          <C-l>     :vertical res +5<cr>
 nmap    <silent>          <C-h>     :vertical res -5<cr>

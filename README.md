@@ -112,6 +112,7 @@ git clone https://github.com/denstiny/nvim-nanny.git ~/.config/nvim
 |clang|coc-nvim| c/c++ 代码完成
 | rust | sniprun| 代码块运行
 |yarn|markdown-preview 预览插件需要
+|astyle|vim-autoformat 自动对齐工具
 |~~~jedi-language-server~~~|~~~coc-jedi~~~|~~~python语言服务器~~~
 ```sh
 sudo pacman -S go nodejs python ctags clang rust yarn

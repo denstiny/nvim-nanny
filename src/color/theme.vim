@@ -65,4 +65,3 @@ hi IndentBlanklineContextChar guifg=#7987A0
 "  au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>135v.\+', -1)
 "endif
 
-

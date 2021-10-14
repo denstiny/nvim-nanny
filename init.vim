@@ -13,10 +13,9 @@ Plug 'dstein64/vim-startuptime',{'on':'StartupTime'}
 Plug 'mbbill/undotree'
 
 "=== vim目录树
-"Plug 'preservim/nerdtree'
-"Plug 'ryanoasis/vim-devicons'
-Plug 'kyazdani42/nvim-tree.lua'
-Plug 'kyazdani42/nvim-web-devicons'
+Plug 'preservim/nerdtree'
+Plug 'ryanoasis/vim-devicons'
+
 "===vim终端辅助插件
 Plug 'skywind3000/vim-terminal-help'
 
@@ -115,9 +114,6 @@ function! Dot(path)
 endfunction
 
 lua << EOF
-
--- packer
-require('use-packer')
 -- line
 require('aeroline')
 -- 代码高亮
