@@ -169,8 +169,7 @@ let g:translator_proxy_url = 'socks5://127.0.0.1:1089'
 let g:translator_default_engines=["bing","google"]
 let g:NERDTreeDirArrowExpandable = '●'
 let g:NERDTreeDirArrowCollapsible = '◉'
-
-
+let g:translator_window_borderchars = ['','','','','','','','']
 
 
 "===
@@ -179,12 +178,6 @@ let g:NERDTreeDirArrowCollapsible = '◉'
 
 " Key bindings can be changed, see below
 call wilder#setup({'modes': [':', '/', '?']})
-
-" 'file_command' : for ripgrep : ['rg', '--files']
-"                : for fd      : ['fd', '-tf']
-" 'dir_command'  : for fd      : ['fd', '-td']
-" 'filters'      : use ['cpsm_filter'] for performance, requires cpsm vim plugin
-"                  found at https://github.com/nixprime/cpsm
 call wilder#set_option('pipeline', [
       \   wilder#branch(
       \     wilder#python_file_finder_pipeline({
@@ -196,7 +189,6 @@ call wilder#set_option('pipeline', [
       \     wilder#python_search_pipeline(),
       \   ),
       \ ])
-
 let s:accent_fg = "#ea4298"
 hi Pmenu  ctermfg=0 ctermbg=13 guifg=#a9b1d6 guibg=NONE
 

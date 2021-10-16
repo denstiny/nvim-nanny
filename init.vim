@@ -77,23 +77,21 @@ Plug 'voldikss/vim-translator'
 "=== code run
 Plug 'michaelb/sniprun', {'do': 'bash install.sh'}
 
+"=== 对齐工具
+Plug 'godlygeek/tabular'
+
 "=== 对象文本
 Plug 'wellle/targets.vim'
 
 "=== 逃离插入模式
 Plug 'jdhao/better-escape.vim'
 
-"=== 聚光灯
-Plug 'junegunn/limelight.vim'
-
-"=== 对其插件
-Plug 'godlygeek/tabular'
-
 "=== ctags
 Plug 'liuchengxu/vista.vim'
 Plug 'mhinz/vim-startify',{'branch': 'center'}
 "=== 只需要一次tab
 Plug 'pta2002/intellitab.nvim'
+
 "=== 中文移动
 Plug 'ZSaberLv0/vim-easymotion-chs'
 
