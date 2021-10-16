@@ -49,7 +49,9 @@ au              BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | e
 "=== floaterm
 autocmd         User Startified setlocal buflisted "自定关闭遗留
 autocmd InsertEnter,BufEnter * set formatoptions=vt "删除遗留
-"hi FloatermBorder guifg=cyan
+let g:floaterm_winblend=0.5
+
+hi FloatermBorder guibg=NONE guifg=#3F4859
 let             g:floaterm_position ='center'
 let             g:floaterm_winblend = 5		"设置浮动窗口透明度
 let             g:floaterm_keymap_new    = "'g"
@@ -57,6 +59,7 @@ let             g:floaterm_keymap_prev   = "'a"
 let             g:floaterm_keymap_next   = "'d"
 let             g:floaterm_keymap_toggle = "'s"
 let             g:floaterm_autoclose	 = 1
+let 			g:floaterm_title         = ""
 
 
 
@@ -166,3 +169,45 @@ let g:translator_proxy_url = 'socks5://127.0.0.1:1089'
 let g:translator_default_engines=["bing","google"]
 let g:NERDTreeDirArrowExpandable = '●'
 let g:NERDTreeDirArrowCollapsible = '◉'
+
+
+
+
+"===
+"=== wilder
+"===
+
+" Key bindings can be changed, see below
+call wilder#setup({'modes': [':', '/', '?']})
+
+" 'file_command' : for ripgrep : ['rg', '--files']
+"                : for fd      : ['fd', '-tf']
+" 'dir_command'  : for fd      : ['fd', '-td']
+" 'filters'      : use ['cpsm_filter'] for performance, requires cpsm vim plugin
+"                  found at https://github.com/nixprime/cpsm
+call wilder#set_option('pipeline', [
+      \   wilder#branch(
+      \     wilder#python_file_finder_pipeline({
+      \       'file_command': ['find', '.', '-type', 'f', '-printf', '%P\n'],
+      \       'dir_command': ['find', '.', '-type', 'd', '-printf', '%P\n'],
+      \       'filters': ['fuzzy_filter', 'difflib_sorter'],
+      \     }),
+      \     wilder#cmdline_pipeline(),
+      \     wilder#python_search_pipeline(),
+      \   ),
+      \ ])
+
+let s:accent_fg = "#ea4298"
+hi Pmenu  ctermfg=0 ctermbg=13 guifg=#a9b1d6 guibg=NONE
+
+call wilder#set_option('renderer', wilder#popupmenu_renderer(wilder#popupmenu_border_theme({
+      \ 'border': 'rounded',
+      \ 'highlighter': wilder#basic_highlighter(),
+      \ 'highlights': {
+      \   'default': 'Pmenu',
+      \   'accent': wilder#make_hl('WilderAccent', 'Pmenu', [{}, {}, {'foreground': s:accent_fg}]),
+      \ },
+      \ 'left': [' ', wilder#popupmenu_devicons(), wilder#popupmenu_buffer_flags()],
+      \ 'right': [' ', wilder#popupmenu_scrollbar()],
+      \ })))
+

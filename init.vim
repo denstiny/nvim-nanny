@@ -101,7 +101,8 @@ Plug 'ZSaberLv0/vim-easymotion-chs'
 Plug 'edluffy/specs.nvim'
 "=== 状态栏
 Plug 'tamton-aquib/staline.nvim'
-
+"=== 命令行完成
+Plug 'gelguy/wilder.nvim', { 'do': ':UpdateRemotePlugins' }
 call plug#end()
 
 "配色主题
