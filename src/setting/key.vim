@@ -13,13 +13,14 @@ map     <silent><leader>y "+y
 nmap    <silent>          <leader>q :bunload<cr>
 map     <silent>          <leader>w <C-w>
 map     <silent>          er        :Re<CR>
-map     <silent>          tr 		:NERDTreeToggle<CR>
+map     <silent>          tr 		:NvimTreeToggle<CR>
 map     <silent>          ei        :e<space>
 nmap    <silent>          <C-l>     :vertical res +5<cr>
 nmap    <silent>          <C-h>     :vertical res -5<cr>
 nmap    <silent>          <C-j>     :res      +5<cr>
 nmap    <silent>          <C-k>     :res      -5<cr>
-noremap <silent>          <C-f>     :FZF<cr>
+noremap <silent>          <C-f>     <cmd>Telescope find_files<cr>
+noremap <silent>          <C-g>     <cmd>Telescope live_grep<cr>
 nmap <silent>          <esc>     :nohlsearch<cr>
 
 
@@ -34,7 +35,6 @@ nnoremap <F7> :call vimspector#Reset()<CR>
 "===
 "=== markdown预览工具
 "===
-
 nmap <leader><F7> <Plug>MarkdownPreview
 nmap <leader><F8> <Plug>MarkdownPreviewStop
 nmap <C-p> <Plug>MarkdownPreviewToggle

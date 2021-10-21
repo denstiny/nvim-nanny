@@ -6,6 +6,7 @@ filetype on              " 设置开启文件类型侦测
 set foldmethod=manual
 set nobackup
 set nowritebackup
+set nowrap
 set noswapfile
 set cmdheight=1
 set updatetime=300
@@ -65,12 +66,11 @@ let 			g:floaterm_title         = ""
 
 "=== 自定义命令
 command!        -nargs=0 Apt :CocList marketplace
-
+command! 		-nargs=0 Help :Telescope help_tags
 
 
 "=== 彩虹括号
 let             g:rainbow_active = 1
-
 
 
 "===
@@ -167,9 +167,7 @@ let g:vista_icon_indent = ["╰─▸ ", "├─▸ "]
 " translation configuration 
 let g:translator_proxy_url = 'socks5://127.0.0.1:1089'
 let g:translator_default_engines=["bing","google"]
-let g:NERDTreeDirArrowExpandable = '●'
-let g:NERDTreeDirArrowCollapsible = '◉'
-let g:translator_window_borderchars = ['','','','','','','','']
+"let g:translator_window_borderchars = ['','','','','','','','']
 
 
 "===
@@ -202,4 +200,9 @@ call wilder#set_option('renderer', wilder#popupmenu_renderer(wilder#popupmenu_bo
       \ 'left': [' ', wilder#popupmenu_devicons(), wilder#popupmenu_buffer_flags()],
       \ 'right': [' ', wilder#popupmenu_scrollbar()],
       \ })))
+
+
+
+"=== 自动关闭number
+autocmd TermOpen * setlocal nonumber
 

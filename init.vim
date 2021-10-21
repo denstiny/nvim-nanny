@@ -13,8 +13,11 @@ Plug 'dstein64/vim-startuptime',{'on':'StartupTime'}
 Plug 'mbbill/undotree'
 
 "=== vim目录树
-Plug 'preservim/nerdtree'
-Plug 'ryanoasis/vim-devicons'
+"Plug 'preservim/nerdtree', { 'on': 'NERDTreeToggle' }
+"Plug 'ryanoasis/vim-devicons'
+
+Plug 'kyazdani42/nvim-web-devicons' 
+Plug 'kyazdani42/nvim-tree.lua'
 
 "===vim终端辅助插件
 Plug 'skywind3000/vim-terminal-help'
@@ -66,7 +69,7 @@ Plug 'skywind3000/asyncrun.vim'
 Plug 'thinca/vim-quickrun'
 
 " markdown预览
-Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install','for':['markdown','html']  }
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install','for':['markdown','html'] }
 
 " markdown生成目录
 Plug 'mzlogin/vim-markdown-toc',{'for':'markdown'} " 使用GenTocGFm 创建
@@ -95,12 +98,13 @@ Plug 'pta2002/intellitab.nvim'
 "=== 中文移动
 Plug 'ZSaberLv0/vim-easymotion-chs'
 
-"=== 显示光标
-Plug 'edluffy/specs.nvim'
 "=== 状态栏
 Plug 'tamton-aquib/staline.nvim'
+
 "=== 命令行完成
 Plug 'gelguy/wilder.nvim', { 'do': ':UpdateRemotePlugins' }
+
+
 call plug#end()
 
 "配色主题
@@ -117,8 +121,11 @@ lua << EOF
 require('aeroline')
 -- 代码高亮
 require('treesitter')
+-- nvim tree
+require('nvimtree')
 -- theme
 require('theme')
+
 EOF
 
 for file in split(glob(Dot('src/setting/*.vim')),'\n')
