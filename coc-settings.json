@@ -51,9 +51,9 @@
 	"diagnostic.displayByAle": false,
 	"diagnostic.refreshOnInsertMode": false,
 	"diagnostic.checkCurrentLine": true,
-	"diagnostic.virtualTextPrefix": " ◉ ",
-	"diagnostic.virtualText": false,
-	"diagnostic.messageTarget": "float",
+	"diagnostic.virtualTextPrefix": "  ",
+	"diagnostic.virtualText": true,
+	"diagnostic.messageTarget": "echo",
 	"codeLens.enable": false,
 	"list.previewHighlightGroup": "Statement",
 	"list.nextKeymap": "<C-e>",
@@ -88,4 +88,9 @@
 	"snippets.loadFromExtensions": true,
     "java.home": "/usr/lib/jvm/java-11-openjdk",
     "java.errors.incompleteClasspath.severity": "ignore",
+	"python.formatting.provider":"yapf",
+	"pylsp.builtin.enableInstallPylspMypy" : true , 
+  	"pylsp.builtin.enableInstallPylsIsort" : true , 
+  	"pylsp.builtin.enableInstallPythonLspBlack" : true
+
 }

@@ -163,6 +163,12 @@ let g:ale_sign_warning = '◉'
 
 "=== ctags
 let g:vista_icon_indent = ["╰─▸ ", "├─▸ "]
+let g:vista#renderer#enable_icon = 1
+let g:vista#renderer#icons = {
+\   "function": "\uf794",
+\   "variable": "\uf71b",
+\  }
+
 
 " translation configuration 
 let g:translator_proxy_url = 'socks5://127.0.0.1:1089'
@@ -205,4 +211,3 @@ call wilder#set_option('renderer', wilder#popupmenu_renderer(wilder#popupmenu_bo
 
 "=== 自动关闭number
 autocmd TermOpen * setlocal nonumber
-

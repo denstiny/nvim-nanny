@@ -13,7 +13,7 @@ map     <silent><leader>y "+y
 nmap    <silent>          <leader>q :bunload<cr>
 map     <silent>          <leader>w <C-w>
 map     <silent>          er        :Re<CR>
-map     <silent>          tr 		:NvimTreeToggle<CR>
+map     <silent>          tr 		:NvimTreeFocus<CR>
 map     <silent>          ei        :e<space>
 nmap    <silent>          <C-l>     :vertical res +5<cr>
 nmap    <silent>          <C-h>     :vertical res -5<cr>
@@ -21,9 +21,7 @@ nmap    <silent>          <C-j>     :res      +5<cr>
 nmap    <silent>          <C-k>     :res      -5<cr>
 noremap <silent>          <C-f>     <cmd>Telescope find_files<cr>
 noremap <silent>          <C-g>     <cmd>Telescope live_grep<cr>
-nmap <silent>          <esc>     :nohlsearch<cr>
-
-
+nmap    <silent>          <esc>     :normal za<cr>
 
 "=== vimspector
 nnoremap <LEADER>vs :tabe .vimspector.json<CR>:LoadVimSpectorJsonTemplate<CR>

@@ -10,15 +10,19 @@ highlight clear SignColumn
 hi CursorLine cterm=NONE ctermbg=darkred ctermfg=darkred guibg=#2C323C guifg=NONE
 " 取消vim空行的波浪 '~'
 set fillchars=fold:\ ,vert:\ ,eob:\   ",msgsep:-
+"set listchars=tab:..
+
 
 
 
 hi VertSplit  term=none  cterm=none  gui=none  guibg=#2C323C  guifg=none
-hi Normal guibg=none ctermbg=NONE 
-
-"Set the coc floating window background color
+hi Normal guibg=none ctermbg=NONE  ctermfg=none
 "hi CocFloating guibg=#31324B guifg=none 
 hi NormalFloat guibg=none guifg=none 
+hi LineNr guibg=none
+hi tstype guifg=#e5c07b gui=italic
+hi tsfunction gui=bold
+hi TSVariable guifg=#CFEBFD
 
 "Set the default color floating window
 
@@ -64,4 +68,5 @@ hi IndentBlanklineContextChar guifg=#7987A0
 "else
 "  au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>135v.\+', -1)
 "endif
+
 

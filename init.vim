@@ -62,7 +62,15 @@ Plug 'gcmt/wildfire.vim'
 "=== 开发工具
 Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile','branch': 'master'}
 Plug 'puremourning/vimspector',{ 'do': 'python3 install_gadget.py --all','for':['c','cpp','h','python']}
-Plug 'w0rp/ale',{'for':'java'}
+"Plug 'onsails/lspkind-nvim'
+"Plug 'hrsh7th/nvim-cmp'
+"Plug 'hrsh7th/cmp-nvim-lsp'
+"Plug 'neovim/nvim-lspconfig'
+"Plug 'williamboman/nvim-lsp-installer'
+"Plug 'hrsh7th/cmp-nvim-lua'
+"Plug 'hrsh7th/cmp-path'
+"Plug 'hrsh7th/cmp-buffer'
+"Plug 'w0rp/ale',{'for':'java'}
 Plug 'skywind3000/asynctasks.vim',{'on':'AsyncTask'}
 Plug 'skywind3000/asyncrun.vim'
 "=== 快速运行
@@ -92,8 +100,6 @@ Plug 'jdhao/better-escape.vim'
 "=== ctags
 Plug 'liuchengxu/vista.vim'
 Plug 'mhinz/vim-startify',{'branch': 'center'}
-"=== 只需要一次tab
-Plug 'pta2002/intellitab.nvim'
 
 "=== 中文移动
 Plug 'ZSaberLv0/vim-easymotion-chs'
@@ -108,9 +114,8 @@ Plug 'gelguy/wilder.nvim', { 'do': ':UpdateRemotePlugins' }
 call plug#end()
 
 "配色主题
-set background=dark
+"set background=dark
 lua require('colorbuddy').colorscheme('onebuddy')
-"colorscheme gruvbox
 
 function! Dot(path)
 	return "~/.config/nvim/" . a:path
@@ -125,7 +130,7 @@ require('treesitter')
 require('nvimtree')
 -- theme
 require('theme')
-
+-- lsp config
 EOF
 
 for file in split(glob(Dot('src/setting/*.vim')),'\n')

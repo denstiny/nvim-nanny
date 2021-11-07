@@ -3,7 +3,7 @@ set showtabline=2
 
 hi TabLineFill guifg=none guibg=none ctermbg=NONE ctermfg=NONE
 hi TabLineSel guifg=#70778a  guibg=none cterm=bold gui=bold
-hi Tabline guifg=#292929  guibg=none
+hi Tabline guifg=#1B1F27  guibg=none
 
 
 let g:Tabest = ""
@@ -45,8 +45,8 @@ autocmd InsertEnter * set tabline=%!MyTabLine()
 
 
 
-hi User1 guifg=#7FFFD4 guibg=None
-hi User2 guifg=#FF1493 guibg=none gui=bold
+hi User1 guifg=#7FFFD4 guibg=none
+hi User2 guifg=#FF1493 guibg=none ctermfg=none gui=bold
 hi User3 guifg=#70778a  guibg=none
 hi User4 guifg=#a0ee40 guibg=none
 hi User5 guifg=#eeee40 guibg=none
