@@ -6,7 +6,7 @@ filetype on              " 设置开启文件类型侦测
 set foldmethod=manual
 set nobackup
 set nowritebackup
-set nowrap
+set wrap
 set noswapfile
 set cmdheight=1
 set updatetime=300
@@ -211,3 +211,6 @@ call wilder#set_option('renderer', wilder#popupmenu_renderer(wilder#popupmenu_bo
 
 "=== 自动关闭number
 autocmd TermOpen * setlocal nonumber
+
+"=== tab line options
+

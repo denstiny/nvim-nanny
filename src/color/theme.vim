@@ -20,9 +20,14 @@ hi Normal guibg=none ctermbg=NONE  ctermfg=none
 "hi CocFloating guibg=#31324B guifg=none 
 hi NormalFloat guibg=none guifg=none 
 hi LineNr guibg=none
-hi tstype guifg=#e5c07b gui=italic
+
+
+" 更改全局 的 type 样式
+hi tstype guifg=#e5c07b gui=italic " bold 粗体 italic 斜体 none 默认"
+
 hi tsfunction gui=bold
 hi TSVariable guifg=#CFEBFD
+hi TabLineFill guibg=#1b1f27
 
 "Set the default color floating window
 
@@ -68,5 +73,3 @@ hi IndentBlanklineContextChar guifg=#7987A0
 "else
 "  au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>135v.\+', -1)
 "endif
-
-

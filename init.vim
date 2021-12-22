@@ -1,4 +1,5 @@
 let mapleader = ";"
+set mouse=a
 
 call plug#begin('~/.vim/plugged')
 "=== 自动代码格式化
@@ -104,8 +105,10 @@ Plug 'mhinz/vim-startify',{'branch': 'center'}
 "=== 中文移动
 Plug 'ZSaberLv0/vim-easymotion-chs'
 
-"=== 状态栏
+"=== 状态栏 标签栏
 Plug 'tamton-aquib/staline.nvim'
+Plug 'romgrk/barbar.nvim'
+
 
 "=== 命令行完成
 Plug 'gelguy/wilder.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -116,27 +119,21 @@ call plug#end()
 "配色主题
 "set background=dark
 lua require('colorbuddy').colorscheme('onebuddy')
+lua require('init') 
 
 function! Dot(path)
 	return "~/.config/nvim/" . a:path
 endfunction
 
-lua << EOF
--- line
-require('aeroline')
--- 代码高亮
-require('treesitter')
--- nvim tree
-require('nvimtree')
--- theme
-require('theme')
--- lsp config
-EOF
 
 for file in split(glob(Dot('src/setting/*.vim')),'\n')
 	exe 'source' file
 endfor
 "
 for file in split(glob(Dot('src/color/*.vim')),'\n')
+	exe 'source' file
+endfor
+
+for file in split(glob(Dot('src/neovide/*.vim')),'\n')
 	exe 'source' file
 endfor

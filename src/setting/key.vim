@@ -10,7 +10,7 @@ map     ,                 <Plug>(easymotion-bd-f)
 map     <silent>          <leader>n :bp<CR>
 map     <silent>          <leader>o :bp<CR>
 map     <silent><leader>y "+y
-nmap    <silent>          <leader>q :bunload<cr>
+nmap    <silent>          <leader>q :BufferClose<cr>
 map     <silent>          <leader>w <C-w>
 map     <silent>          er        :Re<CR>
 map     <silent>          tr 		:NvimTreeFocus<CR>
