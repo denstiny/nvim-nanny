@@ -1,0 +1,1 @@
+require "aero.plugins.plugins"
