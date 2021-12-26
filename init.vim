@@ -11,4 +11,4 @@ lua require "init"
 
 
 " Loading vimscript configuration script
-autocmd VimEnter * call VimConfig()
+call VimConfig()

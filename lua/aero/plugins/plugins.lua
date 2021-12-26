@@ -51,56 +51,65 @@ packer.startup(function(use)
     use "phaazon/hop.nvim"
     use {"numToStr/Comment.nvim", "blackCauldron7/surround.nvim"}
     use { 'lewis6991/gitsigns.nvim',
-        requires = {
-            'nvim-lua/plenary.nvim'
-        },
-        config = function()
-            require('gitsigns').setup()
-        end
-    }
-    -- Theme
-    --use 'tjdevries/colorbuddy.vim'
-    --use 'Th3Whit3Wolf/onebuddy'
-    use 'folke/tokyonight.nvim'
+    requires = {
+        'nvim-lua/plenary.nvim'
+    },
+    config = function()
+        require('gitsigns').setup()
+    end
+}
+-- Theme
+--use 'tjdevries/colorbuddy.vim'
+--use 'Th3Whit3Wolf/onebuddy'
+use 'folke/tokyonight.nvim'
 
-    -- Indent blackline
-    use "lukas-reineke/indent-blankline.nvim"
+-- Indent blackline
+use "lukas-reineke/indent-blankline.nvim"
 
-    -- term
-    use {"akinsho/toggleterm.nvim"}
-    -- code run
-    use { 'michaelb/sniprun', run = 'bash ./install.sh'}
+-- term
+use {"akinsho/toggleterm.nvim"}
+-- code run
+use { 'michaelb/sniprun', run = 'bash ./install.sh'}
+use {"thinca/vim-quickrun"}
+use {"skywind3000/asyncrun.vim",requires={'skywind3000/asynctasks.vim'}}
 
-    -- color
-    use {'norcalli/nvim-colorizer.lua',config="require'colorizer'.setup()"}
+-- color
+use {'norcalli/nvim-colorizer.lua',config="require'colorizer'.setup()"}
 
-    -- debug
+-- debug
 
-    use {'puremourning/vimspector',run='python3 install_gadget.py --all'}
+use {'puremourning/vimspector',run='python3 install_gadget.py --all'}
 
-    -- 无干扰写作
-    use {"folke/zen-mode.nvim"}
+-- 无干扰写作
+use {"folke/zen-mode.nvim"}
 
-    -- File manager
-    use {'kyazdani42/nvim-tree.lua'}
-    -- quick run
-    use {"thinca/vim-quickrun"}
-    -- statline
-    use {
-        'nvim-lualine/lualine.nvim',
-        requires = {'kyazdani42/nvim-web-devicons', opt = true}
-    }
-    use 'mbbill/undotree'
-    use 'mg979/vim-visual-multi'
+-- File manager
+use {'kyazdani42/nvim-tree.lua'}
+-- statline
+use {
+    'nvim-lualine/lualine.nvim',
+    requires = {'kyazdani42/nvim-web-devicons', opt = true}
+}
+use 'mbbill/undotree'
+use 'mg979/vim-visual-multi'
 
-    use 'easymotion/vim-easymotion'
-    use 'ZSaberLv0/vim-easymotion-chs'
+use 'easymotion/vim-easymotion'
+use 'ZSaberLv0/vim-easymotion-chs'
 
-    -- vim start ui
-    use {"mhinz/vim-startify",branch="center"}
-    -- undo tree
-    use {"mbbill/undotree"}
-    -- buff line
-    use {'akinsho/bufferline.nvim'}
+-- vim start ui
+use {"mhinz/vim-startify",branch="center"}
+-- undo tree
+use {"mbbill/undotree"}
+-- buff line
+use {'akinsho/bufferline.nvim'}
+-- tudo list
+use {
+    "folke/todo-comments.nvim",
+    requires = "nvim-lua/plenary.nvim",
+    config = function()
+        require("todo-comments").setup {
+        }
+    end
+}
 
 end)

@@ -12,9 +12,9 @@ set sw=4
 set ts=4
 set tabstop=4
 set clipboard=unnamed
-set foldcolumn=0 "设置边框的边度
+set foldcolumn=0 
 set nofoldenable
-set signcolumn=yes  "是否关闭边框
+set signcolumn=yes 
 set cursorline
 set virtualedit=block,onemore
 set autoindent
@@ -35,12 +35,12 @@ let             g:undotree_WindowLayout = 2
 let             g:undotree_DiffpanelHeight = 8
 let             g:undotree_SplitWidth = 20
 
-"=== 自动定位上次编辑位置
+"=== Automatically locate the last editing position
 au   BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
 
 "===
-"=== vimspector 代码调试
+"=== vimspector debug
 "===
 
 let g:vimspector_enable_mappings = 'HUMAN'
@@ -67,11 +67,10 @@ let g:vimspector_install_gadgets = [
             \'vscode-bash-debug',
             \'vscode-go'
             \]
-"autocmd User CocGitStatusChange {command}
 
 
 "===
-"=== vim折行
+"=== vim Fold line
 "===
 let &showbreak=" ↪  "
 
@@ -80,7 +79,7 @@ let &showbreak=" ↪  "
 
 
 "===
-"=== fcitx 输入法
+"=== fcitx Input method, it is suitable for Chinese
 "===
 
 let g:FcitxState = 0 " 0 为英文，1为中文
@@ -109,28 +108,6 @@ endfunction
 
 autocmd InsertEnter * call SwapChinese()
 autocmd InsertLeave * call SwapEnglish()
-
-
-"=== 逃离 esc
-let g:better_escape_interval = 100
-let g:better_escape_shortcut = 'jk'
-
-
-"=== ctags
-let g:vista_icon_indent = ["╰─▸ ", "├─▸ "]
-let g:vista#renderer#enable_icon = 1
-let g:vista#renderer#icons = {
-\   "function": "\uf794",
-\   "variable": "\uf71b",
-\  }
-
-
-"=== statline 
-let g:skyline_path=0
-let g:skyline_wordcount=1
-let g:skyline_lineinfo=0
-let g:skyline_filetype=0
-
 
 
 "=== startify
@@ -162,3 +139,12 @@ let g:startify_custom_header_quotes = [
             \[' 我不佩服第一个打通隧道的人，我佩服扩宽隧道的人',' ——中铁一局']
             \ ]
 let g:startify_center = 40
+
+
+"=== asyncrun
+let g:asyncrun_open = 10
+let g:asynctasks_config_name = ['.tasks', '.git/tasks.ini', '.svn/tasks.ini']
+let g:asynctasks_term_pos = 'tab'
+let g:asynctasks_term_rows = 10    " 设置纵向切割时，高度为 10
+let g:asynctasks_term_rows = 10    " 设置水平端子拆分的高度
+let g:asynctasks_term_cols = 30    " 设置垂直端子分割的宽度

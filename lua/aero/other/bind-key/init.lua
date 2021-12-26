@@ -17,6 +17,7 @@ U.nmap("<Leader>ew", "<Plug>(easymotion-w)")
 U.vmap(";y", '"+y')
 -- exit nvim
 U.nmap("<leader>q","<Cmd>qall<cr>")
+U.nmap("q","<Cmd>q<cr>")
 
 -- Paste from clipboard
 U.nmap("<C-p>", [["+p]])
@@ -62,3 +63,8 @@ U.nmap("<leader>z","<Cmd>ZenMode<cr>")
 
 -- undo tree
 U.nmap("L", "<Cmd>UndotreeToggle<cr>")
+--  Async Task
+U.nmap("<leader>r","<Cmd>AsyncTask file-run<cr>")
+U.nmap("<leader>d", "<Cmd>AsyncTask file-build<cr>")
+-- error list
+U.nmap("er", "<Cmd>Trouble<cr>")
