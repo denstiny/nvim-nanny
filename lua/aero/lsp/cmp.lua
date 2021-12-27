@@ -76,6 +76,9 @@ cmp.setup {
 			maxwidth = 200,
 		}
 	},
+    documentation = {
+        border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
+    },
 	snippet = {expand = function(args) snip.lsp_expand(args.body) end},
 	experimental = {ghost_text = true}
 }

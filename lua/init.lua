@@ -23,7 +23,10 @@ require "aero.toggleterm-config"
 require "aero.sniprun-config"
 
 -- 无干扰写作
-require "aero.truezen"
+require "aero.truezen-config"
 
--- nvim tree 
-require "aero.nvimtree"
+-- nvim tree
+require "aero.nvimtree-config"
+
+-- navigator nvim
+require "aero.navigator-config"

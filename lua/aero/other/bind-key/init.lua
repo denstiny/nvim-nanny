@@ -17,7 +17,7 @@ U.nmap("<Leader>ew", "<Plug>(easymotion-w)")
 U.vmap(";y", '"+y')
 -- exit nvim
 U.nmap("<leader>q","<Cmd>qall<cr>")
-U.nmap("q","<Cmd>q<cr>")
+--U.nmap("q","<Cmd>q<cr>")
 
 -- Paste from clipboard
 U.nmap("<C-p>", [["+p]])
@@ -57,6 +57,8 @@ U.nmap("<F4>", "<Plug>VimspectorRestart")                                       
 --exchange buffer
 U.nmap("<a-1>","<Cmd>BufferLineCyclePrev<cr>")
 U.nmap("<a-2>","<Cmd>BufferLineCycleNext<cr>")
+U.nmap("q", "<Cmd>BufferLinePickClose<cr>")
+U.nmap("c", "<Cmd>BufferLinePick<cr>")
 
 -- No interference pattern
 U.nmap("<leader>z","<Cmd>ZenMode<cr>")
