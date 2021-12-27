@@ -27,6 +27,15 @@ set termguicolors
 set expandtab
 set fo-=r
 
+
+"=== Ban vim disrupt the cursor style
+autocmd InsertEnter * set guicursor=a:blinkon1,i:ver35-Cursor
+autocmd InsertLeave * set guicursor=i:ver35-Cursor
+autocmd VimLeave  * set gcr=n-v-c:ver25-Cursor/lCursor,ve:ver35-Cursor,o:hor50-Cursor,i-ci:ver25-Cursor/lCursor,a:blinkon1
+
+
+
+
 "=== undotree
 let             g:undotree_DiffAutoOpen = 1
 let             g:undotree_SetFocusWhenToggle = 1
