@@ -1,0 +1,2 @@
+require'goto-preview'.setup {
+}

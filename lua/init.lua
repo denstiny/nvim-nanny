@@ -2,7 +2,7 @@
 require "aero.plugins"
 
 -- auto start
-require "aero.au"
+require "aero.other.au"
 
 -- lsp
 require "aero.lsp"
@@ -29,4 +29,7 @@ require "aero.truezen-config"
 require "aero.nvimtree-config"
 
 -- navigator nvim
-require "aero.navigator-config"
+require "aero.goto-preview-config"
+
+-- telescope 
+require("aero.telescope-config")

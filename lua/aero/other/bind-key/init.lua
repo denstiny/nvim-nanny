@@ -47,7 +47,7 @@ U.nmap("<Shift><F5>","<Plug>VimspectorStop")                                    
 U.nmap("<F6>","<Plug>VimspectorPause")                                            -- 暂停调试
 U.nmap("<F7>","<Plug>VimspectorStop")                                             -- 停止调试
 U.nmap("<F9>","<Plug>VimspectorToggleBreakpoint")                                 -- 切换行断点
-U.nmap("<F8>", "<Plug>VimspectorAddFunctionBreakpoint")                    -- 设置光标下的变量断点
+U.nmap("<F8>", "<Plug>VimspectorAddFunctionBreakpoint")                           -- 设置光标下的变量断点
 U.nmap("<F10>","<Plug>VimspectorStepOver")                                        -- 踏入
 U.nmap("F11>", "<Plug>VimspectorStepInto")                                        -- 跳过
 U.nmap("<Shift><F11>", "<Plug>VimspectorStepOut")                                 -- 跳出当前函数范围
@@ -55,10 +55,10 @@ U.nmap("<F4>", "<Plug>VimspectorRestart")                                       
 
 
 --exchange buffer
-U.nmap("<a-1>","<Cmd>BufferLineCyclePrev<cr>")
-U.nmap("<a-2>","<Cmd>BufferLineCycleNext<cr>")
-U.nmap("q", "<Cmd>BufferLinePickClose<cr>")
-U.nmap("c", "<Cmd>BufferLinePick<cr>")
+U.nmap("<a-p>","<Cmd>BufferLineCyclePrev<cr>")
+U.nmap("<a-n>","<Cmd>BufferLineCycleNext<cr>")
+U.nmap("b","<Cmd>bufferLinePick<cr>")
+U.nmap("q","<Cmd>q<cr>")
 
 -- No interference pattern
 U.nmap("<leader>z","<Cmd>ZenMode<cr>")
@@ -70,3 +70,12 @@ U.nmap("<leader>r","<Cmd>AsyncTask file-run<cr>")
 U.nmap("<leader>d", "<Cmd>AsyncTask file-build<cr>")
 -- error list
 U.nmap("er", "<Cmd>Trouble<cr>")
+
+--- goto preview
+U.nmap("gpd", "<Cmd>lua require('goto-preview').goto_preview_definition()<CR>")
+
+-- telescope
+U.nmap("/", "<Cmd>Telescope current_buffer_fuzzy_find<cr>")
+U.nmap("?", "<Cmd>Telescope grep_string<cr>")
+U.nmap("B","<Cmd>Telescope buffers<cr>")
+U.nmap("<C-f>", "<Cmd>Telescope find_files<cr>")

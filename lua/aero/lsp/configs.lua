@@ -1,4 +1,5 @@
 local null = require "null-ls"
+
 require "lsp_signature".setup()
 null.setup {
 	sources = {
@@ -7,6 +8,7 @@ null.setup {
 		null.builtins.formatting.yapf
 	}
 }
+
 
 -- Extended capabilities
 local capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -23,7 +25,7 @@ local on_attach = function(bufnr)
 	local function imap(...) map("i", ...) end
 	local function vmap(...) map("v", ...) end
 	local function nmapl(m, ...) map("n", "<leader>" .. m, ...) end
-	nmap("gd", "<cmd>lua vim.lsp.buf.definition()<cr>") -- Definition
+	nmap("gd", "<cmd>Telescope lsp_definitions<cr>") -- Definition
 	nmap("gD", "<cmd>lua vim.lsp.buf.declaration()<cr>") -- Declaration
 	nmap("gt", "<cmd>lua vim.lsp.buf.type_definition()<cr>") -- Type definition
 	nmap("gi", "<cmd>lua vim.lsp.buf.implementation()<cr>") -- Implementation

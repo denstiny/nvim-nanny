@@ -17,12 +17,12 @@ packer.startup(function(use)
         "folke/lua-dev.nvim",
         "jose-elias-alvarez/null-ls.nvim"
     }
-    use {'ray-x/navigator.lua', requires = {'ray-x/guihua.lua', run = 'cd lua/fzy && make'}}
+    --use {'ray-x/navigator.lua', requires = {'ray-x/guihua.lua', run = 'cd lua/fzy && make'}}
+    use { 'rmagatti/goto-preview'}
     use {'Chiel92/vim-autoformat'}
     -- lsp icon
     use {
         "folke/trouble.nvim",
-        "folke/lsp-colors.nvim",
         "kyazdani42/nvim-web-devicons",
     }
     -- Completion
@@ -37,7 +37,7 @@ packer.startup(function(use)
     use {"f3fora/cmp-spell"}
     use {"hrsh7th/cmp-nvim-lsp"}
     use {"L3MON4D3/LuaSnip"}
-    --use {"saadparwaiz1/cmp_luasnip"}
+    use {"saadparwaiz1/cmp_luasnip"}
     use {'tzachar/cmp-tabnine', run='./install.sh', requires = 'hrsh7th/nvim-cmp'}
     use 'dcampos/nvim-snippy'
     use 'dcampos/cmp-snippy'
@@ -109,6 +109,10 @@ packer.startup(function(use)
             require("todo-comments").setup {
             }
         end
+    }
+    use {
+        'nvim-telescope/telescope.nvim',
+        requires = { {'nvim-lua/plenary.nvim'} }
     }
 
 end)
