@@ -18,6 +18,8 @@ set signcolumn=yes
 set cursorline
 set virtualedit=block,onemore
 set autoindent
+set nobackup
+set noswapfile
 set numberwidth=1
 set nu
 set hidden

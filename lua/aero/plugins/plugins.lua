@@ -110,6 +110,7 @@ packer.startup(function(use)
             }
         end
     }
+    use { 'junegunn/vim-slash'}
     use {
         'nvim-telescope/telescope.nvim',
         requires = { {'nvim-lua/plenary.nvim'} }

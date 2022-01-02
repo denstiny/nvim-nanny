@@ -75,7 +75,7 @@ U.nmap("er", "<Cmd>Trouble<cr>")
 U.nmap("gpd", "<Cmd>lua require('goto-preview').goto_preview_definition()<CR>")
 
 -- telescope
-U.nmap("/", "<Cmd>Telescope current_buffer_fuzzy_find<cr>")
+U.nmap("f", "<Cmd>Telescope current_buffer_fuzzy_find<cr>")
 U.nmap("?", "<Cmd>Telescope grep_string<cr>")
 U.nmap("B","<Cmd>Telescope buffers<cr>")
 U.nmap("<C-f>", "<Cmd>Telescope find_files<cr>")
