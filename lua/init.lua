@@ -31,5 +31,8 @@ require "aero.nvimtree-config"
 -- navigator nvim
 require "aero.goto-preview-config"
 
--- telescope 
+-- telescope
 require("aero.telescope-config")
+
+-- luasnip
+require("aero.luasnip-config")

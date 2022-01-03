@@ -36,7 +36,9 @@ packer.startup(function(use)
     use {"dmitmel/cmp-digraphs"}
     use {"f3fora/cmp-spell"}
     use {"hrsh7th/cmp-nvim-lsp"}
-    use {"L3MON4D3/LuaSnip"}
+    use {"L3MON4D3/LuaSnip",
+        requires={'rafamadriz/friendly-snippets'}
+    }
     use {"saadparwaiz1/cmp_luasnip"}
     use {'tzachar/cmp-tabnine', run='./install.sh', requires = 'hrsh7th/nvim-cmp'}
     use 'dcampos/nvim-snippy'
