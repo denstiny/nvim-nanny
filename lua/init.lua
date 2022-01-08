@@ -1,4 +1,3 @@
--- TODO: 代理里被哦
 -- plugins
 require "aero.plugins"
 
@@ -37,3 +36,9 @@ require("aero.telescope-config")
 
 -- luasnip
 require("aero.luasnip-config")
+
+-- lsp scrollbar
+require("aero.scrollbar-config")
+
+-- fold code
+require("aero.fold-config")

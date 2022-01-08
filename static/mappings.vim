@@ -56,7 +56,6 @@ au   BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal!
 
 let g:vimspector_enable_mappings = 'HUMAN'
 function! s:read_template_into_buffer(template)
-    " has to be a function to avoid the extra space fzf#run insers otherwise
     execute '0r ~/.config/nvim/static/vimspector-json/'.a:template
 endfunction
 command! -bang -nargs=* LoadVimSpectorJsonTemplate call fzf#run({

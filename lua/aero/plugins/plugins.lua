@@ -108,4 +108,8 @@ packer.startup(function(use)
         'nvim-telescope/telescope.nvim',
         requires = { {'nvim-lua/plenary.nvim'} }
     }
+    -- scroll bar
+    use("petertriho/nvim-scrollbar")
+    -- fold code
+    use{ 'anuvyklack/pretty-fold.nvim'}
 end)
