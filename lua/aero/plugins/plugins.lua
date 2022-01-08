@@ -103,15 +103,6 @@ packer.startup(function(use)
     use {"mbbill/undotree"}
     -- buff line
     use {'akinsho/bufferline.nvim'}
-    -- todo list
-    use {
-        "folke/todo-comments.nvim",
-        requires = "nvim-lua/plenary.nvim",
-        config = function()
-            require("todo-comments").setup {
-            }
-        end
-    }
     use { 'junegunn/vim-slash'}
     use {
         'nvim-telescope/telescope.nvim',
