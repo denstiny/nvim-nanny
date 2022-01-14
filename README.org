@@ -1,0 +1,30 @@
+* Denstiny Aero Neovim configuration file
+** head
+[[https://s4.ax1x.com/2022/01/14/7G96DP.png]]
+** lsp
+[[https://s4.ax1x.com/2022/01/14/7GC9Dx.png]]
+** debug
+[[https://s4.ax1x.com/2022/01/14/7GPNfe.png]]
+
+* The configuration file
+** Automatic loading static all files in directory(自动加载 static 目录下所有文件)
+viml用户可以在 static 目录下创建自己的配置
+** lua dir
+|-------------------------+------------------|
+| init.lua                | lua 配置文件入口 |
+|-------------------------+------------------|
+| plugins/plugins         | 安装插件入口     |
+| lsp/init.lua            | lsp server 配置  |
+| other/bind-key/init.lua | 按键绑定         |
+| other/statline/init.lua | 状态栏配置       |
+| other/theme/init.lua    | 主题配置         |
+| other/au.lua            | 自动启动配置     |
+
+* installation
+#+begin_src shell
+  git clone https://github.com/denstiny/nvim-nanny.git
+  git clone --depth 1 https://github.com/wbthomason/packer.nvim\
+      ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+  nvim -c PackerSync
+#+end_src
+

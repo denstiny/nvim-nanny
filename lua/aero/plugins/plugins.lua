@@ -17,7 +17,6 @@ packer.startup(function(use)
         'folke/lua-dev.nvim',
         'jose-elias-alvarez/null-ls.nvim'
     }
-    --use {'ray-x/navigator.lua', requires = {'ray-x/guihua.lua', run = 'cd lua/fzy && make'}}
     use { 'rmagatti/goto-preview' }
     use { 'Chiel92/vim-autoformat' }
     -- lsp icon
