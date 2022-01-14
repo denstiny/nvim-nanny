@@ -1,8 +1,10 @@
 * Denstiny Aero Neovim configuration file
 ** head
 [[https://s4.ax1x.com/2022/01/14/7G96DP.png]]
-** lsp
+** theme
 [[https://s4.ax1x.com/2022/01/14/7GC9Dx.png]]
+** lsp
+[[https://s4.ax1x.com/2022/01/14/7GkEwt.png]]
 ** debug
 [[https://s4.ax1x.com/2022/01/14/7GPNfe.png]]
 
@@ -19,6 +21,12 @@ viml用户可以在 static 目录下创建自己的配置
 | other/statline/init.lua | 状态栏配置       |
 | other/theme/init.lua    | 主题配置         |
 | other/au.lua            | 自动启动配置     |
+
+** Most languages support
+[[https://s4.ax1x.com/2022/01/14/7Gk3mn.png]]
+*** Case, c LSP server installation
+nvim -c LspInstall c
+
 
 * installation
 #+begin_src shell
