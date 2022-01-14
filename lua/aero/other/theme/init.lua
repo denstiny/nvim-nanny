@@ -8,3 +8,5 @@ vim.g.tokyonight_colors = { hint = "orange", error = "#ff0000" }
 
 -- Load the colorscheme
 vim.cmd[[colorscheme tokyonight]]
+--- 縮进线
+vim.cmd[[hi IndentBlanklineContextChar guifg=#676C90 gui=nocombine]]
