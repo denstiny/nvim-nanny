@@ -42,23 +42,16 @@ U.nmap("tr","<Cmd>NvimTreeToggle<cr>")
 
 -- vimsector config
 U.nmap("<leader>vs","<Cmd>tabe .vimsector.json<CR>:LoadVimSpectorJsonTemplate<CR>")
-U.nmap("<F5>","<Plug>VimspectorContinue")                                         -- 开始调试
-U.nmap("<Shift><F5>","<Plug>VimspectorStop")                                      -- 停止调试
-U.nmap("<F6>","<Plug>VimspectorPause")                                            -- 暂停调试
-U.nmap("<F7>","<Plug>VimspectorStop")                                             -- 停止调试
-U.nmap("<F9>","<Plug>VimspectorToggleBreakpoint")                                 -- 切换行断点
-U.nmap("<F8>", "<Plug>VimspectorAddFunctionBreakpoint")                           -- 设置光标下的变量断点
-U.nmap("<F10>","<Plug>VimspectorStepOver")                                        -- 踏入
-U.nmap("F11>", "<Plug>VimspectorStepInto")                                        -- 跳过
-U.nmap("<Shift><F11>", "<Plug>VimspectorStepOut")                                 -- 跳出当前函数范围
-U.nmap("<F4>", "<Plug>VimspectorRestart")                                         -- 重新启动调试
+U.nmap("<F7>", "call vimspector#Reset()")             -- 停止调试(quit debug)
+U.nmap("<F4>", "<Plug>VimspectorRestart")             -- 使用相同配置重新调试( restart debug)
+U.nmap("<F2>", "<Plug>VimspectorBalloonEval")
 
 
 --exchange buffer
 U.nmap("<a-p>","<Cmd>BufferLineCyclePrev<cr>")
 U.nmap("<a-n>","<Cmd>BufferLineCycleNext<cr>")
 U.nmap("b","<Cmd>bufferLinePick<cr>")
-U.nmap("q","<Cmd>q<cr>")
+--U.nmap("q","<Cmd>q<cr>")
 
 -- No interference pattern
 U.nmap("<leader>z","<Cmd>ZenMode<cr>")
@@ -85,3 +78,16 @@ U.map('i', '<C-j>', '<CMD>lua require("luasnip").jump(1)<CR>')
 U.map('i', '<C-k>', '<CMD>lua require("luasnip").jump(-1)<CR>')
 U.map('s', '<C-j>', '<CMD>lua require("luasnip").jump(1)<CR>')
 U.map('s', '<C-k>', '<CMD>lua require("luasnip").jump(-1)<CR>')
+
+
+-- term
+function _G.set_terminal_keymaps()
+  local opts = {noremap = true}
+  vim.api.nvim_buf_set_keymap(0, 't', '<esc>', [[<C-\><C-n>]], opts)
+  vim.api.nvim_buf_set_keymap(0, 't', 'jk', [[<C-\><C-n>]], opts)
+end
+vim.cmd('autocmd! TermOpen term://* lua set_terminal_keymaps()')
+
+
+-- siderbar
+U.nmap("td", "<Cmd>lua require('sidebar-nvim').toggle()<CR>")

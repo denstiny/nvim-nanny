@@ -2,6 +2,7 @@ if not pcall(require, "hop") then return end
 
 -- Configuration for other small plugins
 vim.g.fugitive_legacy_commands = false
+
 require"Comment".setup {ignore = "^$"}
 require"gitsigns".setup {keymaps = {}}
 require"nvim-autopairs".setup {}
@@ -12,3 +13,6 @@ require "aero.other.theme"
 require "aero.other.bind-key"
 -- statline
 require "aero.other.statline"
+
+-- vimscript
+vim.g.vimspector_enable_mappings='VISUAL_STUDIO'
