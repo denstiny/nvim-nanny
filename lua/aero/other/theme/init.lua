@@ -10,3 +10,4 @@ vim.g.tokyonight_colors = { hint = "orange", error = "#ff0000" }
 vim.cmd[[colorscheme tokyonight]]
 --- 縮进线
 vim.cmd[[hi IndentBlanklineContextChar guifg=#676C90 gui=nocombine]]
+vim.cmd[[highlight IndentBlanklineContextStart guisp=#676c90 gui=underline]]

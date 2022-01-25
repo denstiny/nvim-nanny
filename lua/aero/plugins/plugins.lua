@@ -112,4 +112,7 @@ packer.startup(function(use)
     use{ 'anuvyklack/pretty-fold.nvim'}
     -- sandwidth
     use {'machakann/vim-sandwich'}
+    use {'nvim-neorg/neorg'}
+    -- markdown
+    use "iamcco/markdown-preview.nvim"
 end)

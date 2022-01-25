@@ -42,3 +42,6 @@ require("aero.scrollbar-config")
 
 -- fold code
 require("aero.fold-config")
+
+-- neorg
+require("aero.neorg-config")

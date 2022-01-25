@@ -76,6 +76,7 @@ cmp.setup {
     },
     sources = {
         {name = "nvim_lsp"},
+        {name = "neorg"},
         --{name = "nvim_lsp_signature_help"},
         {name = "luasnip"},
         {name = "buffer", keyword_lenght = 5},
