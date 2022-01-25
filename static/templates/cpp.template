@@ -1,0 +1,13 @@
+/**
+ * @author      : {{NAME}} ({{EMAIL}})
+ * @file        : {{FILE}}
+ * @created     : {{TIMESTAMP}} ( {{TODAY}} )
+ * @github      : https://github.com/denstiny
+ * @blog        : https://denstiny.github.io
+ */
+
+#include <iostream>
+using namespace std;
+int main(int argc, char **argv) {
+    cout << "hello world" << endl;
+}

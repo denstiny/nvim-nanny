@@ -153,7 +153,11 @@ let g:startify_center = 40
 
 "=== asyncrun
 let g:asyncrun_open = 10
-let g:asynctasks_config_name = ['.tasks', '.git/tasks.ini', '.svn/tasks.ini']
+let g:asynctask_template  =  ' ~/.config/nvim/static/templates/task_template.ini'
+let g:asynctasks_config_name = ['main.tasks', '.git/tasks.ini', '.svn/tasks.ini']
+let g:asynctasks_extra_config = [
+    \ '~/.config/nvim/static/templates/task_template.ini',
+    \ ]
 let g:asynctasks_term_pos = 'tab'
 let g:asynctasks_term_rows = 10    " 设置纵向切割时，高度为 10
 let g:asynctasks_term_rows = 10    " 设置水平端子拆分的高度
@@ -162,3 +166,22 @@ let g:asynctasks_term_cols = 30    " 设置垂直端子分割的宽度
 "undercul
 let &t_Cs = "\e[4:3m"
 let &t_Ce = "\e[4:0m"
+
+" markdown table
+function! s:isAtStartOfLine(mapping)
+  let text_before_cursor = getline('.')[0 : col('.')-1]
+  let mapping_pattern = '\V' . escape(a:mapping, '\')
+  let comment_pattern = '\V' . escape(substitute(&l:commentstring, '%s.*$', '', ''), '\')
+  return (text_before_cursor =~? '^' . ('\v(' . comment_pattern . '\v)?') . '\s*\v' . mapping_pattern . '\v$')
+endfunction
+inoreabbrev <expr> <bar><bar>
+          \ <SID>isAtStartOfLine('\|\|') ?
+          \ '<c-o>:TableModeEnable<cr><bar><space><bar><left><left>' : '<bar><bar>'
+inoreabbrev <expr> __
+          \ <SID>isAtStartOfLine('__') ?
+          \ '<c-o>:silent! TableModeDisable<cr>' : '__'
+let g:table_mode_corner='|'
+
+" vim template
+let g:tmpl_search_paths = ['~/.config/nvim/static/templates']
+let g:tmpl_author_email = '2254228017@qq.com'

@@ -115,4 +115,8 @@ packer.startup(function(use)
     use {'nvim-neorg/neorg'}
     -- markdown
     use "iamcco/markdown-preview.nvim"
+    -- markdown table
+    use "dhruvasagar/vim-table-mode"
+    -- new file templates
+    use {'tibabit/vim-templates'}
 end)

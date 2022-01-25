@@ -1,0 +1,12 @@
+/**
+ * @author      : {{NAME}} ({{EMAIL}})
+ * @file        : {{FILE}}
+ * @created     : {{TIMESTAMP}} ( {{TODAY}} )
+ * @github      : https://github.com/denstiny
+ * @blog        : https://denstiny.github.io
+ */
+
+#include <stdio.h>
+int main(int argc, char **arg) {
+    printf("hello world!");
+}
