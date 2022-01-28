@@ -1,0 +1,16 @@
+/**
+ * @author      : {{NAME}} ({{EMAIL}})
+ * @file        : {{FILE}}
+ * @created     : {{TIMESTAMP}} ( {{TODAY}} )
+ * @github      : https://github.com/denstiny
+ * @blog        : https://denstiny.github.io
+ */
+
+#ifndef A_H
+
+#define A_H
+
+
+
+
+#endif /* end of include guard A_H */
