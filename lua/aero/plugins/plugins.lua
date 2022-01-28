@@ -51,12 +51,12 @@ packer.startup(function(use)
     use 'phaazon/hop.nvim'
     use {'numToStr/Comment.nvim', 'blackCauldron7/surround.nvim'}
     use { 'lewis6991/gitsigns.nvim',
-    requires = {
-        'nvim-lua/plenary.nvim'
-    },
-    config = function()
-        require('gitsigns').setup()
-    end
+        requires = {
+            'nvim-lua/plenary.nvim'
+        },
+        config = function()
+            require('gitsigns').setup()
+        end
     }
     -- Theme
     use 'folke/tokyonight.nvim'
@@ -68,6 +68,7 @@ packer.startup(function(use)
     use {'akinsho/toggleterm.nvim'}
     -- code run
     use { 'michaelb/sniprun', run = 'bash ./install.sh'}
+    use {'jubnzv/mdeval.nvim'}
     use {'skywind3000/asyncrun.vim',requires={'skywind3000/asynctasks.vim'}}
 
     -- color
@@ -85,7 +86,10 @@ packer.startup(function(use)
     -- statline
     use {
         'nvim-lualine/lualine.nvim',
-        requires = {'kyazdani42/nvim-web-devicons', opt = true}
+        requires = {
+            'kyazdani42/nvim-web-devicons',
+            opt = true
+        }
     }
     use 'mbbill/undotree'
     use 'mg979/vim-visual-multi'
@@ -101,7 +105,9 @@ packer.startup(function(use)
     use { 'akinsho/bufferline.nvim' }
     use { 'junegunn/vim-slash' }
     use { 'nvim-telescope/telescope.nvim',
-        requires = { {'nvim-lua/plenary.nvim'} }
+        requires = {
+            {'nvim-lua/plenary.nvim'}
+        }
     }
     -- scroll bar
     use( 'petertriho/nvim-scrollbar' )
@@ -118,5 +124,4 @@ packer.startup(function(use)
     use {'tibabit/vim-templates'}
     -- wilder
     use {'gelguy/wilder.nvim'}
-    use {'jubnzv/mdeval.nvim'}
 end)
