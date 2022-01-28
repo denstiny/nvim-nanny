@@ -50,7 +50,8 @@ U.nmap("<F2>", "<Plug>VimspectorBalloonEval")
 --exchange buffer
 U.nmap("<a-p>","<Cmd>BufferLineCyclePrev<cr>")
 U.nmap("<a-n>","<Cmd>BufferLineCycleNext<cr>")
-U.nmap("b","<Cmd>bufferLinePick<cr>")
+U.nmap("b","<Cmd>BufferLinePick<cr>")
+U.nmap("cb","<Cmd>BufferLinePickClose<cr>")
 --U.nmap("q","<Cmd>q<cr>")
 
 -- No interference pattern

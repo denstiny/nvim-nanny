@@ -52,28 +52,48 @@ tabnine:setup({
 };
 })
 
+local t = function(str)
+    return vim.api.nvim_replace_termcodes(str, true, true, true)
+end
 cmp.setup {
-    mapping = {
-        ["<C-Space>"] = cmp.mapping.complete(),
-        ["<C-c>"] = cmp.mapping.close(),
-        ["<C-u>"] = cmp.mapping.scroll_docs(-4),
-        ["<C-d>"] = cmp.mapping.scroll_docs(4),
-        ["<CR>"] = cmp.mapping.confirm {
-            behavior = cmp.ConfirmBehavior.Insert,
-            select = false
-        },
-        ["<Tab>"] = cmp.mapping(function(fallback)
-            if cmp.visible() then
-                cmp.select_next_item()
-            elseif snip.expand_or_locally_jumpable() then
-                snip.expand_or_jump()
-            elseif has_words_before() then
-                cmp.complete()
-            else
-                fallback()
-            end
-        end, { "i", "s" }),
-    },
+    		mapping = {
+			["<CR>"] = cmp.mapping.confirm({ select = true }),
+			["<C-p>"] = cmp.mapping.select_prev_item(),
+			["<C-n>"] = cmp.mapping.select_next_item(),
+			["<C-d>"] = cmp.mapping.scroll_docs(-4),
+			["<C-f>"] = cmp.mapping.scroll_docs(4),
+			["<C-e>"] = cmp.mapping.close(),
+			["<Tab>"] = cmp.mapping(function(fallback)
+				if cmp.visible() then
+					cmp.select_next_item()
+				elseif has_words_before() then
+					cmp.complete()
+				else
+					fallback()
+				end
+			end, { "i", "s" }),
+			["<S-Tab>"] = cmp.mapping(function(fallback)
+				if cmp.visible() then
+					cmp.select_prev_item()
+				else
+					fallback()
+				end
+			end, { "i", "s" }),
+			["<C-h>"] = function(fallback)
+				if require("luasnip").jumpable(-1) then
+					vim.fn.feedkeys(t("<Plug>luasnip-jump-prev"), "")
+				else
+					fallback()
+				end
+			end,
+			["<C-l>"] = function(fallback)
+				if require("luasnip").expand_or_jumpable() then
+					vim.fn.feedkeys(t("<Plug>luasnip-expand-or-jump"), "")
+				else
+					fallback()
+				end
+			end,
+		},
     sources = {
         {name = "nvim_lsp"},
         {name = "neorg"},
@@ -95,7 +115,11 @@ cmp.setup {
     documentation = {
         border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
     },
-    snippet = {expand = function(args) snip.lsp_expand(args.body) end},
+    snippet = {
+        expand = function(args)
+            snip.lsp_expand(args.body)
+        end
+    },
     experimental = {ghost_text = true}
 }
 

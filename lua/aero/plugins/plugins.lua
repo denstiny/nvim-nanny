@@ -40,8 +40,6 @@ packer.startup(function(use)
     }
     use {"saadparwaiz1/cmp_luasnip"}
     use {'tzachar/cmp-tabnine', run='./install.sh', requires = 'hrsh7th/nvim-cmp'}
-    use 'dcampos/nvim-snippy'
-    use 'dcampos/cmp-snippy'
     use {  'ray-x/lsp_signature.nvim',}
 
 
@@ -70,7 +68,6 @@ packer.startup(function(use)
     use {'akinsho/toggleterm.nvim'}
     -- code run
     use { 'michaelb/sniprun', run = 'bash ./install.sh'}
-    use {'thinca/vim-quickrun'}
     use {'skywind3000/asyncrun.vim',requires={'skywind3000/asynctasks.vim'}}
 
     -- color
@@ -119,4 +116,7 @@ packer.startup(function(use)
     use "dhruvasagar/vim-table-mode"
     -- new file templates
     use {'tibabit/vim-templates'}
+    -- wilder
+    use {'gelguy/wilder.nvim'}
+    use {'jubnzv/mdeval.nvim'}
 end)

@@ -1,6 +1,5 @@
 -- Loading any vscode snippets from plugins
 require('luasnip.loaders.from_vscode').lazy_load()
-
 local util = require("luasnip.util.util")
 
 
@@ -68,4 +67,7 @@ require'luasnip'.config.setup({
 		end
 		return snippet
 	end
+})
+require'luasnip/loaders/from_vscode'.lazy_load({
+	paths = {"~/.config/nvim/lua/aero/snippets"},
 })
