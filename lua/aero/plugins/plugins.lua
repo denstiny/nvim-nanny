@@ -79,7 +79,7 @@ packer.startup(function(use)
     use {'puremourning/vimspector',run='python3 install_gadget.py --all'}
 
     -- 无干扰写作
-    use {'folke/zen-mode.nvim'}
+    use {'Pocco81/TrueZen.nvim'}
 
     -- File manager
     use {'kyazdani42/nvim-tree.lua'}

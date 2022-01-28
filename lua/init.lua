@@ -45,3 +45,6 @@ require("aero.fold-config")
 
 -- neorg
 require("aero.neorg-config")
+
+-- mdeval
+require("aero.mdeval")

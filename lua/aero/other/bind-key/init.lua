@@ -55,7 +55,7 @@ U.nmap("cb","<Cmd>BufferLinePickClose<cr>")
 --U.nmap("q","<Cmd>q<cr>")
 
 -- No interference pattern
-U.nmap("<leader>z","<Cmd>ZenMode<cr>")
+U.nmap("<leader>z","<Cmd>TZAtaraxis<cr>")
 
 -- undo tree
 U.nmap("L", "<Cmd>UndotreeToggle<cr>")
