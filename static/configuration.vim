@@ -176,6 +176,7 @@ let g:asynctasks_term_pos = 'bottom'
 let g:asynctasks_term_rows = 10    " 设置纵向切割时，高度为 10
 let g:asynctasks_term_rows = 10    " 设置水平端子拆分的高度
 let g:asynctasks_term_cols = 30    " 设置垂直端子分割的宽度
+let g:asyncrun_save = 2
 
 
 
