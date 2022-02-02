@@ -1,7 +1,24 @@
+function IsMe() 
+    if $USER != 'aero'
+        echo "每一个vim 用户都应该拥有自己的配置"
+        let buf = nvim_create_buf(v:false, v:true)
+        call nvim_buf_set_lines(buf, 0, -1, v:true, ["每一个vim用户都应该拥有自己的配置，如果要继续使用配置文件中设置$USER=aero,示例: let $USER=aero"])
+        let opts = {'relative': 'cursor', 'width': 100, 'height': 3, 'col': 0,
+            \ 'row': 1, 'anchor': 'NW'}
+        let win = nvim_open_win(buf, 0, opts)
+        " optional: change highlight, otherwise Pmenu is used
+        call nvim_win_set_option(win, 'winhl', 'Normal:MyHighlight')
+        return 1
+    else
+        return 0
+    endif
+endfunction
+
 "=== Ban vim disrupt the cursor style
 autocmd InsertEnter * set guicursor=a:blinkon1,i:ver35-Cursor
 autocmd InsertLeave * set guicursor=i:ver35-Cursor
 autocmd VimLeave    * set gcr=n-v-c:ver25-Cursor/lCursor,ve:ver35-Cursor,o:hor50-Cursor,i-ci:ver25-Cursor/lCursor,a:blinkon1
+autocmd VimEnter    * call IsMe()
 
 
 
@@ -125,9 +142,33 @@ autocmd InsertLeave * call SwapEnglish()
 
 "=== startify
 " 设置书签
-let g:startify_bookmarks            = [
-            \ '~/neorg/Todo.norg'
-            \]
+if filereadable($HOME . "/neorg/Todo.norg")
+    let g:startify_bookmarks            = [
+                \ '~/neorg/Todo.norg'
+                \]
+else
+    let g:startify_bookmarks            = [
+                \ '/mnt/home/neorg/Todo.norg'
+                \]
+endif
+"== 同步书签
+function CopyTododisk()
+    if IsMe()
+        echo "不是合法用户"
+        return
+    endif
+    if filereadable("/mnt/home")
+        return
+    endif
+    if !filereadable($HOME . "/neorg/Todo.norg")
+        silent !cp -rf /mnt/home/neorg ~/
+    endif
+    if !filereadable("/mnt/home/neorg")
+        silent !cp -rf ~/neorg /mnt/home/neorg
+    endif
+    silent !rsync -avu --delete "$HOME/neorg" "/mnt/home/neorg"
+endfunction
+
 " 起始页显示的列表长度
 let g:startify_files_number = 3
 " 是否自动加载目录下的Session.vim, 很好用

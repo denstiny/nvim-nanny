@@ -55,5 +55,3 @@ M.cssls = vim.tbl_deep_extend("force", {
 	settings = {css = {validate = false}}
 }, M.general)
 return M
-
-
