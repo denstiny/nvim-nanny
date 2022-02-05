@@ -117,11 +117,13 @@ packer.startup(function(use)
     use {'machakann/vim-sandwich'}
     use {'nvim-neorg/neorg'}
     -- markdown
-    use "iamcco/markdown-preview.nvim"
+    use{ "iamcco/markdown-preview.nvim",run="cd app && yarn install"}
     -- markdown table
     use "dhruvasagar/vim-table-mode"
     -- new file templates
     use {'tibabit/vim-templates'}
     -- wilder
     use {'gelguy/wilder.nvim'}
+    -- live server
+    use {'turbio/bracey.vim'}
 end)

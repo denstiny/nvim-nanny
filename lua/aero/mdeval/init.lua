@@ -10,7 +10,6 @@ require 'mdeval'.setup({
       default_header = [[
     #include <iostream>
     #include <vector>
-    #include <bits/stdc++.h>
     using namespace std;
       ]]
     },
