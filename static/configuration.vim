@@ -25,8 +25,6 @@ autocmd VimEnter    * call IsMe()
 
 
 
-
-
 "=== undotree
 let             g:undotree_DiffAutoOpen = 1
 let             g:undotree_SetFocusWhenToggle = 1
