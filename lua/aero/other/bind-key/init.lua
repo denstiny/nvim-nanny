@@ -41,8 +41,8 @@ U.nmap("tr","<Cmd>NvimTreeToggle<cr>")
 U.nmap("tr","<Cmd>NvimTreeToggle<cr>")
 
 -- vimsector config
-U.nmap("<leader>vs","<Cmd>tabe .vimsector.json<CR>:LoadVimSpectorJsonTemplate<CR>")
-U.nmap("<F7>", "call vimspector#Reset()")             -- 停止调试(quit debug)
+U.nmap("<leader>vs","<Cmd>tabe .vimspector.json<CR>:LoadVimSpectorJsonTemplate<CR>")
+U.nmap("<F7>", "<Cmd>VimspectorReset<cr>")             -- 停止调试(quit debug)
 U.nmap("<F4>", "<Plug>VimspectorRestart")             -- 使用相同配置重新调试( restart debug)
 U.nmap("<F2>", "<Plug>VimspectorBalloonEval")
 
@@ -67,6 +67,7 @@ U.nmap("er", "<Cmd>Trouble<cr>")
 
 --- goto preview
 U.nmap("gpd", "<Cmd>lua require('goto-preview').goto_preview_definition()<CR>")
+U.nmap("gf", "<Cmd>e <cfile><Cr>")
 
 -- telescope
 U.nmap("f", "<Cmd>Telescope current_buffer_fuzzy_find<cr>")

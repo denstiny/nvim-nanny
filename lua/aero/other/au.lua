@@ -21,3 +21,8 @@ endfunction
 vim.cmd [[
 au BufWritePost Todo.norg call CopyTododisk()
 ]]
+
+-- 不显示状态栏
+vim.cmd [[
+au BufCreate * set statusline=\ 
+]]
