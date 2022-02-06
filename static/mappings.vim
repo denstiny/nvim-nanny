@@ -20,7 +20,7 @@ set virtualedit=block,onemore
 set autoindent
 set nobackup
 set noswapfile
-set numberwidth=10
+set numberwidth=1
 set nu
 set hidden
 set shortmess+=c

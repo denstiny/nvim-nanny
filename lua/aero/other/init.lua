@@ -20,4 +20,3 @@ vim.g.vimspector_enable_mappings='VISUAL_STUDIO'
 vim.o.laststatus=0
 -- 右下角不显示光标位置信息
 vim.cmd[[set noru]]
-vim.cmd[[set numberwidth=10]]
