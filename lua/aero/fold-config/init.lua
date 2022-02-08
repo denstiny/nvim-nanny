@@ -10,4 +10,7 @@ require('pretty-fold').setup{
       }
    }
 }
+vim.cmd[[
+hi Folded guibg=#1A1B26
+]]
 require('pretty-fold.preview').setup_keybinding()

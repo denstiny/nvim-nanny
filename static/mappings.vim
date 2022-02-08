@@ -28,3 +28,4 @@ set updatetime=100
 set termguicolors
 set expandtab
 set fo-=r
+set selection=exclusive

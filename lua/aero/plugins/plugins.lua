@@ -50,14 +50,6 @@ packer.startup(function(use)
     -- Tools
     use 'phaazon/hop.nvim'
     use {'numToStr/Comment.nvim', 'blackCauldron7/surround.nvim'}
-    use { 'lewis6991/gitsigns.nvim',
-        requires = {
-            'nvim-lua/plenary.nvim'
-        },
-        config = function()
-            require('gitsigns').setup()
-        end
-    }
     -- Theme
     use 'folke/tokyonight.nvim'
 
@@ -126,4 +118,6 @@ packer.startup(function(use)
     use {'gelguy/wilder.nvim'}
     -- live server
     use {'turbio/bracey.vim'}
+    -- gitsigns
+    use {'lewis6991/gitsigns.nvim'}
 end)

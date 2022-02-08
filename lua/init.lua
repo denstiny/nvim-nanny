@@ -48,3 +48,5 @@ require("aero.neorg-config")
 
 -- mdeval
 require("aero.mdeval")
+-- gitsigns
+require("aero.gitsigns-config")

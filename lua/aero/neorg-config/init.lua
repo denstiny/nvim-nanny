@@ -43,3 +43,5 @@ require('neorg').setup {
         },
     },
 }
+
+
