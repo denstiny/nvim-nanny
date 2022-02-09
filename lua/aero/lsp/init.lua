@@ -23,7 +23,6 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = function(...)
 		{
             update_in_insert = false,
             virtual_text = false,
-            require('litee.lsp.handlers').ws_lsp_handler(), {}
         })(...)
 end
 
