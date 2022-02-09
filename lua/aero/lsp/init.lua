@@ -20,11 +20,16 @@ end)
 -- Disable diagnostic updates in insert mode
 vim.lsp.handlers["textDocument/publishDiagnostics"] = function(...)
 	vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics,
-		{update_in_insert = false})(...)
+		{
+            update_in_insert = false,
+            virtual_text = false,
+            require('litee.lsp.handlers').ws_lsp_handler(), {}
+        })(...)
 end
 
 
 local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
+--local signs = { Error = "", Warn = "", Hint = "", Info = "" }
 
 for type, icon in pairs(signs) do
   local hl = "DiagnosticSign" .. type

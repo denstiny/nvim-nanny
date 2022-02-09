@@ -12,11 +12,11 @@ kind.init({
     preset = 'codicons',
     symbol_map = {
         Text = " ",
-        Method = "",
-        Function = " ",
+        Method = " ",
+        Function = " ",
         Constructor = " ",
         Field = "ﰠ ",
-        Variable = " ",
+        Variable = " ",
         Class = "ﴯ ",
         Interface = " ",
         Module = " ",
@@ -68,6 +68,8 @@ cmp.setup {
 					cmp.select_next_item()
 				elseif has_words_before() then
 					cmp.complete()
+                elseif require('neogen').jumpable() then
+                    require('neogen').jump_next()
 				else
 					fallback()
 				end
@@ -75,6 +77,8 @@ cmp.setup {
 			["<S-Tab>"] = cmp.mapping(function(fallback)
 				if cmp.visible() then
 					cmp.select_prev_item()
+                elseif require('neogen').jumpable(true) then
+                    require('neogen').jump_prev()
 				else
 					fallback()
 				end

@@ -93,3 +93,7 @@ vim.cmd('autocmd! TermOpen term://* lua set_terminal_keymaps()')
 
 -- siderbar
 U.nmap("td", "<Cmd>lua require('sidebar-nvim').toggle()<CR>")
+-- fold lsp
+U.nmap("tp","<Cmd>lua vim.diagnostic.open_float(nil, {focus=false, scope=\"cursor\"})<CR>")
+-- 注释
+U.nmap("<leader>nf", "<Cmd>lua require('neogen').generate()<CR>")

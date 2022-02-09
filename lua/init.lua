@@ -1,8 +1,6 @@
 -- plugins
 require "aero.plugins"
 
--- auto start
-require "aero.other.au"
 
 -- lsp
 require "aero.lsp"
@@ -50,3 +48,7 @@ require("aero.neorg-config")
 require("aero.mdeval")
 -- gitsigns
 require("aero.gitsigns-config")
+-- auto start
+require "aero.other.au"
+-- 注释
+require("aero.neogen-config")

@@ -7,14 +7,13 @@ set nobackup
 set nowritebackup
 set cmdheight=1
 set updatetime=300
-set signcolumn=yes
 set sw=4
 set ts=4
 set tabstop=4
 set clipboard=unnamed
 set foldcolumn=0 
 set nofoldenable
-set signcolumn=yes 
+set signcolumn=auto:1-2
 set cursorline
 set virtualedit=block,onemore
 set autoindent

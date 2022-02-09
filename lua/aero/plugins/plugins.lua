@@ -40,7 +40,7 @@ packer.startup(function(use)
     }
     use {"saadparwaiz1/cmp_luasnip"}
     use {'tzachar/cmp-tabnine', run='./install.sh', requires = 'hrsh7th/nvim-cmp'}
-    use {  'ray-x/lsp_signature.nvim',}
+    use {'ray-x/lsp_signature.nvim'}
 
 
     -- Treesitter
@@ -120,4 +120,8 @@ packer.startup(function(use)
     use {'turbio/bracey.vim'}
     -- gitsigns
     use {'lewis6991/gitsigns.nvim'}
+    -- 注释
+    use {'danymat/neogen'}
+    -- auto save folding
+    use {'vim-scripts/restore_view.vim'}
 end)

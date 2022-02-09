@@ -25,7 +25,7 @@ require('gitsigns').setup {
   current_line_blame_formatter_opts = {
     relative_time = false
   },
-  sign_priority = 6,
+  sign_priority = 0,
   update_debounce = 100,
   status_formatter = nil, -- Use default
   max_file_length = 40000,
@@ -41,3 +41,8 @@ require('gitsigns').setup {
     enable = false
   },
 }
+
+--vim.cmd[[
+--au VimEnter * set signcolumn=auto:1-2
+--au BufCreate * set signcolumn=auto:1-2
+--]]
