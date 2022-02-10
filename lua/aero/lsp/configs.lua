@@ -79,7 +79,7 @@ local on_attach = function(bufnr)
     nmap("gt", "<cmd>lua vim.lsp.buf.type_definition()<cr>") -- Type definition
     nmap("gi", "<cmd>lua vim.lsp.buf.implementation()<cr>") -- Implementation
     nmap("gr", "<cmd>lua vim.lsp.buf.rename()<cr>") -- Rename
-    nmap("gR", "<cmd>lua vim.lsp.buf.references()<cr>") -- References
+    nmap("gR", "<cmd>TroubleToggle lsp_references<cr>") -- References
     nmap("gp", "<cmd>lua vim.diagnostic.goto_prev()<cr>") -- Next diagnostic
     nmap("gn", "<cmd>lua vim.diagnostic.goto_next()<cr>") -- Prev diagnostic
     nmap("K", "<cmd>lua vim.lsp.buf.hover()<cr>") -- Hover info

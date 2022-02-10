@@ -96,7 +96,7 @@ packer.startup(function(use)
     -- buff line
     use { 'akinsho/bufferline.nvim' }
     use { 'junegunn/vim-slash' }
-    use { 'nvim-telescope/telescope.nvim',
+    use { 'nvim-telescope/telescope.nvim','nvim-telescope/telescope-packer.nvim',
         requires = {
             {'nvim-lua/plenary.nvim'}
         }
