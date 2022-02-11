@@ -27,3 +27,6 @@ vim.cmd [[
 au BufCreate * set statusline=\ 
 au VimEnter * set statusline=\ 
 ]]
+vim.cmd [[
+au VimEnter * unmap n
+]]

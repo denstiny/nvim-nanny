@@ -1,13 +1,20 @@
+function Vtext_Isme()
+    call nvim_buf_clear_namespace(0, -1, 0, -1)
+    let chunk = [["每一个vim用户都应该拥有自己的配置，如果要继续使用配置文件中设置$USER=aero,示例: let $USER=\"aero\""]]
+    call nvim_buf_set_virtual_text(0, 1000, line(".")-1, chunk, {})
+endfunction
 function IsMe() 
     if $USER != 'aero'
         echo "每一个vim 用户都应该拥有自己的配置"
         let buf = nvim_create_buf(v:false, v:true)
-        call nvim_buf_set_lines(buf, 0, -1, v:true, ["每一个vim用户都应该拥有自己的配置，如果要继续使用配置文件中设置$USER=aero,示例: let $USER=aero"])
+        call nvim_buf_set_lines(buf, 0, -1, v:true, ["每一个vim用户都应该拥有自己的配置，如果要继续使用配置文件中设置$USER=aero,示例: let $USER=\"aero\""])
         let opts = {'relative': 'cursor', 'width': 100, 'height': 3, 'col': 0,
             \ 'row': 1, 'anchor': 'NW'}
         let win = nvim_open_win(buf, 0, opts)
         " optional: change highlight, otherwise Pmenu is used
         call nvim_win_set_option(win, 'winhl', 'Normal:MyHighlight')
+        au InsertEnter * call Vtext_Isme()
+        au InsertLeave * call Vtext_Isme()
         return 1
     else
         return 0
