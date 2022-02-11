@@ -11,9 +11,9 @@ local tabnine = require('cmp_tabnine.config')
 kind.init({
     preset = 'codicons',
     symbol_map = {
-        Text = " ",
-        Method = " ",
-        Function = " ",
+        Text = " ",
+        Method = " ",
+        Function = " ",
         Constructor = " ",
         Field = "ﰠ ",
         Variable = " ",
@@ -28,7 +28,7 @@ kind.init({
         Snippet = " ",
         Color = " ",
         File = " ",
-        Reference = " ",
+        Reference = " ",
         Folder = " ",
         EnumMember = " ",
         Constant = " ",

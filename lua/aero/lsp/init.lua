@@ -22,13 +22,14 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = function(...)
 	vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics,
 		{
             update_in_insert = false,
+            severity_sort = true,
             virtual_text = false,
         })(...)
 end
 
 
-local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
---local signs = { Error = "", Warn = "", Hint = "", Info = "" }
+--local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
+local signs = { Error = "", Warn = "", Hint = "", Info = "" }
 
 for type, icon in pairs(signs) do
   local hl = "DiagnosticSign" .. type

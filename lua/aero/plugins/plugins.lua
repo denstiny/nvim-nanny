@@ -124,4 +124,6 @@ packer.startup(function(use)
     use {'danymat/neogen'}
     -- auto save folding
     --use {'vim-scripts/restore_view.vim'}
+    -- 自动关闭 对符号
+    -- use {'Raimondi/delimitMate'}
 end)
