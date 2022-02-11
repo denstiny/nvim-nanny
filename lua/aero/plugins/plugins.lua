@@ -123,5 +123,5 @@ packer.startup(function(use)
     -- 注释
     use {'danymat/neogen'}
     -- auto save folding
-    use {'vim-scripts/restore_view.vim'}
+    --use {'vim-scripts/restore_view.vim'}
 end)

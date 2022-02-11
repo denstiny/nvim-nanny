@@ -29,4 +29,5 @@ au VimEnter * set statusline=\
 ]]
 vim.cmd [[
 au VimEnter * unmap n
+au VimEnter * unmap N
 ]]
