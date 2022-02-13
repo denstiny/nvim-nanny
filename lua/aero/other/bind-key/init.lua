@@ -36,6 +36,8 @@ U.nmap("<tab>","<Cmd>normal za<cr>")
 
 --- nvim tree
 U.nmap("tr","<Cmd>NvimTreeToggle<cr>")
+--- lsp tree
+U.nmap("ts", "<Cmd>SymbolsOutline<cr>")
 
 -- nvim tree
 U.nmap("tr","<Cmd>NvimTreeToggle<cr>")

@@ -15,7 +15,7 @@ kind.init({
         Method = " ",
         Function = " ",
         Constructor = " ",
-        Field = "ﰠ ",
+        Field = " ",
         Variable = " ",
         Class = "ﴯ ",
         Interface = " ",
