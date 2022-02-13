@@ -4,6 +4,7 @@ if not pcall(require, "hop") then return end
 vim.g.fugitive_legacy_commands = false
 
 require"Comment".setup {ignore = "^$"}
+require('yode-nvim').setup({})
 require"nvim-autopairs".setup {}
 require"hop".setup {jump_on_sole_occurrence = true}
 ---  theme
