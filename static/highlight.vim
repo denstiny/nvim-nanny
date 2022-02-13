@@ -4,6 +4,8 @@
 function Neorghighter()
     highlight Link guifg=#1A1B26
     match Link /\v\(\/.+\)/
+    hi NeorgMarkupItalicDelimiter guifg=#1A1B26
+    hi NeorgMarkupBoldDelimiter guifg=#1A1B26
 endfunction
 
 au BufCreate *.norg call Neorghighter()

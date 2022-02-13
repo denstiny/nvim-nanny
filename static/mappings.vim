@@ -11,7 +11,7 @@ set sw=4
 set ts=4
 set tabstop=4
 set clipboard=unnamed
-set foldcolumn=0 
+set foldcolumn=0
 set nofoldenable
 set signcolumn=auto:1-2
 set cursorline
@@ -28,3 +28,4 @@ set termguicolors
 set expandtab
 set fo-=r
 set selection=exclusive
+set noshowmode  "不显示模式信息"

@@ -398,3 +398,6 @@ let g:quickrun_config._ = {}
 if has('nvim')
     let g:quickrun_config._['runner'] = 'nvimterm'
 endif
+
+"=== 专注重要代码
+map <Leader>fc      :YodeCreateSeditorFloating<CR>
