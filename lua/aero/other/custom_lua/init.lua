@@ -7,10 +7,10 @@ function addStartify_bookmark()
     for key=1,#_str-1 do
         dir = dir .. '/' ..  _str[key]
     end
+    print(dir)
     dir = dir .. '\n'
     local file = io.open(projectRootfile .. '/.projectRoots', 'a')
     file:write(dir)
-    print(dir)
     file:flush()
     file:close()
     projectRoots()
