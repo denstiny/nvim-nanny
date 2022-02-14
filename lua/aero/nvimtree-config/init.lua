@@ -66,5 +66,6 @@ require'nvim-tree'.setup {
       allow_resize = true,
       side = "right",
       width = 25,
+      auto_resize = true
    },
 }

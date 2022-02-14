@@ -13,7 +13,8 @@ require "aero.other.theme"
 require "aero.other.bind-key"
 -- statline
 require "aero.other.statline"
-
+-- custom lua
+require("aero.other.custom_lua")
 -- vimscript
 vim.g.vimspector_enable_mappings='VISUAL_STUDIO'
 -- 不显示状态栏

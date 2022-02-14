@@ -149,13 +149,16 @@ autocmd InsertLeave * call SwapEnglish()
 " 设置书签
 if filereadable($HOME . "/neorg/Todo.norg")
     let g:startify_bookmarks            = [
-                \ '~/neorg/Todo.norg'
+                \ '~/neorg/Todo.norg',
                 \]
 else
     let g:startify_bookmarks            = [
                 \ '/mnt/home/neorg/Todo.norg'
                 \]
 endif
+let g:startify_bookmarks_ = g:startify_bookmarks
+"== 添加自定义书签
+lua projectRoots()
 "== 同步书签
 function CopyTododisk()
     if IsMe()
@@ -184,6 +187,7 @@ let g:startify_skiplist = [
        \ '^/tmp',
        \ '/project/.*/documentation',
        \ ]
+let g:startify_custom_footer=["","","                                                            一定要做一个自私自利的人!"]
 let g:startify_custom_header_quotes = [
             \["答案很长，我准备用一生的时间来回答，你准备要听了吗？"],
             \["夜我就是你的圣诞礼物，非～非礼啊。"],

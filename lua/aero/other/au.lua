@@ -5,6 +5,8 @@ au!
 au BufWritePost plugins.lua source <afile> | PackerSync
 augroup END ]]
 
+vim.cmd [[
+au BufWritePost .projectRoots | lua projectRoots() ]]
 -- 自动加载vim配置
 vim.cmd [[
 function! VimConfig()

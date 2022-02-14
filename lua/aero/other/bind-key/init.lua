@@ -36,6 +36,7 @@ U.nmap("<tab>","<Cmd>normal za<cr>")
 
 --- nvim tree
 U.nmap("tr","<Cmd>NvimTreeToggle<cr>")
+U.nmap("<leader>ad", "<Cmd>lua addStartify_bookmark()<cr>")
 --- lsp tree
 U.nmap("ts", "<Cmd>SymbolsOutline<cr>")
 
@@ -99,3 +100,6 @@ U.nmap("td", "<Cmd>lua require('sidebar-nvim').toggle()<CR>")
 U.nmap("tp","<Cmd>lua vim.diagnostic.open_float(nil, {focus=false, scope=\"cursor\"})<CR>")
 -- 注释
 U.nmap("<leader>nf", "<Cmd>lua require('neogen').generate()<CR>")
+
+-- startify
+U.nmap("F", "<Cmd>startify<cr>")
