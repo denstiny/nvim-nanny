@@ -27,6 +27,11 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = function(...)
         })(...)
 end
 
+--vim.diagnostic.config({
+--  virtual_text = {
+--    prefix = '●', -- Could be '●', '▎', 'x'
+--  }
+--})
 
 --local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
 local signs = { Error = "", Warn = "", Hint = "", Info = "" }

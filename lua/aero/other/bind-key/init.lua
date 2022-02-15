@@ -17,6 +17,7 @@ U.nmap("<Leader>ew", "<Plug>(easymotion-w)")
 U.vmap(";y", '"+y')
 -- exit nvim
 U.nmap("<leader>q","<Cmd>qall<cr>")
+U.nmap("<A-q>", "<Cmd>wqall<cr>")
 --U.nmap("q","<Cmd>q<cr>")
 
 -- Paste from clipboard
