@@ -13,5 +13,10 @@
       "prefix": "/**/",
       "body" : ["/*","  ${1:annotation}","*/"],
       "description": "annotation"
+  },
+  "cream": {
+      "prefix" : "Ice cream",
+      "body":"🎉",
+      "description": "Ice cream"
   }
 }

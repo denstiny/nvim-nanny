@@ -13,5 +13,9 @@
       "prefix": "/**/",
       "body" : ["/*","  ${1:annotation}","*/"],
       "description": "annotation"
+  },
+  "dv":{
+      "prefix":"divider",
+      "body":["/* ------------ ${CURRENT_YEAR}-${CURRENT_MONTH}-${CURRENT_DATE} ----------- */",""]
   }
 }

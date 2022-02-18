@@ -54,7 +54,7 @@ require'nvim-tree'.setup {
    disable_netrw = true,
    hijack_netrw = true,
    ignore_ft_on_setup = { "dashboard" },
-   auto_close = false,
+   auto_close = true,
    open_on_tab = false,
    hijack_cursor = true,
    update_cwd = true,

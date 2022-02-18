@@ -46,7 +46,7 @@ U.nmap("tr","<Cmd>NvimTreeToggle<cr>")
 
 -- vimsector config
 U.nmap("<leader>vs","<Cmd>tabe .vimspector.json<CR>:LoadVimSpectorJsonTemplate<CR>")
-U.nmap("<F7>", "<Cmd>VimspectorReset<cr>")             -- 停止调试(quit debug)
+U.nmap("<F7>", "<Cmd>VimspectorReset<cr>")            -- 停止调试(quit debug)
 U.nmap("<F4>", "<Plug>VimspectorRestart")             -- 使用相同配置重新调试( restart debug)
 U.nmap("<F2>", "<Plug>VimspectorBalloonEval")
 
@@ -104,3 +104,5 @@ U.nmap("<leader>nf", "<Cmd>lua require('neogen').generate()<CR>")
 
 -- startify
 U.nmap("F", "<Cmd>startify<cr>")
+-- colip list
+U.nmap("<C-p>", "<Cmd>Telescope neoclip a<cr>")

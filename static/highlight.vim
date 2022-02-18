@@ -8,8 +8,8 @@ function Neorghighter()
     hi NeorgMarkupBoldDelimiter guifg=#1A1B26
 endfunction
 
-au BufCreate *.norg call Neorghighter()
-au VimEnter *.norg call Neorghighter()
+"au BufCreate *.norg call Neorghighter()
+"au VimEnter *.norg call Neorghighter()
 
 "== lsp_signature hint String
 hi My_String guifg=#8407C5

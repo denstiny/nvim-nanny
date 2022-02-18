@@ -1,3 +1,4 @@
+require('aero.plugins.packerInit')
 -- Configure packer
 local packer = require "packer" packer.init {
     auto_clean = true,
@@ -95,7 +96,7 @@ packer.startup(function(use)
     use {"mbbill/undotree"}
     -- buff line
     use { 'akinsho/bufferline.nvim' }
-    use { 'junegunn/vim-slash' }
+    use {'kevinhwang91/nvim-hlslens'}
     use { 'nvim-telescope/telescope.nvim','nvim-telescope/telescope-packer.nvim',
         requires = {
             {'nvim-lua/plenary.nvim'}
@@ -117,7 +118,7 @@ packer.startup(function(use)
     -- wilder
     use {'gelguy/wilder.nvim'}
     -- live server
-    use {'turbio/bracey.vim'}
+    use {'turbio/bracey.vim',run = 'npm install --prefix server'}
     -- gitsigns
     use {'lewis6991/gitsigns.nvim'}
     -- 注释
@@ -127,4 +128,11 @@ packer.startup(function(use)
     -- 专注重要代码
     use {'hoschi/yode-nvim'}
     use {'simrat39/symbols-outline.nvim'}
+    -- clip list
+    use { "AckslD/nvim-neoclip.lua",}
+    -- 竞技性编程快速测试
+    use {
+        'xeluxee/competitest.nvim',
+        requires = 'MunifTanjim/nui.nvim',
+    }
 end)

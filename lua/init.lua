@@ -52,3 +52,11 @@ require("aero.gitsigns-config")
 require "aero.other.au"
 -- 注释
 require("aero.neogen-config")
+-- clip list
+require("aero.neoclip-config")
+---- test code
+require("aero.competitest-config")
+---- auto pairs
+require("aero.autopairs-config")
+-- auto 自动清楚搜索高亮
+require("aero.hlselens-config")

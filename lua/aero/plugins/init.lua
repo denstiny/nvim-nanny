@@ -1,1 +1,2 @@
-require "aero.plugins.plugins"
+require('aero.plugins.packerInit')
+require('aero.plugins.plugins')
