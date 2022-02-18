@@ -54,9 +54,9 @@ require "aero.other.au"
 require("aero.neogen-config")
 -- clip list
 require("aero.neoclip-config")
----- test code
+-- test code
 require("aero.competitest-config")
----- auto pairs
+-- auto pairs
 require("aero.autopairs-config")
 -- auto 自动清楚搜索高亮
 require("aero.hlselens-config")

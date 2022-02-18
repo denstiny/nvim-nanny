@@ -1,4 +1,3 @@
-require('aero.plugins.packerInit')
 -- Configure packer
 local packer = require "packer" packer.init {
     auto_clean = true,
@@ -12,11 +11,11 @@ packer.startup(function(use)
     use {'nvim-lua/popup.nvim', 'nvim-lua/plenary.nvim'}
 
     -- LSP
+     use {'neovim/nvim-lspconfig'}
     use {
-        'neovim/nvim-lspconfig',
         'williamboman/nvim-lsp-installer',
-        'folke/lua-dev.nvim',
-        'jose-elias-alvarez/null-ls.nvim'
+        --'folke/lua-dev.nvim',
+        'jose-elias-alvarez/null-ls.nvim',
     }
     use { 'rmagatti/goto-preview' }
     use { 'Chiel92/vim-autoformat' }
@@ -27,6 +26,7 @@ packer.startup(function(use)
     }
     -- Completion
     use {'hrsh7th/nvim-cmp'}
+    use {'hrsh7th/cmp-nvim-lua'}
     use {'onsails/lspkind-nvim'}
     use {'hrsh7th/cmp-nvim-lsp-signature-help'}
     use {'windwp/nvim-autopairs'}
@@ -50,7 +50,7 @@ packer.startup(function(use)
 
     -- Tools
     use 'phaazon/hop.nvim'
-    use {'numToStr/Comment.nvim', 'blackCauldron7/surround.nvim'}
+    use {'numToStr/Comment.nvim'}
     -- Theme
     use 'folke/tokyonight.nvim'
 

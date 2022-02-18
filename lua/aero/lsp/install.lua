@@ -3,7 +3,7 @@ local languageServers = {
 	"sumneko_lua",
 	"vimls",
 	"clangd",
-	"pylsp",
+	"pyright",
 	"jdtls",
 	"html",
 	"cssls",

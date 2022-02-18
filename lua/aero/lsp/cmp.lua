@@ -103,6 +103,7 @@ cmp.setup {
         {name = "neorg"},
         --{name = "nvim_lsp_signature_help"},
         {name = "luasnip"},
+        {name = "nvim_lua"},
         {name = "buffer", keyword_lenght = 5},
         {name = "path"},
         {name = "calc"},
@@ -114,7 +115,7 @@ cmp.setup {
         fields = { 'kind', 'abbr', 'menu' },
         format = kind.cmp_format {
             with_text = false,
-            maxwidth = 70,
+            maxwidth = 200,
         },
     },
     documentation = {

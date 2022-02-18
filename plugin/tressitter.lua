@@ -1,5 +1,9 @@
 local has_ts, ts = pcall(require, "nvim-treesitter.configs")
 local parser_configs = require('nvim-treesitter.parsers').get_parser_configs()
+require("nvim-treesitter.install").command_extra_args = {
+    curl = { "--proxy", "http://127.0.0.1:7890" },
+}
+
 
 parser_configs.norg = {
     install_info = {
