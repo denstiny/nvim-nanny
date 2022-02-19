@@ -5,6 +5,11 @@ require('lualine').setup {
 }
 vim.opt.termguicolors = true
 require("bufferline").setup{
+    highlights = {
+        fill = {
+            guibg = '#1A1B26',
+        },
+    },
     options = {
         custom_areas = {
             left = function()

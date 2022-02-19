@@ -1,9 +1,14 @@
 local has_ts, ts = pcall(require, "nvim-treesitter.configs")
 local parser_configs = require('nvim-treesitter.parsers').get_parser_configs()
-require("nvim-treesitter.install").command_extra_args = {
-    curl = { "--proxy", "http://127.0.0.1:7890" },
-}
 
+
+
+-- use ssh to download parser
+require("nvim-treesitter.install").prefer_git = true
+local parsers = require("nvim-treesitter.parsers").get_parser_configs()
+for _, p in pairs(parsers) do
+	p.install_info.url = p.install_info.url:gsub("https://github.com/", "git@github.com:")
+end
 
 parser_configs.norg = {
     install_info = {

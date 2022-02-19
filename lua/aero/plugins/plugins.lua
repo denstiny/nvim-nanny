@@ -4,6 +4,16 @@ local packer = require "packer" packer.init {
     compile_on_sync = true,
     display = {prompt_border = 'rounded'}
 }
+-- init config
+packer.init({
+	git = { clone_timeout = 288, default_url_format = "git@github.com:%s" },
+	max_jobs = 30,
+	display = {
+		open_fn = function()
+			return require("packer.util").float({ border = "single" }) -- single rounded
+		end,
+	},
+})
 -- Plugin list
 packer.startup(function(use)
     use 'wbthomason/packer.nvim'

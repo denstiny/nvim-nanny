@@ -14,3 +14,4 @@ endfunction
 "== lsp_signature hint String
 hi My_String guifg=#8407C5
 match My_String /🐼/
+hi cursorlinenr gui = bold
