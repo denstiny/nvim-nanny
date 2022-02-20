@@ -1,6 +1,10 @@
-# @author      : {{NAME}} ({{EMAIL}})
-# @file        : {{FILE}}
-# @created     : {{TIMESTAMP}}
-# @github      : https://github.com/denstiny
-# @blog        : https://denstiny.github.io
+"""
+
+ @author      : {{NAME}} ({{EMAIL}})
+ @file        : {{FILE}}
+ @created     : {{TIMESTAMP}}
+ @github      : https://github.com/denstiny
+ @blog        : https://denstiny.github.io
+
+"""
 

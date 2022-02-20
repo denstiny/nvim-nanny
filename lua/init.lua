@@ -60,3 +60,8 @@ require("aero.competitest-config")
 require("aero.autopairs-config")
 -- auto 自动清楚搜索高亮
 require("aero.hlselens-config")
+-- vimshift
+require("aero.winshift-config")
+
+-- 平滑滚动
+require("aero.neoscroll-config")

@@ -145,4 +145,8 @@ packer.startup(function(use)
         'xeluxee/competitest.nvim',
         requires = 'MunifTanjim/nui.nvim',
     }
+    -- windows
+    use 'sindrets/winshift.nvim'
+    -- 平滑滚动
+    use 'karb94/neoscroll.nvim'
 end)

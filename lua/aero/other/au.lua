@@ -33,8 +33,8 @@ vim.cmd [[
 au BufCreate * set statusline=\ 
 au BufCreate * hi statusline gui=underline guibg=none guifg=#565F89 " 活动
 au BufCreate * hi StatusLineNC guibg=none gui=underline "非活动
-au VimEnter *  set statusline=\ 
-au VimEnter *  hi statusline gui=underline guibg=none guifg=#565F89
-au VimEnter * hi StatusLineNC guibg=none gui=underline
-au VimEnter * hi VertSplit guifg=#343A55
+au VimEnter  * set statusline=\ 
+au VimEnter  * hi statusline gui=underline guibg=none guifg=#565F89
+au VimEnter  * hi StatusLineNC guibg=none gui=underline
+au VimEnter  * hi VertSplit guifg=#343A55
 ]]
