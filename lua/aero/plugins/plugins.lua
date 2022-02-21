@@ -27,13 +27,6 @@ packer.startup(function(use)
         --'folke/lua-dev.nvim',
         'jose-elias-alvarez/null-ls.nvim',
     }
-    use { 'rmagatti/goto-preview' }
-    use { 'Chiel92/vim-autoformat' }
-    -- lsp icon
-    use {
-        'folke/trouble.nvim',
-        'kyazdani42/nvim-web-devicons',
-    }
     -- Completion
     use {'hrsh7th/nvim-cmp'}
     use {'hrsh7th/cmp-nvim-lua'}
@@ -52,8 +45,13 @@ packer.startup(function(use)
     use {"saadparwaiz1/cmp_luasnip"}
     use {'tzachar/cmp-tabnine', run='./install.sh', requires = 'hrsh7th/nvim-cmp'}
     use {'ray-x/lsp_signature.nvim'}
-
-
+    use { 'rmagatti/goto-preview' }
+    use { 'Chiel92/vim-autoformat' }
+    -- lsp icon
+    use {
+        'folke/trouble.nvim',
+        'kyazdani42/nvim-web-devicons',
+    }
     -- Treesitter
     use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
     use 'nvim-treesitter/nvim-treesitter-refactor'
@@ -149,4 +147,6 @@ packer.startup(function(use)
     use 'sindrets/winshift.nvim'
     -- 平滑滚动
     use 'karb94/neoscroll.nvim'
+    -- 微光
+    use  'folke/twilight.nvim'
 end)
