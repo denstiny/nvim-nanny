@@ -149,4 +149,6 @@ packer.startup(function(use)
     use 'karb94/neoscroll.nvim'
     -- 微光
     use  'folke/twilight.nvim'
+    -- drawing
+    use 'willchao612/vim-diagon'
 end)

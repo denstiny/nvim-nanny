@@ -17,5 +17,22 @@
   "dv":{
       "prefix":"--",
       "body":["/* ------------ ${CURRENT_YEAR}-${CURRENT_MONTH}-${CURRENT_DATE} ----------- */",""]
+  },
+  "test":{
+      "prefix":"test",
+      "body":[
+          "std::vector<${1:type}> array;",
+          "${1:type} n;",
+          "",
+          "while (std::cin >> n) { ",
+          "    if(std::cin.get() == '\\n') ",
+          "        break; ",
+          "",
+          "    array.emplace_back(n); ",
+          "}",
+          "",
+          "for (auto i : array) { ",
+          "    std::cout << i << \" \"; ",
+          "}",""]
   }
 }
