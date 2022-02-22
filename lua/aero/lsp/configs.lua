@@ -139,12 +139,22 @@ vim.g.symbols_outline = {
 		Key = {icon = "🔐", hl = "TSType"},
 		Null = {icon = "NULL", hl = "TSType"},
 		EnumMember = {icon = "", hl = "TSField"},
- 	    Struct = {icon = "פּ", hl = "TSType"},
+        Struct = {icon = "פּ", hl = "TSType"},
 		Event = {icon = "🗲", hl = "TSType"},
 		Operator = {icon = "+", hl = "TSOperator"},
 		TypeParameter = {icon = "𝙏", hl = "TSParameter"}
 	}
 }
+
+--  自动关闭 symbols outline
+set_symbols_outline_state = function()
+  vim.g['symbols_outline_state'] = require('symbols-outline').state
+end
+vim.cmd[[
+hi FocusedSymbol guibg = black
+autocmd BufEnter * :lua set_symbols_outline_state()
+autocmd BufEnter * if winnr('$') == 1 && exists('g:symbols_outline_state.outline_buf') && g:symbols_outline_state.outline_buf | quit | endif
+]]
 
 -- Configs for the language servers
 local M = {}

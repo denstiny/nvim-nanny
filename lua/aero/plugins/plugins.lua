@@ -92,7 +92,6 @@ packer.startup(function(use)
             opt = true
         }
     }
-    use 'mbbill/undotree'
     use 'mg979/vim-visual-multi'
 
     use 'easymotion/vim-easymotion'
