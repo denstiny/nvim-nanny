@@ -7,9 +7,10 @@ set nobackup
 set nowritebackup
 set cmdheight=1
 set updatetime=300
-set sw=4
-set ts=4
-set tabstop=4
+set sw=2
+set ts=2
+set tabstop=2
+set shiftwidth=2
 set clipboard=unnamed
 set foldcolumn=0
 set nofoldenable

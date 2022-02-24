@@ -67,3 +67,5 @@ require("aero.neoscroll-config")
 
 -- 微光
 require("aero.twilight-config")
+-- easy Esc
+require("aero.easyEsc-config")

@@ -6,7 +6,7 @@ local packer = require "packer" packer.init {
 }
 -- init config
 packer.init({
-	git = { clone_timeout = 288, default_url_format = "git@github.com:%s" },
+	--git = { clone_timeout = 288, default_url_format = "git@github.com:%s" },
 	max_jobs = 30,
 	display = {
 		open_fn = function()
@@ -21,7 +21,7 @@ packer.startup(function(use)
     use {'nvim-lua/popup.nvim', 'nvim-lua/plenary.nvim'}
 
     -- LSP
-     use {'neovim/nvim-lspconfig'}
+    use {'neovim/nvim-lspconfig'}
     use {
         'williamboman/nvim-lsp-installer',
         --'folke/lua-dev.nvim',
@@ -55,6 +55,7 @@ packer.startup(function(use)
     -- Treesitter
     use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
     use 'nvim-treesitter/nvim-treesitter-refactor'
+    use {'nvim-treesitter/playground'}
 
     -- Tools
     use 'phaazon/hop.nvim'
@@ -150,4 +151,6 @@ packer.startup(function(use)
     use  'folke/twilight.nvim'
     -- drawing
     use 'willchao612/vim-diagon'
+    -- better escape
+    use { "max397574/better-escape.nvim", }
 end)

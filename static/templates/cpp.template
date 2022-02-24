@@ -13,30 +13,24 @@ using namespace std;
 class Solution {
   public:
     int findRepeatNumber(vector<int> & nums) {
-        std::sort(nums.begin(), nums.end());
-        int key = *nums.begin();
-
-        for (auto it = nums.begin(); it != nums.end() && *(++it) != key; key = *it);
-
-        return key;
+      std::sort(nums.begin(), nums.end());
+      int key = *nums.begin();
+      for (auto it = nums.begin(); it != nums.end() && *(++it) != key; key = *it);
+      return key;
     }
 };
 
 
 int main(int argc, char **argv) {
-    std::vector<type> array;
-    type n;
-
-    while (std::cin >> n) {
-        if(std::cin.get() == '\n')
-            break;
-
-        array.emplace_back(n);
-    }
-
-    for (auto i : array) {
-        std::cout << i << " ";
-    }
-
-    return 0;
+  std::vector<type> array;
+  type n;
+  while (std::cin >> n) {
+    if(std::cin.get() == '\n')
+      break;
+    array.emplace_back(n);
+  }
+  for (auto i : array) {
+    std::cout << i << " ";
+  }
+  return 0;
 }

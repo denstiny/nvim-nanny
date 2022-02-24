@@ -36,7 +36,7 @@ true_zen.setup({
 				FoldColumn = true,
 				ColorColumn = true,
 				VertSplit = true,
-				StatusLine = true,
+				StatusLine = false,
 				StatusLineNC = true,
 				SignColumn = true,
 			},
