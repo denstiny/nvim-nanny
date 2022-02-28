@@ -21,7 +21,6 @@ end)
 vim.lsp.handlers["textDocument/publishDiagnostics"] = function(...)
   vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics,
   {
-
     update_in_insert = false,
     severity_sort = true,
     virtual_text = false,

@@ -6,7 +6,7 @@ local packer = require "packer" packer.init {
 }
 -- init config
 packer.init({
-	--git = { clone_timeout = 288, default_url_format = "git@github.com:%s" },
+	git = { clone_timeout = 288, default_url_format = "git@github.com:%s" },
 	max_jobs = 30,
 	display = {
 		open_fn = function()
@@ -61,8 +61,8 @@ packer.startup(function(use)
     use 'phaazon/hop.nvim'
     use {'numToStr/Comment.nvim'}
     -- Theme
-    use 'folke/tokyonight.nvim'
-
+    --use 'folke/tokyonight.nvim'
+    use({ 'rose-pine/neovim', as = 'rose-pine', tag = 'v1.*'})
     -- Indent blackline
     use 'lukas-reineke/indent-blankline.nvim'
 
@@ -119,6 +119,8 @@ packer.startup(function(use)
     use {'nvim-neorg/neorg'}
     -- markdown
     use{ "iamcco/markdown-preview.nvim",run="cd app && yarn install"}
+    use {'mzlogin/vim-markdown-toc',ft = {'markdown'}}
+    use {'denstiny/picgo-nvim'}
     -- markdown table
     use "dhruvasagar/vim-table-mode"
     -- new file templates
@@ -153,4 +155,6 @@ packer.startup(function(use)
     use 'willchao612/vim-diagon'
     -- better escape
     use { "max397574/better-escape.nvim", }
+    -- 翻译
+    use {"voldikss/vim-translator"}
 end)

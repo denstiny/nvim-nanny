@@ -7,10 +7,10 @@ vim.g.tokyonight_sidebars = { "qf", "vista_kind", "terminal", "packer" }
 vim.g.tokyonight_colors = { hint = "orange", error = "#ff0000" }
 
 -- Load the colorscheme
+--vim.g.tokyonight_style = "day"
 vim.cmd[[
-  colorscheme tokyonight
-  hi TSVariable guifg = #EDBCB4
-  hi NonText guifg=#2C2B39
+  colorscheme rose-pine
+  hi NonText guifg=#3E4710
 ]]
 --- 縮进线
 vim.cmd[[hi IndentBlanklineContextChar guifg=#676C90 gui=nocombine]]

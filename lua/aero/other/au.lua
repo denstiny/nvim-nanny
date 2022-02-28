@@ -4,6 +4,13 @@ augroup packer
 au!
 au BufWritePost plugins.lua source <afile> | PackerSync
 augroup END ]]
+-- 自动执行vim脚本
+vim.cmd[[ 
+  augroup sourceMy
+  au!
+  aut BufWritePost *.vim source <afile>
+  augroup END
+]]
 
 vim.cmd [[
 au BufWritePost .projectRoots | lua projectRoots() ]]

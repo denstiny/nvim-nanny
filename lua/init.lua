@@ -69,3 +69,5 @@ require("aero.neoscroll-config")
 require("aero.twilight-config")
 -- easy Esc
 require("aero.easyEsc-config")
+-- rose pine
+require("aero.rose-pine")

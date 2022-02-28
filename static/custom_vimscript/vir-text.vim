@@ -1,5 +1,4 @@
 highlight default virReturnText guifg=#3A3A46 guibg=bg
-set nolist
 
 function MygetLine(_line)
   let s:string = getline(a:_line)
@@ -9,9 +8,11 @@ function MygetLine(_line)
   return 0
 endfunction
 
-let g:VirReturnTextFunList = ['startify','NvimTree','Trouble','Outline','norg']
 
+let g:VirReturnTextFunList = ['startify','NvimTree','Trouble','Outline','norg','packer','lsp-installer','toggleterm']
+let g:cureLine_ = line('.')
 function VirReturnTextFun() abort
+  set nolist
   let chunk = [['⤵ ','virReturnText'],]
   let cureLine = line('.')-1
   for s:_fileType in g:VirReturnTextFunList
@@ -33,8 +34,9 @@ function Clear_namespace_VirReturnTextSy() abort
       return 0
     endif
   endfor
-  call nvim_buf_clear_namespace(0,-1,0,-1) 
+  call nvim_buf_clear_namespace(0,1000,0,-1) 
 endfunction
+
 augroup MyFunVirReturnTextFun
   au!
   au TextChanged,InsertLeave * call Clear_namespace_VirReturnTextSy()

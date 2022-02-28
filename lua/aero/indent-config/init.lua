@@ -34,4 +34,4 @@ vim.g.indent_blankline_context_patterns = {
 }
 
 
-vim.g.indent_blankline_filetype_exclude = {'help','startify','TERMINAL','terminal'}
+vim.g.indent_blankline_filetype_exclude = {'help','startify','TERMINAL','terminal','packer','lsp-installer'}

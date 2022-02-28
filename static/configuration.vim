@@ -419,3 +419,6 @@ call wilder#set_option('renderer', wilder#popupmenu_renderer(wilder#popupmenu_bo
 
 "=== 专注重要代码
 map <Leader>fc      :YodeCreateSeditorFloating<CR>
+
+
+let g:indent_blankline_show_end_of_line = v:false

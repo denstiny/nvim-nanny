@@ -11,6 +11,7 @@
   -- but you can further control the types of nodes that should always be fully expanded
   expand = { -- for treesitter, we we always try to expand to the top-most ancestor with these types
     "function_definition",
+    "comment",
     "method",
     "table",
     "if_expression",

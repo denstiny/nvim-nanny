@@ -1,15 +1,13 @@
-local colors = require("tokyonight.colors").setup()
-
 require("scrollbar").setup({
     handle = {
-        color = colors.bg_highlight,
+        color = "#191724",
     },
-    marks = {
-        Search = { color = colors.orange },
-        Error = { color = colors.error },
-        Warn = { color = colors.warning },
-        Info = { color = colors.info },
-        Hint = { color = colors.hint },
-        Misc = { color = colors.purple },
-    }
+    --marks = {
+    --    Search = { color = "#403d52" },
+    --    Error = { color = "#eb6f92" },
+    --    Warn = { color = "#f6c177" },
+    --    Info = { color = "" },
+    --    Hint = { color = colors.hint },
+    --    Misc = { color = colors.purple },
+    --}
 })

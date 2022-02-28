@@ -106,3 +106,4 @@ U.nmap("<leader>nf", "<Cmd>lua require('neogen').generate()<CR>")
 U.nmap("F", "<Cmd>startify<cr>")
 -- colip list
 U.nmap("<C-p>", "<Cmd>Telescope neoclip a<cr>")
+U.nmap("<A-t>","<Cmd>echo &filetype<cr>")
