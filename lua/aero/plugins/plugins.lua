@@ -155,6 +155,4 @@ packer.startup(function(use)
     use 'willchao612/vim-diagon'
     -- better escape
     use { "max397574/better-escape.nvim", }
-    -- 翻译
-    use {"voldikss/vim-translator"}
 end)

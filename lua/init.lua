@@ -45,20 +45,28 @@ require("aero.neorg-config")
 
 -- mdeval
 require("aero.mdeval")
+
 -- gitsigns
 require("aero.gitsigns-config")
+
 -- auto start
 require "aero.other.au"
+
 -- 注释
 require("aero.neogen-config")
+
 -- clip list
 require("aero.neoclip-config")
+
 -- test code
 require("aero.competitest-config")
+
 -- auto pairs
 require("aero.autopairs-config")
+
 -- auto 自动清楚搜索高亮
 require("aero.hlselens-config")
+
 -- vimshift
 require("aero.winshift-config")
 
@@ -67,7 +75,9 @@ require("aero.neoscroll-config")
 
 -- 微光
 require("aero.twilight-config")
+
 -- easy Esc
 require("aero.easyEsc-config")
+
 -- rose pine
 require("aero.rose-pine")

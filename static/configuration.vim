@@ -422,3 +422,11 @@ map <Leader>fc      :YodeCreateSeditorFloating<CR>
 
 
 let g:indent_blankline_show_end_of_line = v:false
+
+
+"=== 仅在当前缓冲区高亮当前行
+augroup CursorLine
+    au!
+    au VimEnter,WinEnter,BufWinEnter * setlocal cursorline
+    au WinLeave * setlocal nocursorline
+augroup END

@@ -20,3 +20,5 @@ vim.g.vimspector_enable_mappings='VISUAL_STUDIO'
 vim.o.laststatus=0
 -- 右下角不显示光标位置信息
 vim.cmd[[set noru]]
+-- 显示隐藏符号
+require('overvir').initVirTool()
