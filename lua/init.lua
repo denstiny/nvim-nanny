@@ -1,6 +1,5 @@
 -- plugins
 require "aero.plugins"
-
 -- lsp
 require "aero.lsp"
 
@@ -73,11 +72,3 @@ require("aero.winshift-config")
 -- 平滑滚动
 require("aero.neoscroll-config")
 
--- 微光
-require("aero.twilight-config")
-
--- easy Esc
-require("aero.easyEsc-config")
-
--- rose pine
-require("aero.rose-pine")

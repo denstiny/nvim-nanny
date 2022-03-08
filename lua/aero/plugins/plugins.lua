@@ -19,7 +19,6 @@ packer.startup(function(use)
     use 'wbthomason/packer.nvim'
     use 'lewis6991/impatient.nvim'
     use {'nvim-lua/popup.nvim', 'nvim-lua/plenary.nvim'}
-
     -- LSP
     use {'neovim/nvim-lspconfig'}
     use {
@@ -61,8 +60,8 @@ packer.startup(function(use)
     use 'phaazon/hop.nvim'
     use {'numToStr/Comment.nvim'}
     -- Theme
-    --use 'folke/tokyonight.nvim'
-    use({ 'rose-pine/neovim', as = 'rose-pine', tag = 'v1.*'})
+    use 'folke/tokyonight.nvim'
+    use {'bluz71/vim-nightfly-guicolors'}
     -- Indent blackline
     use 'lukas-reineke/indent-blankline.nvim'
 
@@ -82,7 +81,7 @@ packer.startup(function(use)
 
     -- 无干扰写作
     use {'Pocco81/TrueZen.nvim'}
-
+    
     -- File manager
     use {'kyazdani42/nvim-tree.lua'}
     -- statline
@@ -119,8 +118,8 @@ packer.startup(function(use)
     use {'nvim-neorg/neorg'}
     -- markdown
     use{ "iamcco/markdown-preview.nvim",run="cd app && yarn install"}
-    use {'mzlogin/vim-markdown-toc',ft = {'markdown'}}
-    use {'denstiny/picgo-nvim'}
+    use {'mzlogin/vim-markdown-toc'}
+    --use {'denstiny/picgo-nvim'}
     -- markdown table
     use "dhruvasagar/vim-table-mode"
     -- new file templates
@@ -135,8 +134,6 @@ packer.startup(function(use)
     use {'danymat/neogen'}
     -- auto save folding
     --use {'vim-scripts/restore_view.vim'}
-    -- 专注重要代码
-    use {'hoschi/yode-nvim'}
     use {'simrat39/symbols-outline.nvim'}
     -- clip list
     use { "AckslD/nvim-neoclip.lua",}
@@ -149,10 +146,10 @@ packer.startup(function(use)
     use 'sindrets/winshift.nvim'
     -- 平滑滚动
     use 'karb94/neoscroll.nvim'
-    -- 微光
-    use  'folke/twilight.nvim'
     -- drawing
     use 'willchao612/vim-diagon'
     -- better escape
     use { "max397574/better-escape.nvim", }
+    -- start time
+    use {'dstein64/vim-startuptime'}
 end)

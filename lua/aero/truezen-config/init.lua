@@ -68,3 +68,23 @@ true_zen.setup({
 		cursor_by_mode = false,
 	}
 })
+
+local TruezenStatus = true
+
+function Truezen()
+  vim.cmd[[
+  TZAtaraxis
+  set statusline=\ 
+  hi statusline gui=underline guibg=none guifg=#565F89 " 活动
+  hi statusline gui=underline guibg=none guifg=#565F89
+  hi StatusLineNC guibg=none gui=underline
+  hi VertSplit guifg=#343A55
+  ]]
+  if TruezenStatus then
+    TruezenStatus = false
+    vim.cmd[[call VirReturnTextStop()]]
+  else
+    TruezenStatus = true
+    vim.cmd[[call VirReturnTextRun()]]
+  end
+end

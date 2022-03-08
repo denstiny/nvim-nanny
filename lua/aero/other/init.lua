@@ -4,8 +4,7 @@ if not pcall(require, "hop") then return end
 vim.g.fugitive_legacy_commands = false
 
 require"Comment".setup {ignore = "^$"}
-require('yode-nvim').setup({})
-require"hop".setup {jump_on_sole_occurrence = true}
+--require"hop".setup {jump_on_sole_occurrence = true}
 ---  theme
 require "aero.other.theme"
 ---   bind key
@@ -21,4 +20,4 @@ vim.o.laststatus=0
 -- 右下角不显示光标位置信息
 vim.cmd[[set noru]]
 -- 显示隐藏符号
-require('overvir').initVirTool()
+--vim.g.OverVirTualChara_c = '⤵'

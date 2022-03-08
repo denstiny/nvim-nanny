@@ -7,12 +7,11 @@ vim.g.tokyonight_sidebars = { "qf", "vista_kind", "terminal", "packer" }
 vim.g.tokyonight_colors = { hint = "orange", error = "#ff0000" }
 
 -- Load the colorscheme
---vim.g.tokyonight_style = "day"
 vim.cmd[[
-  colorscheme rose-pine
+  colorscheme tokyonight
   hi NonText guifg=#3E4710
 ]]
 --- 縮进线
-vim.cmd[[hi IndentBlanklineContextChar guifg=#676C90 gui=nocombine]]
-vim.cmd[[highlight IndentBlanklineContextStart guisp=#676c90 gui=underline]]
-vim.cmd[[ highlight EndOfBuffer guifg = bg ]]
+-- vim.cmd[[hi IndentBlanklineContextChar guifg=#676C90 gui=nocombine]]
+-- vim.cmd[[highlight IndentBlanklineContextStart guisp=red gui=underline]]
+vim.cmd[[highlight EndOfBuffer guifg = bg ]]

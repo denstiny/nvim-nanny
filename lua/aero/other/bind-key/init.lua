@@ -59,7 +59,7 @@ U.nmap("cb","<Cmd>BufferLinePickClose<cr>")
 --U.nmap("q","<Cmd>q<cr>")
 
 -- No interference pattern
-U.nmap("<leader>z","<Cmd>TZAtaraxis<cr>")
+U.nmap("<leader>z","<Cmd>lua Truezen()<cr>")
 
 -- undo tree
 U.nmap("L", "<Cmd>UndotreeToggle<cr>")
@@ -74,7 +74,7 @@ U.nmap("gpd", "<Cmd>lua require('goto-preview').goto_preview_definition()<CR>")
 U.nmap("gf", "<Cmd>e <cfile><Cr>")
 
 -- telescope
-U.nmap("f", "<Cmd>Telescope current_buffer_fuzzy_find<cr>")
+U.nmap("F", "<Cmd>Telescope current_buffer_fuzzy_find<cr>")
 U.nmap("?", "<Cmd>Telescope grep_string<cr>")
 U.nmap("B","<Cmd>Telescope buffers<cr>")
 U.nmap("<C-f>", "<Cmd>Telescope find_files<cr>")
@@ -103,7 +103,7 @@ U.nmap("tp","<Cmd>lua vim.diagnostic.open_float(nil, {focus=false, scope=\"curso
 U.nmap("<leader>nf", "<Cmd>lua require('neogen').generate()<CR>")
 
 -- startify
-U.nmap("F", "<Cmd>startify<cr>")
+U.nmap("H", "<Cmd>Startify<cr>")
 -- colip list
 U.nmap("<C-p>", "<Cmd>Telescope neoclip a<cr>")
 U.nmap("<A-t>","<Cmd>echo &filetype<cr>")

@@ -144,16 +144,15 @@ autocmd InsertLeave * call SwapEnglish()
 
 
 
-
 "=== startify
 " 设置书签
-if filereadable($HOME . "/neorg/Todo.norg")
+if filereadable($HOME . "/neorg/index.norg")
   let g:startify_bookmarks            = [
-        \ '~/neorg/Todo.norg',
+        \ '~/neorg/index.norg',
         \]
 else
   let g:startify_bookmarks            = [
-        \ '/mnt/home/neorg/Todo.norg'
+        \ '/mnt/home/neorg/index.norg'
         \]
 endif
 let g:startify_bookmarks_ = g:startify_bookmarks
@@ -168,7 +167,7 @@ function CopyTododisk()
   if filereadable("/mnt/home")
     return
   endif
-  if !filereadable($HOME . "/neorg/Todo.norg")
+  if !filereadable($HOME . "/neorg/index.norg")
     silent !cp -rf /mnt/home/neorg ~/
   endif
   if !filereadable("/mnt/home/neorg")
@@ -178,7 +177,7 @@ function CopyTododisk()
 endfunction
 
 " 起始页显示的列表长度
-let g:startify_files_number = 3
+let g:startify_files_number = 5
 " 是否自动加载目录下的Session.vim, 很好用
 let g:startify_session_autoload = 1
 " 过滤列表，支持正则表达式
@@ -282,6 +281,7 @@ let g:asyncrun_save = 2
 let g:asyncrun_bell = 1
 let g:asyncrun_trim = 1
 let g:asyncrun_open = 1
+let g:asynctasks_term_reuse=1
 
 
 
@@ -418,15 +418,19 @@ call wilder#set_option('renderer', wilder#popupmenu_renderer(wilder#popupmenu_bo
 " endif
 
 "=== 专注重要代码
-map <Leader>fc      :YodeCreateSeditorFloating<CR>
+"map <Leader>fc      :YodeCreateSeditorFloating<CR>
 
 
 let g:indent_blankline_show_end_of_line = v:false
 
 
 "=== 仅在当前缓冲区高亮当前行
-augroup CursorLine
-    au!
-    au VimEnter,WinEnter,BufWinEnter * setlocal cursorline
-    au WinLeave * setlocal nocursorline
-augroup END
+" augroup CursorLine
+"     au!
+"     au VimEnter,WinEnter,BufWinEnter * setlocal cursorline
+"     au WinLeave * setlocal nocursorline
+" augroup END
+
+
+"=== picgo
+"let g:picgo_server = {'遇见图床':{'url':'https://www.hualigs.cn/','token':'d874b26932e0abf2f1f184db9bdb5f00'}}
