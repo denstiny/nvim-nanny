@@ -1,4 +1,4 @@
-highlight default Activitycharacter guifg=#4D557B guibg=#292e42
+highlight default Activitycharacter guifg=#4D557B guibg=#21202e
 highlight default Activitycharacter_v guifg=#4D557B guibg=bg
 highlight default Inactivecharacters guifg=#343A55 guibg=bg
 function MygetLine(_line)
@@ -9,7 +9,7 @@ function MygetLine(_line)
   return 0
 endfunction
 
-let g:VirreturnText='↵'
+let g:VirreturnText='⌐'
 let g:VirReturnTextFunStart = v:true
 let g:VirReturnTextFunList = ['startify','NvimTree','Trouble','Outline','norg','packer','lsp-installer','toggleterm','packer','TelescopePrompt','CompetiTest','help','startuptime']
 let g:cureLine_ = line('.')

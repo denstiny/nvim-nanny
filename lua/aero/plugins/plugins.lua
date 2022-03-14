@@ -60,9 +60,8 @@ packer.startup(function(use)
     use 'phaazon/hop.nvim'
     use {'numToStr/Comment.nvim'}
     -- Theme
-    use 'folke/tokyonight.nvim'
-    use {'bluz71/vim-nightfly-guicolors'}
-    -- Indent blackline
+    --use 'folke/tokyonight.nvim'
+    use({ 'rose-pine/neovim', as = 'rose-pine', tag = 'v1.*'})
     use 'lukas-reineke/indent-blankline.nvim'
 
     -- term

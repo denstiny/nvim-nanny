@@ -8,7 +8,7 @@ vim.g.tokyonight_colors = { hint = "orange", error = "#ff0000" }
 
 -- Load the colorscheme
 vim.cmd[[
-  colorscheme tokyonight
+  colorscheme rose-pine
   hi NonText guifg=#3E4710
 ]]
 --- 縮进线

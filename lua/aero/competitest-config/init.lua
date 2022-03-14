@@ -16,7 +16,7 @@ require('competitest').setup {
 	editor_ui = {
 		popup_width = 0.4,
 		popup_height = 0.6,
-		show_nu = true,
+		show_nu = false,
 		show_rnu = false,
 		normal_mode_mappings = {
 			switch_window = { "<C-h>", "<C-l>", "<C-i>" },
@@ -35,7 +35,7 @@ require('competitest').setup {
 		selector_width = 0.3,
 		selector_show_nu = false,
 		selector_show_rnu = false,
-		show_nu = true,
+		show_nu = false,
 		show_rnu = false,
 		mappings = {
 			run_again = "R",
@@ -51,7 +51,7 @@ require('competitest').setup {
 		viewer = {
 			width = 0.5,
 			height = 0.5,
-			show_nu = true,
+			show_nu = false,
 			show_rnu = false,
 			close_mappings = { "q", "Q" },
 		},
