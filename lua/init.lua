@@ -72,3 +72,5 @@ require("aero.winshift-config")
 -- 平滑滚动
 require("aero.neoscroll-config")
 
+-- lsp_signature
+require("aero.lsp-signature")
