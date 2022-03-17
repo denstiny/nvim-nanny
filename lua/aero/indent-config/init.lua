@@ -34,3 +34,5 @@ vim.g.indent_blankline_context_patterns = {
 }
 
 vim.g.indent_blankline_filetype_exclude = {'help','startify','TERMINAL','terminal','packer','lsp-installer','','startuptime'}
+vim.g.indent_blankline_show_end_of_line = false -- 占用隐藏符号
+vim.g.indent_blankline_show_trailing_blankline_indent = false -- 删除多余的缩进线

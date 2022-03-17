@@ -95,18 +95,6 @@ let g:vimspector_install_gadgets = [
 
 
 
-"=== vim Fold line
-let &showbreak=" ↪  "
-
-
-
-
-
-
-
-
-
-
 
 
 "=== fcitx Input method, it is suitable for Chinese
@@ -364,9 +352,6 @@ let g:tmpl_author_email = '2254228017@qq.com'
 
 
 
-
-
-
 "=== wilder
 call wilder#setup({
       \ 'modes': [':', '/', '?'],
@@ -400,37 +385,3 @@ call wilder#set_option('renderer', wilder#popupmenu_renderer(wilder#popupmenu_bo
         \ 'left': [' ', wilder#popupmenu_devicons(), wilder#popupmenu_buffer_flags()],
         \ 'right': [' ', wilder#popupmenu_scrollbar()],
         \ })))
-
-
-
-
-
-
-
-
-
-
-" "=== quickrun 
-" let g:quickrun_config = {}
-" let g:quickrun_config._ = {}
-" if has('nvim')
-"   let g:quickrun_config._['runner'] = 'nvimterm'
-" endif
-
-"=== 专注重要代码
-"map <Leader>fc      :YodeCreateSeditorFloating<CR>
-
-
-let g:indent_blankline_show_end_of_line = v:false
-
-
-"=== 仅在当前缓冲区高亮当前行
-" augroup CursorLine
-"     au!
-"     au VimEnter,WinEnter,BufWinEnter * setlocal cursorline
-"     au WinLeave * setlocal nocursorline
-" augroup END
-
-
-"=== picgo
-"let g:picgo_server = {'遇见图床':{'url':'https://www.hualigs.cn/','token':'d874b26932e0abf2f1f184db9bdb5f00'}}
