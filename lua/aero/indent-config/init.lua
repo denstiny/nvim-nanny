@@ -9,7 +9,7 @@ require("indent_blankline").setup {
 }
 
 vim.g.indent_blankline_context_patterns = {
-	'class',
+  'class',
 	'function',
 	'method',
 	'^if',

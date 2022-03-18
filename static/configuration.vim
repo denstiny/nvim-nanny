@@ -95,8 +95,6 @@ let g:vimspector_install_gadgets = [
 
 
 
-
-
 "=== fcitx Input method, it is suitable for Chinese
 let g:FcitxState = 0 " 0 为英文，1为中文
 function! SwapEnglish()
