@@ -32,7 +32,7 @@ U.nmap("<C-j>", "<Cmd>res +5<cr>")
 U.nmap("<C-k>", "<Cmd>res -5<cr>")
 
 -- fold
-U.nmap("<tab>","<Cmd>normal za<cr>")
+--U.nmap("<tab>","<Cmd>normal za<cr>")
 
 
 --- nvim tree

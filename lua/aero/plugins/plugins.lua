@@ -111,7 +111,7 @@ packer.startup(function(use)
     -- scroll bar
     use( 'petertriho/nvim-scrollbar' )
     -- fold code
-    use{ 'anuvyklack/pretty-fold.nvim'}
+    --use{ 'anuvyklack/pretty-fold.nvim'}
     -- sandwidth
     use {'machakann/vim-sandwich'}
     use {'nvim-neorg/neorg'}

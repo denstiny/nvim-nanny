@@ -15,3 +15,4 @@ vim.cmd[[
 -- vim.cmd[[hi IndentBlanklineContextChar guifg=#676C90 gui=nocombine]]
 -- vim.cmd[[highlight IndentBlanklineContextStart guisp=red gui=underline]]
 vim.cmd[[highlight EndOfBuffer guifg = bg ]]
+--exec "hi LineNr guifg=".synIDattr(hlID('SignColumn'),'bg')

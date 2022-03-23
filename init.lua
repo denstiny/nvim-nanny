@@ -11,6 +11,7 @@
 --                                                                \______/
 --  Config files for NEOVIM. Created by Denstiny Aaro Urdaniz
 
+-- load cache
 require("impatient")
 
 -- Load the lua configuration script

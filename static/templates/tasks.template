@@ -1,0 +1,38 @@
+# vim: set fenc=utf-8 ft=dosini:
+
+# define a new task named "file-build"
+[file-build]
+
+# shell command, use quotation for filenames containing spaces
+# check ":AsyncTaskMacro" to see available macros
+command=mkdir -p $(VIM_FILEDIR)/build &&  g++ "$(VIM_FILEPATH)" -g -w  -o "$(VIM_FILEDIR)/build/$(VIM_FILENOEXT)"
+
+# working directory, can change to $(VIM_ROOT) for project root 设置项目根目录
+cwd=$(VIM_FILEDIR)
+
+# output mode, can be one of quickfix and terminal
+# - quickfix: output to quickfix window
+# - terminal: run the command in the internal terminal
+output=terminal
+
+# this is for output=quickfix only
+# if it is omitted, vim's current errorformat will be used.
+errorformat=%f:%l:%m
+
+# save file before execute
+save=1
+
+
+[file-run]
+command="$(VIM_FILEPATH)"
+command:c,cpp="$(VIM_FILEDIR)/build/$(VIM_FILENOEXT)"
+command:go="$(VIM_FILEDIR)/build/$(VIM_FILENOEXT)" 
+command:python=python "$(VIM_FILEPATH)"
+command:javascript=node "$(VIM_FILEPATH)"
+command:sh=sh "$(VIM_FILEPATH)"
+command:lua=lua "$(VIM_FILEPATH)"
+command:perl=perl "$(VIM_FILEPATH)"
+command:ruby=ruby "$(VIM_FILEPATH)"
+output=terminal
+cwd=$(VIM_FILEDIR)
+save=2
