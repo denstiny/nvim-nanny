@@ -16,6 +16,7 @@ hi My_String guifg=#8407C5
 match My_String /🐼/
 hi cursorlinenr gui = bold
 hi LineNr guifg=bg
+hi NormalFloat guibg=bg
 
 
 "exec "hi LineNr guifg=".synIDattr(hlID('SignColumn'),'bg')

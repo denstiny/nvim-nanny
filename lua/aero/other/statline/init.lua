@@ -36,3 +36,8 @@ require("bufferline").setup{
     }
   }
 }
+vim.cmd([[
+  hi BufferLinePickSelected gui=none
+  hi BufferLinePick gui=none
+  hi BufferLinePickVisible gui=none
+]])

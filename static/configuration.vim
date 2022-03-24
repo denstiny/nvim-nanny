@@ -141,9 +141,7 @@ else
         \ '/mnt/home/neorg/index.norg'
         \]
 endif
-let g:startify_bookmarks_ = g:startify_bookmarks
-"== 添加自定义书签
-lua projectRoots()
+"let g:startify_bookmarks_ = g:startify_bookmarks
 "== 同步书签
 function CopyTododisk()
   if IsMe()
@@ -383,3 +381,17 @@ call wilder#set_option('renderer', wilder#popupmenu_renderer(wilder#popupmenu_bo
         \ 'left': [' ', wilder#popupmenu_devicons(), wilder#popupmenu_buffer_flags()],
         \ 'right': [' ', wilder#popupmenu_scrollbar()],
         \ })))
+
+
+
+
+
+
+
+
+
+
+"== 翻译
+let g:translator_default_engines = ['haici','bing','google','youdao']
+let g:translator_proxy_url = 'socks5://127.0.0.1:7891'
+let g:translator_window_borderchars = ['─', '│', '─', '│', '╭', '╮', '╯', '╰']

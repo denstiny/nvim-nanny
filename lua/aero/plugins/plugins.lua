@@ -151,4 +151,6 @@ packer.startup(function(use)
     use { "max397574/better-escape.nvim", }
     -- start time
     use {'dstein64/vim-startuptime'}
+    -- 翻译
+    use {'voldikss/vim-translator'}
 end)

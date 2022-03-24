@@ -12,8 +12,6 @@ vim.cmd[[
   augroup END
 ]]
 
-vim.cmd [[
-au BufWritePost .projectRoots | lua projectRoots() ]]
 -- 自动加载vim配置
 vim.cmd [[
 function! VimConfig()

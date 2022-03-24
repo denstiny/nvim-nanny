@@ -111,7 +111,7 @@ cmp.setup {
     fields = { 'kind', 'abbr', 'menu' },
     format = kind.cmp_format {
       with_text = false,
-      maxwidth = 200,
+      maxwidth = 80,
     },
   },
   documentation = {

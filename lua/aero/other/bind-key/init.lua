@@ -12,11 +12,19 @@ U.nmap("<Leader>es", "<Plug>(easymotion-s)")
 U.nmap("<Leader>et", "<Plug>(easymotion-t)")
 U.nmap("<Leader>ew", "<Plug>(easymotion-w)")
 
+-- leader-t: 翻译
+U.nmap("<leader>te","<Plug>Translate")
+U.vmap("<leader>te","<Plug>TranslateV")
+U.nmap("<leader>tw","<Plug>TranslateW")
+U.vmap("<leader>tw","<Plug>TranslateWV")
+U.nmap("<leader>tr","<Plug>TranslateR")
+U.vmap("<Leader>tr","<Plug>TranslateRV")
+U.nmap("<Leader>tx","<Plug>TranslateX")
 
 -- colpy text
 U.vmap(";y", '"+y')
 -- exit nvim
-U.nmap("<leader>q","<Cmd>qall<cr>")
+U.nmap("<Leader>q","<Cmd>qall<cr>")
 U.nmap("<A-q>", "<Cmd>wqall!<cr>")
 --U.nmap("q","<Cmd>q<cr>")
 
@@ -37,7 +45,7 @@ U.nmap("<C-k>", "<Cmd>res -5<cr>")
 
 --- nvim tree
 U.nmap("tr","<Cmd>NvimTreeToggle<cr>")
-U.nmap("<leader>ad", "<Cmd>lua addStartify_bookmark()<cr>")
+U.nmap("<Leader>ad", "<Cmd>lua addStartify_bookmark()<cr>")
 --- lsp tree
 U.nmap("ts", "<Cmd>SymbolsOutline<cr>")
 
@@ -45,7 +53,7 @@ U.nmap("ts", "<Cmd>SymbolsOutline<cr>")
 U.nmap("tr","<Cmd>NvimTreeToggle<cr>")
 
 -- vimsector config
-U.nmap("<leader>vs","<Cmd>tabe .vimspector.json<CR>:LoadVimSpectorJsonTemplate<CR>")
+U.nmap("<Leader>vs","<Cmd>tabe .vimspector.json<CR>:LoadVimSpectorJsonTemplate<CR>")
 U.nmap("<F7>", "<Cmd>VimspectorReset<cr>")            -- 停止调试(quit debug)
 U.nmap("<F4>", "<Plug>VimspectorRestart")             -- 使用相同配置重新调试( restart debug)
 U.nmap("<F2>", "<Plug>VimspectorBalloonEval")
@@ -59,13 +67,13 @@ U.nmap("cb","<Cmd>BufferLinePickClose<cr>")
 --U.nmap("q","<Cmd>q<cr>")
 
 -- No interference pattern
-U.nmap("<leader>z","<Cmd>lua Truezen()<cr>")
+U.nmap("<Leader>z","<Cmd>lua Truezen()<cr>")
 
 -- undo tree
 U.nmap("L", "<Cmd>UndotreeToggle<cr>")
 --  Async Task
-U.nmap("<leader>r","<Cmd>AsyncTask file-run<cr>")
-U.nmap("<leader>d", "<Cmd>AsyncTask file-build<cr>")
+U.nmap("<Leader>r","<Cmd>AsyncTask file-run<cr>")
+U.nmap("<Leader>d", "<Cmd>AsyncTask file-build<cr>")
 -- error list
 U.nmap("er", "<Cmd>Trouble<cr>")
 
@@ -100,7 +108,7 @@ U.nmap("td", "<Cmd>lua require('sidebar-nvim').toggle()<CR>")
 -- fold lsp
 U.nmap("tp","<Cmd>lua vim.diagnostic.open_float(nil, {focus=false, scope=\"cursor\"})<CR>")
 -- 注释
-U.nmap("<leader>nf", "<Cmd>lua require('neogen').generate()<CR>")
+U.nmap("<Leader>nf", "<Cmd>lua require('neogen').generate()<CR>")
 
 -- startify
 U.nmap("H", "<Cmd>Startify<cr>")
