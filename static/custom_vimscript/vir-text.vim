@@ -1,7 +1,9 @@
 "=== 显示回车符号,但是空行不显示
-highlight default Activitycharacter guifg=#4D557B guibg=#21202e
-highlight default Activitycharacter_v guifg=#4D557B guibg=bg
-highlight default Inactivecharacters guifg=#343A55 guibg=bg
+
+highlight default Activitycharacter guifg=#4D557B guibg=#21202e  " 当前行
+highlight default Activitycharacter_v guifg=#4D557B guibg=bg     " 当前行C-V 状态
+highlight default Inactivecharacters guifg=#343A55 guibg=bg      " 默认
+
 function MygetLine(_line)
   let s:string = split(getline(a:_line))
   if len(s:string) > 0
@@ -14,6 +16,7 @@ let g:VirreturnText='⌐'
 let g:VirReturnTextFunStart = v:true
 let g:VirReturnTextFunList = ['startify','NvimTree','Trouble','Outline','norg','packer','lsp-installer','toggleterm','packer','TelescopePrompt','CompetiTest','help','startuptime']
 let g:cureLine_ = line('.')
+
 function VirReturnTextFun() abort
   set nolist
   if g:VirReturnTextFunStart == v:false
