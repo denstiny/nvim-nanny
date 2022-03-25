@@ -1,3 +1,4 @@
+"=== 显示回车符号,但是空行不显示
 highlight default Activitycharacter guifg=#4D557B guibg=#21202e
 highlight default Activitycharacter_v guifg=#4D557B guibg=bg
 highlight default Inactivecharacters guifg=#343A55 guibg=bg
