@@ -6,11 +6,11 @@ require('pretty-fold').setup{
          '', function() return string.rep('', vim.v.foldlevel) end, '', 'content', '↩ '
       },
       right = {
-         '', 'number_of_folded_lines', ': ', 'percentage', ' ',
+         '', '', ' ', '', ' ',
       }
    }
 }
 vim.cmd[[
-hi Folded guibg=#1A1B26
+hi Folded guibg=bg
 ]]
 require('pretty-fold.preview').setup_keybinding()

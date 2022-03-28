@@ -63,6 +63,7 @@ packer.startup(function(use)
     --use 'folke/tokyonight.nvim'
     use({ 'rose-pine/neovim', as = 'rose-pine', tag = 'v1.*'})
     use 'lukas-reineke/indent-blankline.nvim'
+    use {'RRethy/nvim-base16'}
 
     -- term
     use {'akinsho/toggleterm.nvim'}
@@ -111,7 +112,7 @@ packer.startup(function(use)
     -- scroll bar
     use( 'petertriho/nvim-scrollbar' )
     -- fold code
-    --use{ 'anuvyklack/pretty-fold.nvim'}
+    use{ 'anuvyklack/pretty-fold.nvim'}
     -- sandwidth
     use {'machakann/vim-sandwich'}
     use {'nvim-neorg/neorg'}

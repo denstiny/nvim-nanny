@@ -7,7 +7,7 @@ endfunction
 
 augroup cmd_msg_cls
     autocmd!
-    autocmd CmdlineLeave :  call timer_start(10000, funcref('s:empty_message'))
+    autocmd CmdlineLeave :  call timer_start(1000, funcref('s:empty_message'))
 augroup END
 
 " 高亮指定行

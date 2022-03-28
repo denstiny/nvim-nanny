@@ -14,7 +14,7 @@ endfunction
 
 let g:VirreturnText='⌐'
 let g:VirReturnTextFunStart = v:true
-let g:VirReturnTextFunList = ['startify','NvimTree','Trouble','Outline','norg','packer','lsp-installer','toggleterm','packer','TelescopePrompt','CompetiTest','help','startuptime']
+let g:VirReturnTextFunList = ['startify','NvimTree','Trouble','Outline','norg','packer','lsp-installer','toggleterm','packer','TelescopePrompt','CompetiTest','help','startuptime','markdown']
 let g:cureLine_ = line('.')
 
 function VirReturnTextFun() abort

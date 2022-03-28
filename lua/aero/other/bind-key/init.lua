@@ -40,7 +40,7 @@ U.nmap("<C-j>", "<Cmd>res +5<cr>")
 U.nmap("<C-k>", "<Cmd>res -5<cr>")
 
 -- fold
---U.nmap("<tab>","<Cmd>normal za<cr>")
+U.nmap("<tab>","<Cmd>normal za<cr>")
 
 
 --- nvim tree
@@ -115,3 +115,4 @@ U.nmap("H", "<Cmd>Startify<cr>")
 -- colip list
 U.nmap("<C-p>", "<Cmd>Telescope neoclip a<cr>")
 U.nmap("<A-t>","<Cmd>echo &filetype<cr>")
+U.nmap("<C-s>",'<Cmd>lua require("aero.other.custom_lua.mdorg").ResCodeBlock()')

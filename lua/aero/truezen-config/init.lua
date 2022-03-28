@@ -82,9 +82,15 @@ function Truezen()
   ]]
   if TruezenStatus then
     TruezenStatus = false
-    vim.cmd[[call VirReturnTextStop()]]
+    vim.cmd[[ 
+    call VirReturnTextStop() 
+    ScrollbarToggle
+    ]]
   else
     TruezenStatus = true
-    vim.cmd[[call VirReturnTextRun()]]
+    vim.cmd[[
+    call VirReturnTextRun() 
+    ScrollbarToggle
+    ]]
   end
 end
