@@ -19,4 +19,4 @@ vim.o.laststatus=0
 vim.cmd[[set noru]]
 -- 显示隐藏符号
 --vim.g.OverVirTualChara_c = '⤵'
-local mdorg = require("aero.other.custom_lua.mdorg")
+require("aero.other.custom_lua.mdorg")

@@ -7,6 +7,7 @@
 
 
 local M = {}
+vim.g.start_stus = false
 M.createdBuffer = "vs"
 M.testPath = "/mnt/home/test/"
 vim.g.code = {}
@@ -79,6 +80,8 @@ end
 
 
 
+--- 插入代码块
+---@param code
 M.InsertBlockCode = function (code)
   buferid = vim.api.nvim_get_current_buf()
   vim.api.nvim_buf_set_lines(buferid,0,-1,false,code)
@@ -90,21 +93,23 @@ end
 ---@param code 
 M.CreatedBufferEditCodeBlock = function (ty)
   if M.createdBuffer == "vs" then
-    vim.cmd("vsplit ".. M.testPath .. "test")
+    vim.cmd("vsplit ".. M.testPath .. "test."..ty)
+    vim.g.start_stus = true
   end
-  vim.cmd("set filetype="..ty)
-  vim.cmd("LspRestart")
 end
 
 
 --- 保存
 M.ResCodeBlock = function() 
   local code = {}
-  for i=1, vim.fn.line('$') do
-    code[#code + 1] = vim.fn.getline(i)
+  if vim.g.start_stus then
+    for i=1, vim.fn.line('$') do
+      code[#code + 1] = vim.fn.getline(i)
+    end
+    vim.cmd("silent !rm " .. vim.fn.expand("%:p"))
+    vim.cmd("bd!")
+    vim.api.nvim_buf_set_lines(vim.g.buferid,vim.g.start-1,vim.g.done,false,code)
   end
-  vim.cmd("bd!")
-  vim.api.nvim_buf_set_lines(vim.g.buferid,vim.g.start,vim.g.done,false,code)
 end
 
 --- 编辑当前代码快
@@ -121,6 +126,9 @@ M.EditBufferCodeBlock = function ()
     M.InsertBlockCode(code)
   end
 end
-
-M.EditBufferCodeBlock()
+--M.EditBufferCodeBlock()
+vim.cmd[[
+  command! EditBufferCodeBlock lua require("aero.other.custom_lua.mdorg").EditBufferCodeBlock()
+  command! ResCodeBlock lua require("aero.other.custom_lua.mdorg").ResCodeBlock()
+]]
 return M
