@@ -115,4 +115,3 @@ U.nmap("H", "<Cmd>Startify<cr>")
 -- colip list
 U.nmap("<C-p>", "<Cmd>Telescope neoclip a<cr>")
 U.nmap("<A-t>","<Cmd>echo &filetype<cr>")
-U.nmap("<C-s>",'<Cmd>lua require("aero.other.custom_lua.mdorg").ResCodeBlock()')

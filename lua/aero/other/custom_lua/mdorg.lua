@@ -8,6 +8,12 @@
 
 local M = {}
 M.createdBuffer = "vs"
+M.testPath = "/mnt/home/test/"
+vim.g.code = {}
+vim.g.len = 0
+vim.g.start = 0
+vim.g.done = 0
+vim.g.bufferid = 0
 
 --- ```cpp
 --- print("hello")
@@ -74,19 +80,17 @@ end
 
 
 M.InsertBlockCode = function (code)
-  for i = 1, #code  do
-    cmd = "silent r !echo \"" .. code[i] .. "\""
-    vim.cmd(cmd)
-  end
+  buferid = vim.api.nvim_get_current_buf()
+  vim.api.nvim_buf_set_lines(buferid,0,-1,false,code)
 end
 
 
---- 创建一个心的buffer,编辑代码快
+--- 创建一个新的buffer,编辑代码快
 ---@param way 
 ---@param code 
-M.CreatedBufferEditCodeBlock = function (ty,code)
+M.CreatedBufferEditCodeBlock = function (ty)
   if M.createdBuffer == "vs" then
-    vim.cmd("vsplit test")
+    vim.cmd("vsplit ".. M.testPath .. "test")
   end
   vim.cmd("set filetype="..ty)
   vim.cmd("LspRestart")
@@ -96,28 +100,27 @@ end
 --- 保存
 M.ResCodeBlock = function() 
   local code = {}
-  vim.cmd("silent " .. "write")
-  vim.cmd("quit")
-  local ty,code,start,done =  M.GetBufferCodeBlockType(vim.fn.line('.'))
-  vim.cmd(""..start)
-  for i = start, done-1 do
-    vim.cmd("d ")
+  for i=1, vim.fn.line('$') do
+    code[#code + 1] = vim.fn.getline(i)
   end
-  vim.cmd("silent " .. start .. "r " .. "test" )
-  vim.cmd("silent " .. "!rm test")
+  vim.cmd("bd!")
+  vim.api.nvim_buf_set_lines(vim.g.buferid,vim.g.start,vim.g.done,false,code)
 end
 
 --- 编辑当前代码快
 M.EditBufferCodeBlock = function ()
-  M.len = 0
-  M.code = {}
+  vim.g.bufferid = vim.api.nvim_get_current_buf()
   local line = vim.fn.line('.')
   local ty,code,start,done = M.GetBufferCodeBlockType(line)
+
   if string.len(ty) > 0 then
+    vim.g.start = start
+    vim.g.done = done
     -- 创建新的分割窗口
-    M.CreatedBufferEditCodeBlock(ty,code)
+    M.CreatedBufferEditCodeBlock(ty)
     M.InsertBlockCode(code)
   end
 end
+
+M.EditBufferCodeBlock()
 return M
--- M.EditBufferCodeBlock()
