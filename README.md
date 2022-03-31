@@ -1,11 +1,11 @@
 # Denstiny Aero Neovim configuration file
 `nvim version`:`NVIM v0.6.1`
 ## head
-![head](https://i.imgtg.com/2022/03/18/WISXP.png) 
+![head](https://s3.bmp.ovh/imgs/2022/03/31/61de8e533d8bfca5.png) 
 ## lsp
-![lsp](https://i.imgtg.com/2022/03/18/WIQH6.png) 
+![lsp](https://s3.bmp.ovh/imgs/2022/03/31/ad918d0868d1bfeb.png) 
 ## debug
-![debug](https://i.imgtg.com/2022/03/18/WIczb.png) 
+![debug](https://s3.bmp.ovh/imgs/2022/03/31/d6a944d351cb6e58.png) 
 ## configuration file
 > Automatic loading static all files in directory(自动加载 static 目录下所有文件)
 

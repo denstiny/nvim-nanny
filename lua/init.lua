@@ -74,3 +74,6 @@ require("aero.neoscroll-config")
 
 -- lsp_signature
 require("aero.lsp-signature")
+
+-- project
+require("aero.project-config")

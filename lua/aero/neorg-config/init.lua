@@ -42,10 +42,6 @@ require('neorg').setup {
         engine = "nvim-cmp" -- We current support nvim-compe and nvim-cmp only
       }
     },
-    ["core.norg.esupports.hop"] = {
-      config = { 
-      }
-    },
     ["core.norg.journal"] = {
       config = { -- 生成日记
       }
@@ -54,11 +50,6 @@ require('neorg').setup {
       config = { -- 生成目录
         toc_split_placement='left',
         default_toc_mode = "split",
-      }
-    },
-    ["core.norg.esupports"] = {
-      config = { -- Note that this table is optional and doesn't need to be provided
-        -- Configuration here
       }
     },
   },

@@ -1,5 +1,8 @@
 require('telescope').setup{
   defaults = {
+      layout_config = {
+      vertical = { width = 0.5 }
+    },
     -- Default configuration for telescope goes here:
     -- config_key = value,
     mappings = {
@@ -19,6 +22,18 @@ require('telescope').setup{
     -- }
     -- Now the picker_config_key will be applied every time you call this
     -- builtin picker
+    find_files = {
+      theme = "dropdown",
+    },
+    current_buffer_fuzzy_find = {
+      theme = "dropdown",
+    },
+    grep_string = {
+      theme = "dropdown",
+    },
+    buffers = {
+      theme = "dropdown",
+    }
   },
   extensions = {
     -- Your extension configuration goes here:
@@ -29,3 +44,4 @@ require('telescope').setup{
   }
 }
 require("telescope").load_extension "packer"
+require('telescope').load_extension('projects')

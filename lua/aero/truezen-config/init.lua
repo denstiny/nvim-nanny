@@ -85,11 +85,15 @@ function Truezen()
     vim.cmd[[ 
     call VirReturnTextStop() 
     ScrollbarToggle
+    hi StatusLineNC guibg=none gui=none
+    hi statusline gui=none guibg=none guifg=#565F89
     ]]
   else
     TruezenStatus = true
     vim.cmd[[
     call VirReturnTextRun() 
+    hi StatusLineNC guibg=none gui=underline
+    hi statusline gui=underline guibg=none guifg=#565F89 " 活动
     ScrollbarToggle
     ]]
   end

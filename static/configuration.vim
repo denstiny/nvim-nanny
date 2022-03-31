@@ -248,8 +248,6 @@ let g:startify_center = 40
 
 
 
-
-
 "=== asyncrun
 let g:asyncrun_open = 10
 let g:asynctask_template  =  ' ~/.config/nvim/static/templates/task_template.ini'
@@ -395,3 +393,18 @@ call wilder#set_option('renderer', wilder#popupmenu_renderer(wilder#popupmenu_bo
 let g:translator_default_engines = ['haici','bing','google','youdao']
 let g:translator_proxy_url = 'socks5://127.0.0.1:7891'
 let g:translator_window_borderchars = ['─', '│', '─', '│', '╭', '╮', '╯', '╰']
+
+
+
+
+"=== 自动关闭侧边
+augroup AUTOClose
+    " 退出侧边等
+    autocmd WinEnter * if winnr('$') == 1 && getbufvar(winbufnr(winnr()), "&filetype") == "netrw" |q|endif
+    autocmd WinEnter * if winnr('$') == 1 && getbufvar(winbufnr(winnr()), "&filetype") == "qf" |q|endif
+    autocmd WinEnter * if winnr('$') == 1 && getbufvar(winbufnr(winnr()), "&filetype") == "vista" |q|endif
+    autocmd WinEnter * if winnr('$') == 1 && getbufvar(winbufnr(winnr()), "&filetype") == "NvimTree"|q|endif
+    autocmd WinEnter * if winnr('$') == 1 && getbufvar(winbufnr(winnr()), "&filetype") == "rbrowser"|q|endif
+    autocmd WinEnter * if winnr('$') == 1 && getbufvar(winbufnr(winnr()), "&buftype")  == "tagbar"|q|endif
+    autocmd WinEnter * if winnr('$') == 1 && getbufvar(winbufnr(winnr()), "&buftype")  == "preview"|q|endif
+augroup END

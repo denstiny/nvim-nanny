@@ -154,4 +154,6 @@ packer.startup(function(use)
     use {'dstein64/vim-startuptime'}
     -- 翻译
     use {'voldikss/vim-translator'}
+    -- project
+    use {'ahmedkhalf/project.nvim'}
 end)

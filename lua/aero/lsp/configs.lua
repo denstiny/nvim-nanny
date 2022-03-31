@@ -26,7 +26,7 @@ local on_attach = function(bufnr)
 	local function nmapl(m, ...) map("n", "<leader>" .. m, ...) end
 	nmap("gd", "<cmd>Telescope lsp_definitions<cr>") -- Definition
 	nmap("gD", "<cmd>lua vim.lsp.buf.declaration()<cr>") -- Declaration
-	nmap("gt", "<cmd>lua vim.lsp.buf.type_definition()<cr>") -- Type definition
+	nmap("gt", "<cmd>Telescope lsp_definitions theme=dropdown<cr>") -- Type definition
 	nmap("gi", "<cmd>lua vim.lsp.buf.implementation()<cr>") -- Implementation
 	nmap("gr", "<cmd>lua vim.lsp.buf.rename()<cr>") -- Rename
 	nmap("gR", "<cmd>TroubleToggle lsp_references<cr>") -- References

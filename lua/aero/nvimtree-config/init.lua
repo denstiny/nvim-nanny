@@ -1,6 +1,7 @@
 local g = vim.g
 --nvim_tree_hide_dotfiles, nvim_tree_ignore
 vim.o.termguicolors = true
+vim.g.nvim_tree_respect_buf_cwd = 1
 
 g.nvim_tree_add_trailing = 0 -- append a trailing slash to folder names
 g.nvim_tree_git_hl = git_status
@@ -54,7 +55,6 @@ require'nvim-tree'.setup {
    disable_netrw = true,
    hijack_netrw = true,
    ignore_ft_on_setup = { "dashboard" },
-   auto_close = true,
    open_on_tab = false,
    hijack_cursor = true,
    update_cwd = true,
@@ -65,7 +65,10 @@ require'nvim-tree'.setup {
    view = {
       allow_resize = true,
       side = "right",
-      width = 25,
+      width = 30,
       auto_resize = true
    },
 }
+vim.cmd[[ 
+  autocmd  VimResized,Bufnew * NvimTreeResize 30
+]]
