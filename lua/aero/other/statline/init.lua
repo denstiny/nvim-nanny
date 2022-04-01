@@ -19,16 +19,16 @@ require("bufferline").setup{
         local _mode_me = vim.fn.mode()
         local result = {}
         if _mode_me == 'n' then
-          table.insert(result,{text = " 🛡️  " , guifg = "#1AE51A",guibg=bg})
+          table.insert(result,{text = "   " , guifg = "#1AE51A",guibg=bg})
 
         elseif _mode_me == 'niI' or _mode_me == 'ic' or _mode_me == 'ix' then
-          table.insert(result,{text = " 🗡️  " , guifg = "#E5BD1A",guibg=bg})
+          table.insert(result,{text = "   " , guifg = "#E5BD1A",guibg=bg})
 
         elseif _mode_me == 'c' then
-          table.insert(result,{text = " 🔧  " , guifg = "#2ABCD7",guibg=bg})
+          table.insert(result,{text = "   " , guifg = "#2ABCD7",guibg=bg})
 
         else
-          table.insert(result,{text = " 🗡️  " , guifg = "#E5BD1A",guibg=bg})
+          table.insert(result,{text = "   " , guifg = "#E5BD1A",guibg=bg})
 
         end
         return result
@@ -36,6 +36,7 @@ require("bufferline").setup{
     }
   }
 }
+
 vim.cmd([[
   hi BufferLinePickSelected gui=none
   hi BufferLinePick gui=none
