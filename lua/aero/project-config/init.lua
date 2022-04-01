@@ -17,7 +17,7 @@ vim.cmd[[
 local project_nvim = require("project_nvim")
 function startify_Project()
   local recent_projects = project_nvim.get_recent_projects()
-  local startify_bookmarks_ = vim.g.startify_bookmarks
+  local startify_bookmarks_ = vim.g.startify_bookmarks_
   for i = 1, #recent_projects do
     table.insert(startify_bookmarks_,#startify_bookmarks_ + 1,recent_projects[i])
   end

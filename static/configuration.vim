@@ -141,7 +141,7 @@ else
         \ '/mnt/home/neorg/index.norg'
         \]
 endif
-"let g:startify_bookmarks_ = g:startify_bookmarks
+let g:startify_bookmarks_ = g:startify_bookmarks
 "== 同步书签
 function CopyTododisk()
   if IsMe()
@@ -407,4 +407,11 @@ augroup AUTOClose
     autocmd WinEnter * if winnr('$') == 1 && getbufvar(winbufnr(winnr()), "&filetype") == "rbrowser"|q|endif
     autocmd WinEnter * if winnr('$') == 1 && getbufvar(winbufnr(winnr()), "&buftype")  == "tagbar"|q|endif
     autocmd WinEnter * if winnr('$') == 1 && getbufvar(winbufnr(winnr()), "&buftype")  == "preview"|q|endif
+augroup END
+
+"=== qf 快捷键
+augroup quickfix
+  autocmd!
+  autocmd BufEnter * if &filetype == 'qf' |nmap <silent> q :q<cr>|endif
+  autocmd BufDelete * if &filetype == 'qf' |unmap q|endif
 augroup END
