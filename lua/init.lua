@@ -1,7 +1,5 @@
 -- plugins
 require "aero.plugins"
--- lsp
-require "aero.lsp"
 
 -- trouble
 require "aero.trouble-config"
@@ -11,6 +9,8 @@ require "aero.indent-config"
 
 -- other
 require "aero.other"
+-- lsp
+require "aero.lsp"
 
 -- term
 require "aero.toggleterm-config"

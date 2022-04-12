@@ -11,64 +11,70 @@ g.nvim_tree_indent_markers = 1
 g.nvim_tree_root_folder_modifier = table.concat { ":t:gs?$?/..", string.rep(" ", 1000), "?:gs?^??" }
 --
 g.nvim_tree_show_icons = {
-   folders = 1,
-   -- folder_arrows= 1
-   files = 1,
-   git = git_status,
+  folders = 1,
+  -- folder_arrows= 1
+  files = 1,
+  git = git_status,
 }
 
 g.nvim_tree_icons = {
-   default = "",
-   symlink = "",
-   git = {
-      deleted = "",
-      ignored = "◌",
-      renamed = "➜",
-      staged = "✓",
-      unmerged = "",
-      unstaged = "✗",
-      untracked = "★",
-   },
-   folder = {
-      -- disable indent_markers option to get arrows working or if you want both arrows and indent then just add the arrow icons in front            ofthe default and opened folders below!
-      -- arrow_open = "",
-      -- arrow_closed = "",
-      default = "",
-      empty = "", -- 
-      empty_open = "",
-      open = "",
-      symlink = "",
-      symlink_open = "",
-   },
+  default = "",
+  symlink = "",
+  git = {
+    deleted = "",
+    ignored = "◌",
+    renamed = "➜",
+    staged = "✓",
+    unmerged = "",
+    unstaged = "✗",
+    untracked = "★",
+  },
+  folder = {
+    -- disable indent_markers option to get arrows working or if you want both arrows and indent then just add the arrow icons in front            ofthe default and opened folders below!
+    -- arrow_open = "",
+    -- arrow_closed = "",
+    default = "",
+    empty = "", -- 
+    empty_open = "",
+    open = "",
+    symlink = "",
+    symlink_open = "",
+  },
 }
 
 require'nvim-tree'.setup {
-   diagnostics = {
-      enable = true,
-      icons = {
-         hint = "",
-         info = "",
-         warning = "",
-         error = "",
-      },
-   },
-   disable_netrw = true,
-   hijack_netrw = true,
-   ignore_ft_on_setup = { "dashboard" },
-   open_on_tab = false,
-   hijack_cursor = true,
-   update_cwd = true,
-   update_focused_file = {
-      enable = true,
-      update_cwd = false,
-   },
-   view = {
-      allow_resize = true,
-      side = "right",
-      width = 30,
-      auto_resize = true
-   },
+  diagnostics = {
+    enable = true,
+    icons = {
+      hint = "",
+      info = "",
+      warning = "",
+      error = "",
+    },
+  },
+  sort_by = 'modification_time',
+  disable_netrw = true,
+  hijack_netrw = true,
+  ignore_ft_on_setup = { "dashboard" },
+  open_on_tab = false,
+  hijack_cursor = true,
+  update_cwd = true,
+  update_focused_file = {
+    enable = true,
+    update_cwd = false,
+  },
+  view = {
+    allow_resize = true,
+    side = "right",
+    width = 30,
+    auto_resize = true
+  },
+  actions = {
+    open_file = {
+      resize_window = true
+    }
+  }
 }
-vim.cmd[[ 
-  autocmd  VimResized,Bufnew * NvimTreeResize 30
-]]
+-- vim.cmd[[ 
+--   autocmd  VimResized,Bufnew * NvimTreeResize 30
+-- ]]

@@ -110,11 +110,11 @@ function! SwapChinese()
     let s:Editor = system("fcitx5-remote -o")
   elseif g:FcitxState == 3
     let g:FcitxState = 1
-  elseif s:LineChar > '~'
-    let s:Editor = system("fcitx5-remote -o") "切换中文
-    let g:FcitxState = 3
-  elseif s:LineChar <= '~'
-    let s:Editor = system("fcitx5-remote -c")
+  "elseif s:LineChar > '~'
+  "  let s:Editor = system("fcitx5-remote -o") "切换中文
+  "  let g:FcitxState = 3
+  "elseif s:LineChar <= '~'
+  "  let s:Editor = system("fcitx5-remote -c")
   endif
 endfunction
 autocmd InsertEnter * call SwapChinese()
@@ -177,8 +177,6 @@ let g:startify_custom_header_quotes = [
       \["有一种水果全世界最甜，叫黑凤梨。"],
       \["因为睡觉，才有了下一代，才有了你。"],
       \["你在我身边时，药是甜的，雪是暖的，连风暴都是可爱的。"],
-      \["无事献殷勤，非常喜欢你。"],
-      \["抱怨没用，抱我啊。"],
       \["我的房子租期到了诶，我能住你心里去么，收多少房租我都愿意。"],
       \["愿有岁月可回首，且以深情共白头。"],
       \["我可能盐吃多了，闲的老是想你。"],
@@ -192,7 +190,6 @@ let g:startify_custom_header_quotes = [
       \["周末民政局搞特价，我请你，走起。"],
       \["哥你受惊了，连我你都亲你都喝啥样了？"],
       \["你知道我最大的缺点是什么吗？是缺点你。"],
-      \["来和妲己玩耍吧。"],
       \["好累啊，我需要你的抱抱了。"],
       \["如果我想和你约会，你的回答会和这问题的回答一样吗？"],
       \["我给你做牛做马，你给我草好不好呀。"],
@@ -209,7 +206,6 @@ let g:startify_custom_header_quotes = [
       \["我能陪你熬夜，也会劝你早睡。"],
       \["每个人都喜欢自己吧？那么你还真是我的情敌。"],
       \["我想你应该很忙吧，那就只看前三个字就好了。"],
-      \["奉我为主。"],
       \["我的世界不允许你的消失，不管结局是否完美。"],
       \["初见是惊鸿一瞥，南柯一梦是你。"],
       \["前半生到处浪荡，后半生为你煲汤。"],
