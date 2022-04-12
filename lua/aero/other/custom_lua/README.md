@@ -1,5 +1,8 @@
 # 这些是自己的脚本
-> 非代码bug,不接受任何提问
+> 规则
+- 非代码bug,不接受任何提问
+- 脚本是自用的不经常更新,拒绝道德绑架
+- 建议有能力的在issues中提交代码片段
 <!-- vim-markdown-toc GFM -->
 
 * [**file**: `mdorg.lua`](#file-mdorglua)
