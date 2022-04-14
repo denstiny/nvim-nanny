@@ -25,6 +25,6 @@ t['zt']    = {'zt', {'130'}}
 t['zz']    = {'zz', {'130'}}
 t['zb']    = {'zb', {'130'}}
 -- 音乐键滚动
-t[''] = {'scroll', {'-vim.wo.scroll', 'true', '130'}}
-t[''] = {'scroll', { 'vim.wo.scroll', 'true', '130'}}
+t['']    = {'scroll', {'-5', 'true', '30', '5', e}}
+t['']     = {'scroll', {'5', 'true', '30', '5', e}}
 require('neoscroll.config').set_mappings(t)
