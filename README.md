@@ -45,6 +45,8 @@ viml用户可以在 static 目录下创建自己的配置
 | static/mappings.vim      | 默认参数配置     |
 | static/highlight.vim     | 自定义高亮设置   |
 
+> [Custom scripts for lua](./lua/aero/other/custom_lua/README.md) 
+> [Custom scripts for viml](./static/custom_vimscript/README.md) 
 
 ##  Most languages support
 ![support](https://s4.ax1x.com/2022/01/14/7Gk3mn.png) 

@@ -9,7 +9,7 @@
 local M = {}
 vim.g.start_stus = false
 M.createdBuffer = "vs"
-M.testPath = "/mnt/home/test/"
+M.testPath = "/tmp/mdorg/"
 vim.g.code = {}
 vim.g.len = 0
 vim.g.start = 0
@@ -92,12 +92,21 @@ end
 ---@param way 
 ---@param code 
 M.CreatedBufferEditCodeBlock = function (ty)
+  M.OpenDir(M.testPath)
   if M.createdBuffer == "vs" then
-    vim.cmd("vsplit ".. M.testPath .. "test."..ty)
+    vim.cmd("vsplit ".. M.testPath .. "mdnorg."..ty)
     vim.g.start_stus = true
   end
 end
 
+M.OpenDir = function(pathname)
+  local file = io.open(pathname)
+  if file then
+    file:close()
+  else
+    os.execute('mkdir -p '.. pathname)
+  end
+end
 
 --- 保存
 M.ResCodeBlock = function() 
