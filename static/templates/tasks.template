@@ -1,11 +1,18 @@
 # vim: set fenc=utf-8 ft=dosini:
 
 # define a new task named "file-build"
+[+]
+MoveBuild=mkdir -p $(VIM_FILEDIR/build)
+build_main_path=$(VIM_FILEPATH)
+build_out_path=$(VIM_FILEDIR)/build/$(VIM_FILENOEXT)
+
+
 [file-build]
 
 # shell command, use quotation for filenames containing spaces
 # check ":AsyncTaskMacro" to see available macros
-command=mkdir -p $(VIM_FILEDIR)/build &&  g++ "$(VIM_FILEPATH)" -g -w  -o "$(VIM_FILEDIR)/build/$(VIM_FILENOEXT)"
+#command=mkdir -p $(VIM_FILEDIR)/build &&  g++ "$(VIM_FILEPATH)" -g -w  -o "$(VIM_FILEDIR)/build/$(VIM_FILENOEXT)"
+command=$(+MoveBuild) &&  g++ "$(VIM_FILEPATH)" -g -w  -o $(+build_out_path)
 
 # working directory, can change to $(VIM_ROOT) for project root 设置项目根目录
 cwd=$(VIM_FILEDIR)

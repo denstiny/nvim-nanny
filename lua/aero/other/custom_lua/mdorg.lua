@@ -10,6 +10,7 @@ local M = {}
 vim.g.start_stus = false
 M.createdBuffer = "vs"
 M.testPath = "/tmp/mdorg/"
+M.filename = "mdnorg"
 vim.g.code = {}
 vim.g.len = 0
 vim.g.start = 0
@@ -94,17 +95,35 @@ end
 M.CreatedBufferEditCodeBlock = function (ty)
   M.OpenDir(M.testPath)
   if M.createdBuffer == "vs" then
-    vim.cmd("vsplit ".. M.testPath .. "mdnorg."..ty)
+    vim.cmd("vsplit ".. M.testPath .. M.filename .. "." ..ty)
     vim.g.start_stus = true
   end
 end
 
+--- 判断目录是否存在,不存在则创建
+---@param pathname 
 M.OpenDir = function(pathname)
   local file = io.open(pathname)
   if file then
     file:close()
   else
     os.execute('mkdir -p '.. pathname)
+  end
+end
+
+
+M.CloseMdorg = function ()
+  function split(str,reps)
+    local resultStrList = {}
+    string.gsub(str,'[^'..reps..']+',function (w)
+        table.insert(resultStrList,w)
+    end)
+    return resultStrList
+  end
+  local file = split(vim.fn.expand("%:t"),'.')
+  if vim.api.nvim__buf_stats(vim.g.Mbufferid) ~= 0 and file[1] == M.filename then
+    M.ResCodeBlock()
+    vim.cmd("silent augroup! AutoCloseMdorg")
   end
 end
 
@@ -123,7 +142,14 @@ end
 
 --- 编辑当前代码快
 M.EditBufferCodeBlock = function ()
-  vim.g.bufferid = vim.api.nvim_get_current_buf()
+  vim.g.Mbufferid = vim.api.nvim_get_current_buf()
+  -- 创建一个任务组
+  vim.cmd[[ 
+  augroup AutoCloseMdorg
+    autocmd!
+    autocmd WinLeave * lua require("aero.other.custom_lua.mdorg").CloseMdorg()
+  augroup END
+  ]]
   local line = vim.fn.line('.')
   local ty,code,start,done = M.GetBufferCodeBlockType(line)
 
