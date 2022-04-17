@@ -13,8 +13,8 @@ M.testPath = "/tmp/mdorg/"
 M.filename = "mdnorg"
 vim.g.code = {}
 vim.g.len = 0
-vim.g.start = 0
-vim.g.done = 0
+vim.g.mdorg_start = 0
+vim.g.mdorg_done = 0
 vim.g.bufferid = 0
 
 --- ```cpp
@@ -112,7 +112,13 @@ M.OpenDir = function(pathname)
 end
 
 
+--- 自动释放当前窗口
+---@param w 
 M.CloseMdorg = function ()
+  --- 分隔字符串
+  ---@param str 
+  ---@param reps 
+  ---@return 
   function split(str,reps)
     local resultStrList = {}
     string.gsub(str,'[^'..reps..']+',function (w)
@@ -123,7 +129,7 @@ M.CloseMdorg = function ()
   local file = split(vim.fn.expand("%:t"),'.')
   if vim.api.nvim__buf_stats(vim.g.Mbufferid) ~= 0 and file[1] == M.filename then
     M.ResCodeBlock()
-    vim.cmd("silent augroup! AutoCloseMdorg")
+    -- vim.cmd("silent augroup! AutoCloseMdorg")
   end
 end
 
@@ -136,7 +142,8 @@ M.ResCodeBlock = function()
     end
     vim.cmd("silent !rm " .. vim.fn.expand("%:p"))
     vim.cmd("bd!")
-    vim.api.nvim_buf_set_lines(vim.g.buferid,vim.g.start-1,vim.g.done,false,code)
+    vim.cmd("unmap q")
+    vim.api.nvim_buf_set_lines(vim.g.Mbuferid,vim.g.mdorg_start-1,vim.g.mdorg_done,false,code)
   end
 end
 
@@ -144,18 +151,19 @@ end
 M.EditBufferCodeBlock = function ()
   vim.g.Mbufferid = vim.api.nvim_get_current_buf()
   -- 创建一个任务组
-  vim.cmd[[ 
-  augroup AutoCloseMdorg
-    autocmd!
-    autocmd WinLeave * lua require("aero.other.custom_lua.mdorg").CloseMdorg()
-  augroup END
-  ]]
+  -- vim.cmd[[ 
+  -- augroup AutoCloseMdorg
+  --   autocmd!
+  --   autocmd WinLeave * lua require("aero.other.custom_lua.mdorg").CloseMdorg()
+  -- augroup END
+  -- ]]
   local line = vim.fn.line('.')
   local ty,code,start,done = M.GetBufferCodeBlockType(line)
 
   if string.len(ty) > 0 then
-    vim.g.start = start
-    vim.g.done = done
+    vim.cmd("nmap q <Cmd>ResCodeBlock<cr>")
+    vim.g.mdorg_start = start
+    vim.g.mdorg_done = done
     -- 创建新的分割窗口
     M.CreatedBufferEditCodeBlock(ty)
     M.InsertBlockCode(code)
