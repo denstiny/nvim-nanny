@@ -114,9 +114,9 @@ cmp.setup {
       maxwidth = 80,
     },
   },
-  documentation = {
-    border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
-  },
+  --documentation = {
+  --  border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
+  --},
   snippet = {
     expand = function(args)
       snip.lsp_expand(args.body)

@@ -77,3 +77,11 @@ require("aero.lsp-signature")
 
 -- project
 require("aero.project-config")
+-- notify
+require("aero.notify-config")
+-- cmp
+require "aero.cmp-config"
+-- lsp 加载进度
+require("aero.fidget-config")
+-- lsp symbols outline
+require("aero.symboes-outline-config")

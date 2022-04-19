@@ -25,6 +25,7 @@ packer.startup(function(use)
         'williamboman/nvim-lsp-installer',
         --'folke/lua-dev.nvim',
         'jose-elias-alvarez/null-ls.nvim',
+        'j-hui/fidget.nvim' -- lsp进度
     }
     -- Completion
     use {'hrsh7th/nvim-cmp'}
@@ -156,4 +157,6 @@ packer.startup(function(use)
     use {'voldikss/vim-translator'}
     -- project
     use {'ahmedkhalf/project.nvim'}
+    -- notify
+    use {'rcarriga/nvim-notify'}
 end)

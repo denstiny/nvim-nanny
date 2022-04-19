@@ -2,7 +2,7 @@
 
 # define a new task named "file-build"
 [+]
-MoveBuild=mkdir -p $(VIM_FILEDIR/build)
+MoveBuild=mkdir -p $(VIM_FILEDIR)/build
 build_main_path=$(VIM_FILEPATH)
 build_out_path=$(VIM_FILEDIR)/build/$(VIM_FILENOEXT)
 
