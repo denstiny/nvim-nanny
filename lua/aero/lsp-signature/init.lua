@@ -18,7 +18,7 @@ cfg = {
   -- will set to true when fully tested, set to false will use whichever side has more space
   -- this setting will be helpful if you do not want the PUM and floating win overlap
 
-  floating_window_off_x = 50, -- adjust float windows x position.
+  floating_window_off_x = 70, -- adjust float windows x position.
   floating_window_off_y = 10, -- adjust float windows y position.
 
 
