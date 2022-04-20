@@ -3,7 +3,7 @@ if not status_ok then
   return
 end
 
-local user_plugin_opts = require("core.utils").user_plugin_opts
+local user_plugin_opts = require("aero.lsp.core.utils").user_plugin_opts
 
 lsp_installer.on_server_ready(function(server)
   local opts = server:get_default_options()

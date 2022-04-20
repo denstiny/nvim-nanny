@@ -111,21 +111,21 @@ M.OpenDir = function(pathname)
   end
 end
 
-
---- 自动释放当前窗口
----@param w 
-M.CloseMdorg = function ()
   --- 分隔字符串
   ---@param str 
   ---@param reps 
   ---@return 
-  function split(str,reps)
-    local resultStrList = {}
-    string.gsub(str,'[^'..reps..']+',function (w)
-        table.insert(resultStrList,w)
-    end)
-    return resultStrList
-  end
+function split(str,reps)
+  local resultStrList = {}
+  string.gsub(str,'[^'.. reps .. ']+', function (w)
+    table.insert(resultStrList,w)
+  end)
+  return resultStrList
+end
+
+--- 自动释放当前窗口
+---@param w 
+M.CloseMdorg = function ()
   local file = split(vim.fn.expand("%:t"),'.')
   if vim.api.nvim__buf_stats(vim.g.Mbufferid) ~= 0 and file[1] == M.filename then
     M.ResCodeBlock()
@@ -169,9 +169,13 @@ M.EditBufferCodeBlock = function ()
     M.InsertBlockCode(code)
   end
 end
+vim.g.mdorg_Edit = M.EditBufferCodeBlock
+vim.g.mdorg_Res = M.ResCodeBlock
+vim.g.mdorg_close = M.CloseMdorg
+
 --M.EditBufferCodeBlock()
 vim.cmd[[
-  command! EditBufferCodeBlock lua require("aero.other.custom_lua.mdorg").EditBufferCodeBlock()
-  command! ResCodeBlock lua require("aero.other.custom_lua.mdorg").ResCodeBlock()
+command! EditBufferCodeBlock call mdorg_Edit()
+command! ResCodeBlock call mdorg_Res()
 ]]
 return M

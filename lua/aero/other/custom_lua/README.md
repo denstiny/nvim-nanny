@@ -18,11 +18,11 @@
 ### 配置
 ```lua
 -- 这是一个临时存储新打开的文件的地址,别担心,在你编辑完成之后会自动删除,使用临时文件的好处是你还可以通过其他插件去调试
-M.testPath = "/mnt/home/test/"
+M.testPath = "/tmp/mdorg/"
 
 -- 这是我的命令绑定,根据自己的情况修改
 vim.cmd[[
-  command! EditBufferCodeBlock lua require("aero.other.custom_lua.mdorg").EditBufferCodeBlock()
-  command! ResCodeBlock lua require("aero.other.custom_lua.mdorg").ResCodeBlock()
+command! EditBufferCodeBlock call mdorg_Edit()
+command! ResCodeBlock call mdorg_Res()
 ]]
 ```
