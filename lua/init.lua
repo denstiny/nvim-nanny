@@ -11,7 +11,10 @@ require "aero.indent-config"
 require "aero.other"
 -- lsp
 require "aero.lsp"
-
+-- lsp config
+--require "aero.lsp-config"
+-- clangd extension
+--require "aero.clangd_extensions"
 -- term
 require "aero.toggleterm-config"
 

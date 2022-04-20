@@ -27,6 +27,7 @@ packer.startup(function(use)
         'jose-elias-alvarez/null-ls.nvim',
         'j-hui/fidget.nvim' -- lsp进度
     }
+    use {"p00f/clangd_extensions.nvim"}
     -- Completion
     use {'hrsh7th/nvim-cmp'}
     use {'hrsh7th/cmp-nvim-lua'}
