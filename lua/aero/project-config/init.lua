@@ -1,4 +1,8 @@
-require("project_nvim").setup {
+local has_ts, plug = pcall(require, "project_nvim")
+if not has_ts then return end
+
+
+plug.setup {
     manual_mode = false,
     detection_methods = { "lsp", "pattern" },
     patterns = { ".git", "_darcs", ".hg", ".bzr", ".svn", "Makefile", "package.json" },

@@ -1,3 +1,5 @@
+local has_ts, plug = pcall(require, "neorg")
+if not has_ts then return end
 local parser_configs = require('nvim-treesitter.parsers').get_parser_configs()
 
 parser_configs.norg = {
@@ -24,7 +26,7 @@ parser_configs.norg_table = {
   },
 }
 
-require('neorg').setup {
+neorg.setup {
   -- Tell Neorg what modules to load
   load = {
     ["core.defaults"] = {}, -- Load all the default modules

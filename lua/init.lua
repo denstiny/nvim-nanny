@@ -1,20 +1,24 @@
 -- plugins
 require "aero.plugins"
 
+-- other
+require "aero.other"
+
+-- notify
+require("aero.notify-config")
+
 -- trouble
 require "aero.trouble-config"
 
 -- indent
 require "aero.indent-config"
 
--- other
-require "aero.other"
 -- lsp
 require "aero.lsp"
--- lsp config
---require "aero.lsp-config"
+
 -- clangd extension
---require "aero.clangd_extensions"
+require "aero.clangd_extensions"
+
 -- term
 require "aero.toggleterm-config"
 
@@ -43,7 +47,7 @@ require("aero.scrollbar-config")
 require("aero.fold-config")
 
 -- neorg
--- require("aero.neorg-config")
+require("aero.neorg-config")
 
 -- mdeval
 require("aero.mdeval")
@@ -66,7 +70,7 @@ require("aero.competitest-config")
 -- auto pairs
 require("aero.autopairs-config")
 
--- auto 自动清楚搜索高亮
+-- auto 自动清理搜索高亮
 require("aero.hlselens-config")
 
 -- vimshift
@@ -80,11 +84,12 @@ require("aero.lsp-signature")
 
 -- project
 require("aero.project-config")
--- notify
-require("aero.notify-config")
+
 -- cmp
 require "aero.cmp-config"
+
 -- lsp 加载进度
 require("aero.fidget-config")
+
 -- lsp symbols outline
 require("aero.symboes-outline-config")

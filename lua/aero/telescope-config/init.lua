@@ -1,4 +1,6 @@
-require('telescope').setup{
+local has_ts, plug = pcall(require, "telescope")
+if not has_ts then return end
+plug.setup{
   defaults = {
       layout_config = {
       vertical = { width = 0.5 }

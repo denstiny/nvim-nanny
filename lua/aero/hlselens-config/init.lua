@@ -1,4 +1,7 @@
-require('hlslens').setup({
+
+local has_ts, plug = pcall(require, "hlslens")
+if not has_ts then return end
+plug.setup({
     calm_down = true,
     nearest_only = true,
     nearest_float_when = 'always',

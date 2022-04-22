@@ -1,3 +1,5 @@
+local has_ts, plug = pcall(require, "symbols-outline")
+if not has_ts then return end
 vim.g.symbols_outline = {
 	highlight_hovered_item = false,
 	show_guides = true,
@@ -53,8 +55,10 @@ vim.g.symbols_outline = {
 }
 
 --  自动关闭 symbols outline
+
+
 set_symbols_outline_state = function()
-  vim.g['symbols_outline_state'] = require('symbols-outline').state
+  vim.g['symbols_outline_state'] = plug.state
 end
 vim.cmd[[
 hi FocusedSymbol guibg = black

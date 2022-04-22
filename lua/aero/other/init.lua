@@ -3,7 +3,7 @@ if not pcall(require, "hop") then return end
 -- Configuration for other small plugins
 vim.g.fugitive_legacy_commands = false
 
-require"Comment".setup {ignore = "^$"}
+--require"Comment".setup {ignore = "^$"}
 --require"hop".setup {jump_on_sole_occurrence = true}
 ---  theme
 require "aero.other.theme"

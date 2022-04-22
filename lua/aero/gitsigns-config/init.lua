@@ -1,4 +1,6 @@
-require('gitsigns').setup {
+local has_ts, plug = pcall(require, "gitsigns")
+if not has_ts then return end
+plug.setup {
   signs = {
     add          = {hl = 'GitSignsAdd'   , text = '│', numhl='GitSignsAddNr'   , linehl='GitSignsAddLn'},
     change       = {hl = 'GitSignsChange', text = '│', numhl='GitSignsChangeNr', linehl='GitSignsChangeLn'},

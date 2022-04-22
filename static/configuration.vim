@@ -387,7 +387,7 @@ call wilder#set_option('renderer', wilder#popupmenu_renderer(wilder#popupmenu_bo
 
 "== 翻译
 let g:translator_default_engines = ['haici','bing','google','youdao']
-let g:translator_proxy_url = 'socks5://127.0.0.1:7891'
+let g:translator_proxy_url = 'socks5://127.0.0.1:7890'
 let g:translator_window_borderchars = ['─', '│', '─', '│', '╭', '╮', '╯', '╰']
 
 

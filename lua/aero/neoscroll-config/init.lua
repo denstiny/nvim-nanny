@@ -1,4 +1,6 @@
-require('neoscroll').setup({
+local has_ts, plug = pcall(require, "neoscroll")
+if not has_ts then return end
+plug.setup({
     -- All these keys will be mapped to their corresponding default scrolling animation
     mappings = {'<C-u>', '<C-d>', '<C-b>',
                 '<C-y>', '<C-e>', 'zt', 'zz', 'zb'},

@@ -1,5 +1,6 @@
 let mapleader = ";"
 set hidden
+set termguicolors
 set scrolloff=5
 set encoding=UTF-8
 filetype on 

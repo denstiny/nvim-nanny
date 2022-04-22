@@ -1,4 +1,6 @@
-require'sniprun'.setup({
+local has_ts, sniprun = pcall(require, "sniprun")
+if not has_ts then return end
+sniprun.setup({
 	display = {
 		"Classic",                    --# display results in the command-line  area
 		"VirtualTextOk",              --# display ok results as virtual text (multiline is shortened)

@@ -1,4 +1,6 @@
-require"nvim-autopairs".setup {}
+local has_ts, plug = pcall(require, "nvim-autopairs")
+if not has_ts then return end
+plug.setup {}
 local npairs = require'nvim-autopairs'
 local Rule = require'nvim-autopairs.rule'
 local cond = require'nvim-autopairs.conds'

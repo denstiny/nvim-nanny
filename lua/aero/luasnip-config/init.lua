@@ -1,9 +1,13 @@
 -- Loading any vscode snippets from plugins
+
+local has_ts, plug = pcall(require, "luasnip")
+if not has_ts then return end
+
 require('luasnip.loaders.from_vscode').lazy_load()
 local util = require("luasnip.util.util")
 
 
-require'luasnip'.config.setup({
+plug.config.setup({
 	parser_nested_assembler = function(_, snippet)
 		local select = function(snip, no_move)
 			snip.parent:enter_node(snip.indx)

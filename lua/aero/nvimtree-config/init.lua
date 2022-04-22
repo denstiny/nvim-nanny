@@ -1,3 +1,5 @@
+local has_ts, nvim_tree = pcall(require, "nvim-tree")
+if not has_ts then return end
 local g = vim.g
 --nvim_tree_hide_dotfiles, nvim_tree_ignore
 vim.o.termguicolors = true
@@ -42,7 +44,7 @@ g.nvim_tree_icons = {
   },
 }
 
-require'nvim-tree'.setup {
+nvim_tree.setup {
   diagnostics = {
     enable = true,
     icons = {

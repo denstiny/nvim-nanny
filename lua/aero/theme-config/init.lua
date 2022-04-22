@@ -1,4 +1,8 @@
-require("themer").setup({
+
+local has_ts, plug = pcall(require, "telescope")
+if not has_ts then return end
+
+plug.setup({
     colorscheme = "rose_pine",
     styles = {
       	["function"] = { style = 'italic' },

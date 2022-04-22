@@ -1,4 +1,7 @@
-    require('neoclip').setup({
+
+local has_ts, plug = pcall(require, "neoclip")
+if not has_ts then return end
+    plug.setup({
       history = 1000,
       enable_persistent_history = false,
       db_path = vim.fn.stdpath("data") .. "/databases/neoclip.sqlite3",

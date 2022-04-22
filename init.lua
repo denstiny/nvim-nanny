@@ -12,7 +12,8 @@
 --   Config files for NEOVIM. Created by Denstiny Aaro Urdaniz
 
 -- load cache
-require("impatient")
+--require("impatient")
+pcall(require,"impatient")
 
 -- Load the lua configuration script
 require "init"

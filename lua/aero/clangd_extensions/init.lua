@@ -1,4 +1,8 @@
-require("clangd_extensions").setup({
+local has_ts, clangd_extensions = pcall(require, "clangd_extensions")
+if not has_ts then return end
+
+
+clangd_extensions.setup({
   server = {
     capabilities = capabilities,
     on_attach = on_attach,

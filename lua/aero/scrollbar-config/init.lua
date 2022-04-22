@@ -1,4 +1,6 @@
-require("scrollbar").setup({
+local has_ts, plug = pcall(require, "scrollbar")
+if not has_ts then return end
+plug.setup({
     handle = {
         color = "#221F34",
     },

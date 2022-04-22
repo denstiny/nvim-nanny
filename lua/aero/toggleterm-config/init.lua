@@ -1,4 +1,8 @@
-require"toggleterm".setup {
+local has_ts, toggleterm = pcall(require, "toggleterm")
+if not has_ts then return end
+
+
+toggleterm.setup {
   size = 13,
   open_mapping = [[<c-\>]],
   shade_filetypes = {},
