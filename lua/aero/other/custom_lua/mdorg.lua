@@ -90,8 +90,7 @@ end
 
 
 --- 创建一个新的buffer,编辑代码快
----@param way 
----@param code 
+---@param ty  分屏方式
 M.CreatedBufferEditCodeBlock = function (ty)
   M.OpenDir(M.testPath)
   if M.createdBuffer == "vs" then
@@ -101,7 +100,7 @@ M.CreatedBufferEditCodeBlock = function (ty)
 end
 
 --- 判断目录是否存在,不存在则创建
----@param pathname 
+---@param pathname
 M.OpenDir = function(pathname)
   local file = io.open(pathname)
   if file then
@@ -112,14 +111,12 @@ M.OpenDir = function(pathname)
 end
 
   --- 分隔字符串
-  ---@param str 
-  ---@param reps 
+  ---@param str 字符串
+  ---@param reps 关键字
   ---@return 
 function split(str,reps)
   local resultStrList = {}
-  string.gsub(str,'[^'.. reps .. ']+', function (w)
-    table.insert(resultStrList,w)
-  end)
+  string.gsub(str,'[^'.. reps .. ']+', function (w) table.insert(resultStrList,w) end)
   return resultStrList
 end
 
