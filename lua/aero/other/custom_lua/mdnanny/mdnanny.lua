@@ -25,7 +25,6 @@ end
 
 --- main入口函数
 M.start = function ()
-  api.nvim_create_autocmd()
   local bnr = vim.fn.bufnr("%")
   api.nvim_create_autocmd({"CursorMoved", "CursorHold","CursorMovedI"}, {
     pattern = {"*.md"},
