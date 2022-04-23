@@ -160,4 +160,6 @@ packer.startup(function(use)
     use {'ahmedkhalf/project.nvim'}
     -- notify
     use {'rcarriga/nvim-notify'}
+    -- 当前所在的位置
+    use {"SmiteshP/nvim-gps"}
 end)

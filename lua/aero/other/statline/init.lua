@@ -5,8 +5,9 @@ require('lualine').setup {
 }
 vim.opt.termguicolors = true
 local bg = vim.fn.synIDattr(vim.fn.hlID("SignColumn"),"bg")
-
-
+local m = 1
+require("nvim-gps").setup()
+local gps = require("nvim-gps")
 require("bufferline").setup{
   highlights = {
     fill = {
@@ -14,6 +15,7 @@ require("bufferline").setup{
     },
   },
   options = {
+    show_close_icon = false,
     custom_areas = {
       left = function()
         local _mode_me = vim.fn.mode()
@@ -33,6 +35,23 @@ require("bufferline").setup{
         end
         return result
       end,
+      right = function() 
+        local result = {}
+        if gps.is_available() then
+          --print(gps.get_location())
+          local data = gps.get_data()
+          for i = 1, #data do
+            table.insert(result,{text = data[i].icon, guifg="#D6A868"})
+            table.insert(result,{text = data[i].text,guifg="#fff"})
+            if #data == 1 or i == #data then
+              table.insert(result,{text = " ",guifg="#9B9AAB"})
+            else
+              table.insert(result,{text = " > ",guifg="#9B9AAB"})
+            end
+          end
+        end
+        return result
+      end
     }
   }
 }
