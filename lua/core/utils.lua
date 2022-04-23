@@ -52,6 +52,9 @@ end
 --- 显示诊断信息
 function M.CreatorShowDiagnosticWindow()
   -- :lua print(vim.inspect(vim.lsp.diagnostic.get_line_diagnostics()))
+  if M.win then
+    return
+  end
   local diagnostic = vim.lsp.diagnostic.get_line_diagnostics()
   if #diagnostic == 0 then
     return
@@ -63,7 +66,7 @@ function M.CreatorShowDiagnosticWindow()
   local height = api.nvim_get_option("lines")
   for i = 1, #diagnostic do
     size = size + 1
-    local str = diagnostic[i].source .. " -> " .. diagnostic[i].message
+    local str = diagnostic[i].source .. ":" .. diagnostic[i].message
     if string.len(str) > len then
       len = string.len(str)
     end
@@ -72,15 +75,23 @@ function M.CreatorShowDiagnosticWindow()
   M.creatorFloatWindow(height - size,width - len,len,size,dia_text)
 end
 
+
 --- 删除窗口
 function M.DeleteWindow()
+  local var = vim.lsp.diagnostic.get_line_diagnostics()
   if M.win and M.cureLine ~= vim.fn.line('.') then
     vim.api.nvim_win_close(M.win,true)
     M.win = nil
+    return
+  end
+  if M.cureLine == vim.fn.line('.') and #var < 0 then
+    vim.api.nvim_win_close(M.win,true)
+    M.win = nil
+    return
   end
 end
 
---- Dia诊断开始入口
+
 function M.ShowDiagnosticWindow()
   M.CreatorShowDiagnosticWindow()
 end

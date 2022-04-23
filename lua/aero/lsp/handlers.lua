@@ -80,7 +80,7 @@ function M.setup()
       on_attach_override(client, bufnr)
     end
     vim.g.mlsp_bufer = bufnr
-    vim.api.nvim_create_autocmd("CursorHold", {
+    vim.api.nvim_create_autocmd({"CursorHold","CursorMoved","TextChangedI","InsertLeave"}, {
       buffer=bufnr,
       callback = function()
         MDia.ShowDiagnosticWindow()
