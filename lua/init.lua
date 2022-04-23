@@ -17,7 +17,7 @@ require "aero.indent-config"
 require "aero.lsp"
 
 -- clangd extension
-require "aero.clangd_extensions"
+--require "aero.clangd_extensions"
 
 -- term
 require "aero.toggleterm-config"
@@ -87,6 +87,9 @@ require("aero.project-config")
 
 -- cmp
 require "aero.cmp-config"
+
+-- null ls 代码诊断格式化
+require("aero.null-ls-config")
 
 -- lsp 加载进度
 require("aero.fidget-config")

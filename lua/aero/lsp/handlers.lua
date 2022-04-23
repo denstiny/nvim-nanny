@@ -1,4 +1,5 @@
 local M = {}
+local MDia = require("core.utils")
 function M.setup()
   local signs = {
     { name = "DiagnosticSignError", text = "" },
@@ -78,18 +79,26 @@ function M.setup()
     if on_attach_override ~= nil then
       on_attach_override(client, bufnr)
     end
-
+    vim.g.mlsp_bufer = bufnr
     vim.api.nvim_create_autocmd("CursorHold", {
       buffer=bufnr,
       callback = function()
-        local opts = {
-          focusable = false,
-          close_events = { "BufLeave", "CursorMoved", "InsertEnter", "FocusLost" },
-          border = 'rounded',
-          source = 'always',  -- show source in diagnostic popup window
-          prefix = ' '
-        }
-        vim.diagnostic.open_float(nil, opts)
+        MDia.ShowDiagnosticWindow()
+       --  local opts = {
+       --    focusable = false,
+       --    close_events = { "BufLeave", "CursorMoved", "InsertEnter", "FocusLost" },
+       --    border = 'rounded',
+       --    source = 'always',  -- show source in diagnostic popup window
+       --    prefix = ' '
+       --  }
+       --  vim.diagnostic.open_float(nil, opts)
+      end
+    })
+
+    vim.api.nvim_create_autocmd({ "BufLeave", "CursorMoved", "InsertEnter", "FocusLost" }, {
+      buffer=bufnr,
+      callback = function()
+        MDia.DeleteWindow()
       end
     })
 
