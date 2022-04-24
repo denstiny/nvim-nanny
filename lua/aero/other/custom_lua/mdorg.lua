@@ -30,6 +30,19 @@ vim.g.bufferid = 0
 --- @end
 
 
+
+--- 修复类型
+function M.getEditType(ty)
+  if ty == "markdown" then
+    return "md"
+  end
+  if ty == "bash" then
+    return "sh"
+  end
+  return ty
+end
+
+
 --- 获取buffer
 M.GetBufferCodeBlockType = function (line)
   local ty = ''
@@ -56,7 +69,7 @@ M.GetBufferCodeBlockType = function (line)
     local str_begin,str_end,str_sub = string.find(str,filetypeBlock.begin,1,false)
 
     if (str_begin ~= nil and str_end ~= nil) then
-       ty = str_sub
+       ty = M.getEditType(str_sub)
        start = line+1
        vim.g.mdorg_indent = str_begin
       break
