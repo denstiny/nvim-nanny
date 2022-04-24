@@ -33,11 +33,6 @@ vim.cmd [[
 au BufWritePost Todo.norg call CopyTododisk()
 ]]
 
--- 自动加载项目目录到startify
-
--- vim.cmd[[ 
---   autocmd BufEnter * lua startify_Project() 
--- ]]
 
 -- 不显示状态栏
 vim.cmd [[

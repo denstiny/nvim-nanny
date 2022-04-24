@@ -24,7 +24,7 @@ packer.startup(function(use)
     use {
         'williamboman/nvim-lsp-installer',
         --'folke/lua-dev.nvim',
-        'jose-elias-alvarez/null-ls.nvim',
+        --'jose-elias-alvarez/null-ls.nvim',
         'j-hui/fidget.nvim' -- lsp进度
     }
     use {"p00f/clangd_extensions.nvim"}
@@ -54,7 +54,7 @@ packer.startup(function(use)
         'kyazdani42/nvim-web-devicons',
     }
     -- Treesitter
-    use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
+    use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' ,commit = "facc6fd"}
     use {'nvim-treesitter/nvim-treesitter-refactor'}
     use {'nvim-treesitter/playground'}
 
@@ -100,66 +100,72 @@ packer.startup(function(use)
     use 'ZSaberLv0/vim-easymotion-chs'
 
     -- vim start ui
-    use {"mhinz/vim-startify",branch="center"}
+    use {"mhinz/vim-startify",branch="center",config=function ()
+      vim.cmd[[ 
+      autocmd BufEnter * lua startify_Project() 
+      ]]
+    end}
+
+    -- 自动加载项目目录到startify
     -- undo tree
     use {"mbbill/undotree"}
     -- buff line
     use { 'akinsho/bufferline.nvim' }
     use {'kevinhwang91/nvim-hlslens'}
     use { 'nvim-telescope/telescope.nvim','nvim-telescope/telescope-packer.nvim',
-        requires = {
-            {'nvim-lua/plenary.nvim'}
-        }
+    requires = {
+      {'nvim-lua/plenary.nvim'}
     }
-    -- scroll bar
-    use( 'petertriho/nvim-scrollbar' )
-    -- fold code
-    use{ 'anuvyklack/pretty-fold.nvim'}
-    -- sandwidth
-    use {'machakann/vim-sandwich'}
-    use {'nvim-neorg/neorg'}
-    -- markdown
-    use{ "iamcco/markdown-preview.nvim",run="cd app && yarn install"}
-    use {'mzlogin/vim-markdown-toc'}
-    --use {'denstiny/picgo-nvim'}
-    -- markdown table
-    use "dhruvasagar/vim-table-mode"
-    -- new file templates
-    use {'tibabit/vim-templates'}
-    -- wilder
-    use {'gelguy/wilder.nvim'}
-    -- live server
-    use {'turbio/bracey.vim',run = 'npm install --prefix server'}
-    -- gitsigns
-    use {'lewis6991/gitsigns.nvim'}
-    -- 注释
-    use {'danymat/neogen'}
-    -- auto save folding
-    --use {'vim-scripts/restore_view.vim'}
-    use {'simrat39/symbols-outline.nvim'}
-    -- clip list
-    use { "AckslD/nvim-neoclip.lua",}
-    -- 竞技性编程快速测试
-    use {
-        'xeluxee/competitest.nvim',
-        requires = 'MunifTanjim/nui.nvim',
-    }
-    -- windows
-    use 'sindrets/winshift.nvim'
-    -- 平滑滚动
-    use 'karb94/neoscroll.nvim'
-    -- drawing
-    use 'willchao612/vim-diagon'
-    -- better escape
-    use { "max397574/better-escape.nvim", }
-    -- start time
-    use {'dstein64/vim-startuptime'}
-    -- 翻译
-    use {'voldikss/vim-translator'}
-    -- project
-    use {'ahmedkhalf/project.nvim'}
-    -- notify
-    use {'rcarriga/nvim-notify'}
-    -- 当前所在的位置
-    use {"SmiteshP/nvim-gps"}
+  }
+  -- scroll bar
+  use( 'petertriho/nvim-scrollbar' )
+  -- fold code
+  use{ 'anuvyklack/pretty-fold.nvim'}
+  -- sandwidth
+  use {'machakann/vim-sandwich'}
+  use {'nvim-neorg/neorg'}
+  -- markdown
+  use{ "iamcco/markdown-preview.nvim",run="cd app && yarn install"}
+  use {'mzlogin/vim-markdown-toc'}
+  --use {'denstiny/picgo-nvim'}
+  -- markdown table
+  use "dhruvasagar/vim-table-mode"
+  -- new file templates
+  use {'tibabit/vim-templates'}
+  -- wilder
+  use {'gelguy/wilder.nvim'}
+  -- live server
+  use {'turbio/bracey.vim',run = 'npm install --prefix server'}
+  -- gitsigns
+  use {'lewis6991/gitsigns.nvim'}
+  -- 注释
+  use {'danymat/neogen'}
+  -- auto save folding
+  --use {'vim-scripts/restore_view.vim'}
+  use {'simrat39/symbols-outline.nvim'}
+  -- clip list
+  use { "AckslD/nvim-neoclip.lua",}
+  -- 竞技性编程快速测试
+  use {
+    'xeluxee/competitest.nvim',
+    requires = 'MunifTanjim/nui.nvim',
+  }
+  -- windows
+  use 'sindrets/winshift.nvim'
+  -- 平滑滚动
+  use 'karb94/neoscroll.nvim'
+  -- drawing
+  use 'willchao612/vim-diagon'
+  -- better escape
+  use { "max397574/better-escape.nvim", }
+  -- start time
+  use {'dstein64/vim-startuptime'}
+  -- 翻译
+  use {'voldikss/vim-translator'}
+  -- project
+  use {'ahmedkhalf/project.nvim'}
+  -- notify
+  use {'rcarriga/nvim-notify'}
+  -- 当前所在的位置
+  use {"SmiteshP/nvim-gps"}
 end)

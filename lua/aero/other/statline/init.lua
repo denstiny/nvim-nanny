@@ -41,12 +41,12 @@ require("bufferline").setup{
           --print(gps.get_location())
           local data = gps.get_data()
           for i = 1, #data do
-            table.insert(result,{text = data[i].icon, guifg="#D6A868"})
-            table.insert(result,{text = data[i].text,guifg="#fff"})
+            table.insert(result,{text = data[i].icon, guifg="#D6A868",gui="bold"})
+            table.insert(result,{text = data[i].text,guifg="#fff",gui="bold"})
             if #data == 1 or i == #data then
-              table.insert(result,{text = " ",guifg="#9B9AAB"})
+              table.insert(result,{text = " ",guifg="#9B9AAB",gui="bold"})
             else
-              table.insert(result,{text = " > ",guifg="#9B9AAB"})
+              table.insert(result,{text = " > ",guifg="#9B9AAB",gui="bold"})
             end
           end
         end

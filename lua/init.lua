@@ -89,7 +89,7 @@ require("aero.project-config")
 require "aero.cmp-config"
 
 -- null ls 代码诊断格式化
-require("aero.null-ls-config")
+--require("aero.null-ls-config")
 
 -- lsp 加载进度
 require("aero.fidget-config")

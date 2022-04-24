@@ -55,8 +55,7 @@ viml用户可以在 static 目录下创建自己的配置
 nvim -c LspInstall c
 ```
 ## Inserallation
-```shell
-
+```bash
   git clone https://github.com/denstiny/nvim-nanny.git
   git clone --depth 1 https://github.com/wbthomason/packer.nvim\
       ~/.local/share/nvim/site/pack/packer/start/packer.nvim
