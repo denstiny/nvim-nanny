@@ -131,16 +131,17 @@ M.CloseMdorg = function ()
 end
 
 --- 保存
-M.ResCodeBlock = function() 
+M.ResCodeBlock = function()
   local code = {}
   if vim.g.start_stus then
+    vim.g.start_stus = false
     for i=1, vim.fn.line('$') do
       code[#code + 1] = vim.fn.getline(i)
     end
     vim.cmd("silent !rm " .. vim.fn.expand("%:p"))
     vim.cmd("bd!")
     vim.cmd("unmap q")
-    vim.api.nvim_buf_set_lines(vim.g.Mbuferid,vim.g.mdorg_start-1,vim.g.mdorg_done,false,code)
+    vim.api.nvim_buf_set_lines(vim.g.Mbufferid,vim.g.mdorg_start-1,vim.g.mdorg_done,false,code)
   end
 end
 
