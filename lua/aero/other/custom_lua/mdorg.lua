@@ -50,22 +50,28 @@ M.GetBufferCodeBlockType = function (line)
     }
   end
 
+  -- 获取开始位置
   while line ~= 0 do
     local str = vim.fn.getline(line)
     local str_begin,str_end,str_sub = string.find(str,filetypeBlock.begin,1,false)
 
     if (str_begin ~= nil and str_end ~= nil) then
-      ty = str_sub
+       ty = str_sub
        start = line+1
+       vim.g.mdorg_indent = str_begin
       break
     end
 
     line = line - 1
   end
 
+  -- 获取结束位置
   while line ~= vim.fn.line('$') do
     line = line + 1
     local str = vim.fn.getline(line)
+    if vim.g.mdorg_indent ~= 1 then
+      str = string.sub(str,vim.g.mdorg_indent)
+    end
     local str_begin,str_end,str_sub = string.find(str,filetypeBlock.done)
 
     if str_begin ~= nil and str_end ~= nil then
@@ -135,8 +141,12 @@ M.ResCodeBlock = function()
   local code = {}
   if vim.g.start_stus then
     vim.g.start_stus = false
+    local space = ""
+    for i = 1, vim.g.mdorg_indent -1 do
+      space = space .. " "
+    end
     for i=1, vim.fn.line('$') do
-      code[#code + 1] = vim.fn.getline(i)
+      code[#code + 1] = space .. vim.fn.getline(i)
     end
     vim.cmd("silent !rm " .. vim.fn.expand("%:p"))
     vim.cmd("bd!")
@@ -148,13 +158,6 @@ end
 --- 编辑当前代码快
 M.EditBufferCodeBlock = function ()
   vim.g.Mbufferid = vim.api.nvim_get_current_buf()
-  -- 创建一个任务组
-  -- vim.cmd[[ 
-  -- augroup AutoCloseMdorg
-  --   autocmd!
-  --   autocmd WinLeave * lua require("aero.other.custom_lua.mdorg").CloseMdorg()
-  -- augroup END
-  -- ]]
   local line = vim.fn.line('.')
   local ty,code,start,done = M.GetBufferCodeBlockType(line)
 
@@ -176,4 +179,11 @@ vim.cmd[[
 command! EditBufferCodeBlock call mdorg_Edit()
 command! ResCodeBlock call mdorg_Res()
 ]]
+
+-- 自动命令
+vim.api.nvim_create_autocmd("BufEnter",{
+  pattern = {"*.md","*.norg"},
+  command = "nmap ed <Cmd>EditBufferCodeBlock<cr>"
+})
+
 return M
