@@ -108,7 +108,7 @@ function M.setup()
     vim.keymap.set("n", "gr","<cmd>TroubleToggle lsp_references<cr>", opts)
     vim.keymap.set("n", "gp", vim.diagnostic.goto_prev, opts)
     vim.keymap.set("n", "gn", vim.diagnostic.goto_next, opts)
-    vim.keymap.set("n", "er", "<Cmd>Trouble<cr>", opts)
+    vim.keymap.set("n", "da", "<Cmd>Trouble<cr>", opts)
     vim.keymap.set("n", "ca", vim.lsp.buf.code_action, opts)
   end
 

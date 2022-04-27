@@ -74,8 +74,6 @@ U.nmap("L", "<Cmd>UndotreeToggle<cr>")
 --  Async Task
 U.nmap("<Leader>r","<Cmd>AsyncTask file-run<cr>")
 U.nmap("<Leader>d", "<Cmd>AsyncTask file-build<cr>")
--- error list
-U.nmap("er", "<Cmd>Trouble<cr>")
 
 --- goto preview
 U.nmap("gpd", "<Cmd>lua require('goto-preview').goto_preview_definition()<CR>")

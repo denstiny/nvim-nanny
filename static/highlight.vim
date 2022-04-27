@@ -20,3 +20,5 @@ hi NormalFloat guibg=bg
 
 
 "exec "hi LineNr guifg=".synIDattr(hlID('SignColumn'),'bg')
+
+

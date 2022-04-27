@@ -60,7 +60,6 @@ packer.startup(function(use)
 
     -- Tools
     use 'phaazon/hop.nvim'
-    use {'numToStr/Comment.nvim'}
     -- Theme
     --use 'folke/tokyonight.nvim'
     use({ 'rose-pine/neovim', as = 'rose-pine', tag = 'v1.*'})
@@ -85,7 +84,7 @@ packer.startup(function(use)
     use {'Pocco81/TrueZen.nvim'}
     
     -- File manager
-    use {'kyazdani42/nvim-tree.lua'}
+    use {'kyazdani42/nvim-tree.lua',commit = "ce2cf713"}
     -- statline
     use {
         'nvim-lualine/lualine.nvim',
@@ -124,6 +123,7 @@ packer.startup(function(use)
   -- sandwidth
   use {'machakann/vim-sandwich'}
   use {'nvim-neorg/neorg'}
+  --use {'nvim-orgmode/orgmode'}
   -- markdown
   use{ "iamcco/markdown-preview.nvim",run="cd app && yarn install"}
   use {'mzlogin/vim-markdown-toc'}

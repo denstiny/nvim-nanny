@@ -66,10 +66,10 @@ nvim_tree.setup {
     update_cwd = false,
   },
   view = {
-    allow_resize = true,
+    --allow_resize = true,
     side = "right",
     width = 30,
-    auto_resize = true
+    --auto_resize = true
   },
   actions = {
     open_file = {
