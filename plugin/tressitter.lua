@@ -5,7 +5,7 @@ local parser_configs = require('nvim-treesitter.parsers').get_parser_configs()
 
 
 -- use ssh to download parser
--- require("nvim-treesitter.install").prefer_git = true
+require("nvim-treesitter.install").prefer_git = true
 -- local parsers = require("nvim-treesitter.parsers").get_parser_configs()
 -- for _, p in pairs(parsers) do
 -- 	p.install_info.url = p.install_info.url:gsub("https://github.com/", "git@github.com:")
@@ -84,6 +84,9 @@ ts.setup {
       node_incremental = "<c-j>",
       node_decremental = "<c-k>"
     }
+  },
+  indent = {
+    enable = true
   },
   textobjects = {
     select = {

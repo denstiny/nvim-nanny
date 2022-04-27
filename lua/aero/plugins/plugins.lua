@@ -141,7 +141,7 @@ packer.startup(function(use)
   -- 注释
   use {'danymat/neogen'}
   -- auto save folding
-  --use {'vim-scripts/restore_view.vim'}
+  use {'vim-scripts/restore_view.vim'}
   use {'simrat39/symbols-outline.nvim'}
   -- clip list
   use { "AckslD/nvim-neoclip.lua",}

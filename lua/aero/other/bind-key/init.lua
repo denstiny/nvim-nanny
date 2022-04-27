@@ -115,3 +115,9 @@ U.nmap("<C-p>", "<Cmd>Telescope neoclip a<cr>")
 U.nmap("<A-t>","<Cmd>echo &filetype<cr>")
 -- Open project
 U.nmap("<A-p>","<Cmd>Telescope projects theme=dropdown<cr>")
+
+-- 音乐旋钮
+U.imap("","<Left>")
+U.imap("","<Right>")
+U.imap("<A->","<Up>")
+U.imap("<A->","<Down>")
