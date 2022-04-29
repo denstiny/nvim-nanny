@@ -109,7 +109,7 @@ packer.startup(function(use)
     -- undo tree
     use {"mbbill/undotree"}
     -- buff line
-    use { 'akinsho/bufferline.nvim' }
+    use { 'akinsho/bufferline.nvim' ,commit = "8f7e72f"}
     use {'kevinhwang91/nvim-hlslens'}
     use { 'nvim-telescope/telescope.nvim','nvim-telescope/telescope-packer.nvim',
     requires = {

@@ -20,17 +20,21 @@ require("bufferline").setup{
       left = function()
         local _mode_me = vim.fn.mode()
         local result = {}
+        -- print(_mode_me)  -- print model name
         if _mode_me == 'n' then
-          table.insert(result,{text = "   " , guifg = "#2C6881",guibg=bg})
+          table.insert(result,{text = "   ", guifg = "#2C6881",guibg=bg})
 
-        elseif _mode_me == 'niI' or _mode_me == 'ic' or _mode_me == 'ix' then
-          table.insert(result,{text = "   " , guifg = "#713A50",guibg=bg})
+        elseif _mode_me == 'i' then
+          table.insert(result,{text = "   ", guifg = "#713A50",guibg=bg})
 
-        elseif _mode_me == 'c' then
-          table.insert(result,{text = "   " , guifg = "#2ABCD7",guibg=bg})
+        elseif _mode_me == 'c' then 
+          table.insert(result,{text = "   ", guifg = "#19E5A6",guibg=bg})
+
+        elseif _mode_me == 'v' or _mode_me == 'V' then
+          table.insert(result,{text = "   ", guifg = "#2ABCD7",guibg=bg})
 
         else
-          table.insert(result,{text = "   " , guifg = "#713A50",guibg=bg})
+          table.insert(result,{text = "   ", guifg = "#713A50",guibg=bg})
 
         end
         return result
