@@ -196,7 +196,7 @@ command! ResCodeBlock call mdorg_Res()
 -- 自动命令
 vim.api.nvim_create_autocmd("BufEnter",{
   pattern = {"*.md","*.norg"},
-  command = "nmap ed <Cmd>EditBufferCodeBlock<cr>"
+  command = "nmap <leader>ed <Cmd>EditBufferCodeBlock<cr>"
 })
 
 return M
