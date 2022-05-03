@@ -15,4 +15,3 @@ plug.setup{
 vim.cmd[[
 hi Folded guibg=bg
 ]]
-require('pretty-fold.preview').setup_keybinding()
