@@ -40,6 +40,7 @@ packer.startup(function(use)
     use {'dmitmel/cmp-digraphs'}
     use {'f3fora/cmp-spell'}
     use {'hrsh7th/cmp-nvim-lsp'}
+    use {'hrsh7th/cmp-cmdline'}
     use {'L3MON4D3/LuaSnip',
         requires={'rafamadriz/friendly-snippets'}
     }
@@ -132,8 +133,6 @@ packer.startup(function(use)
   use "dhruvasagar/vim-table-mode"
   -- new file templates
   use {'tibabit/vim-templates'}
-  -- wilder
-  use {'gelguy/wilder.nvim'}
   -- live server
   use {'turbio/bracey.vim',run = 'npm install --prefix server'}
   -- gitsigns

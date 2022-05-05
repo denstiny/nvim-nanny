@@ -7,7 +7,6 @@ if not has_cmp then return end
 local snip = require "luasnip"
 local kind = require "lspkind"
 local tabnine = require('cmp_tabnine.config')
-
 kind.init({
   preset = 'codicons',
   symbol_map = {
@@ -48,16 +47,24 @@ tabnine:setup({
   snippet_placeholder = '..';
   ignored_file_types = { -- default is not to ignore
   -- uncomment to ignore in lua:
-  -- lua = true
+  lua = true
 };
 })
 
-local t = function(str)
-  return vim.api.nvim_replace_termcodes(str, true, true, true)
-end
+
+--local t = function(str)
+--  return vim.api.nvim_replace_termcodes(str, true, true, true)
+--end
 cmp.setup {
   mapping = {
-    ["<CR>"] = cmp.mapping.confirm({ select = true }),
+    --["<CR>"] = cmp.mapping.confirm({ select = true }),
+    ["<CR>"] = cmp.mapping(function(fallback)
+      if cmp.get_active_entry() then
+        cmp.confirm({select = true})
+      else
+        fallback()
+      end
+    end,{"i","c"}),
     ["<C-p>"] = cmp.mapping.select_prev_item(),
     ["<C-n>"] = cmp.mapping.select_next_item(),
     ["<C-d>"] = cmp.mapping.scroll_docs(-4),
@@ -114,16 +121,34 @@ cmp.setup {
       maxwidth = 80,
     },
   },
-  --documentation = {
-  --  border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
-  --},
   snippet = {
     expand = function(args)
       snip.lsp_expand(args.body)
     end
   },
   experimental = {
-    ghost_text = true
+    ghost_text = true,
+  },
+  window = {
+    completion = {
+      border = {'┌', '─', '┐', '│', '┘', '─', '└', '│'},
+      winhighlight = 'FloatBorder:FloatBorder'
+    },
+    documentation = {
+      border = {'╭', '─', '╮', '│', '╯', '─', '╰', '│'},
+      winhighlight = 'Normal:CmpPmenu,FloatBorder:FloatBorder,CursorLine:PmenuSel,Search:None',
+    }
   },
 }
 
+cmp.setup.cmdline(':', {
+  mapping = cmp.mapping.preset.cmdline(),
+  sources = {
+    { name = 'cmdline' }
+  }
+})
+
+cmp.setup.cmdline('/', {
+  mapping = cmp.mapping.preset.cmdline(),
+  sources = {{name = 'buffer'}}
+})
