@@ -1,8 +1,8 @@
 
-local has_ts, plug = pcall(require, "telescope")
+local has_ts, telescope = pcall(require, "telescope")
 if not has_ts then return end
 
-plug.setup({
+telescope.setup({
     colorscheme = "rose_pine",
     styles = {
       	["function"] = { style = 'italic' },

@@ -1,6 +1,6 @@
 local has_ts, nvim_notify = pcall(require, "trouble")
 if not has_ts then return end
-require("trouble").setup {
+nvim_notify.setup {
   position = "bottom", -- position of the list can be: bottom, top, left, right
   height = 10, -- height of the trouble list when position is top or bottom
   width = 50, -- width of the list when position is left or right

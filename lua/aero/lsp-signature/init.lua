@@ -1,4 +1,4 @@
-local has_ts, plug = pcall(require, "lsp_signature")
+local has_ts, lsp_signature = pcall(require, "lsp_signature")
 if not has_ts then return end
 cfg = {
   debug = false, -- set to true to enable debug logging
@@ -51,4 +51,4 @@ cfg = {
 }
 
 
-plug.setup(cfg)
+lsp_signature.setup(cfg)

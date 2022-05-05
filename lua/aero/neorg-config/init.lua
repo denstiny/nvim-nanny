@@ -1,7 +1,7 @@
-local has_ts, plug = pcall(require, "neorg")
+local has_ts, neorg = pcall(require, "neorg")
 if not has_ts then return end
 
-plug.setup {
+neorg.setup {
   -- Tell Neorg what modules to load
   load = {
     ["core.defaults"] = {}, -- Load all the default modules

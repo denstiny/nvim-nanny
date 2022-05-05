@@ -1,6 +1,6 @@
-local has_ts, plug = pcall(require, "orgmode")
+local has_ts, orgmode = pcall(require, "orgmode")
 if not has_ts then return end
-plug.setup_ts_grammar()
+orgmode.setup_ts_grammar()
 
 -- Tree-sitter configuration
 require'nvim-treesitter.configs'.setup {
@@ -13,7 +13,7 @@ require'nvim-treesitter.configs'.setup {
   ensure_installed = {'org'}, -- Or run :TSUpdate org
 }
 
-plug.setup({
+orgmode.setup({
   org_agenda_files = {'~/Dropbox/org/*', '~/my-orgs/**/*'},
   org_default_notes_file = '~/Dropbox/org/refile.org',
 })

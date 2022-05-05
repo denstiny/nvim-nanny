@@ -1,120 +1,119 @@
 -- Configure packer
 local packer = require "packer" packer.init {
-    auto_clean = true,
-    compile_on_sync = true,
-    display = {prompt_border = 'rounded'}
+  auto_clean = true,
+  compile_on_sync = true,
+  display = {prompt_border = 'rounded'}
 }
 -- init config
 packer.init({
-	git = { clone_timeout = 288, default_url_format = "git@github.com:%s" },
-	max_jobs = 30,
-	display = {
-		open_fn = function()
-			return require("packer.util").float({ border = "single" }) -- single rounded
-		end,
-	},
+  git = { clone_timeout = 288, default_url_format = "git@github.com:%s" },
+  max_jobs = 30,
+  display = {
+    open_fn = function()
+      return require("packer.util").float({ border = "single" }) -- single rounded
+    end,
+  },
 })
 -- Plugin list
 packer.startup(function(use)
-    use 'wbthomason/packer.nvim'
-    use 'lewis6991/impatient.nvim'
-    use {'nvim-lua/popup.nvim', 'nvim-lua/plenary.nvim'}
-    -- LSP
-    use {'neovim/nvim-lspconfig'}
-    use {
-        'williamboman/nvim-lsp-installer',
-        --'folke/lua-dev.nvim',
-        --'jose-elias-alvarez/null-ls.nvim',
-        'j-hui/fidget.nvim' -- lsp进度
+  use 'wbthomason/packer.nvim'
+  use 'lewis6991/impatient.nvim'
+  use {'nvim-lua/popup.nvim', 'nvim-lua/plenary.nvim'}
+  -- LSP
+  use {'neovim/nvim-lspconfig'}
+  use {
+    'williamboman/nvim-lsp-installer',
+    --'folke/lua-dev.nvim',
+    --'jose-elias-alvarez/null-ls.nvim',
+    'j-hui/fidget.nvim' -- lsp进度
+  }
+  use {"p00f/clangd_extensions.nvim"}
+  -- Completion
+  use {'hrsh7th/nvim-cmp'}
+  use {'hrsh7th/cmp-nvim-lua'}
+  use {'onsails/lspkind-nvim'}
+  use {'hrsh7th/cmp-nvim-lsp-signature-help'}
+  use {'windwp/nvim-autopairs'}
+  use {'hrsh7th/cmp-buffer'}
+  use {'hrsh7th/cmp-path'}
+  use {'hrsh7th/cmp-calc'}
+  use {'dmitmel/cmp-digraphs'}
+  use {'f3fora/cmp-spell'}
+  use {'hrsh7th/cmp-nvim-lsp'}
+  use {'hrsh7th/cmp-cmdline'}
+  use {'L3MON4D3/LuaSnip',
+    requires={'rafamadriz/friendly-snippets'}
+  }
+  use {"saadparwaiz1/cmp_luasnip"}
+  use {'tzachar/cmp-tabnine', run='./install.sh', requires = 'hrsh7th/nvim-cmp'}
+  use {'ray-x/lsp_signature.nvim'}
+  use { 'rmagatti/goto-preview' }
+  use { 'Chiel92/vim-autoformat' }
+  -- lsp icon
+  use {
+    'folke/trouble.nvim',
+    'kyazdani42/nvim-web-devicons',
+  }
+  -- Treesitter
+  use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' ,commit = "facc6fd"}
+  use {'nvim-treesitter/nvim-treesitter-refactor'}
+  use {'nvim-treesitter/playground'}
+
+  -- Tools
+  use 'phaazon/hop.nvim'
+  -- Theme
+  --use 'folke/tokyonight.nvim'
+  use({ 'rose-pine/neovim', as = 'rose-pine', tag = 'v1.*'})
+  use 'lukas-reineke/indent-blankline.nvim'
+
+  -- term
+  use {'akinsho/toggleterm.nvim'}
+  -- code run
+  use { 'michaelb/sniprun', run = 'bash ./install.sh'}
+  use {'jubnzv/mdeval.nvim'}
+  use {'skywind3000/asyncrun.vim',requires={'skywind3000/asynctasks.vim'}}
+
+  -- color
+  use {'norcalli/nvim-colorizer.lua',config="require'colorizer'.setup()"}
+
+  -- debug
+
+  use {'puremourning/vimspector',run='python3 install_gadget.py --all'}
+
+  -- 无干扰写作
+  use {'Pocco81/TrueZen.nvim'}
+
+  -- File manager
+  use {'kyazdani42/nvim-tree.lua',commit = "ce2cf713"}
+  -- statline
+  use {
+    'nvim-lualine/lualine.nvim',
+    requires = {
+      'kyazdani42/nvim-web-devicons',
+      opt = true
     }
-    use {"p00f/clangd_extensions.nvim"}
-    -- Completion
-    use {'hrsh7th/nvim-cmp'}
-    use {'hrsh7th/cmp-nvim-lua'}
-    use {'onsails/lspkind-nvim'}
-    use {'hrsh7th/cmp-nvim-lsp-signature-help'}
-    use {'windwp/nvim-autopairs'}
-    use {'hrsh7th/cmp-buffer'}
-    use {'hrsh7th/cmp-path'}
-    use {'hrsh7th/cmp-calc'}
-    use {'dmitmel/cmp-digraphs'}
-    use {'f3fora/cmp-spell'}
-    use {'hrsh7th/cmp-nvim-lsp'}
-    use {'hrsh7th/cmp-cmdline'}
-    use {'L3MON4D3/LuaSnip',
-        requires={'rafamadriz/friendly-snippets'}
-    }
-    use {"saadparwaiz1/cmp_luasnip"}
-    use {'tzachar/cmp-tabnine', run='./install.sh', requires = 'hrsh7th/nvim-cmp'}
-    use {'ray-x/lsp_signature.nvim'}
-    use { 'rmagatti/goto-preview' }
-    use { 'Chiel92/vim-autoformat' }
-    -- lsp icon
-    use {
-        'folke/trouble.nvim',
-        'kyazdani42/nvim-web-devicons',
-    }
-    -- Treesitter
-    use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' ,commit = "facc6fd"}
-    use {'nvim-treesitter/nvim-treesitter-refactor'}
-    use {'nvim-treesitter/playground'}
+  }
+  use 'mg979/vim-visual-multi'
 
-    -- Tools
-    use 'phaazon/hop.nvim'
-    -- Theme
-    --use 'folke/tokyonight.nvim'
-    use({ 'rose-pine/neovim', as = 'rose-pine', tag = 'v1.*'})
-    use 'lukas-reineke/indent-blankline.nvim'
-    use {'RRethy/nvim-base16'}
+  use 'easymotion/vim-easymotion'
+  use 'ZSaberLv0/vim-easymotion-chs'
 
-    -- term
-    use {'akinsho/toggleterm.nvim'}
-    -- code run
-    use { 'michaelb/sniprun', run = 'bash ./install.sh'}
-    use {'jubnzv/mdeval.nvim'}
-    use {'skywind3000/asyncrun.vim',requires={'skywind3000/asynctasks.vim'}}
-
-    -- color
-    use {'norcalli/nvim-colorizer.lua',config="require'colorizer'.setup()"}
-
-    -- debug
-
-    use {'puremourning/vimspector',run='python3 install_gadget.py --all'}
-
-    -- 无干扰写作
-    use {'Pocco81/TrueZen.nvim'}
-    
-    -- File manager
-    use {'kyazdani42/nvim-tree.lua',commit = "ce2cf713"}
-    -- statline
-    use {
-        'nvim-lualine/lualine.nvim',
-        requires = {
-            'kyazdani42/nvim-web-devicons',
-            opt = true
-        }
-    }
-    use 'mg979/vim-visual-multi'
-
-    use 'easymotion/vim-easymotion'
-    use 'ZSaberLv0/vim-easymotion-chs'
-
-    -- vim start ui
-    use {"mhinz/vim-startify",branch="center",config=function ()
-      vim.cmd[[ 
+  -- vim start ui
+  use {"mhinz/vim-startify",branch="center",config=function ()
+    vim.cmd[[ 
       autocmd BufEnter * lua startify_Project() 
       ]]
-    end}
+  end}
 
-    -- 自动加载项目目录到startify
-    -- undo tree
-    use {"mbbill/undotree"}
-    -- buff line
-    use { 'akinsho/bufferline.nvim' ,commit = "8f7e72f"}
-    use {'kevinhwang91/nvim-hlslens'}
-    use { 'nvim-telescope/telescope.nvim','nvim-telescope/telescope-packer.nvim',
+  -- 自动加载项目目录到startify
+  -- undo tree
+  use {"mbbill/undotree"}
+  -- buff line
+  use { 'akinsho/bufferline.nvim' ,commit = "8f7e72f"}
+  use {'kevinhwang91/nvim-hlslens'}
+  use { 'nvim-telescope/telescope.nvim','nvim-telescope/telescope-packer.nvim',
     requires = {
-      {'nvim-lua/plenary.nvim'}
+      {'nvim-lua/plenary.nvim'},
     }
   }
   -- scroll bar

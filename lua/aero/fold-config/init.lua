@@ -1,6 +1,6 @@
-local has_ts, plug = pcall(require, "pretty-fold")
+local has_ts, pretty_fold = pcall(require, "pretty-fold")
 if not has_ts then return end
-plug.setup{
+pretty_fold.setup{
   keep_indentation = false,
   fill_char = ' ',
   sections = {

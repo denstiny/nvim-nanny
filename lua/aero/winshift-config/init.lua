@@ -1,8 +1,8 @@
 
-local has_ts, plug = pcall(require, "winshift")
+local has_ts, winshift = pcall(require, "winshift")
 if not has_ts then return end
 
-plug.setup({
+winshift.setup({
   highlight_moving_win = true,  -- Highlight the window being moved
   focused_hl_group = "Visual",  -- The highlight group used for the moving window
   moving_win_options = {

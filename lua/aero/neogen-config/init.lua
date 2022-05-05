@@ -1,5 +1,5 @@
 
-local has_ts, plug = pcall(require, "neogen")
+local has_ts, neogen = pcall(require, "neogen")
 if not has_ts then return end
-plug.setup {
+neogen.setup {
 }

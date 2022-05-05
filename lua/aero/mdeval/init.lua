@@ -1,7 +1,7 @@
 
-local has_ts, plug = pcall(require, "mdeval")
+local has_ts, mdeval = pcall(require, "mdeval")
 if not has_ts then return end
-plug.setup({
+mdeval.setup({
   -- Don't ask before executing code blocks
   allowed_file_types={'rust', 'haskell','cpp','c','python'},
   require_confirmation=false,

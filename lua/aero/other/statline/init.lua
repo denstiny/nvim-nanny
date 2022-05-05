@@ -4,8 +4,7 @@ require('lualine').setup {
   }
 }
 vim.opt.termguicolors = true
-local bg = vim.fn.synIDattr(vim.fn.hlID("SignColumn"),"bg")
-local m = 1
+local bg = vim.fn.synIDattr(vim.fn.hlID("Normal"),"bg")
 require("nvim-gps").setup()
 local gps = require("nvim-gps")
 require("bufferline").setup{

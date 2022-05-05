@@ -1,6 +1,6 @@
-local has_ts, plug = pcall(require, "null-ls")
+local has_ts, null_ls = pcall(require, "null-ls")
 if not has_ts then return end
-plug.setup({
+null_ls.setup({
   debug = true,
   sources = {
     require("null-ls").builtins.formatting.stylua,
@@ -13,7 +13,7 @@ plug.setup({
 local api = vim.api
 
 local no_really = {
-  method = plug.methods.DIAGNOSTICS,
+  method = null_ls.methods.DIAGNOSTICS,
   filetypes = { "markdown", "text" },
   generator = {
     fn = function(params)
@@ -39,4 +39,4 @@ local no_really = {
     end,
   },
 }
-plug.register(no_really)
+null_ls.register(no_really)

@@ -1,7 +1,7 @@
 
-local has_ts, plug = pcall(require, "goto-preview")
+local has_ts, goto_preview = pcall(require, "goto-preview")
 if not has_ts then return end
-plug.setup {
+goto_preview.setup {
 	local_config_file_name = ".competitest.lua",
 
 	floating_border = "rounded",

@@ -1,6 +1,6 @@
-local has_ts, plug = pcall(require, "telescope")
+local has_ts, telescope = pcall(require, "telescope")
 if not has_ts then return end
-plug.setup{
+telescope.setup{
   defaults = {
       layout_config = {
       vertical = { width = 0.5 }
@@ -25,13 +25,10 @@ plug.setup{
     -- Now the picker_config_key will be applied every time you call this
     -- builtin picker
     find_files = {
-      theme = "dropdown",
     },
     current_buffer_fuzzy_find = {
-      theme = "dropdown",
     },
     grep_string = {
-      theme = "dropdown",
     },
     buffers = {
       theme = "dropdown",
@@ -45,5 +42,6 @@ plug.setup{
     -- please take a look at the readme of the extension you want to configure
   }
 }
-require("telescope").load_extension "packer"
-require('telescope').load_extension('projects')
+telescope.load_extension "packer"
+telescope.load_extension('projects')
+

@@ -1,13 +1,13 @@
 -- Loading any vscode snippets from plugins
 
-local has_ts, plug = pcall(require, "luasnip")
+local has_ts, luasnip = pcall(require, "luasnip")
 if not has_ts then return end
 
 require('luasnip.loaders.from_vscode').lazy_load()
 local util = require("luasnip.util.util")
 
 
-plug.config.setup({
+luasnip.config.setup({
 	parser_nested_assembler = function(_, snippet)
 		local select = function(snip, no_move)
 			snip.parent:enter_node(snip.indx)
@@ -83,7 +83,7 @@ vim.api.nvim_create_autocmd("ModeChanged", {
   group    = augroup,
   pattern  = "*:s",
   callback = function ()
-    if plug.in_snippet() then
+    if luasnip.in_snippet() then
       return vim.diagnostic.disable()
     end
   end
@@ -93,7 +93,7 @@ vim.api.nvim_create_autocmd("ModeChanged", {
   group    = augroup,
   pattern  = "[is]:n",
   callback = function ()
-    if plug.in_snippet() then
+    if luasnip.in_snippet() then
       return vim.diagnostic.enable()
     end
   end
