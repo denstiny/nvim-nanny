@@ -65,21 +65,16 @@ packer.startup(function(use)
   --use 'folke/tokyonight.nvim'
   use({ 'rose-pine/neovim', as = 'rose-pine', tag = 'v1.*'})
   use 'lukas-reineke/indent-blankline.nvim'
-
   -- term
   use {'akinsho/toggleterm.nvim'}
   -- code run
   use { 'michaelb/sniprun', run = 'bash ./install.sh'}
   use {'jubnzv/mdeval.nvim'}
   use {'skywind3000/asyncrun.vim',requires={'skywind3000/asynctasks.vim'}}
-
   -- color
   use {'norcalli/nvim-colorizer.lua',config="require'colorizer'.setup()"}
-
   -- debug
-
   use {'puremourning/vimspector',run='python3 install_gadget.py --all'}
-
   -- 无干扰写作
   use {'Pocco81/TrueZen.nvim'}
 
@@ -94,17 +89,14 @@ packer.startup(function(use)
     }
   }
   use 'mg979/vim-visual-multi'
-
   use 'easymotion/vim-easymotion'
   use 'ZSaberLv0/vim-easymotion-chs'
-
   -- vim start ui
   use {"mhinz/vim-startify",branch="center",config=function ()
     vim.cmd[[ 
       autocmd BufEnter * lua startify_Project() 
       ]]
   end}
-
   -- 自动加载项目目录到startify
   -- undo tree
   use {"mbbill/undotree"}

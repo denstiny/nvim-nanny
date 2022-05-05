@@ -1,6 +1,6 @@
 -- @author      : aero (2254228017@qq.com)
 -- @file        : mdorg
--- @created     : 星期一 3月 28, 2022 20:12:46 CST 
+-- @created     : 星期一 3月 28, 2022 20:12:46 CST
 -- @github      : https://github.com/denstiny
 -- @blog        : https://denstiny.github.io
 
@@ -103,13 +103,13 @@ end
 --- 插入代码块
 ---@param code
 M.InsertBlockCode = function (code)
-  buferid = vim.api.nvim_get_current_buf()
+  local buferid = vim.api.nvim_get_current_buf()
   vim.api.nvim_buf_set_lines(buferid,0,-1,false,code)
 end
 
 
 --- 创建一个新的buffer,编辑代码快
----@param ty  分屏方式
+---@param ty
 M.CreatedBufferEditCodeBlock = function (ty)
   M.OpenDir(M.testPath)
   if M.createdBuffer == "vs" then
@@ -130,8 +130,8 @@ M.OpenDir = function(pathname)
 end
 
   --- 分隔字符串
-  ---@param str 字符串
-  ---@param reps 关键字
+  ---@param str
+  ---@param reps
   ---@return 
 function split(str,reps)
   local resultStrList = {}
@@ -140,7 +140,7 @@ function split(str,reps)
 end
 
 --- 自动释放当前窗口
----@param w 
+---@param w
 M.CloseMdorg = function ()
   local file = split(vim.fn.expand("%:t"),'.')
   if vim.api.nvim__buf_stats(vim.g.Mbufferid) ~= 0 and file[1] == M.filename then
