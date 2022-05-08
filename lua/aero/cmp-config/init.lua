@@ -46,9 +46,9 @@ tabnine:setup({
   run_on_every_keystroke = true;
   snippet_placeholder = '..';
   ignored_file_types = { -- default is not to ignore
-  -- uncomment to ignore in lua:
-  lua = true
-};
+    -- uncomment to ignore in lua:
+    lua = true
+  };
 })
 
 
@@ -102,17 +102,28 @@ cmp.setup {
     end, { "i", "s" }),
   },
   sources = {
-    {name = "nvim_lsp"},
+    {name = "nvim_lsp",priority=10},
     {name = "neorg"},
     --{name = "nvim_lsp_signature_help"},
     {name = "luasnip"},
     {name = "nvim_lua"},
-    {name = "buffer", keyword_lenght = 5},
+    {name = "buffer", keyword_lenght = 5,priority=9},
     {name = "path"},
     {name = "calc"},
-    {name = 'cmp_tabnine'},
+    {name = 'cmp_tabnine',priority=10},
     --{name = "digraphs"},
     {name = "spell"}
+  },
+  sorting = {
+    comparators = {
+      cmp.config.compare.score,
+      cmp.config.compare.exact,
+      cmp.config.compare.order,
+      cmp.config.compare.offset,
+      cmp.config.compare.kind,
+      cmp.config.compare.sort_text,
+      cmp.config.compare.length,
+    },
   },
   formatting = {
     fields = { 'kind', 'abbr', 'menu' },

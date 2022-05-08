@@ -32,3 +32,4 @@ set fo-=r
 set selection=exclusive
 set noshowmode  "不显示模式信息"
 set timeoutlen=400
+set fillchars=eob:\ 

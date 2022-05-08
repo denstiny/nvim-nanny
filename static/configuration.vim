@@ -375,3 +375,7 @@ augroup quickfix
   autocmd BufEnter * if &filetype == 'qf' |nmap <silent> q :q<cr>|endif
   autocmd BufDelete * if &filetype == 'qf' |unmap q|endif
 augroup END
+
+
+let &t_Cs = "\e[4:3m"
+let &t_Ce = "\e[4:0m"

@@ -96,3 +96,6 @@ require("aero.fidget-config")
 
 -- lsp symbols outline
 require("aero.symboes-outline-config")
+
+-- 远程开发
+require("aero.distant-config")

@@ -55,7 +55,7 @@ packer.startup(function(use)
     'kyazdani42/nvim-web-devicons',
   }
   -- Treesitter
-  use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' ,commit = "facc6fd"}
+  use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
   use {'nvim-treesitter/nvim-treesitter-refactor'}
   use {'nvim-treesitter/playground'}
 
@@ -158,4 +158,6 @@ packer.startup(function(use)
   use {'rcarriga/nvim-notify'}
   -- 当前所在的位置
   use {"SmiteshP/nvim-gps"}
+  -- 远程开发
+  use {'chipsenkbeil/distant.nvim'}
 end)
