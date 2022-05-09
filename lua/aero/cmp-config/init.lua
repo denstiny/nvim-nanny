@@ -151,15 +151,3 @@ cmp.setup {
     }
   },
 }
-
-cmp.setup.cmdline(':', {
-  mapping = cmp.mapping.preset.cmdline(),
-  sources = {
-    { name = 'cmdline' }
-  }
-})
-
-cmp.setup.cmdline('/', {
-  mapping = cmp.mapping.preset.cmdline(),
-  sources = {{name = 'buffer'}}
-})

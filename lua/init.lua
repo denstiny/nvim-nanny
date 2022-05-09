@@ -14,7 +14,7 @@ require "aero.trouble-config"
 require "aero.indent-config"
 
 -- lsp
-require "aero.lsp"
+require "aero.lsp-setup"
 
 -- clangd extension
 --require "aero.clangd_extensions"

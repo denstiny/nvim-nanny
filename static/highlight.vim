@@ -21,4 +21,5 @@ hi NormalFloat guibg=bg
 
 "exec "hi LineNr guifg=".synIDattr(hlID('SignColumn'),'bg')
 
-
+" 替换符号的显示样式
+"syn match WhiteSpace /##/ containedin=ALL conceal cchar=\ 

@@ -1,8 +1,9 @@
 -- Configure packer
-local packer = require "packer" packer.init {
+local packer = require "packer"
+packer.init {
   auto_clean = true,
   compile_on_sync = true,
-  display = {prompt_border = 'rounded'}
+  display = { prompt_border = 'rounded' }
 }
 -- init config
 packer.init({
@@ -18,35 +19,33 @@ packer.init({
 packer.startup(function(use)
   use 'wbthomason/packer.nvim'
   use 'lewis6991/impatient.nvim'
-  use {'nvim-lua/popup.nvim', 'nvim-lua/plenary.nvim'}
+  use { 'nvim-lua/popup.nvim', 'nvim-lua/plenary.nvim' }
   -- LSP
-  use {'neovim/nvim-lspconfig'}
+  use { 'neovim/nvim-lspconfig' }
   use {
     'williamboman/nvim-lsp-installer',
-    --'folke/lua-dev.nvim',
-    --'jose-elias-alvarez/null-ls.nvim',
     'j-hui/fidget.nvim' -- lsp进度
   }
-  use {"p00f/clangd_extensions.nvim"}
+  use { "p00f/clangd_extensions.nvim" }
   -- Completion
-  use {'hrsh7th/nvim-cmp'}
-  use {'hrsh7th/cmp-nvim-lua'}
-  use {'onsails/lspkind-nvim'}
-  use {'hrsh7th/cmp-nvim-lsp-signature-help'}
-  use {'windwp/nvim-autopairs'}
-  use {'hrsh7th/cmp-buffer'}
-  use {'hrsh7th/cmp-path'}
-  use {'hrsh7th/cmp-calc'}
-  use {'dmitmel/cmp-digraphs'}
-  use {'f3fora/cmp-spell'}
-  use {'hrsh7th/cmp-nvim-lsp'}
-  use {'hrsh7th/cmp-cmdline'}
-  use {'L3MON4D3/LuaSnip',
-    requires={'rafamadriz/friendly-snippets'}
+  use { 'hrsh7th/nvim-cmp' }
+  use { 'hrsh7th/cmp-nvim-lua' }
+  use { 'onsails/lspkind-nvim' }
+  use { 'hrsh7th/cmp-nvim-lsp-signature-help' }
+  use { 'windwp/nvim-autopairs' }
+  use { 'hrsh7th/cmp-buffer' }
+  use { 'hrsh7th/cmp-path' }
+  use { 'hrsh7th/cmp-calc' }
+  use { 'dmitmel/cmp-digraphs' }
+  use { 'f3fora/cmp-spell' }
+  use { 'hrsh7th/cmp-nvim-lsp' }
+  use { 'hrsh7th/cmp-cmdline' }
+  use { 'L3MON4D3/LuaSnip',
+    requires = { 'rafamadriz/friendly-snippets' }
   }
-  use {"saadparwaiz1/cmp_luasnip"}
-  use {'tzachar/cmp-tabnine', run='./install.sh', requires = 'hrsh7th/nvim-cmp'}
-  use {'ray-x/lsp_signature.nvim'}
+  use { "saadparwaiz1/cmp_luasnip" }
+  use { 'tzachar/cmp-tabnine', run = './install.sh', requires = 'hrsh7th/nvim-cmp' }
+  use { 'ray-x/lsp_signature.nvim' }
   use { 'rmagatti/goto-preview' }
   use { 'Chiel92/vim-autoformat' }
   -- lsp icon
@@ -55,31 +54,31 @@ packer.startup(function(use)
     'kyazdani42/nvim-web-devicons',
   }
   -- Treesitter
-  use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
-  use {'nvim-treesitter/nvim-treesitter-refactor'}
-  use {'nvim-treesitter/playground'}
+  use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
+  use { 'nvim-treesitter/nvim-treesitter-refactor' }
+  use { 'nvim-treesitter/playground' }
 
   -- Tools
   use 'phaazon/hop.nvim'
   -- Theme
   --use 'folke/tokyonight.nvim'
-  use({ 'rose-pine/neovim', as = 'rose-pine', tag = 'v1.*'})
+  use({ 'rose-pine/neovim', as = 'rose-pine', tag = 'v1.*' })
   use 'lukas-reineke/indent-blankline.nvim'
   -- term
-  use {'akinsho/toggleterm.nvim'}
+  use { 'akinsho/toggleterm.nvim' }
   -- code run
-  use { 'michaelb/sniprun', run = 'bash ./install.sh'}
-  use {'jubnzv/mdeval.nvim'}
-  use {'skywind3000/asyncrun.vim',requires={'skywind3000/asynctasks.vim'}}
+  use { 'michaelb/sniprun', run = 'bash ./install.sh' }
+  use { 'jubnzv/mdeval.nvim' }
+  use { 'skywind3000/asyncrun.vim', requires = { 'skywind3000/asynctasks.vim' } }
   -- color
-  use {'norcalli/nvim-colorizer.lua',config="require'colorizer'.setup()"}
+  use { 'norcalli/nvim-colorizer.lua', config = "require'colorizer'.setup()" }
   -- debug
-  use {'puremourning/vimspector',run='python3 install_gadget.py --all'}
+  use { 'puremourning/vimspector', run = 'python3 install_gadget.py --all' }
   -- 无干扰写作
-  use {'Pocco81/TrueZen.nvim'}
+  use { 'Pocco81/TrueZen.nvim' }
 
   -- File manager
-  use {'kyazdani42/nvim-tree.lua',commit = "ce2cf713"}
+  use { 'kyazdani42/nvim-tree.lua', commit = "ce2cf713" }
   -- statline
   use {
     'nvim-lualine/lualine.nvim',
@@ -92,49 +91,49 @@ packer.startup(function(use)
   use 'easymotion/vim-easymotion'
   use 'ZSaberLv0/vim-easymotion-chs'
   -- vim start ui
-  use {"mhinz/vim-startify",branch="center",config=function ()
-    vim.cmd[[ 
+  use { "mhinz/vim-startify", branch = "center", config = function()
+    vim.cmd [[ 
       autocmd BufEnter * lua startify_Project() 
       ]]
-  end}
+  end }
   -- 自动加载项目目录到startify
   -- undo tree
-  use {"mbbill/undotree"}
+  use { "mbbill/undotree" }
   -- buff line
-  use { 'akinsho/bufferline.nvim' ,commit = "8f7e72f"}
-  use {'kevinhwang91/nvim-hlslens'}
-  use { 'nvim-telescope/telescope.nvim','nvim-telescope/telescope-packer.nvim',
+  use { 'akinsho/bufferline.nvim', commit = "8f7e72f" }
+  use { 'kevinhwang91/nvim-hlslens' }
+  use { 'nvim-telescope/telescope.nvim', 'nvim-telescope/telescope-packer.nvim',
     requires = {
-      {'nvim-lua/plenary.nvim'},
+      { 'nvim-lua/plenary.nvim' },
     }
   }
   -- scroll bar
-  use( 'petertriho/nvim-scrollbar' )
+  use('petertriho/nvim-scrollbar')
   -- fold code
-  use{ 'anuvyklack/pretty-fold.nvim'}
+  use { 'anuvyklack/pretty-fold.nvim' }
   -- sandwidth
-  use {'machakann/vim-sandwich'}
-  use {'nvim-neorg/neorg'}
+  use { 'machakann/vim-sandwich' }
+  use { 'nvim-neorg/neorg' }
   --use {'nvim-orgmode/orgmode'}
   -- markdown
-  use{ "iamcco/markdown-preview.nvim",run="cd app && yarn install"}
-  use {'mzlogin/vim-markdown-toc'}
+  use { "iamcco/markdown-preview.nvim", run = "cd app && yarn install" }
+  use { 'mzlogin/vim-markdown-toc' }
   --use {'denstiny/picgo-nvim'}
   -- markdown table
   use "dhruvasagar/vim-table-mode"
   -- new file templates
-  use {'tibabit/vim-templates'}
+  use { 'tibabit/vim-templates' }
   -- live server
-  use {'turbio/bracey.vim',run = 'npm install --prefix server'}
+  use { 'turbio/bracey.vim', run = 'npm install --prefix server' }
   -- gitsigns
-  use {'lewis6991/gitsigns.nvim'}
+  use { 'lewis6991/gitsigns.nvim' }
   -- 注释
-  use {'danymat/neogen'}
+  use { 'danymat/neogen' }
   -- auto save folding
-  use {'vim-scripts/restore_view.vim'}
-  use {'simrat39/symbols-outline.nvim'}
+  use { 'vim-scripts/restore_view.vim' }
+  use { 'simrat39/symbols-outline.nvim' }
   -- clip list
-  use { "AckslD/nvim-neoclip.lua",}
+  use { "AckslD/nvim-neoclip.lua", }
   -- 竞技性编程快速测试
   use {
     'xeluxee/competitest.nvim',
@@ -149,15 +148,19 @@ packer.startup(function(use)
   -- better escape
   use { "max397574/better-escape.nvim", }
   -- start time
-  use {'dstein64/vim-startuptime'}
+  use { 'dstein64/vim-startuptime' }
   -- 翻译
-  use {'voldikss/vim-translator'}
+  use { 'voldikss/vim-translator' }
   -- project
-  use {'ahmedkhalf/project.nvim'}
+  use { 'ahmedkhalf/project.nvim' }
   -- notify
-  use {'rcarriga/nvim-notify'}
+  use { 'rcarriga/nvim-notify' }
   -- 当前所在的位置
-  use {"SmiteshP/nvim-gps"}
+  use { "SmiteshP/nvim-gps" }
   -- 远程开发
-  use {'chipsenkbeil/distant.nvim'}
+  use { 'chipsenkbeil/distant.nvim' }
+  -- wilder
+  use { 'gelguy/wilder.nvim' }
+  -- make
+  use "ravenxrz/neovim-cmake"
 end)
