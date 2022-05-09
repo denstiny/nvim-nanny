@@ -74,10 +74,10 @@ local function lsp_keymaps(bufnr)
 end
 
 M.on_attach = function(client, bufnr)
-  -- if client.name == "tsserver" or client.name == "clangd" then
-  -- client.resolved_capabilities.document_formatting = false
-  -- end
-  vim.cmd[[autocmd BufWritePost * Format]]
+  if client.name == "tsserver" or client.name == "clangd" then
+    client.resolved_capabilities.document_formatting = false
+  end
+  vim.cmd [[autocmd BufWritePost * Format]]
   lsp_keymaps(bufnr)
   lsp_highlight_document(client)
 

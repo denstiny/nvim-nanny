@@ -10,9 +10,17 @@
     "description": "Lorem Ipsum Sentence"
   },
   "cream": {
-      "prefix" : "Ice cream",
+      "prefix" : "cream",
       "body":"🎉",
       "description": "Ice cream"
+  },
+  "ulist": {
+    "prefix": "unordered list",
+    "body": ["- ${1:text}"]
+  },
+  "olist": {
+    "prefix": "ordered list",
+    "body" : ["~ ${1:text}"]
   },
   "link": {
       "prefix" : "lfile",

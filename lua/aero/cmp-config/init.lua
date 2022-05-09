@@ -103,7 +103,7 @@ cmp.setup {
   },
   sources = {
     {name = "nvim_lsp",priority=10},
-    {name = "neorg"},
+    {name = "neorg",priority=11},
     --{name = "nvim_lsp_signature_help"},
     {name = "luasnip"},
     {name = "nvim_lua"},
