@@ -71,12 +71,25 @@ nvim_tree.setup {
     width = 30,
     --auto_resize = true
   },
+  renderer = {
+    indent_markers = {
+      enable = true,
+      icons = {
+        corner = "└ ",
+        edge = "│ ",
+        none = "  ",
+      },
+    },
+    icons = {
+      webdev_colors = true,
+    }
+  },
   actions = {
     open_file = {
       resize_window = true
     }
   }
 }
--- vim.cmd[[ 
+-- vim.cmd[[
 --   autocmd  VimResized,Bufnew * NvimTreeResize 30
 -- ]]
