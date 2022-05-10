@@ -20,8 +20,8 @@ neorg.setup {
       },
     }, -- Allows for use of icons
     ["core.keybinds"] = {
-      config={
-        default_keybinds=false
+      config = {
+        default_keybinds = false
       }
     },
     ["core.norg.dirman"] = { -- Manage your directories with Neorg
@@ -42,7 +42,7 @@ neorg.setup {
     },
     ["core.norg.qol.toc"] = {
       config = { -- 生成目录
-        toc_split_placement='left',
+        toc_split_placement = 'left',
         default_toc_mode = "split",
       }
     },
@@ -75,15 +75,16 @@ neorg.setup {
 
 
 
-vim.api.nvim_create_autocmd({"BufEnter"},{
-  pattern = {"*.org","*.norg","*.md"},
-  callback= function ()
+vim.api.nvim_create_autocmd({ "BufEnter" }, {
+  pattern = { "*.org", "*.norg", "*.md" },
+  callback = function()
     vim.opt.conceallevel = 2
     --vim.opt.concealcursor = 'n'
-    vim.cmd[[
-    syn match keyword /@code/ containedin=ALL conceal cchar=[
-    syn match keyword /@end/ containedin=ALL conceal cchar=]
-    syn match keyword /@/ containedin=ALL conceal cchar=[
+    vim.cmd [[
+    hi conceal guifg=#31748f guibg=#15131E
+    syn match keyword /@code/ containedin=ALL conceal cchar=
+    syn match keyword /@end/ containedin=ALL conceal cchar= 
+    syn match keyword /@/ containedin=ALL conceal cchar= 
     ]]
   end
 })

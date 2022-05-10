@@ -42,9 +42,8 @@ function M.getEditType(ty)
   return ty
 end
 
-
 --- 获取buffer
-M.GetBufferCodeBlockType = function (line)
+M.GetBufferCodeBlockType = function(line)
   local ty = ''
   local code = {}
   local filetype = vim.bo.filetype
@@ -66,12 +65,12 @@ M.GetBufferCodeBlockType = function (line)
   -- 获取开始位置
   while line ~= 0 do
     local str = vim.fn.getline(line)
-    local str_begin,str_end,str_sub = string.find(str,filetypeBlock.begin,1,false)
+    local str_begin, str_end, str_sub = string.find(str, filetypeBlock.begin, 1, false)
 
     if (str_begin ~= nil and str_end ~= nil) then
-       ty = M.getEditType(str_sub)
-       start = line+1
-       vim.g.mdorg_indent = str_begin
+      ty = M.getEditType(str_sub)
+      start = line + 1
+      vim.g.mdorg_indent = str_begin
       break
     end
 
@@ -83,37 +82,37 @@ M.GetBufferCodeBlockType = function (line)
     line = line + 1
     local str = vim.fn.getline(line)
     if vim.g.mdorg_indent ~= 1 then
-      str = string.sub(str,vim.g.mdorg_indent)
+      str = string.sub(str, vim.g.mdorg_indent)
     end
-    local str_begin,str_end,str_sub = string.find(str,filetypeBlock.done)
+    local str_begin, str_end, str_sub = string.find(str, filetypeBlock.done)
 
     if str_begin ~= nil and str_end ~= nil then
       done = line - 1
       break
     end
 
-    code[#code+1] = str
+    code[#code + 1] = str
   end
 
-  return ty,code,start,done
+  return ty, code, start, done
 end
 
 
 
 --- 插入代码块
 ---@param code
-M.InsertBlockCode = function (code)
+M.InsertBlockCode = function(code)
   local buferid = vim.api.nvim_get_current_buf()
-  vim.api.nvim_buf_set_lines(buferid,0,-1,false,code)
+  vim.api.nvim_buf_set_lines(buferid, 0, -1, false, code)
 end
 
 
 --- 创建一个新的buffer,编辑代码快
 ---@param ty
-M.CreatedBufferEditCodeBlock = function (ty)
+M.CreatedBufferEditCodeBlock = function(ty)
   M.OpenDir(M.testPath)
   if M.createdBuffer == "vs" then
-    vim.cmd("vsplit ".. M.testPath .. M.filename .. "." ..ty)
+    vim.cmd("vsplit " .. M.testPath .. M.filename .. "." .. ty)
     vim.g.start_stus = true
   end
 end
@@ -125,24 +124,24 @@ M.OpenDir = function(pathname)
   if file then
     file:close()
   else
-    os.execute('mkdir -p '.. pathname)
+    os.execute('mkdir -p ' .. pathname)
   end
 end
 
-  --- 分隔字符串
-  ---@param str
-  ---@param reps
-  ---@return 
-function split(str,reps)
+--- 分隔字符串
+---@param str
+---@param reps
+---@return
+function split(str, reps)
   local resultStrList = {}
-  string.gsub(str,'[^'.. reps .. ']+', function (w) table.insert(resultStrList,w) end)
+  string.gsub(str, '[^' .. reps .. ']+', function(w) table.insert(resultStrList, w) end)
   return resultStrList
 end
 
 --- 自动释放当前窗口
 ---@param w
-M.CloseMdorg = function ()
-  local file = split(vim.fn.expand("%:t"),'.')
+M.CloseMdorg = function()
+  local file = split(vim.fn.expand("%:t"), '.')
   if vim.api.nvim__buf_stats(vim.g.Mbufferid) ~= 0 and file[1] == M.filename then
     M.ResCodeBlock()
     -- vim.cmd("silent augroup! AutoCloseMdorg")
@@ -155,24 +154,24 @@ M.ResCodeBlock = function()
   if vim.g.start_stus then
     vim.g.start_stus = false
     local space = ""
-    for i = 1, vim.g.mdorg_indent -1 do
+    for i = 1, vim.g.mdorg_indent - 1 do
       space = space .. " "
     end
-    for i=1, vim.fn.line('$') do
+    for i = 1, vim.fn.line('$') do
       code[#code + 1] = space .. vim.fn.getline(i)
     end
     vim.cmd("silent !rm " .. vim.fn.expand("%:p"))
     vim.cmd("bd!")
     vim.cmd("unmap q")
-    vim.api.nvim_buf_set_lines(vim.g.Mbufferid,vim.g.mdorg_start-1,vim.g.mdorg_done,false,code)
+    vim.api.nvim_buf_set_lines(vim.g.Mbufferid, vim.g.mdorg_start - 1, vim.g.mdorg_done, false, code)
   end
 end
 
 --- 编辑当前代码快
-M.EditBufferCodeBlock = function ()
+M.EditBufferCodeBlock = function()
   vim.g.Mbufferid = vim.api.nvim_get_current_buf()
   local line = vim.fn.line('.')
-  local ty,code,start,done = M.GetBufferCodeBlockType(line)
+  local ty, code, start, done = M.GetBufferCodeBlockType(line)
 
   if string.len(ty) > 0 then
     vim.cmd("nmap q <Cmd>ResCodeBlock<cr>")
@@ -188,14 +187,14 @@ vim.g.mdorg_Res = M.ResCodeBlock
 vim.g.mdorg_close = M.CloseMdorg
 
 --M.EditBufferCodeBlock()
-vim.cmd[[
+vim.cmd [[
 command! EditBufferCodeBlock call mdorg_Edit()
 command! ResCodeBlock call mdorg_Res()
 ]]
 
 -- 自动命令
-vim.api.nvim_create_autocmd("BufEnter",{
-  pattern = {"*.md","*.norg"},
+vim.api.nvim_create_autocmd("BufEnter", {
+  pattern = { "*.md", "*.norg" },
   command = "nmap <leader>ed <Cmd>EditBufferCodeBlock<cr>"
 })
 
