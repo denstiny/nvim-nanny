@@ -83,8 +83,8 @@ vim.api.nvim_create_autocmd({ "BufEnter" }, {
     vim.cmd [[
     hi conceal guifg=#31748f guibg=#15131E
     syn match keyword /@code/ containedin=ALL conceal cchar=
-    syn match keyword /@end/ containedin=ALL conceal cchar= 
-    syn match keyword /@/ containedin=ALL conceal cchar= 
+    "syn match keyword /@end/ containedin=ALL conceal cchar= 
+    "syn match keyword /@/ containedin=ALL conceal cchar= 
     ]]
   end
 })
