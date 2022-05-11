@@ -12,13 +12,11 @@
 --   Config files for NEOVIM. Created by Denstiny Aaro Urdaniz
 
 -- load cache
---require("impatient")
-pcall(require,"impatient")
+pcall(require, "impatient")
 
 -- Load the lua configuration script
 require "init"
 
 
 -- Loading vimscript configuration script
--- call VimConfig()
-vim.cmd[[call VimConfig()]]
+vim.cmd [[call VimConfig()]]
