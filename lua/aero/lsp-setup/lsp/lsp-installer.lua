@@ -14,9 +14,7 @@ end
 
 -- Register a handler that will be called for all installed servers.
 -- Alternatively, you may also register handlers on specific server instances instead (see example below).
-lsp_installer.setup({})
 local servers_lsp = {
-  "csharp_ls",
   "pyright",
   "jdtls",
   "cmake",
@@ -28,6 +26,7 @@ local servers_lsp = {
   "gopls",
   "clangd",
   "sumneko_lua",
+  --"csharp_ls",
   --"r_language_server",
   --"rust_analyzer",
   --"julials",
@@ -51,19 +50,29 @@ local servers_lsp = {
   --"denols",
   --"taplo",
 }
+lsp_installer.setup({
+  ensure_installed = servers_lsp,
+  automatic_installation = true,
+  pip = {
+    install_args = { "--proxy", "127.0.0.1:9090" }
+  }
+})
 
 for _, lsp in ipairs(servers_lsp) do
-  local ok, server = lsp_installer.get_server(name)
-  if ok then
-    if not server:is_installed() then
-      vim.notify("Installing " .. name)
-      server:install()
-    end
-  end
+  --local ok, server = lsp_installer.get_server(lsp)
+  --if ok then
+  --  if not server:is_installed() then
+  --    vim.notify("Installing " .. lsp)
+  --    server:install()
+  --  end
+  --end
   local opts = {
     -- on_attach = my_custom_on_attach,
     on_attach = require("aero.lsp-setup.lsp.handlers").on_attach,
     capabilities = require("aero.lsp-setup.lsp.handlers").capabilities,
+    flags = {
+      debounce_text_changes = 150,
+    },
   }
 
   if lsp == "clangd" then
