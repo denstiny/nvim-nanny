@@ -77,12 +77,12 @@ M.on_attach = function(client, bufnr)
   if client.name == "lua" or client.name == "clangd" then
     client.resolved_capabilities.document_formatting = false
   end
-  vim.api.nvim_create_autocmd({ "BufWritePost" }, {
-    pattern = { "*" },
-    callback = function()
-      vim.lsp.buf.formatting()
-    end
-  })
+  --vim.api.nvim_create_autocmd({ "BufWritePost" }, {
+  --  pattern = { "*" },
+  --  callback = function()
+  --    vim.lsp.buf.formatting()
+  --  end
+  --})
   lsp_keymaps(bufnr)
   lsp_highlight_document(client)
 

@@ -101,4 +101,5 @@ require("aero.symboes-outline-config")
 require("aero.distant-config")
 
 -- make
---require("aero.make-config")
+require("aero.make-config")
+require("aero.dap-config")

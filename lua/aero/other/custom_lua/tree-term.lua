@@ -2,7 +2,7 @@ local M = {}
 M.set_nvimtree_when_open_term = function()
   local nvimtree_view = require "nvim-tree.view"
   if nvimtree_view.is_visible() then
-    vim.cmd("NvimTreeToggle")
+    require('nvim-tree').toggle(false, true)
     vim.cmd("ToggleTerm")
     require('nvim-tree').toggle(false, true)
   else

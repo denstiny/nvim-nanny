@@ -20,7 +20,7 @@ cmake.setup({
   quickfix_only_on_error = false, -- Open quickfix window only if target build failed.
   dap_configuration = {
     name = "Launch file",
-    type = "cppdbg",
+    type = "lldb",
     request = "launch",
     cwd = '${workspaceFolder}',
     stopOnEntry = false,
@@ -33,5 +33,5 @@ cmake.setup({
       },
     },
   }, -- DAP configuration. By default configured to work with `lldb-vscode`.
-  --dap_open_command = require('dap').repl.open, -- Command to run after starting DAP session. You can set it to `false` if you don't want to open anything or `require('dapui').open` if you are using https://github.com/rcarriga/nvim-dap-ui
+  dap_open_command = require('dap').repl.open, -- Command to run after starting DAP session. You can set it to `false` if you don't want to open anything or `require('dapui').open` if you are using https://github.com/rcarriga/nvim-dap-ui
 })
