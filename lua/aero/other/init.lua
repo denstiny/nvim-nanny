@@ -11,11 +11,12 @@ require "aero.other.bind-key"
 -- statline
 require "aero.other.statline"
 -- vimscript
-vim.g.vimspector_enable_mappings='VISUAL_STUDIO'
+vim.g.vimspector_enable_mappings = 'VISUAL_STUDIO'
 -- 不显示状态栏
-vim.o.laststatus=0
+vim.o.laststatus = 0
 -- 右下角不显示光标位置信息
-vim.cmd[[set noru]]
+vim.cmd [[set noru]]
 -- 显示隐藏符号
 --vim.g.OverVirTualChara_c = '⤵'
 require("aero.other.custom_lua.mdorg")
+require("aero.other.custom_lua.tree-term")

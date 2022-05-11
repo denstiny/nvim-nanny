@@ -13,18 +13,18 @@ U.nmap("<Leader>et", "<Plug>(easymotion-t)")
 U.nmap("<Leader>ew", "<Plug>(easymotion-w)")
 
 -- leader-t: 翻译
-U.nmap("<leader>te","<Plug>Translate")
-U.vmap("<leader>te","<Plug>TranslateV")
-U.nmap("<leader>tw","<Plug>TranslateW")
-U.vmap("<leader>tw","<Plug>TranslateWV")
-U.nmap("<leader>tr","<Plug>TranslateR")
-U.vmap("<Leader>tr","<Plug>TranslateRV")
-U.nmap("<Leader>tx","<Plug>TranslateX")
+U.nmap("<leader>te", "<Plug>Translate")
+U.vmap("<leader>te", "<Plug>TranslateV")
+U.nmap("<leader>tw", "<Plug>TranslateW")
+U.vmap("<leader>tw", "<Plug>TranslateWV")
+U.nmap("<leader>tr", "<Plug>TranslateR")
+U.vmap("<Leader>tr", "<Plug>TranslateRV")
+U.nmap("<Leader>tx", "<Plug>TranslateX")
 
 -- colpy text
 U.vmap(";y", '"+y')
 -- exit nvim
-U.nmap("<Leader>q","<Cmd>qall<cr>")
+U.nmap("<Leader>q", "<Cmd>qall<cr>")
 U.nmap("<A-q>", "<Cmd>wqall!<cr>")
 --U.nmap("q","<Cmd>q<cr>")
 
@@ -40,39 +40,39 @@ U.nmap("<C-j>", "<Cmd>res +5<cr>")
 U.nmap("<C-k>", "<Cmd>res -5<cr>")
 
 -- fold
-U.nmap("<tab>","<Cmd>normal za<cr>")
+U.nmap("<tab>", "<Cmd>normal za<cr>")
 
 
 --- nvim tree
-U.nmap("tr","<Cmd>NvimTreeToggle<cr>")
+U.nmap("tr", "<Cmd>NvimTreeToggle<cr>")
 U.nmap("<Leader>ad", "<Cmd>lua addStartify_bookmark()<cr>")
 --- lsp tree
 U.nmap("ts", "<Cmd>SymbolsOutline<cr>")
 
 -- nvim tree
-U.nmap("tr","<Cmd>NvimTreeToggle<cr>")
+U.nmap("tr", "<Cmd>NvimTreeToggle<cr>")
 
 -- vimsector config
-U.nmap("<Leader>vs","<Cmd>tabe .vimspector.json<CR>:LoadVimSpectorJsonTemplate<CR>")
-U.nmap("<F7>", "<Cmd>VimspectorReset<cr>")            -- 停止调试(quit debug)
-U.nmap("<F4>", "<Plug>VimspectorRestart")             -- 使用相同配置重新调试( restart debug)
+U.nmap("<Leader>vs", "<Cmd>tabe .vimspector.json<CR>:LoadVimSpectorJsonTemplate<CR>")
+U.nmap("<F7>", "<Cmd>VimspectorReset<cr>") -- 停止调试(quit debug)
+U.nmap("<F4>", "<Plug>VimspectorRestart") -- 使用相同配置重新调试( restart debug)
 U.nmap("<F2>", "<Plug>VimspectorBalloonEval")
 
 
 --exchange buffer
-U.nmap("<a-p>","<Cmd>BufferLineCyclePrev<cr>")
-U.nmap("<a-n>","<Cmd>BufferLineCycleNext<cr>")
-U.nmap("b","<Cmd>BufferLinePick<cr>")
-U.nmap("cb","<Cmd>BufferLinePickClose<cr>")
+U.nmap("<a-p>", "<Cmd>BufferLineCyclePrev<cr>")
+U.nmap("<a-n>", "<Cmd>BufferLineCycleNext<cr>")
+U.nmap("b", "<Cmd>BufferLinePick<cr>")
+U.nmap("cb", "<Cmd>BufferLinePickClose<cr>")
 --U.nmap("q","<Cmd>q<cr>")
 
 -- No interference pattern
-U.nmap("<Leader>z","<Cmd>lua Truezen()<cr>")
+U.nmap("<Leader>z", "<Cmd>lua Truezen()<cr>")
 
 -- undo tree
 U.nmap("L", "<Cmd>UndotreeToggle<cr>")
 --  Async Task
-U.nmap("<Leader>r","<Cmd>AsyncTask file-run<cr>")
+U.nmap("<Leader>r", "<Cmd>AsyncTask file-run<cr>")
 U.nmap("<Leader>d", "<Cmd>AsyncTask file-build<cr>")
 
 --- goto preview
@@ -82,7 +82,7 @@ U.nmap("gf", "<Cmd>e <cfile><Cr>")
 -- telescope
 U.nmap("F", "<Cmd>Telescope current_buffer_fuzzy_find<cr>")
 U.nmap("?", "<Cmd>Telescope grep_string<cr>")
-U.nmap("B","<Cmd>Telescope buffers<cr>")
+U.nmap("B", "<Cmd>Telescope buffers<cr>")
 U.nmap("<C-f>", "<Cmd>Telescope find_files<cr>")
 
 -- luasnip
@@ -94,17 +94,21 @@ U.map('s', '<C-k>', '<CMD>lua require("luasnip").jump(-1)<CR>')
 
 -- term
 function _G.set_terminal_keymaps()
-  local opts = {noremap = true}
+  local opts = { noremap = true }
   vim.api.nvim_buf_set_keymap(0, 't', '<esc>', [[<C-\><C-n>]], opts)
   vim.api.nvim_buf_set_keymap(0, 't', 'jk', [[<C-\><C-n>]], opts)
+  vim.api.nvim_buf_set_keymap(0, 't', '<C-\\>', "<Cmd>ToggleTermTree<cr>", opts)
 end
+
+U.nmap('<C-\\>', "<Cmd>ToggleTermTree<cr>")
+
 vim.cmd('autocmd! TermOpen term://* lua set_terminal_keymaps()')
 
 
 -- siderbar
 U.nmap("td", "<Cmd>lua require('sidebar-nvim').toggle()<CR>")
 -- fold lsp
-U.nmap("tp","<Cmd>lua vim.diagnostic.open_float(nil, {focus=false, scope=\"cursor\"})<CR>")
+U.nmap("tp", "<Cmd>lua vim.diagnostic.open_float(nil, {focus=false, scope=\"cursor\"})<CR>")
 -- 注释
 U.nmap("<Leader>nf", "<Cmd>lua require('neogen').generate()<CR>")
 
@@ -112,6 +116,7 @@ U.nmap("<Leader>nf", "<Cmd>lua require('neogen').generate()<CR>")
 U.nmap("H", "<Cmd>Startify<cr>")
 -- colip list
 U.nmap("<C-p>", "<Cmd>Telescope neoclip a<cr>")
-U.nmap("<A-t>","<Cmd>echo &filetype<cr>")
+U.nmap("<A-t>", "<Cmd>echo &filetype<cr>")
 -- Open project
-U.nmap("<A-p>","<Cmd>Telescope projects theme=dropdown<cr>")
+U.nmap("<A-p>", "<Cmd>Telescope projects theme=dropdown<cr>")
+U.nmap("<A-p>", "<Cmd>Telescope projects theme=dropdown<cr>")

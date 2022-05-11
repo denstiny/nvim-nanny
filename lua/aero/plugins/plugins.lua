@@ -162,5 +162,6 @@ packer.startup(function(use)
   -- wilder
   use { 'gelguy/wilder.nvim' }
   -- make
-  use "ravenxrz/neovim-cmake"
+  use "Shatur/neovim-cmake"
+  use "mfussenegger/nvim-dap"
 end)
