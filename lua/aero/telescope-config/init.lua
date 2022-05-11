@@ -1,8 +1,8 @@
 local has_ts, telescope = pcall(require, "telescope")
 if not has_ts then return end
-telescope.setup{
+telescope.setup {
   defaults = {
-      layout_config = {
+    layout_config = {
       vertical = { width = 0.5 }
     },
     -- Default configuration for telescope goes here:
@@ -40,7 +40,15 @@ telescope.setup{
     --   extension_config_key = value,
     -- }
     -- please take a look at the readme of the extension you want to configure
-  }
+  },
+  colorscheme = "rose_pine",
+  styles = {
+    ["function"]    = { style = 'italic' },
+    functionbuiltin = { style = 'italic' },
+    variable        = { style = 'italic' },
+    variableBuiltIn = { style = 'italic' },
+    parameter       = { style = 'italic' },
+  },
 }
 telescope.load_extension "packer"
 telescope.load_extension('projects')
