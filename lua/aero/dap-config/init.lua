@@ -6,11 +6,11 @@ end
 local TabOpened = { opened = true }
 if dap then
   --require("dap-go").setup()
-  --dap.adapters.lldb = {
-  --    type = "executable",
-  --    command = "/usr/bin/lldb-vscode", -- adjust as needed
-  --    name = "lldb",
-  --}
+  dap.adapters.lldb = {
+      type = "executable",
+      command = "/usr/bin/lldb-vscode", -- adjust as needed
+      name = "lldb",
+  }
   dap.configurations.cpp = {
     {
       name = "Launch",
@@ -41,7 +41,7 @@ if dap then
   dap.configurations.rust = dap.configurations.cpp
   --vim.api.nvim_set_keymap("n", "<F4>", ":lua require'mydap'()<CR>", { noremap = false, silent = true })
   vim.keymap.set("n", "<F4>", function()
-    require("mydap")()
+    require("aero.dap-config")()
   end)
   --vim.api.nvim_set_keymap("n", "<F5>", ":lua require'dap'.continue()<CR>", { noremap = false, silent = true })
   vim.keymap.set("n", "<F5>", function()

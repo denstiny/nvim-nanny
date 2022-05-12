@@ -24,7 +24,7 @@ cmake.setup({
     request = "launch",
     cwd = '${workspaceFolder}',
     stopOnEntry = false,
-    runInTerminal = true,
+    runInTerminal = false,
     setupCommands = {
       {
         description = 'enable pretty printing',
