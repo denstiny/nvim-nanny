@@ -16,16 +16,16 @@ end
 -- Alternatively, you may also register handlers on specific server instances instead (see example below).
 local servers_lsp = {
   "pyright",
-  "jdtls",
   "cmake",
   "bashls",
   "vimls",
   "texlab",
   "jsonls",
   "vuels",
-  "gopls",
   "clangd",
   "sumneko_lua",
+  --"jdtls",
+  --"gopls",
   --"csharp_ls",
   --"r_language_server",
   --"rust_analyzer",
