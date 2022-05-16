@@ -54,7 +54,7 @@ lsp_installer.setup({
   ensure_installed = servers_lsp,
   automatic_installation = true,
   pip = {
-    install_args = { "--proxy", "127.0.0.1:9090" }
+    install_args = { "--proxy", "127.0.0.1:7890" }
   }
 })
 
