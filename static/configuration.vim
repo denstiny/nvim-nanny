@@ -170,7 +170,7 @@ let g:startify_skiplist = [
       \ '^/tmp',
       \ '/project/.*/documentation',
       \ ]
-let g:startify_custom_footer=["","","                                                           准备干饭准备干饭!"]
+let g:startify_custom_footer=["","","                                                                      准备干饭准备干饭!"]
 let g:startify_custom_header_quotes = [
       \["答案很长，我准备用一生的时间来回答，你准备要听了吗？"],
       \["夜我就是你的圣诞礼物，非～非礼啊。"],
