@@ -2,11 +2,11 @@ local runtime_path = vim.split(package.path, ";")
 table.insert(runtime_path, "lua/?.lua")
 table.insert(runtime_path, "lua/?/init.lua")
 
-local userlib = {
-  [vim.fn.expand "~/.local/share/nvim/site/pack/packer/start/vimspector"] = false,
+local runtime_file = vim.api.nvim_get_runtime_file("",true)
+local userlib = vim.tbl_deep_extend("keep",{
   "/usr/share/awesome/lib",
   "/usr/share/nvim/runtime/lua/lsp"
-}
+},runtime_file)
 
 return {
   settings = {
@@ -25,7 +25,8 @@ return {
         --  [vim.fn.expand "$VIMRUNTIME/lua"] = true,
         --  [vim.fn.stdpath "config" .. "/lua"] = true,
         --},
-        library = vim.tbl_deep_extend("keep", userlib, vim.api.nvim_get_runtime_file("", true)),
+        --library = vim.tbl_deep_extend("keep", userlib, vim.api.nvim_get_runtime_file("", true)),
+        library = userlib
       },
       telemetry = {
         enable = false,
