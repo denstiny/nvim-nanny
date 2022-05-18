@@ -44,3 +44,9 @@ au VimEnter  * hi statusline gui=underline guibg=none guifg=#565F89
 au VimEnter  * hi StatusLineNC guibg=none gui=underline
 au VimEnter  * hi VertSplit guifg=#343A55
 ]]
+vim.api.nvim_create_autocmd({"CursorMoved"},{
+  pattern = {"*"},
+  callback = function ()
+    print(" ")
+  end
+})

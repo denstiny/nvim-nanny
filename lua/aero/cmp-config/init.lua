@@ -112,7 +112,7 @@ cmp.setup {
     {name = "calc"},
     {name = 'cmp_tabnine',priority=9},
     --{name = "digraphs"},
-    {name = "spell"}
+    {name = "spell"},
   },
   sorting = {
     comparators = {
