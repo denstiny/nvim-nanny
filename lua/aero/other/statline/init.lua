@@ -5,6 +5,13 @@ require('lualine').setup {
 }
 vim.opt.termguicolors = true
 local bg = vim.fn.synIDattr(vim.fn.hlID("Normal"),"bg")
+
+_G.gps_location = function()
+  local gps = require "nvim-gps"
+  return gps.is_available() and vim.fn.expand("%:p") .. " ->  " .. gps.get_location() or ""
+end
+
+
 require("nvim-gps").setup()
 local gps = require("nvim-gps")
 require("bufferline").setup{
@@ -38,7 +45,7 @@ require("bufferline").setup{
         end
         return result
       end,
-      right = function() 
+      right = function()
         local result = {}
         if gps.is_available() then
           --print(gps.get_location())
@@ -52,6 +59,7 @@ require("bufferline").setup{
               table.insert(result,{text = " > ",guifg="#9B9AAB",gui="bold"})
             end
           end
+          vim.opt.winbar = "%{%v:lua.gps_location()%}"
         end
         return result
       end

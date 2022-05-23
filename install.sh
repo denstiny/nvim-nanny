@@ -5,5 +5,6 @@
 # @blog        : https://denstiny.github.io
 
 #!/usr/bin/env bash
-sudo pacman -S yarn nodejs python-pip python
-pip install pynvim  pysocks
+sudo pacman -S yarn nodejs python-pip python astyle
+pip install pynvim  
+pip install pysocks

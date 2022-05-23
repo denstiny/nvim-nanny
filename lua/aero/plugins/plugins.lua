@@ -14,6 +14,9 @@ packer.init({
       return require("packer.util").float({ border = "single" }) -- single rounded
     end,
   },
+  luarocks = {
+    python_cmd = 'python' -- Set the python command to use for running hererocks
+  },
 })
 -- Plugin list
 packer.startup(function(use)
@@ -150,7 +153,7 @@ packer.startup(function(use)
   -- start time
   use { 'dstein64/vim-startuptime' }
   -- 翻译
-  use { 'voldikss/vim-translator' }
+  use { 'voldikss/vim-translator' ,run = "pip install pysocks"}
   -- project
   use { 'ahmedkhalf/project.nvim' }
   -- notify
@@ -164,4 +167,6 @@ packer.startup(function(use)
   -- make
   use "Shatur/neovim-cmake"
   use "mfussenegger/nvim-dap"
+  -- fcitx5
+  use({"black-desk/fcitx5-ui.nvim",rocks = {'lgi', 'dbus_proxy'},})
 end)

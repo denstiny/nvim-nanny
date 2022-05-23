@@ -103,3 +103,5 @@ require("aero.distant-config")
 -- make
 require("aero.dap-config")
 require("aero.make-config")
+--fcitx config
+require('aero.fcitx-config')

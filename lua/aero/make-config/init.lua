@@ -1,10 +1,10 @@
-local Path = require('plenary.path')
 local status_ok, cmake = pcall(require, "cmake")
 if not status_ok then
   vim.notify("cmake not found!", vim.log.levels.ERROR)
   return
 end
 
+local Path = require('plenary.path')
 cmake.setup({
   cmake_executable = 'cmake', -- CMake executable to run.
   parameters_file = 'neovim.json', -- JSON file to store information about selected target, run arguments and build type.

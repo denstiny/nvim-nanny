@@ -120,3 +120,6 @@ U.nmap("<A-t>", "<Cmd>echo &filetype<cr>")
 -- Open project
 U.nmap("<A-p>", "<Cmd>Telescope projects theme=dropdown<cr>")
 U.nmap("<A-p>", "<Cmd>Telescope projects theme=dropdown<cr>")
+-- fcitx
+U.imap("<C-Space>","<Cmd>lua require'fcitx5-ui'.toggle()<cr>")
+U.nmap("<C-Space>","<Cmd>lua require'fcitx5-ui'.toggle()<cr>")

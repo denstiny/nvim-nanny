@@ -105,7 +105,7 @@ cmp.setup {
     {name = "nvim_lsp",priority=11},
     {name = "neorg",priority=11},
     --{name = "nvim_lsp_signature_help"},
-    {name = "luasnip",priority = 10},
+    {name = "luasnip",priority = 11},
     {name = "nvim_lua"},
     {name = "buffer", keyword_lenght = 5,priority=9},
     {name = "path",priority = 10},

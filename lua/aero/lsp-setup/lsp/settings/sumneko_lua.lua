@@ -21,12 +21,12 @@ return {
         globals = { "vim", "use" ,"awesome", "client"},
       },
       workspace = {
-        --library = {
-        --  [vim.fn.expand "$VIMRUNTIME/lua"] = true,
-        --  [vim.fn.stdpath "config" .. "/lua"] = true,
-        --},
+        library = {
+          [vim.fn.expand "$VIMRUNTIME/lua"] = true,
+          [vim.fn.stdpath "config" .. "/lua"] = true,
+        },
         --library = vim.tbl_deep_extend("keep", userlib, vim.api.nvim_get_runtime_file("", true)),
-        library = userlib
+        --library = userlib
       },
       telemetry = {
         enable = false,

@@ -137,28 +137,30 @@ if filereadable($HOME . "/neorg/index.norg")
         \ '~/neorg/index.norg',
         \]
 else
+  silent !mkdir ~/Neorg
+  silent !touch ~/Neorg/index.norg
   let g:startify_bookmarks            = [
-        \ '/mnt/home/neorg/index.norg'
+        \ '~/neorg/index.norg',
         \]
 endif
 let g:startify_bookmarks_ = g:startify_bookmarks
 "== 同步书签
-function CopyTododisk()
-  if IsMe()
-    echo "不是合法用户"
-    return
-  endif
-  if filereadable("/mnt/home")
-    return
-  endif
-  if !filereadable($HOME . "/neorg/index.norg")
-    silent !cp -rf /mnt/home/neorg ~/
-  endif
-  if !filereadable("/mnt/home/neorg")
-    silent !cp -rf ~/neorg /mnt/home/
-  endif
-  silent !rsync -avu --delete "$HOME/neorg" "/mnt/home/"
-endfunction
+"function CopyTododisk()
+"  if IsMe()
+"    echo "不是合法用户"
+"    return
+"  endif
+"  if filereadable("/mnt/home")
+"    return
+"  endif
+"  if !filereadable($HOME . "/neorg/index.norg")
+"    silent !cp -rf /mnt/home/neorg ~/
+"  endif
+"  if !filereadable("/mnt/home/neorg")
+"    silent !cp -rf ~/neorg /mnt/home/
+"  endif
+"  silent !rsync -avu --delete "$HOME/neorg" "/mnt/home/"
+"endfunction
 
 " 起始页显示的列表长度
 let g:startify_files_number = 5
