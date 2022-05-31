@@ -45,7 +45,7 @@ end
 
 
 -- {{
--- 自动现实lsp诊断
+-- 自动显示lsp诊断
 M.LspDiagnosticsPopupHandler = function()
   local current_cursor = vim.api.nvim_win_get_cursor(0)
   local last_popup_cursor = vim.w.lsp_diagnostics_last_cursor or {nil, nil}
@@ -67,7 +67,7 @@ vim.api.nvim_create_autocmd({ 'CursorHold' }, {
 
 local function lsp_highlight_document(client)
   -- Set autocommands conditional on server_capabilities
-  if client.resolved_capabilities.document_highlight then
+  if client.server_capabilities.document_highlight then
     vim.api.nvim_exec(
       [[
       augroup lsp_document_highlight
@@ -96,9 +96,9 @@ local function lsp_keymaps(bufnr)
 end
 
 M.on_attach = function(client, bufnr)
-  if client.name == "lua" or client.name == "clangd" then
-    client.resolved_capabilities.document_formatting = false
-  end
+  --if client.name == "lua" or client.name == "clangd" then
+  --  client.document_formatting = false
+  --end
   --vim.api.nvim_create_autocmd({ "BufWritePost" }, {
   --  pattern = { "*" },
   --  callback = function()

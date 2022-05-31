@@ -20,3 +20,5 @@ require "init"
 
 -- Loading vimscript configuration script
 vim.cmd [[call VimConfig()]]
+
+vim.opt.guifont="FiraCode Nerd Font:h9"

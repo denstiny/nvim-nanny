@@ -47,7 +47,7 @@ U.nmap("<tab>", "<Cmd>normal za<cr>")
 U.nmap("tr", "<Cmd>NvimTreeToggle<cr>")
 U.nmap("<Leader>ad", "<Cmd>lua addStartify_bookmark()<cr>")
 --- lsp tree
-U.nmap("ts", "<Cmd>SymbolsOutline<cr>")
+--U.nmap("ts", "<Cmd>SymbolsOutline<cr>")
 
 -- nvim tree
 U.nmap("tr", "<Cmd>NvimTreeToggle<cr>")

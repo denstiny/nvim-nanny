@@ -95,7 +95,7 @@ require "aero.cmp-config"
 require("aero.fidget-config")
 
 -- lsp symbols outline
-require("aero.symboes-outline-config")
+--require("aero.symboes-outline-config")
 
 -- 远程开发
 require("aero.distant-config")
@@ -105,3 +105,4 @@ require("aero.dap-config")
 require("aero.make-config")
 --fcitx config
 require('aero.fcitx-config')
+

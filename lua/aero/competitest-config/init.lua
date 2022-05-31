@@ -1,7 +1,6 @@
-
-local has_ts, goto_preview = pcall(require, "goto-preview")
+local has_ts, competitest = pcall(require, "competitest")
 if not has_ts then return end
-goto_preview.setup {
+competitest.setup {
 	local_config_file_name = ".competitest.lua",
 
 	floating_border = "rounded",

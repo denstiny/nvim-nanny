@@ -6,11 +6,6 @@ require('lualine').setup {
 vim.opt.termguicolors = true
 local bg = vim.fn.synIDattr(vim.fn.hlID("Normal"),"bg")
 
-_G.gps_location = function()
-  local gps = require "nvim-gps"
-  return gps.is_available() and vim.fn.expand("%:p") .. " ->  " .. gps.get_location() or ""
-end
-
 
 require("nvim-gps").setup()
 local gps = require("nvim-gps")
@@ -47,20 +42,6 @@ require("bufferline").setup{
       end,
       right = function()
         local result = {}
-        if gps.is_available() then
-          --print(gps.get_location())
-          local data = gps.get_data()
-          for i = 1, #data do
-            table.insert(result,{text = data[i].icon, guifg="#D6A868",gui="bold"})
-            table.insert(result,{text = data[i].text,guifg="#fff",gui="bold"})
-            if #data == 1 or i == #data then
-              table.insert(result,{text = " ",guifg="#9B9AAB",gui="bold"})
-            else
-              table.insert(result,{text = " > ",guifg="#9B9AAB",gui="bold"})
-            end
-          end
-          vim.opt.winbar = "%{%v:lua.gps_location()%}"
-        end
         return result
       end
     }
@@ -72,3 +53,44 @@ vim.cmd([[
   hi BufferLinePick gui=none
   hi BufferLinePickVisible gui=none
 ]])
+
+
+
+require('winbar').setup({
+    enabled = true, -- 是否启动winbar
+	
+    show_file_path = true, -- 是否显示文件路径
+    show_symbols = true, -- 是否显示函数标签
+
+    -- 颜色配置，为空，将使用默认配色
+    colors = {
+        path = '', -- 路径的颜色，比如#ababab
+        file_name = '', -- 文件名称的颜色，比如#acacac
+        symbols = '',  -- 函数颜色
+    },
+
+    -- 图标配置
+    icons = {
+        seperator = '>', -- 路径分割符号
+        editor_state = '●',
+        lock_icon = '',
+    },
+
+    -- 关闭winbar的窗口
+    exclude_filetype = {
+        'help',
+        'norg',
+        'startify',
+        'dashboard',
+        'packer',
+        'neogitstatus',
+        'NvimTree',
+        'Trouble',
+        'alpha',
+        'lir',
+        'Outline',
+        'spectre_panel',
+        'toggleterm',
+        'qf',
+    }
+})

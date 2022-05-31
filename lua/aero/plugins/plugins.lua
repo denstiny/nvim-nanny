@@ -134,7 +134,7 @@ packer.startup(function(use)
   use { 'danymat/neogen' }
   -- auto save folding
   use { 'vim-scripts/restore_view.vim' }
-  use { 'simrat39/symbols-outline.nvim' }
+  --use { 'simrat39/symbols-outline.nvim' }
   -- clip list
   use { "AckslD/nvim-neoclip.lua", }
   -- 竞技性编程快速测试
@@ -160,6 +160,7 @@ packer.startup(function(use)
   use { 'rcarriga/nvim-notify' }
   -- 当前所在的位置
   use { "SmiteshP/nvim-gps" }
+  --use {"ChristianChiarulli/nvim-gps",tag = "text_hl"}
   -- 远程开发
   use { 'chipsenkbeil/distant.nvim' }
   -- wilder
@@ -169,4 +170,6 @@ packer.startup(function(use)
   use "mfussenegger/nvim-dap"
   -- fcitx5
   use({"black-desk/fcitx5-ui.nvim",rocks = {'lgi', 'dbus_proxy'},})
+  -- winbar
+  use {'fgheng/winbar.nvim'}
 end)

@@ -7,6 +7,7 @@ vim.g.tokyonight_sidebars = { "qf", "vista_kind", "terminal", "packer" }
 vim.g.tokyonight_colors = { hint = "orange", error = "#ff0000" }
 
 -- Load the colorscheme
+
 vim.cmd [[
   colorscheme rose-pine
   hi NonText guifg=#3E4710
