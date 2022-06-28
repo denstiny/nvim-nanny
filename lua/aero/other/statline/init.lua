@@ -71,26 +71,28 @@ require('winbar').setup({
 
     -- 图标配置
     icons = {
-        seperator = '>', -- 路径分割符号
-        editor_state = '●',
-        lock_icon = '',
+      file_icon_default = '  ',
+      seperator = '>', -- 路径分割符号
+      editor_state = '●',
+      lock_icon = '',
     },
 
     -- 关闭winbar的窗口
     exclude_filetype = {
-        'help',
-        'norg',
-        'startify',
-        'dashboard',
-        'packer',
-        'neogitstatus',
-        'NvimTree',
-        'Trouble',
-        'alpha',
-        'lir',
-        'Outline',
-        'spectre_panel',
-        'toggleterm',
-        'qf',
+      'help',
+      'norg',
+      'startify',
+      'dashboard',
+      'packer',
+      'neogitstatus',
+      'NvimTree',
+      'Trouble',
+      'alpha',
+      'lir',
+      'Outline',
+      'spectre_panel',
+      'dosini',
+      'toggleterm',
+      'qf',
     }
-})
+  })

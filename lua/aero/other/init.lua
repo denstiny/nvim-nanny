@@ -1,4 +1,8 @@
-if not pcall(require, "hop") then return end
+local status,hop = pcall(require, "hop")
+if not status then return end
+hop.setup()
+
+
 
 -- Configuration for other small plugins
 vim.g.fugitive_legacy_commands = false
@@ -10,8 +14,6 @@ require "aero.other.theme"
 require "aero.other.bind-key"
 -- statline
 require "aero.other.statline"
--- vimscript
-vim.g.vimspector_enable_mappings = 'VISUAL_STUDIO'
 -- 不显示状态栏
 vim.o.laststatus = 0
 -- 右下角不显示光标位置信息

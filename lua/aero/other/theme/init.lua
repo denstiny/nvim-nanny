@@ -17,3 +17,7 @@ vim.cmd [[
 -- vim.cmd[[highlight IndentBlanklineContextStart guisp=red gui=underline]]
 vim.cmd [[highlight EndOfBuffer guifg = bg ]]
 --exec "hi LineNr guifg=".synIDattr(hlID('SignColumn'),'bg')
+
+
+-- set gui font theme
+vim.opt.guifont="FiraCode Nerd Font:h9"

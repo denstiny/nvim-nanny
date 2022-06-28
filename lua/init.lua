@@ -101,8 +101,9 @@ require("aero.fidget-config")
 require("aero.distant-config")
 
 -- make
-require("aero.dap-config")
 require("aero.make-config")
+-- dap
+require("aero.debug")
 --fcitx config
 require('aero.fcitx-config')
 

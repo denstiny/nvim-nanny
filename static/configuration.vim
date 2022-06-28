@@ -61,35 +61,6 @@ au   BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal!
 
 
 
-"=== vimspector debug
-
-let g:vimspector_enable_mappings = 'HUMAN'
-function! s:read_template_into_buffer(template)
-  execute '0r ~/.config/nvim/static/vimspector-json/'.a:template
-endfunction
-command! -bang -nargs=* LoadVimSpectorJsonTemplate call fzf#run({
-      \   'source': 'ls -1 ~/.config/nvim/static/vimspector-json',
-      \   'down': 20,
-      \   'sink': function('<sid>read_template_into_buffer')
-      \ })
-let g:vimspector_bottombar_height=6
-let g:vimspector_sidebar_width=50
-let g:vimspector_code_minwidth = 77
-let g:vimspector_terminal_maxwidth = 75
-let g:vimspector_terminal_minwidth = 20
-"
-let g:vimspector_install_gadgets = [
-      \'debugpy',
-      \'vscode-cpptools',
-      \'CodeLLDB',
-      \'vscode-bash-debug',
-      \'vscode-go'
-      \]
-
-
-
-
-
 
 
 
@@ -319,7 +290,6 @@ let g:mkdp_preview_options = {
       \ 'content_editable': v:false,
       \ 'disable_filename': 0
       \ }
-command ClearPoint call vimspector#ClearBreakpoints()
 
 
 

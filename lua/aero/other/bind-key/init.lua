@@ -44,20 +44,19 @@ U.nmap("<tab>", "<Cmd>normal za<cr>")
 
 
 --- nvim tree
-U.nmap("tr", "<Cmd>NvimTreeToggle<cr>")
+U.nmap("tr", "<Cmd>NvimTreeFindFileToggle<cr>")
 U.nmap("<Leader>ad", "<Cmd>lua addStartify_bookmark()<cr>")
 --- lsp tree
 --U.nmap("ts", "<Cmd>SymbolsOutline<cr>")
 
--- nvim tree
-U.nmap("tr", "<Cmd>NvimTreeToggle<cr>")
-
--- vimsector config
-U.nmap("<Leader>vs", "<Cmd>tabe .vimspector.json<CR>:LoadVimSpectorJsonTemplate<CR>")
-U.nmap("<F7>", "<Cmd>VimspectorReset<cr>") -- 停止调试(quit debug)
-U.nmap("<F4>", "<Plug>VimspectorRestart") -- 使用相同配置重新调试( restart debug)
-U.nmap("<F2>", "<Plug>VimspectorBalloonEval")
-
+-- Dap Config
+U.nmap("<F5>","<Cmd>DapContinue<cr>") -- 启动调试
+U.nmap("<F4>","<Cmd>DapRestart<cr>") -- 启动调试
+U.nmap("<F7>","<Cmd>DapClose<cr>") -- 关闭调试
+U.nmap("<F9>","<Cmd>DapToggleBreakpoint<cr>") -- 设置断点
+U.nmap("<F10>","<Cmd>DapStepOver<cr>")  -- 步入
+U.nmap("<F11>","<Cmd>DapStepInto<cr>")  -- 单步调试
+U.nmap("<F2>","<Cmd>DapToggleRepl<cr>")
 
 --exchange buffer
 U.nmap("<a-p>", "<Cmd>BufferLineCyclePrev<cr>")
