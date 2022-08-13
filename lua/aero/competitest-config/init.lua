@@ -32,9 +32,9 @@ competitest.setup {
 		},
 	},
 	runner_ui = {
-		total_width = 0.8,
-		total_height = 0.8,
-		selector_width = 0.3,
+		--total_width = 0.8,
+		--total_height = 0.8,
+		--selector_width = 0.3,
 		selector_show_nu = false,
 		selector_show_rnu = false,
 		show_nu = false,

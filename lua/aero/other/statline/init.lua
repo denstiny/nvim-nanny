@@ -1,8 +1,8 @@
-require('lualine').setup {
-  options = {
-    theme = 'rose-pine'
-  }
-}
+--require('lualine').setup {
+--  options = {
+--    theme = 'rose-pine'
+--  }
+--}
 vim.opt.termguicolors = true
 local bg = vim.fn.synIDattr(vim.fn.hlID("Normal"),"bg")
 

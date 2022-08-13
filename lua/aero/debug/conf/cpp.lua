@@ -35,6 +35,16 @@ M.setup = function (path,dap)
         },
       },
     },
+    {
+      name = "cpp",
+      type = "cppdbg",
+      request = "launch",
+      program = function()
+        return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
+      end,
+      cwd = '${workspaceFolder}',
+      stopOnEntry = true,
+    },
   }
 end
 return M

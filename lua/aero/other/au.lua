@@ -29,18 +29,15 @@ endfunction
 ]]
 
 -- 自动同步书签
-vim.cmd [[
-au BufWritePost Todo.norg call CopyTododisk()
-]]
+--vim.cmd [[
+--au BufWritePost Todo.norg call CopyTododisk()
+--]]
 
 
 -- 不显示状态栏
 vim.cmd [[
-au BufCreate * set statusline=\ 
-au BufCreate * hi statusline gui=underline guibg=none guifg=#565F89 " 活动
-au BufCreate * hi StatusLineNC guibg=none gui=underline "非活动
-au VimEnter  * set statusline=\ 
-au VimEnter  * hi statusline gui=underline guibg=none guifg=#565F89
-au VimEnter  * hi StatusLineNC guibg=none gui=underline
+au BufCreate,VimEnter * set statusline=\ 
+au BufCreate,VimEnter * hi statusline gui=underline guibg=none guifg=#565F89 " 活动
+au BufCreate,VimEnter * hi StatusLineNC guibg=none gui=underline "非活动
 au VimEnter  * hi VertSplit guifg=#343A55
 ]]

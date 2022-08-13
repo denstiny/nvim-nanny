@@ -47,7 +47,7 @@ packer.startup(function(use)
   requires = { 'rafamadriz/friendly-snippets' }
 }
 use { "saadparwaiz1/cmp_luasnip" }
-use { 'tzachar/cmp-tabnine', run = './install.sh', requires = 'hrsh7th/nvim-cmp' }
+--use { 'tzachar/cmp-tabnine', run = './install.sh', requires = 'hrsh7th/nvim-cmp' }
 use { 'ray-x/lsp_signature.nvim' }
 use { 'rmagatti/goto-preview' }
 use { 'Chiel92/vim-autoformat' }
@@ -92,15 +92,14 @@ use {
   tag = 'nightly', -- optional, updated every week. (see issue #1193)
   commit = 'e401a4c'
 }
---use "elihunter173/dirbuf.nvim"
 -- statline
-use {
-  'nvim-lualine/lualine.nvim',
-  requires = {
-    'kyazdani42/nvim-web-devicons',
-    opt = true
-  }
-}
+-- use {
+--   'nvim-lualine/lualine.nvim',
+--   requires = {
+--     'kyazdani42/nvim-web-devicons',
+--     opt = true
+--   }
+-- }
 use 'mg979/vim-visual-multi'
 use 'easymotion/vim-easymotion'
 use 'ZSaberLv0/vim-easymotion-chs'
@@ -131,8 +130,9 @@ requires = {
   use { 'nvim-neorg/neorg' }
   --use {'nvim-orgmode/orgmode'}
   -- markdown
-  use { "iamcco/markdown-preview.nvim", run = "cd app && yarn install" }
+  --use { "iamcco/markdown-preview.nvim", run = "cd app && yarn install" }
   use { 'mzlogin/vim-markdown-toc' }
+  --use {'mbpowers/nvimager'} -- markdown 显示图片
   --use {'denstiny/picgo-nvim'}
   -- markdown table
   use "dhruvasagar/vim-table-mode"
@@ -183,4 +183,6 @@ requires = {
   use({"black-desk/fcitx5-ui.nvim",rocks = {'lgi', 'dbus_proxy'},})
   -- winbar
   use {'fgheng/winbar.nvim'}
+  -- tasks 任务管理器
+  use {'GustavoKatel/tasks.nvim'}
 end)

@@ -107,3 +107,5 @@ require("aero.debug")
 --fcitx config
 require('aero.fcitx-config')
 
+-- tasks 任务管理
+require("aero.tasks-config")

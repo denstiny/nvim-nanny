@@ -6,7 +6,7 @@ local has_cmp, cmp = pcall(require, "cmp")
 if not has_cmp then return end
 local snip = require "luasnip"
 local kind = require "lspkind"
-local tabnine = require('cmp_tabnine.config')
+--local tabnine = require('cmp_tabnine.config')
 kind.init({
   preset = 'codicons',
   symbol_map = {
@@ -39,17 +39,17 @@ kind.init({
 })
 
 
-tabnine:setup({
-  max_lines = 1000;
-  max_num_results = 20;
-  sort = true;
-  run_on_every_keystroke = true;
-  snippet_placeholder = '..';
-  ignored_file_types = { -- default is not to ignore
-    -- uncomment to ignore in lua:
-    lua = true
-  };
-})
+--tabnine:setup({
+--  max_lines = 1000;
+--  max_num_results = 20;
+--  sort = true;
+--  run_on_every_keystroke = true;
+--  snippet_placeholder = '..';
+--  ignored_file_types = { -- default is not to ignore
+--    -- uncomment to ignore in lua:
+--    lua = true
+--  };
+--})
 
 
 --local t = function(str)
