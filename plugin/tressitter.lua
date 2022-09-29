@@ -60,6 +60,7 @@ ts.setup {
     "html",
     "css",
     "javascript",
+    "markdown_inline",
     "markdown",
     "bash",
     "comment"

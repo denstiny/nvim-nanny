@@ -22,3 +22,5 @@ vim.cmd [[set noru]]
 --vim.g.OverVirTualChara_c = '⤵'
 require("aero.other.custom_lua.mdorg")
 require("aero.other.custom_lua.tree-term")
+local markdown = require("aero.other.custom_lua.markdown")
+markdown.VirMarkDown_start()

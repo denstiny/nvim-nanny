@@ -1,19 +1,7 @@
-local status_ok, lsp_installer = pcall(require, "nvim-lsp-installer")
-local _, nvim_lsp = pcall(require, "lspconfig")
-if not status_ok or not nvim_lsp then
-  vim.notify("nvim-lspconfig not found!")
-  return
-end
+local _,mason_lsp = pcall(require,"mason-lspconfig")
+local _, lspconfig = pcall(require, "lspconfig")
+if not mason_lsp or not lspconfig then return end
 
--- NOTE: 如果发现某些lsp server安装启动时出现， client exit x and signal 0 等错误
--- 可能是因为node版本过低， 升级node版本即可
--- 升级方法
--- npm cache clean -f
--- npm install -g n
--- n stable
-
--- Register a handler that will be called for all installed servers.
--- Alternatively, you may also register handlers on specific server instances instead (see example below).
 local servers_lsp = {
   "pyright",
   "cmake",
@@ -25,7 +13,7 @@ local servers_lsp = {
   "clangd",
   "sumneko_lua",
   --"jdtls",
-  "gopls",
+  --"gopls",
   --"csharp_ls",
   --"r_language_server",
   --"rust_analyzer",
@@ -50,22 +38,13 @@ local servers_lsp = {
   --"denols",
   --"taplo",
 }
-lsp_installer.setup({
+mason_lsp.setup({
   ensure_installed = servers_lsp,
-  automatic_installation = true,
-  pip = {
-    install_args = { "--proxy", "127.0.0.1:7890" }
-  }
+  automatic_installation = true
 })
 
+
 for _, lsp in ipairs(servers_lsp) do
-  --local ok, server = lsp_installer.get_server(lsp)
-  --if ok then
-  --  if not server:is_installed() then
-  --    vim.notify("Installing " .. lsp)
-  --    server:install()
-  --  end
-  --end
   local opts = {
     -- on_attach = my_custom_on_attach,
     on_attach = require("aero.lsp-setup.lsp.handlers").on_attach,
@@ -95,15 +74,10 @@ for _, lsp in ipairs(servers_lsp) do
     opts = vim.tbl_deep_extend("force", pyright_opts, opts)
   end
 
-  if lsp == "pylsp" then
-    local pylsp_opts = require("aero.lsp-setup.lsp.settings.pylsp")
-    opts = vim.tbl_deep_extend("force", pylsp_opts, opts)
-  end
-
-  if lsp == "gopls" then
+  if lsp == "pyright" then
     local gopls_opts = require("aero.lsp-setup.lsp.settings.gopls")
-    opts = vim.tbl_deep_extend("force",gopls_opts,opts)
+    opts = vim.tbl_deep_extend("force", gopls_opts, opts)
   end
 
-  nvim_lsp[lsp].setup(opts)
+  lspconfig[lsp].setup(opts)
 end

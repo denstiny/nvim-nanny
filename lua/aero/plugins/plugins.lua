@@ -26,9 +26,11 @@ packer.startup(function(use)
   -- LSP
   use { 'neovim/nvim-lspconfig' }
   use {
-    'williamboman/nvim-lsp-installer',
+    --'williamboman/nvim-lsp-installer',
     'j-hui/fidget.nvim' -- lsp进度
   }
+  use { "williamboman/mason.nvim" }
+  use { "williamboman/mason-lspconfig.nvim" }
   use { "p00f/clangd_extensions.nvim" }
   -- Completion
   use { 'hrsh7th/nvim-cmp' }
@@ -65,6 +67,7 @@ use { 'nvim-treesitter/playground' }
 use 'phaazon/hop.nvim'
 -- Theme
 --use 'folke/tokyonight.nvim'
+--use 'marko-cerovac/material.nvim'
 use({ 'rose-pine/neovim', as = 'rose-pine', tag = 'v1.*' })
 use 'lukas-reineke/indent-blankline.nvim'
 -- term
@@ -132,7 +135,6 @@ requires = {
   -- markdown
   --use { "iamcco/markdown-preview.nvim", run = "cd app && yarn install" }
   use { 'mzlogin/vim-markdown-toc' }
-  --use {'mbpowers/nvimager'} -- markdown 显示图片
   --use {'denstiny/picgo-nvim'}
   -- markdown table
   use "dhruvasagar/vim-table-mode"

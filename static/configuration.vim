@@ -386,10 +386,3 @@ call wilder#set_option('renderer', wilder#popupmenu_renderer(wilder#popupmenu_bo
         \ 'left': [' ', wilder#popupmenu_devicons(), wilder#popupmenu_buffer_flags()],
         \ 'right': [' ', wilder#popupmenu_scrollbar()],
         \ })))
-
-
-" nmap <leader>qq <Plug>NvimagerToggle
-" let g:nvimager#autostart = 0
-" let g:nvimager#title = 1
-" let g:nvimager#dynamic_scaler = 'fit_contain'
-" let g:nvimager#static_scaler = 'forced_cover'
