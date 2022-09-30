@@ -16,7 +16,7 @@ highlight default Title_6 guifg=#343A85 guibg=bg       " 六级标题
 ]]
 
 M.Title = {"^# ","^## ","^### ","^#### ","^##### ","^###### "}
-M.Title_icon = {"○"," ☉ ","  ☯ ","   ♼ ","    ☀ ","     ☀ "}
+M.Title_icon = {"○"," ○ ","  ○ ","   ○ ","    ○ ","     ○ "}
 M.Title_hight = {"Title_1","Title_2","Title_3","Title_4","Title_5","Title_6"}
 M.namespace_id = vim.api.nvim_create_namespace("VirMarkDown")
 
