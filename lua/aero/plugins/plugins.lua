@@ -45,6 +45,14 @@ packer.startup(function(use)
   use { 'f3fora/cmp-spell' }
   use { 'hrsh7th/cmp-nvim-lsp' }
   use { 'hrsh7th/cmp-cmdline' }
+  -- Packer
+--use({
+--  "folke/noice.nvim",
+--  event = "VimEnter",
+--  config = function()
+--    require("noice").setup()
+--  end,
+--})
   use { 'L3MON4D3/LuaSnip',
   requires = { 'rafamadriz/friendly-snippets' }
 }
@@ -133,7 +141,7 @@ requires = {
   use { 'nvim-neorg/neorg' }
   --use {'nvim-orgmode/orgmode'}
   -- markdown
-  --use { "iamcco/markdown-preview.nvim", run = "cd app && yarn install" }
+  use { "iamcco/markdown-preview.nvim", run = "cd app && yarn install" }
   use { 'mzlogin/vim-markdown-toc' }
   --use {'denstiny/picgo-nvim'}
   -- markdown table

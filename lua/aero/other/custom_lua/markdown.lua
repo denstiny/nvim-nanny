@@ -12,11 +12,12 @@ highlight default Title_2 guifg=#343A5B guibg=bg       " 二级标题
 highlight default Title_3 guifg=#343A65 guibg=bg       " 三级标题
 highlight default Title_4 guifg=#343A70 guibg=bg       " 四级标题
 highlight default Title_5 guifg=#343A85 guibg=bg       " 五级标题
+highlight default Title_6 guifg=#343A85 guibg=bg       " 六级标题
 ]]
 
-M.Title = {"^# ","^## ","^### ","^#### ","^##### "}
-M.Title_icon = {"○"," ☉ ","  ☯ ","   ♼ ","    ☀ "}
-M.Title_hight = {"Title_1","Title_2","Title_3","Title_4","Title_5"}
+M.Title = {"^# ","^## ","^### ","^#### ","^##### ","^###### "}
+M.Title_icon = {"○"," ☉ ","  ☯ ","   ♼ ","    ☀ ","     ☀ "}
+M.Title_hight = {"Title_1","Title_2","Title_3","Title_4","Title_5","Title_6"}
 M.namespace_id = vim.api.nvim_create_namespace("VirMarkDown")
 
 M.VirTitle = function ()
@@ -55,7 +56,7 @@ M.VirMarkDown_start = function ()
     pattern = {"*.md"},
     callback = M.SwitchInsertMode
   })
-  vim.api.nvim_create_autocmd({"BufEnter","InsertLeave"},{
+  vim.api.nvim_create_autocmd({"BufEnter","InsertLeave","CursorMoved","CursorHold"},{
     pattern = {"*.md"},
     callback = M.VirTitle
   })
