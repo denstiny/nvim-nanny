@@ -1,0 +1,11 @@
+######################################################################
+# @author      : {{NAME}} ({{EMAIL}})
+# @file        : {{FILE}}
+# @created     : {{TIMESTAMP}}
+######################################################################
+
+cmake_minimum_required(VERSION 2.8)
+set(CMAKE_EXPORT_COMPILE_COMMANDS TRUE)
+project({{CURSOR}} C)
+
+add_executable(main main.c)

@@ -62,7 +62,7 @@ M.Vir_Text_Start = function ()
   vim.api.nvim_create_autocmd({"BufEnter","InsertLeave","CursorMoved","CursorHold","CursorMovedI","TextChanged"},{
     callback = M.CreateReturnText
   })
-  vim.api.nvim_create_autocmd({"CursorMoved","CursorHold"},{
+  vim.api.nvim_create_autocmd({"CursorMoved","CursorHold","CursorMovedI"},{
     callback = M.SwitchInsertMode
   });
 end
