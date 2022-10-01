@@ -29,13 +29,21 @@ local handler = function(virtText, lnum, endLnum, width, truncate)
   return newVirtText
 end
 
-vim.o.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
-vim.wo.foldcolumn = '1'
+vim.o.fillchars = [[eob: ,fold: ,foldopen:┌,foldsep:│,foldclose:-]]
+vim.wo.foldcolumn = '5'
 vim.wo.foldnestmax = '1'
 vim.wo.foldlevel = 99 -- feel free to decrease the value
 vim.wo.foldenable = true
+local ftMap = {
+    vim = 'indent',
+    python = {'indent'},
+    git = ''
+}
 ufo.setup({
-  fold_virt_text_handler = handler
+  fold_virt_text_handler = handler,
+  provider_selector = function(bufnr, filetype)
+    return ftMap[filetype] or {'treesitter', 'indent'}
+end
 })
 local bufnr = vim.api.nvim_get_current_buf()
 ufo.setFoldVirtTextHandler(bufnr, handler)

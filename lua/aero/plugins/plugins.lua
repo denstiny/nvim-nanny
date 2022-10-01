@@ -165,7 +165,7 @@ requires = {
     requires = 'MunifTanjim/nui.nvim',
   }
   -- windows
-  use 'sindrets/winshift.nvim'
+  --use 'sindrets/winshift.nvim'
   -- 平滑滚动
   use 'karb94/neoscroll.nvim'
   -- drawing

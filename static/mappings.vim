@@ -13,7 +13,7 @@ set ts=2
 set tabstop=2
 set shiftwidth=2
 set clipboard=unnamed
-set foldcolumn=1
+"set foldcolumn=1
 set nofoldenable
 "set signcolumn=auto:1-2
 set cursorline

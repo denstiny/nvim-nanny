@@ -7,15 +7,28 @@
 local M = {}
 M.icon = "↲"
 M.namespace_id = vim.api.nvim_create_namespace("vir_text")
+M.NoFileType = {'startify','NvimTree','Trouble','Outline','norg','packer','lsp-installer','toggleterm','packer','TelescopePrompt','CompetiTest','help','startuptime','markdown'}
 vim.cmd[[
 highlight default VirReturnText guifg=#4D557B guibg=bg
-highlight default VirReturnText_v guifg=#4D557B guibg=#21202e
+exec "highlight default VirReturnText_v guifg=#4D557B guibg=".synIDattr(hlID('CursorLine'),'bg')
 ]]
 
+M.NoStartFileType = function ()
+  local isStart = true
+  for i=1,#M.NoFileType do
+    if vim.o.filetype == M.NoFileType[i] then
+      isStart = false
+    end
+  end
+  return isStart
+end
+
+
 M.CreateReturnText = function ()
+  if M.NoStartFileType() == false then return end
   local cure = vim.fn.line('.')
   vim.api.nvim_buf_clear_namespace(0,M.namespace_id,cure-2 > 0 and cure-2 or 0,cure+1)
-  for i=cure-30,cure+30 do
+  for i=cure-50,cure+50 do
     if i >= 0 and i <= vim.fn.line('$') then
       local cure_line = vim.fn.getline(i)
       local otp = M.GetReturnText(cure_line)
@@ -33,13 +46,14 @@ M.GetReturnText = function (str)
   local str_len = vim.fn.len(vim.fn.split(str))
   local str_l = string.len(str)
   if str_len > 0 then
-    return {text = M.icon,cod = str_l,hi={"Title_1"}}
+    return {text = M.icon,cod = str_l,hi={"VirReturnText"}}
   else
     return 0
   end
 end
 
 M.SwitchInsertMode = function ()
+  if M.NoStartFileType() == false then return end
   if M.GetReturnText(vim.fn.getline('.')) == 0 then
     return
   end
