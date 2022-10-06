@@ -109,3 +109,9 @@ require('aero.fcitx-config')
 
 -- tasks 任务管理
 require("aero.tasks-config")
+
+-- translation
+require("aero.pantran-config")
+
+-- markid 
+require("aero.markid-config")

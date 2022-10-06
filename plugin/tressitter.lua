@@ -68,6 +68,7 @@ ts.setup {
   autotag = {
     enable = true,
   },
+  markid = {enable = true},
   highlight = {
     enable = true,
     use_languagetree = false,

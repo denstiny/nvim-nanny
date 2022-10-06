@@ -70,6 +70,7 @@ use {
 use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
 use { 'nvim-treesitter/nvim-treesitter-refactor' }
 use { 'nvim-treesitter/playground' }
+use {'David-Kunz/markid'}
 
 -- Tools
 use 'phaazon/hop.nvim'
@@ -175,7 +176,7 @@ requires = {
   -- start time
   use { 'dstein64/vim-startuptime' }
   -- 翻译
-  use { 'voldikss/vim-translator' ,run = "pip install pysocks"}
+  --use { 'voldikss/vim-translator' ,run = "pip install pysocks"}
   -- project
   use { 'ahmedkhalf/project.nvim' }
   -- notify
@@ -187,6 +188,7 @@ requires = {
   use { 'chipsenkbeil/distant.nvim' }
   -- wilder
   use { 'gelguy/wilder.nvim' }
+  use { "potamides/pantran.nvim" }
   -- make
   use "Shatur/neovim-cmake"
   -- fcitx5

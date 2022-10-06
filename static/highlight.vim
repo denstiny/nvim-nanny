@@ -25,7 +25,11 @@ hi NormalFloat guibg=bg
 
 
 "exec "hi LineNr guifg=".synIDattr(hlID('SignColumn'),'bg')
-
 " 替换符号的显示样式
 syn match WhiteSpace /##/ containedin=ALL conceal cchar=\ 
 syn match keyword /##/ containedin=ALL conceal cchar=
+"syntax match MathSymbols /\V&radic;/ conceal cchar=√
+"syntax match MathSymbols /\V&sup2;/ conceal cchar=²
+"syntax match MathSymbols /\V&sum;/ conceal cchar=∑
+syntax match TabeLine /|/ conceal cchar=│
+"set conceallevel=1
