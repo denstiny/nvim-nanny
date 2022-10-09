@@ -1,5 +1,7 @@
 # Denstiny Aero Neovim configuration file
 
+![heading](https://user-images.githubusercontent.com/57088952/160252189-b96cbd52-9419-4a0b-907b-8d8336d20705.jpg)
+
 <!-- vim-markdown-toc GFM -->
 
 * [Dome](#dome)
@@ -16,11 +18,11 @@
 ## Dome
 `nvim version`:`NVIM v0.6.1`
 ### head
-![head](https://s3.bmp.ovh/imgs/2022/03/31/61de8e533d8bfca5.png) 
+![head](https://user-images.githubusercontent.com/57088952/194766975-eafaf2d8-c48d-4364-9312-a73e4867ce9a.png) 
 ### lsp
-![lsp](https://s3.bmp.ovh/imgs/2022/03/31/ad918d0868d1bfeb.png) 
+![lsp](https://user-images.githubusercontent.com/57088952/194767046-fe72917e-2e1b-4862-b3b0-17532ebcdf6f.png) 
 ### debug
-![debug](https://s3.bmp.ovh/imgs/2022/03/31/d6a944d351cb6e58.png) 
+![debug](https://user-images.githubusercontent.com/57088952/194767162-48a08c44-3a94-4de6-91d3-88145929d96e.png) 
 ## configuration file
 > Automatic loading static all files in directory(自动加载 static 目录下所有文件)
 
