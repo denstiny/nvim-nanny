@@ -8,6 +8,9 @@
 * [**file**: `mdorg.lua`](#file-mdorglua)
   * [使用方法](#使用方法)
   * [配置](#配置)
+* [file: vir-text.lua](#file-vir-textlua)
+* [file:tree-term](#filetree-term)
+* [file: markdown.lua](#file-markdownlua)
 
 <!-- vim-markdown-toc -->
 ## **file**: `mdorg.lua` 
@@ -26,3 +29,13 @@ command! EditBufferCodeBlock call mdorg_Edit()
 command! ResCodeBlock call mdorg_Res()
 ]]
 ```
+## file: vir-text.lua
+> 在行末尾显示自定义符号,并排除空行
+```lua
+-- 默认配置
+M.NoFileType = {'startify','NvimTree','Trouble','Outline','norg','packer','lsp-installer','toggleterm','packer','TelescopePrompt','CompetiTest','help','startuptime','markdown'}
+```
+## file:tree-term
+> 在打开NerdTree和Term的时候会互相排斥布局，这个脚本指解决这个问题
+## file: markdown.lua
+> 美化markdown,和增强vim markdown功能

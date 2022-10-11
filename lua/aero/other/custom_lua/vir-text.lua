@@ -35,6 +35,7 @@ M.CreateReturnText = function ()
       if otp ~= 0 then
         vim.api.nvim_buf_set_extmark(0,M.namespace_id,i - 1,otp.cod,{
           virt_text_pos = 'overlay',
+          priority = 0,
           virt_text = {{otp.text,otp.hi}}
         })
       end
@@ -63,6 +64,7 @@ M.SwitchInsertMode = function ()
   vim.api.nvim_buf_clear_namespace(0,M.namespace_id,cure-1,cure)
   vim.api.nvim_buf_set_extmark(0,M.namespace_id,cure-1,cod,{
     virt_text_pos = 'overlay',
+    priority = 0,
     virt_text = {{M.icon,hi}}
   })
 end
