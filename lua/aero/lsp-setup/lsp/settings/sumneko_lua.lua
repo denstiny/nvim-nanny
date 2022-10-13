@@ -13,11 +13,21 @@ return {
         globals = {'vim'},
       },
       workspace = {
-        library = vim.api.nvim_get_runtime_file("", true),
+        --library = vim.api.nvim_get_runtime_file("", true),
+        --library = {
+        --  [vim.fn.expand "$VIMRUNTIME/lua"] = true,
+        --  [vim.fn.stdpath "config" .. "/lua"] = true,
+        --},
+        library = {
+          vim.fn.stdpath("data") .. "/site/pack/packer/start/",
+          vim.fn.stdpath("config"),
+        },
       },
       telemetry = {
         enable = false,
       },
+      maxPreload = 2000,
+      preloadFileSize = 50000,
     },
   },
 }

@@ -3,12 +3,20 @@ if not has_ts then return end
 
 
 toggleterm.setup {
+  open_mapping = [[C-\]],
   size = 13,
-  open_mapping = nil,
   shade_filetypes = {},
   shade_terminals = true,
-  shading_factor = '1',
+  --shading_factor = '1',
   start_in_insert = true,
   persist_size = true,
-  direction = 'horizontal'
+  direction = 'horizontal',
+  highlights = {
+    Normal = {
+      guibg = "#1A1B26",
+    },
+    NormalFloat = {
+      link = 'Normal'
+    },
+  },
 }

@@ -220,11 +220,11 @@ let g:startify_center = 40
 "=== asyncrun
 let g:asyncrun_open = 10
 let g:asynctask_template  =  ' ~/.config/nvim/static/templates/task_template.ini'
-let g:asynctasks_config_name = ['main.tasks', '.git/tasks.ini', '.svn/tasks.ini']
+let g:asynctasks_config_name = ['.git/tasks.ini', '.svn/tasks.ini', 'build/tasks.ini']
+let g:asyncrun_rootmarks = ['.git', '.svn', '.root', '.project', '.hg', 'build']
 let g:asynctasks_extra_config = [
       \ '~/.config/nvim/static/templates/task_template.ini',
       \ ]
-let g:asynctasks_term_pos = 'bottom'
 let g:asynctasks_term_rows = 10    " 设置纵向切割时，高度为 10
 let g:asynctasks_term_rows = 10    " 设置水平端子拆分的高度
 let g:asynctasks_term_cols = 30    " 设置垂直端子分割的宽度
@@ -232,6 +232,7 @@ let g:asyncrun_save = 2
 let g:asyncrun_bell = 1
 let g:asyncrun_trim = 1
 let g:asyncrun_open = 1
+let g:asynctasks_term_pos = 'toggleterm'
 let g:asynctasks_term_reuse=1
 
 
