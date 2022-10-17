@@ -5,9 +5,9 @@ end
 local has_cmp, cmp = pcall(require, "cmp")
 if not has_cmp then return end
 local snip = require "luasnip"
-local kind = require "lspkind"
+local lspkind = require "lspkind"
 
-kind.init({
+lspkind.init({
   preset = 'codicons',
   symbol_map = {
     Text = " ",
@@ -24,7 +24,7 @@ kind.init({
     Value = " ",
     Enum = " ",
     Keyword = " ",
-    Snippet = " ",
+    Snippet = " ",
     Color = " ",
     File = " ",
     Reference = " ",
@@ -35,9 +35,36 @@ kind.init({
     Event = " ",
     Operator = " ",
     TypeParameter = " ",
+    cmp_tabnine = ""
   },
 })
 
+local source_mapping = {
+  buffer = "[Buffer]",
+  nvim_lsp = "[LSP]",
+  nvim_lua = "[Lua]",
+  cmp_tabnine = "[TN]",
+  path = "[Path]",
+  luasnip = "[SN]"
+}
+
+
+-- tabnine
+local tabnine = require('cmp_tabnine.config')
+
+tabnine.setup({
+  max_lines = 1000,
+  max_num_results = 20,
+  sort = true,
+  run_on_every_keystroke = true,
+  snippet_placeholder = '..',
+  ignored_file_types = {
+    -- default is not to ignore
+    -- uncomment to ignore in lua:
+    -- lua = true
+  },
+  show_prediction_strength = false
+})
 
 cmp.setup {
   mapping = {
@@ -90,7 +117,7 @@ cmp.setup {
     end, { "i", "s" }),
   },
   sources = {
-    { name = "nvim_lsp", priority = 11 },
+    { name = "nvim_lsp", priority = 12 },
     { name = "neorg", priority = 11 },
     --{name = "nvim_lsp_signature_help"},
     { name = "luasnip", priority = 11 },
@@ -98,7 +125,7 @@ cmp.setup {
     { name = "buffer", keyword_lenght = 5, priority = 9 },
     { name = "path", priority = 10 },
     { name = "calc" },
-    { name = 'cmp_tabnine', priority = 9 },
+    { name = 'cmp_tabnine', priority = 11 },
     --{name = "digraphs"},
     { name = "spell" },
   },
@@ -115,10 +142,30 @@ cmp.setup {
   },
   formatting = {
     fields = { 'kind', 'abbr', 'menu' },
-    format = kind.cmp_format {
-      with_text = false,
-      maxwidth = 80,
-    },
+    --format = kind.cmp_format {
+    --  with_text = false,
+    --  maxwidth = 80,
+    --},
+    format = function(entry, vim_item)
+      --vim.notify(entry.source.name)
+      vim_item.kind = lspkind.symbolic(vim_item.kind, { mode = "symbol" })
+      vim_item.menu = source_mapping[entry.source.name]
+      if entry.source.name == "cmp_tabnine" then
+        vim_item.kind = ""
+        -- show  score
+        --local detail = (entry.completion_item.data or {}).detail
+        --if detail and detail:find('.*%%.*') then
+        --  vim_item.kind = vim_item.kind .. ' ' .. detail
+        --end
+
+        if (entry.completion_item.data or {}).multiline then
+          vim_item.kind = vim_item.kind .. ' ' .. '[ML]'
+        end
+      end
+      local maxwidth = 80
+      vim_item.abbr = string.sub(vim_item.abbr, 1, maxwidth)
+      return vim_item
+    end
   },
   snippet = {
     expand = function(args)

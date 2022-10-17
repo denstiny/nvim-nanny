@@ -8,7 +8,9 @@ local _use = function(use)
   use { 'wbthomason/packer.nvim' }
   use "folke/neodev.nvim"
   use { 'lewis6991/impatient.nvim' }
-  use { 'rcarriga/nvim-notify' }
+  use { 'rcarriga/nvim-notify', config = function()
+    vim.notify = require("notify")
+  end }
   use { 'p00f/clangd_extensions.nvim' }
   use 'simrat39/rust-tools.nvim'
   use {
@@ -19,6 +21,7 @@ local _use = function(use)
     }
   }
   use { 'hrsh7th/nvim-cmp' }
+  use { 'tzachar/cmp-tabnine', run = './install.sh' }
   use { 'hrsh7th/cmp-nvim-lua' }
   use { 'onsails/lspkind-nvim' }
   use { 'hrsh7th/cmp-nvim-lsp-signature-help' }

@@ -27,3 +27,5 @@ require('packers.hlslens')
 require('packers.undotree')
 -- color theme
 require('packers.packer-theme')
+-- git
+require('packers.git')

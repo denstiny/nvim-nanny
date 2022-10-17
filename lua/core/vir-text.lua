@@ -26,9 +26,9 @@ end
 
 M.CreateReturnText = function()
   vim.cmd [[
-highlight default VirReturnText guifg=#4D557B guibg=bg
-exec "highlight default VirReturnText_v guifg=#4D557B guibg=".synIDattr(hlID('CursorLine'),'bg')
-]]
+    highlight default VirReturnText guifg=#4D557B guibg=bg
+    exec "highlight default VirReturnText_v guifg=#4D557B guibg=".synIDattr(hlID('CursorLine'),'bg')
+  ]]
 
 
   if M.NoStartFileType() == false then return end
@@ -48,6 +48,11 @@ exec "highlight default VirReturnText_v guifg=#4D557B guibg=".synIDattr(hlID('Cu
     end
   end
 end
+
+M.ClearVirtualText = function()
+  vim.api.nvim_buf_clear_namespace(0, M.namespace_id, 0, vim.fn.line('$'))
+end
+
 
 M.GetReturnText = function(str)
   local str_len = vim.fn.len(vim.fn.split(str))
@@ -81,7 +86,8 @@ M.Vir_Text_Start = function()
   vim.api.nvim_create_autocmd({ "BufEnter", "InsertEnter" }, {
     callback = M.SwitchInsertMode
   })
-  vim.api.nvim_create_autocmd({ "BufEnter", "InsertLeave", "CursorMoved", "CursorHold", "CursorMovedI", "TextChanged" },
+  vim.api.nvim_create_autocmd({ "BufEnter", "InsertLeave", "CursorMoved", "CursorHold", "CursorMovedI", "TextChanged",
+    "BufWritePre" },
     {
       callback = M.CreateReturnText
     })
@@ -91,4 +97,5 @@ M.Vir_Text_Start = function()
 end
 
 vim.g.CreateReturnText = M.CreateReturnText
+vim.g.ClearVirtualText = M.ClearVirtualText
 return M

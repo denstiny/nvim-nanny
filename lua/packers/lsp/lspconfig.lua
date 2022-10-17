@@ -71,6 +71,13 @@ if _ then
         "-j=12",
         "--pretty",
       }
+    },
+    extensions = {
+      autoSetHints = true,
+      -- These apply to the default ClangdSetInlayHints command
+      inlay_hints = {
+        only_current_line = true,
+      }
     }
   })
 end

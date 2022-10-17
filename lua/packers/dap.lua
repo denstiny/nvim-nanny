@@ -32,7 +32,6 @@ require('other.dap_conf.go').setup(dap)
 dapui.setup({
   icons = { expanded = "▾", collapsed = "▸" },
   mappings = {
-    --- Use a table to apply multiple mappings
     expand = { "<CR>", "<2-LeftMouse>" },
     open = "o",
     remove = "d",
