@@ -1,0 +1,14 @@
+vim.g.asyncrun_open           = 10
+vim.g.asynctask_template      = vim.fn.stdpath('config') .. '/lua/other/templates/task_template.ini'
+vim.g.asynctasks_config_name  = { '.git/tasks.ini', '.svn/tasks.ini', 'build/tasks.ini' }
+vim.g.asyncrun_rootmarks      = { '.git', '.svn', '.root', '.project', '.hg', 'build' }
+vim.g.asynctasks_extra_config = { vim.fn.stdpath('config') .. '/lua/other/templates/task_template.ini' }
+vim.g.asynctasks_term_rows    = 10
+vim.g.asynctasks_term_rows    = 10
+vim.g.asynctasks_term_cols    = 30
+vim.g.asyncrun_save           = 2
+vim.g.asyncrun_bell           = 1
+vim.g.asyncrun_trim           = 1
+vim.g.asyncrun_open           = 1
+vim.g.asynctasks_term_pos     = 'toggleterm'
+vim.g.asynctasks_term_reuse   = 1
