@@ -82,7 +82,7 @@ end
 
 local function lsp_keymaps(bufnr)
   local opts = { noremap = true, silent = true }
-  vim.api.nvim_buf_set_keymap(bufnr, "n", "gd", "<cmd>Telescope lsp_definitions<cr>", opts)
+  vim.api.nvim_buf_set_keymap(bufnr, "n", "gd", "<cmd>Trouble lsp_definitions<cr>", opts)
   vim.api.nvim_buf_set_keymap(bufnr, "n", "gD", "<cmd>Telescope lsp_definitions<cr>", opts)
   vim.api.nvim_buf_set_keymap(bufnr, "n", "gh", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
   vim.api.nvim_buf_set_keymap(bufnr, "n", "mr", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
@@ -91,7 +91,7 @@ local function lsp_keymaps(bufnr)
   vim.api.nvim_buf_set_keymap(bufnr, "n", "gp", "<cmd>lua vim.diagnostic.goto_prev()<CR>", opts)
   vim.api.nvim_buf_set_keymap(bufnr, "n", "gn", "<cmd>lua vim.diagnostic.goto_next()<cr>", opts)
   vim.api.nvim_buf_set_keymap(bufnr, "n", "gl", '<cmd>lua vim.diagnostic.open_float()<CR>', opts)
-  vim.api.nvim_buf_set_keymap(bufnr, "n", "da", '<Cmd>Trouble<cr>', opts)
+  vim.api.nvim_buf_set_keymap(bufnr, "n", "da", '<Cmd>Trouble workspace_diagnostics<cr>', opts)
 end
 
 M.on_attach = function(client, bufnr)
@@ -102,6 +102,7 @@ M.on_attach = function(client, bufnr)
   -- auto save format
   if client.supports_method('textDocument/formatting') then
     vim.api.nvim_create_autocmd('BufWritePre', {
+      pattern = { "*.cpp", "*.h", "*.c", "*.lua", "*.py", "*.go", "*.hpp", "*.cc" },
       callback = function()
         if vim.fn.has('nvim-0.8') == 1 then
           vim.lsp.buf.format()

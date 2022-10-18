@@ -12,7 +12,7 @@ local _use = function(use)
     vim.opt.termguicolors = true
     vim.notify = require("notify")
     vim.notify.setup({
-      background_colour = "#000000",
+      background_colour = "#16161E",
     })
   end }
   use { 'p00f/clangd_extensions.nvim' }
@@ -77,6 +77,8 @@ local _use = function(use)
   use { 'tpope/vim-surround' }
   use { 'voldikss/vim-translator' }
   use { 'tibabit/vim-templates' }
+  use { 'ahmedkhalf/project.nvim' }
+
 
 
 end

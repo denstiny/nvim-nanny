@@ -1,5 +1,5 @@
 local has_ts, telescope = pcall(require, "telescope")
-if telescope then return end
+if not has_ts then return end
 telescope.setup({
   defaults = {
     layout_config = {
@@ -50,5 +50,4 @@ telescope.setup({
     parameter       = { style = 'italic' },
   },
 })
---telescope.load_extension "packer"
---telescope.load_extension('projects')
+telescope.load_extension('projects')

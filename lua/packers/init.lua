@@ -33,3 +33,5 @@ require('packers.git')
 require('packers.translator')
 -- templates
 require('packers.template')
+-- project
+require('packers.project')
