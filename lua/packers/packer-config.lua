@@ -76,6 +76,8 @@ local _use = function(use)
   use { 'lewis6991/gitsigns.nvim' }
   use { 'tpope/vim-surround' }
   use { 'voldikss/vim-translator' }
+  use { 'tibabit/vim-templates' }
+
 
 end
 local path = packer_util.join_paths(vim.fn.stdpath('data'), 'plugin', 'packer_compiled.lua')

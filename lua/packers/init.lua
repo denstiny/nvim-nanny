@@ -31,3 +31,5 @@ require('packers.packer-theme')
 require('packers.git')
 -- translator
 require('packers.translator')
+-- templates
+require('packers.template')
