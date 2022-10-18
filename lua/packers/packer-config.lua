@@ -9,7 +9,11 @@ local _use = function(use)
   use "folke/neodev.nvim"
   use { 'lewis6991/impatient.nvim' }
   use { 'rcarriga/nvim-notify', config = function()
+    vim.opt.termguicolors = true
     vim.notify = require("notify")
+    vim.notify.setup({
+      background_colour = "#000000",
+    })
   end }
   use { 'p00f/clangd_extensions.nvim' }
   use 'simrat39/rust-tools.nvim'
@@ -63,21 +67,18 @@ local _use = function(use)
   use { 'GustavoKatel/tasks.nvim' }
   -- start time
   use { 'dstein64/vim-startuptime' }
-  -- buffer line
-  --use { 'akinsho/bufferline.nvim', tag = "v2.*" }
-  --use { 'SmiteshP/nvim-navic' }
-  --use { 'fgheng/winbar.nvim' }
   use { 'skywind3000/asyncrun.vim', requires = { 'skywind3000/asynctasks.vim' } }
   -- hlslens
   use { 'kevinhwang91/nvim-hlslens' }
   -- undo tree
   use { 'mbbill/undotree' }
   use { 'lewis6991/gitsigns.nvim' }
+  use { 'tpope/vim-surround' }
+  use { 'voldikss/vim-translator' }
 
 end
 
 local path = packer_util.join_paths(vim.fn.stdpath('data'), 'plugin', 'packer_compiled.lua')
-vim.cmd("luafile " .. path)
 packer.init({
   compile_path = path,
   auto_clean = true,

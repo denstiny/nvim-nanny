@@ -29,3 +29,5 @@ require('packers.undotree')
 require('packers.packer-theme')
 -- git
 require('packers.git')
+-- translator
+require('packers.translator')

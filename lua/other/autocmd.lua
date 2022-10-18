@@ -12,9 +12,3 @@ vim.cmd [[
 au   BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
 ]]
-
---vim.api.nvim_create_autocmd({ "BufWritePost" }, {
---  callback = function()
---    vim.fn.call(vim.g.ClearVirtualText, {})
---  end
---})

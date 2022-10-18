@@ -22,6 +22,7 @@ opt.updatetime = 250
 opt.cursorline = true
 opt.laststatus = 3
 opt.mouse = 'i'
+opt.pumheight = 15
 vim.opt.fillchars = {
   horiz     = '━',
   horizup   = '┻',
@@ -38,3 +39,6 @@ vim.api.nvim_create_autocmd({ "VimEnter" }, {
     opt.formatoptions:remove('r')
   end
 })
+vim.cmd [[
+set noswapfile
+]]

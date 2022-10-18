@@ -59,7 +59,7 @@ end
 
 vim.api.nvim_create_autocmd({ 'CursorHold' }, {
   callback = function()
-    M.LspDiagnosticsPopupHandler()
+    --M.LspDiagnosticsPopupHandler()
   end,
 })
 -- }}
