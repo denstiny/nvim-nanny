@@ -1,8 +1,10 @@
 M = {}
-M.setup = function(path, dap)
+local path = vim.fn.stdpath('data') .. "/mason"
+--M.setup = function(path, dap)
+M.setup = function(dap)
   dap.adapters.python = {
     type = 'executable';
-    command = path .. 'python/bin/python';
+    command = path .. '/packages/debugpy/venv/bin/python',
     args = { '-m', 'debugpy.adapter' };
   }
   dap.configurations.python = {

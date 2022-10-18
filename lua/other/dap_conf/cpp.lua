@@ -1,6 +1,7 @@
 M = {}
 local dapInstallPath = vim.fn.stdpath("data") .. "/mason/"
-M.setup = function(path, dap)
+--M.setup = function(path,dap) {
+M.setup = function(dap)
   dap.adapters.cppdbg = {
     id = 'cppdbg',
     type = 'executable',

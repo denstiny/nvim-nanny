@@ -6,23 +6,41 @@ if not has_dap then return end
 local has_dapui, dapui = pcall(require, "dapui")
 if not has_dapui then return end
 
-local has_dapInstall, DapInstall = pcall(require, "dap-install")
-if not has_dapInstall then return end
--- }
+local _, mason_dap = pcall(require, "mason-nvim-dap")
+if not _ then return end
 
---- {
-local dapInstallPath = vim.fn.stdpath("data") .. "/dapinstall/"
-DapInstall.setup({
-  installation_path = dapInstallPath,
-  proxy = "127.0.0.1:7890"
+-- {
+-- M.nvim_dap_to_package = {
+-- 	['python'] = 'debugpy',
+-- 	['cppdbg'] = 'cpptools',
+-- 	['delve'] = 'delve',
+-- 	['node2'] = 'node-debug2-adapter',
+-- 	['chrome'] = 'chrome-debug-adapter',
+-- 	['firefox'] = 'firefox-debug-adapter',
+-- 	['php'] = 'php-debug-adapter',
+-- 	['coreclr'] = 'netcoredbp',
+-- 	['js'] = 'js-debug-adapter',
+-- 	['lldb'] = 'codelldb',
+-- 	['bash'] = 'bash-debug-adapter',
+-- 	['javadbg'] = 'java-debug-adapter',
+-- 	['javatest'] = 'java-test',
+-- 	['mock'] = 'mockdebug',
+-- 	['puppet'] = 'puppet-editor-services',
+-- 	['elixir'] = 'elixir-ls',
+-- }
+---}
+
+mason_dap.setup({
+  ensure_installed = { "python", "delve", "cppdbg" }
 })
 
+
 --- cpp config
-require('other.dap_conf.cpp').setup(DapInstall, dap)
+require('other.dap_conf.cpp').setup(dap)
 dap.configurations.c = dap.configurations.cpp
 dap.configurations.rust = dap.configurations.cpp
 --- python
-require('other.dap_conf.python').setup(dapInstallPath, dap)
+require('other.dap_conf.python').setup(dap)
 --- go
 require('other.dap_conf.go').setup(dap)
 ---}

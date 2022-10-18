@@ -62,7 +62,8 @@ local _use = function(use)
   --debug
   use 'mfussenegger/nvim-dap'
   use { "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } }
-  use { "Pocco81/dap-buddy.nvim", tag = 'dev' }
+  --use { "Pocco81/dap-buddy.nvim", tag = 'dev' }
+  use { "jayp0521/mason-nvim-dap.nvim" }
   -- tasks
   use { 'GustavoKatel/tasks.nvim' }
   -- start time
@@ -77,8 +78,12 @@ local _use = function(use)
   use { 'voldikss/vim-translator' }
 
 end
-
 local path = packer_util.join_paths(vim.fn.stdpath('data'), 'plugin', 'packer_compiled.lua')
+local _, compiled = pcall(require, path)
+if compiled then
+  vim.cmd("luafile " .. path)
+end
+
 packer.init({
   compile_path = path,
   auto_clean = true,

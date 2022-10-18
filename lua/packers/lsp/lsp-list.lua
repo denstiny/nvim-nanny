@@ -36,11 +36,4 @@ M.lsp_server = {
   --"denols",
   --"taplo",
 }
-M.dapServer = {
-  "delve",
-  "cpptools",
-  "debugpy"
-}
-
-M.Server = tool.mergeTable(M.lsp_server, M.dapServer)
 return M
