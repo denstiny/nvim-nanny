@@ -111,6 +111,8 @@ U.map('s', '<C-k>', '<CMD>lua require("luasnip").jump(-1)<CR>')
 
 
 
+-- symbols map
+U.nmap("ts", "<Cmd>AerialToggle<cr>")
 -- siderbar
 --U.nmap("td", "<Cmd>lua require('sidebar-nvim').toggle()<CR>")
 -- fold lsp

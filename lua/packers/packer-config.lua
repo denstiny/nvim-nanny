@@ -78,13 +78,29 @@ local _use = function(use)
   use { 'voldikss/vim-translator' }
   use { 'tibabit/vim-templates' }
   use { 'ahmedkhalf/project.nvim' }
+  use {
+    'xeluxee/competitest.nvim',
+    requires = 'MunifTanjim/nui.nvim',
+  }
+  -- clip list
+  use { "AckslD/nvim-neoclip.lua", }
+  -- 滚动条
+  use('petertriho/nvim-scrollbar')
+
+  --use { 'sindrets/diffview.nvim' }
+  use 'mg979/vim-visual-multi'
+  use { 'machakann/vim-sandwich' }
+  use_rocks { 'lgi', 'dbus_proxy' }
+  use({ "black-desk/fcitx5-ui.nvim", rocks = { 'lgi', 'dbus_proxy' }, })
+  use { 'stevearc/aerial.nvim' }
+  use { 'brenoprata10/nvim-highlight-colors' }
 
 
 
 end
 local path = packer_util.join_paths(vim.fn.stdpath('data'), 'plugin', 'packer_compiled.lua')
 local _, compiled = pcall(require, path)
-if compiled then
+if _ then
   vim.cmd("luafile " .. path)
 end
 

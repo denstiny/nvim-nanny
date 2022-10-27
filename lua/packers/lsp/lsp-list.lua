@@ -10,7 +10,7 @@ M.lsp_server = {
   "vuels",
   "clangd",
   "sumneko_lua",
-  --"jdtls",
+  "jdtls",
   "gopls",
   --"csharp_ls",
   --"r_language_server",

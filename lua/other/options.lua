@@ -1,10 +1,11 @@
 local opt = vim.opt
 opt.showmode = false
 opt.expandtab = true
-opt.shiftwidth = 2
 opt.smartindent = true
 opt.tabstop = 2
+opt.clipboard:append 'unnamedplus'
 opt.softtabstop = 2
+opt.shiftwidth = 2
 opt.fillchars = { eob = " " }
 opt.ignorecase = true
 opt.smartcase = true
@@ -31,9 +32,10 @@ vim.opt.fillchars = {
   vertleft  = '┫',
   vertright = '┣',
   verthoriz = '╋',
+  eob       = ' '
 }
 
-vim.api.nvim_create_autocmd({ "VimEnter" }, {
+vim.api.nvim_create_autocmd({ "VimEnter", "BufEnter" }, {
   callback = function()
     opt.formatoptions:remove('o')
     opt.formatoptions:remove('r')

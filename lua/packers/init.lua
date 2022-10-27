@@ -35,3 +35,17 @@ require('packers.translator')
 require('packers.template')
 -- project
 require('packers.project')
+-- test
+require('packers.test')
+-- init
+require('packers.clip')
+-- scroll bar
+require('packers.scroll')
+-- fcitx
+require("packers.fcitx")
+-- symbols
+require("packers.symbol-map")
+-- colord
+require('packers.colord')
+-- fcitx
+require('packers.fcitx')
