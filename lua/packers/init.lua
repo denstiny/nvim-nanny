@@ -49,3 +49,8 @@ require("packers.symbol-map")
 require('packers.colord')
 -- fcitx
 require('packers.fcitx')
+-- luapad
+require('packers.luapad-config')
+require('packers.nvimsep')
+-- ufo
+require('packers.ufo-config')

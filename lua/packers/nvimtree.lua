@@ -9,7 +9,8 @@ nvim_tree.setup({
         { key = "u", action = "dir_up" },
       },
     },
-    side = "right"
+    --side = "right"
+    side = "left"
   },
   renderer = {
     group_empty = true,
@@ -26,6 +27,6 @@ nvim_tree.setup({
     dotfiles = true,
   },
   diagnostics = {
-    enable = true
+    enable = false
   },
 })

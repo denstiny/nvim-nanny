@@ -115,7 +115,7 @@ end
 M.CreatedBufferEditCodeBlock = function(ty)
   M.OpenDir(M.testPath)
   if M.createdBuffer == "vs" then
-    vim.cmd("vsplit " .. M.testPath .. M.filename .. "." .. ty)
+    vim.cmd("topleft vsplit " .. M.testPath .. M.filename .. "." .. ty)
     vim.g.start_stus = true
   end
 end

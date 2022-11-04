@@ -10,6 +10,7 @@ symbols.setup({
     ['php']      = { "lsp", "treesitter" },
     ['markdown'] = { "markdown" },
   },
+  position = 'right',
   guides = {
     mid_item = "├─",
     last_item = "└─",

@@ -94,13 +94,18 @@ local _use = function(use)
   use({ "black-desk/fcitx5-ui.nvim", rocks = { 'lgi', 'dbus_proxy' }, })
   use { 'stevearc/aerial.nvim' }
   use { 'brenoprata10/nvim-highlight-colors' }
-
+  use { "iamcco/markdown-preview.nvim", run = "cd app && yarn install" }
+  use 'rafcamlet/nvim-luapad'
+  use { 'nvim-zh/colorful-winsep.nvim' }
+  -- lsp fold code
+  use { 'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async' }
 
 
 end
 local path = packer_util.join_paths(vim.fn.stdpath('data'), 'plugin', 'packer_compiled.lua')
-local _, compiled = pcall(require, path)
-if _ then
+local file = io.open(path)
+if file then
+  file:close()
   vim.cmd("luafile " .. path)
 end
 

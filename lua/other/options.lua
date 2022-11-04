@@ -3,7 +3,6 @@ opt.showmode = false
 opt.expandtab = true
 opt.smartindent = true
 opt.tabstop = 2
-opt.clipboard:append 'unnamedplus'
 opt.softtabstop = 2
 opt.shiftwidth = 2
 opt.fillchars = { eob = " " }
