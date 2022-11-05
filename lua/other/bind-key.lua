@@ -121,7 +121,7 @@ U.nmap("tp", "<Cmd>lua vim.diagnostic.open_float(nil, {focus=false, scope=\"curs
 U.nmap("<Leader>nf", "<Cmd>lua require('neogen').generate()<CR>")
 
 -- startify
-U.nmap("H", "<Cmd>Startify<cr>")
+U.nmap("H", "<Cmd>Telescope help_tags<cr>")
 -- colip list
 U.nmap("<C-p>", "<Cmd>Telescope neoclip a<cr>")
 U.nmap("<A-t>", "<Cmd>echo &filetype<cr>")
