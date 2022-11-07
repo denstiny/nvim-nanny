@@ -3,6 +3,7 @@ local packer_util = require('packer.util')
 
 local _use = function(use)
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate', commit = '325de255' }
+  --use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
   use { 'nvim-treesitter/playground' }
   use { 'nvim-lua/plenary.nvim' }
   use { 'wbthomason/packer.nvim' }
@@ -42,18 +43,28 @@ local _use = function(use)
   -- color
   --use "rebelot/kanagawa.nvim"
   use 'folke/tokyonight.nvim'
+  use({
+    'rose-pine/neovim',
+    as = 'rose-pine',
+    tag = 'v0.1.0', -- Optional tag release
+    config = function()
+      vim.cmd('colorscheme rose-pine')
+    end
+  })
+  use 'marko-cerovac/material.nvim'
   -- statusline
   use { 'ray-x/lsp_signature.nvim' }
   use { 'nvim-lualine/lualine.nvim' }
   use { 'danymat/neogen' }
   use 'lukas-reineke/indent-blankline.nvim'
   use {
-    'kyazdani42/nvim-tree.lua',
+    "nvim-neo-tree/neo-tree.nvim",
+    branch = "v2.x",
     requires = {
-      'kyazdani42/nvim-web-devicons', -- optional, for file icons
-    },
-    tag = 'nightly', -- optional, updated every week. (see issue #1193)
-    commit = 'e401a4c'
+      "nvim-lua/plenary.nvim",
+      "kyazdani42/nvim-web-devicons", -- not strictly required, but recommended
+      "MunifTanjim/nui.nvim",
+    }
   }
   use { 'akinsho/toggleterm.nvim' }
   use { 'folke/trouble.nvim' }

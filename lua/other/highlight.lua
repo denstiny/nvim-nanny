@@ -1,5 +1,6 @@
 vim.cmd [[
-colorscheme tokyonight-night
+"colorscheme tokyonight-night
+colorscheme rose-pine
 hi EndOfBuffer guifg=bg
 hi NormalFloat guibg=bg
 hi FloatBorder guibg=bg

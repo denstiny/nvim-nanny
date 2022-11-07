@@ -21,7 +21,7 @@ treesitter_config.setup({
     "javascript",
     "markdown_inline",
     "markdown",
-    "bash",
+    --"bash",
     "comment"
 
   },
