@@ -14,7 +14,7 @@ M.lsp_server = {
   "gopls",
   --"csharp_ls",
   --"r_language_server",
-  --"rust_analyzer",
+  "rust_analyzer",
   --"julials",
   "pylsp",
   --"tsserver",

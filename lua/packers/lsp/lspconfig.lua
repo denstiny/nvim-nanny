@@ -33,6 +33,8 @@ local _, rust_tools = pcall(require, 'rust-tools')
 if _ then
   lspconfig['rust_analyzer'] = rust_tools.setup({
     server = {
+      on_attach = handlers.on_attach,
+      capabilities = handlers.capabilities,
       settings = {
         ['rust-analyzer'] = {
           cargo = {

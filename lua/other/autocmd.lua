@@ -11,15 +11,15 @@ local function on_backlist(filetype)
   return false
 end
 
-vim.api.nvim_create_autocmd({ "WinEnter" }, {
-  group = group,
-  callback = function(opt)
-    local filetype = vim.api.nvim_buf_get_option(opt.buf, 'filetype')
-    if vim.fn.winnr('$') == 1 and on_backlist(filetype) then
-      vim.cmd.quit()
-    end
-  end
-})
+--vim.api.nvim_create_autocmd({ "WinEnter" }, {
+--  group = group,
+--  callback = function(opt)
+--    local filetype = vim.api.nvim_buf_get_option(opt.buf, 'filetype')
+--    if vim.fn.winnr('$') == 1 and on_backlist(filetype) then
+--      vim.cmd.quit()
+--    end
+--  end
+--})
 -- }}}
 
 

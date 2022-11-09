@@ -66,6 +66,7 @@ local _use = function(use)
       "MunifTanjim/nui.nvim",
     }
   }
+  use { 'kyazdani42/nvim-tree.lua', tag = 'nightly' }
   use { 'akinsho/toggleterm.nvim' }
   use { 'folke/trouble.nvim' }
   use { 'nvim-telescope/telescope.nvim', 'nvim-telescope/telescope-packer.nvim',
@@ -110,6 +111,8 @@ local _use = function(use)
   use { 'nvim-zh/colorful-winsep.nvim' }
   -- lsp fold code
   use { 'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async' }
+  -- good cmd
+  use { "folke/noice.nvim" }
 
 
 end

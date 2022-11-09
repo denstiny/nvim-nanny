@@ -54,3 +54,5 @@ require('packers.luapad-config')
 require('packers.nvimsep')
 -- ufo
 require('packers.ufo-config')
+-- noice
+require('packers.noice-config')
