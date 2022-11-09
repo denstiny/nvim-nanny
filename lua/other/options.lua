@@ -34,12 +34,6 @@ vim.opt.fillchars = {
   eob       = ' '
 }
 
-vim.api.nvim_create_autocmd({ "VimEnter", "BufEnter" }, {
-  callback = function()
-    opt.formatoptions:remove('o')
-    opt.formatoptions:remove('r')
-  end
-})
 vim.cmd [[
 set noswapfile
 ]]
