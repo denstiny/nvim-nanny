@@ -112,7 +112,10 @@ local _use = function(use)
   -- lsp fold code
   use { 'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async' }
   -- good cmd
-  use { "folke/noice.nvim" }
+  -- use { "folke/noice.nvim" }
+  use { 'edluffy/hologram.nvim' }
+  use { 'glepnir/lspsaga.nvim' }
+  use { 'jose-elias-alvarez/null-ls.nvim' }
 
 
 end

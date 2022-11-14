@@ -24,6 +24,10 @@
         "path": "./snippets/cpp.json"
       },
       {
+        "language":"rs",
+        "path": "./snippets/rs.json"
+      },
+      {
         "language":"tasks",
         "path":"./snippets/tasks.json"
       },

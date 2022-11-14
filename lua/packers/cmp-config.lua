@@ -70,7 +70,7 @@ cmp.setup {
   mapping = {
     --["<CR>"] = cmp.mapping.confirm({ select = true }),
     ["<CR>"] = cmp.mapping(function(fallback)
-      if cmp.get_active_entry() then
+      if cmp.get_selected_entry() then
         cmp.confirm({ select = true })
       else
         fallback()
@@ -116,13 +116,14 @@ cmp.setup {
       end
     end, { "i", "s" }),
   },
+  preselect = cmp.PreselectMode.None,
   sources = {
     { name = "nvim_lsp", priority = 12 },
-    { name = "neorg", priority = 10 },
+    --{ name = "neorg", priority = 10 },
     --{name = "nvim_lsp_signature_help"},
     { name = "luasnip", priority = 11 },
     { name = "nvim_lua" },
-    { name = "buffer", priority = 10 },
+    { name = "buffer", priority = 11 },
     { name = "path", priority = 10 },
     { name = "calc" },
     { name = 'cmp_tabnine', priority = 10 },
@@ -131,6 +132,8 @@ cmp.setup {
   },
   sorting = {
     comparators = {
+      cmp.config.compare.locality,
+      cmp.config.compare.recently_used,
       cmp.config.compare.score,
       cmp.config.compare.exact,
       cmp.config.compare.order,
@@ -181,6 +184,7 @@ cmp.setup {
       winhighlight = 'FloatBorder:FloatBorder',
     },
     documentation = {
+      max_width = 50,
       border = { '╭', '─', '╮', '│', '╯', '─', '╰', '│' },
       winhighlight = 'Normal:CmpPmenu,FloatBorder:FloatBorder,CursorLine:PmenuSel,Search:None',
     }

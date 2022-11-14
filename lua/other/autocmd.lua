@@ -11,16 +11,23 @@ local function on_backlist(filetype)
   return false
 end
 
---vim.api.nvim_create_autocmd({ "WinEnter" }, {
---  group = group,
---  callback = function(opt)
---    local filetype = vim.api.nvim_buf_get_option(opt.buf, 'filetype')
---    if vim.fn.winnr('$') == 1 and on_backlist(filetype) then
---      vim.cmd.quit()
---    end
---  end
---})
+vim.api.nvim_create_autocmd({ "WinEnter" }, {
+  group = group,
+  callback = function(opt)
+    local filetype = vim.api.nvim_buf_get_option(opt.buf, 'filetype')
+    if vim.fn.winnr('$') == 1 and on_backlist(filetype) then
+      vim.cmd.quit()
+    end
+  end
+})
 -- }}}
+
+vim.api.nvim_create_autocmd("BufReadPost", { pattern = "*", callback = function()
+    local row, col = unpack(vim.api.nvim_buf_get_mark(0, "\""))
+    if { row, col } ~= { 0, 0 } then
+        vim.api.nvim_win_set_cursor(0, { row, 0 })
+    end
+end })
 
 
 --- {{{ auto clean write output

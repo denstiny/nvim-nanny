@@ -8,7 +8,7 @@ colorful_winsep.setup({
   },
   interval = 30,
   no_exec_files = { "packer", "TelescopePrompt", "mason", "CompetiTest", "NvimTree" },
-  symbols = { "━", "┃", "┏", "┓", "┗", "┛" },
+  symbols = { "─", "│", "┌", "┐", "└", "┘" },
   close_event = function()
   end,
   create_event = function()

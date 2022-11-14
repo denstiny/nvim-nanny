@@ -19,7 +19,7 @@ nvim_tree.setup({
     },
     icons = {
       show = {
-        git = true
+        git = false
       }
     }
   },

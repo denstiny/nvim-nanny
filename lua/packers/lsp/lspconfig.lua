@@ -31,6 +31,8 @@ end
 --- { rust tools
 local _, rust_tools = pcall(require, 'rust-tools')
 if _ then
+  local cap = handlers.capabilities
+  --cap.textDocument.completion.completionItem.preselectSupport = false
   lspconfig['rust_analyzer'] = rust_tools.setup({
     server = {
       on_attach = handlers.on_attach,

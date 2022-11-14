@@ -55,4 +55,8 @@ require('packers.nvimsep')
 -- ufo
 require('packers.ufo-config')
 -- noice
-require('packers.noice-config')
+--require('packers.noice-config')
+-- lspsatga
+require('packers.lsp_saga')
+
+--require('packers.image')

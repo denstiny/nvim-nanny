@@ -40,6 +40,8 @@ command:sh=sh "$(VIM_FILEPATH)"
 command:lua=lua "$(VIM_FILEPATH)"
 command:perl=perl "$(VIM_FILEPATH)"
 command:ruby=ruby "$(VIM_FILEPATH)"
+command:rust=cargo run --target-dir $(VIM_ROOT)
+
 output=terminal
 cwd=$(VIM_FILEDIR)
 save=2

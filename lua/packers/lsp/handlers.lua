@@ -102,7 +102,7 @@ M.on_attach = function(client, bufnr)
   -- auto save format
   if client.supports_method('textDocument/formatting') then
     vim.api.nvim_create_autocmd('BufWritePre', {
-      pattern = { "*.cpp", "*.h", "*.c", "*.lua", "*.py", "*.go", "*.hpp", "*.cc" },
+      pattern = { "*.cpp", "*.h", "*.c", "*.lua", "*.py", "*.go", "*.hpp", "*.cc", "*.rs" },
       callback = function()
         if vim.fn.has('nvim-0.8') == 1 then
           vim.lsp.buf.format()
@@ -126,6 +126,5 @@ if not status_ok then
   return
 end
 
---M.capabilities = cmp_nvim_lsp.update_capabilities(capabilities)
 M.capabilities = cmp_nvim_lsp.default_capabilities(capabilities)
 return M
