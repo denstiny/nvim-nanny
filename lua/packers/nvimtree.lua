@@ -2,6 +2,7 @@ local has_ts, nvim_tree = pcall(require, "nvim-tree")
 if not has_ts then return end
 nvim_tree.setup({
   sort_by = "case_sensitive",
+  root_dirs = { "build", ".git" },
   view = {
     adaptive_size = false,
     mappings = {

@@ -1,14 +1,14 @@
 vim.cmd [[
 "colorscheme tokyonight-night
-colorscheme rose-pine
 hi EndOfBuffer guifg=bg
 hi NormalFloat guibg=bg
 hi FloatBorder guibg=bg
-hi Normal      guibg=#16161E
+hi Normal      guibg=#0D0F18
 hi NormalNC    guibg=bg
 hi SignColumn  guibg=bg
 hi @constructor gui=bold
 hi FloatBorder guifg=#292E42
+hi TelescopeBorder guifg=#292E42
 ]]
 
 local bg = vim.api.nvim_get_hl_by_name("Normal", true)["background"]

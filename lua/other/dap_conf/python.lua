@@ -10,13 +10,14 @@ M.setup = function(dap)
   dap.configurations.python = {
     {
       -- The first three options are required by nvim-dap
-      type = 'python'; -- the type here established the link to the adapter definition: `dap.adapters.python`
-      request = 'launch';
-      name = "Launch file";
+      type = 'python', -- the type here established the link to the adapter definition: `dap.adapters.python`
+      request = 'launch',
+      name = "Launch file",
+      console = "integratedTerminal",
 
       -- Options below are for debugpy, see https://github.com/microsoft/debugpy/wiki/Debug-configuration-settings for supported options
 
-      program = "${file}"; -- This configuration will launch the current file if used.
+      program = "${file}", -- This configuration will launch the current file if used.
       pythonPath = function()
         local cwd = vim.fn.getcwd()
         if vim.fn.executable(cwd .. '/venv/bin/python') == 1 then
@@ -26,7 +27,7 @@ M.setup = function(dap)
         else
           return '/usr/bin/python'
         end
-      end;
+      end
     },
   }
 end

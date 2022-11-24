@@ -51,22 +51,18 @@ local _use = function(use)
       vim.cmd('colorscheme rose-pine')
     end
   })
-  use 'marko-cerovac/material.nvim'
   -- statusline
   use { 'ray-x/lsp_signature.nvim' }
   use { 'nvim-lualine/lualine.nvim' }
   use { 'danymat/neogen' }
   use 'lukas-reineke/indent-blankline.nvim'
   use {
-    "nvim-neo-tree/neo-tree.nvim",
-    branch = "v2.x",
+    'nvim-tree/nvim-tree.lua',
     requires = {
-      "nvim-lua/plenary.nvim",
-      "kyazdani42/nvim-web-devicons", -- not strictly required, but recommended
-      "MunifTanjim/nui.nvim",
-    }
+      'nvim-tree/nvim-web-devicons',
+    },
+    tag = 'nightly'
   }
-  use { 'kyazdani42/nvim-tree.lua', tag = 'nightly' }
   use { 'akinsho/toggleterm.nvim' }
   use { 'folke/trouble.nvim' }
   use { 'nvim-telescope/telescope.nvim', 'nvim-telescope/telescope-packer.nvim',
@@ -99,7 +95,6 @@ local _use = function(use)
   -- 滚动条
   use('petertriho/nvim-scrollbar')
 
-  --use { 'sindrets/diffview.nvim' }
   use 'mg979/vim-visual-multi'
   use { 'machakann/vim-sandwich' }
   use_rocks { 'lgi', 'dbus_proxy' }
@@ -116,6 +111,9 @@ local _use = function(use)
   use { 'edluffy/hologram.nvim' }
   use { 'glepnir/lspsaga.nvim' }
   use { 'jose-elias-alvarez/null-ls.nvim' }
+  use { 'j-hui/fidget.nvim' }
+  use { 'Julpikar/night-owl.nvim' }
+  use { 'ggandor/leap.nvim' }
 
 
 end

@@ -5,3 +5,4 @@
 -- @blog        : https://denstiny.github.io
 
 local M = {}
+return M

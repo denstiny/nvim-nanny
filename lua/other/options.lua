@@ -23,6 +23,7 @@ opt.cursorline = true
 opt.laststatus = 3
 opt.mouse = 'i'
 opt.pumheight = 15
+opt.showtabline = 0
 opt.guifont = "ComicCodeLigatures Nerd Font:h9"
 -- vim.opt.fillchars = {
 --   horiz     = '━',
@@ -34,6 +35,7 @@ opt.guifont = "ComicCodeLigatures Nerd Font:h9"
 --   verthoriz = '╋',
 --   eob       = ' '
 -- }
+
 
 vim.cmd [[
 set noswapfile

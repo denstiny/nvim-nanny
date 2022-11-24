@@ -25,7 +25,7 @@ require('packers.asynrun')
 require('packers.hlslens')
 -- undo tree
 require('packers.undotree')
--- color theme
+--color theme
 require('packers.packer-theme')
 -- git
 require('packers.git')
@@ -58,5 +58,10 @@ require('packers.ufo-config')
 --require('packers.noice-config')
 -- lspsatga
 require('packers.lsp_saga')
-
+--require('packers.null')
 --require('packers.image')
+require('packers.fidget_config')
+require('packers.leap-move')
+require('hologram').setup {
+  auto_display = false -- WIP automatic markdown image display, may be prone to breaking
+}

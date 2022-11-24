@@ -1,15 +1,8 @@
--- Eviline config for lualine
--- Author: shadmansaleh
--- Credit: glepnir
 local _, lualine = pcall(require, 'lualine')
-if not _ then
-  return
-end
+if not _ then return end
 
--- Color table for highlights
--- stylua: ignore
 local colors = {
-  bg       = vim.api.nvim_get_hl_by_name("Normal", true)["background"],
+  bg       = '#0D0F18',
   fg       = '#bbc2cf',
   yellow   = '#ECBE7B',
   cyan     = '#008080',
@@ -176,7 +169,7 @@ ins_left {
     return msg
   end,
   icon = ' LSP:',
-  color = { fg = '#9CCED7', gui = 'bold' },
+  color = { fg = '#9CCFD8', gui = 'bold' },
 }
 
 -- Add components to right sections

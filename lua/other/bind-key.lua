@@ -1,24 +1,24 @@
 local U = require("core.bind-tool")
 vim.g.mapleader = ';'
 -- leader-e: 定义快速位移
-U.nmap("<Leader>eb", "<Plug>(easymotion-b)")
-U.nmap("<Leader>ee", "<Plug>(easymotion-e)")
-U.nmap("<Leader>ef", "<Plug>(easymotion-f)")
-U.nmap("<Leader>ej", "<Plug>(easymotion-j)")
-U.nmap("<Leader>ek", "<Plug>(easymotion-k)")
-U.nmap("<Leader>en", "<Plug>(easymotion-n)")
-U.nmap("<Leader>es", "<Plug>(easymotion-s)")
-U.nmap("<Leader>et", "<Plug>(easymotion-t)")
-U.nmap("<Leader>ew", "<Plug>(easymotion-w)")
+-- U.nmap("<Leader>eb", "<Plug>(easymotion-b)")
+-- U.nmap("<Leader>ee", "<Plug>(easymotion-e)")
+-- U.nmap("<Leader>ef", "<Plug>(easymotion-f)")
+-- U.nmap("<Leader>ej", "<Plug>(easymotion-j)")
+-- U.nmap("<Leader>ek", "<Plug>(easymotion-k)")
+-- U.nmap("<Leader>en", "<Plug>(easymotion-n)")
+-- U.nmap("<Leader>es", "<Plug>(easymotion-s)")
+-- U.nmap("<Leader>et", "<Plug>(easymotion-t)")
+-- U.nmap("<Leader>ew", "<Plug>(easymotion-w)")
 
 -- leader-t: 翻译
-U.nmap("<leader>te", "<Plug>Translate")
-U.vmap("<leader>te", "<Plug>TranslateV")
-U.nmap("<leader>tw", "<Plug>TranslateW")
-U.vmap("<leader>tw", "<Plug>TranslateWV")
-U.nmap("<leader>tr", "<Plug>TranslateR")
-U.vmap("<Leader>tr", "<Plug>TranslateRV")
-U.nmap("<Leader>tx", "<Plug>TranslateX")
+-- U.nmap("<leader>te", "<Plug>Translate")
+-- U.vmap("<leader>te", "<Plug>TranslateV")
+-- U.nmap("<leader>tw", "<Plug>TranslateW")
+-- U.vmap("<leader>tw", "<Plug>TranslateWV")
+-- U.nmap("<leader>tr", "<Plug>TranslateR")
+-- U.vmap("<Leader>tr", "<Plug>TranslateRV")
+-- U.nmap("<Leader>tx", "<Plug>TranslateX")
 --U.nmap("<leader>te", "<cmd>Pantran mode=hover target=zh<cr>")
 --U.vmap("<leader>te", ":Pantran mode=hover target=zh<cr>")
 --U.nmap("<leader>tr", ":Pantran mode=replace target=zh<cr>")
@@ -32,7 +32,7 @@ U.nmap("tr", "<Cmd>NvimTreeFindFileToggle<cr>")
 function _G.set_terminal_keymaps()
   local opts = { noremap = true }
   vim.api.nvim_buf_set_keymap(0, 't', '<esc>', [[<C-\><C-n>]], opts)
-  vim.api.nvim_buf_set_keymap(0, 't', 'jk', [[<C-\><C-n>]], opts)
+  --vim.api.nvim_buf_set_keymap(0, 't', 'jk', [[<C-\><C-n>]], opts)
   vim.api.nvim_buf_set_keymap(0, 't', '<C-\\>', "<Cmd>ToggleTermTree<cr>", opts)
 end
 
@@ -77,10 +77,10 @@ U.nmap("<F11>", "<Cmd>DapStepInto<cr>") -- 单步调试
 U.nmap("<F2>", "<Cmd>DapToggleRepl<cr>")
 
 --exchange buffer
-U.nmap("<a-p>", "<Cmd>BufferLineCyclePrev<cr>")
-U.nmap("<a-n>", "<Cmd>BufferLineCycleNext<cr>")
-U.nmap("b", "<Cmd>BufferLinePick<cr>")
-U.nmap("cb", "<Cmd>BufferLinePickClose<cr>")
+--=U.nmap("<a-p>", "<Cmd>BufferLineCyclePrev<cr>")
+--=U.nmap("<a-n>", "<Cmd>BufferLineCycleNext<cr>")
+--U.nmap("b", "<Cmd>BufferLinePick<cr>")
+--U.nmap("cb", "<Cmd>BufferLinePickClose<cr>")
 --U.nmap("q","<Cmd>q<cr>")
 
 -- No interference pattern

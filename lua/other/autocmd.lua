@@ -23,10 +23,10 @@ vim.api.nvim_create_autocmd({ "WinEnter" }, {
 -- }}}
 
 vim.api.nvim_create_autocmd("BufReadPost", { pattern = "*", callback = function()
-    local row, col = unpack(vim.api.nvim_buf_get_mark(0, "\""))
-    if { row, col } ~= { 0, 0 } then
-        vim.api.nvim_win_set_cursor(0, { row, 0 })
-    end
+  local row, col = unpack(vim.api.nvim_buf_get_mark(0, "\""))
+  if { row, col } ~= { 0, 0 } and row < vim.fn.line('$') then
+    vim.api.nvim_win_set_cursor(0, { row, 0 })
+  end
 end })
 
 

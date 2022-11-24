@@ -1,11 +1,12 @@
-M = {}
-local dapInstallPath = vim.fn.stdpath("data") .. "/mason/"
+local M = {}
+local OpenDebug = vim.fn.stdpath("data") .. "/mason/bin/OpenDebugAD7"
 --M.setup = function(path,dap) {
 M.setup = function(dap)
   dap.adapters.cppdbg = {
     id = 'cppdbg',
     type = 'executable',
-    command = dapInstallPath .. "bin/OpenDebugAD7",
+    --command = 'lldb-vscode',
+    command = OpenDebug,
   }
 
   dap.configurations.cpp = {
@@ -15,7 +16,6 @@ M.setup = function(dap)
       request = "launch",
       program = "${fileDirname}/build/${fileBasenameNoExtension}",
       cwd = '${workspaceFolder}',
-      stopOnEntry = true,
     },
     {
       name = 'Attach to gdbserver :1234',
