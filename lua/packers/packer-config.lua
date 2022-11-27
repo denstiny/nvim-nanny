@@ -26,7 +26,7 @@ local _use = function(use)
     }
   }
   use { 'hrsh7th/nvim-cmp' }
-  use { 'tzachar/cmp-tabnine', run = './install.sh' }
+  --use { 'tzachar/cmp-tabnine', run = './install.sh' }
   use { 'hrsh7th/cmp-nvim-lua' }
   use { 'onsails/lspkind-nvim' }
   use { 'hrsh7th/cmp-nvim-lsp-signature-help' }
@@ -42,7 +42,7 @@ local _use = function(use)
   use { 'hrsh7th/cmp-cmdline' }
   -- color
   --use "rebelot/kanagawa.nvim"
-  use 'folke/tokyonight.nvim'
+  --use 'folke/tokyonight.nvim'
   use({
     'rose-pine/neovim',
     as = 'rose-pine',
@@ -110,10 +110,13 @@ local _use = function(use)
   -- use { "folke/noice.nvim" }
   use { 'edluffy/hologram.nvim' }
   use { 'glepnir/lspsaga.nvim' }
-  use { 'jose-elias-alvarez/null-ls.nvim' }
+  --use { 'jose-elias-alvarez/null-ls.nvim' }
   use { 'j-hui/fidget.nvim' }
-  use { 'Julpikar/night-owl.nvim' }
+  --use { 'Julpikar/night-owl.nvim' }
   use { 'ggandor/leap.nvim' }
+  use {
+    'goolord/alpha-nvim',
+  }
 
 
 end

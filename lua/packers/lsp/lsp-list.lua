@@ -16,7 +16,7 @@ M.lsp_server = {
   --"r_language_server",
   "rust_analyzer",
   --"julials",
-  "pylsp",
+  --"pylsp",
   --"tsserver",
   --"omnisharp",
   --"fsautocomplete",

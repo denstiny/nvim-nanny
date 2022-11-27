@@ -39,7 +39,7 @@ function M.getEditType(ty)
   if ty == "bash" then
     return "sh"
   end
-  if tr == "python" then
+  if ty == "python" then
     return "py"
   end
   return ty

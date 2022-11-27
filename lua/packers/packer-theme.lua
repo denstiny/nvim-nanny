@@ -27,5 +27,3 @@ tokyonight.setup({
   on_highlights = function(hl, c)
   end,
 })
-
-require('packers.lualine-config')

@@ -50,21 +50,21 @@ local source_mapping = {
 
 
 -- tabnine
-local tabnine = require('cmp_tabnine.config')
+--local tabnine = require('cmp_tabnine.config')
 
-tabnine.setup({
-  max_lines = 1000,
-  max_num_results = 20,
-  sort = true,
-  run_on_every_keystroke = true,
-  snippet_placeholder = '..',
-  ignored_file_types = {
-    -- default is not to ignore
-    -- uncomment to ignore in lua:
-    -- lua = true
-  },
-  show_prediction_strength = false
-})
+--tabnine.setup({
+--  max_lines = 1000,
+--  max_num_results = 20,
+--  sort = true,
+--  run_on_every_keystroke = true,
+--  snippet_placeholder = '..',
+--  ignored_file_types = {
+--    -- default is not to ignore
+--    -- uncomment to ignore in lua:
+--    -- lua = true
+--  },
+--  show_prediction_strength = false
+--})
 
 cmp.setup {
   mapping = {
@@ -126,7 +126,7 @@ cmp.setup {
     { name = "buffer", priority = 11 },
     { name = "path", priority = 10 },
     { name = "calc" },
-    { name = 'cmp_tabnine', priority = 10 },
+    --{ name = 'cmp_tabnine', priority = 10 },
     --{name = "digraphs"},
     { name = "spell" },
   },
