@@ -1,5 +1,5 @@
-local has_ts, hlslens = pcall(require, "hlslens")
-if not has_ts then return end
+local _, hlslens = pcall(require, "hlslens")
+if not _ then return end
 hlslens.setup({
   calm_down = true,
   nearest_only = true,

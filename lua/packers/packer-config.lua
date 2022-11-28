@@ -31,6 +31,7 @@ local _use = function(use)
   use { 'onsails/lspkind-nvim' }
   use { 'hrsh7th/cmp-nvim-lsp-signature-help' }
   use { 'windwp/nvim-autopairs' }
+  use({ "kylechui/nvim-surround", tag = "*", })
   use { 'hrsh7th/cmp-buffer' }
   use { 'hrsh7th/cmp-path' }
   use { 'L3MON4D3/LuaSnip', requires = { 'rafamadriz/friendly-snippets' } }
@@ -116,6 +117,18 @@ local _use = function(use)
   use { 'ggandor/leap.nvim' }
   use {
     'goolord/alpha-nvim',
+  }
+  use { "anuvyklack/windows.nvim",
+    requires = {
+      "anuvyklack/middleclass",
+      "anuvyklack/animation.nvim"
+    },
+    config = function()
+      vim.o.winwidth = 10
+      vim.o.winminwidth = 10
+      vim.o.equalalways = false
+      require('windows').setup()
+    end
   }
 
 

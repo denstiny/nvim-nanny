@@ -9,6 +9,8 @@ hi SignColumn  guibg=bg
 hi @constructor gui=bold
 hi FloatBorder guifg=#292E42
 hi TelescopeBorder guifg=#292E42
+hi IndentBlanklineContextStart guisp=#519aba gui=underline
+hi IndentBlanklineContextChar guifg=#519aba
 ]]
 
 local bg = vim.api.nvim_get_hl_by_name("Normal", true)["background"]

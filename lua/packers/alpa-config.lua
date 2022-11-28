@@ -214,7 +214,7 @@ local buttons = {
     dashboard.button("e", "  Edit None Buffer", ":enew<CR>"),
     dashboard.button("c", "  Configuration", ":e ~/.config/nvim/init.lua <CR>"),
     dashboard.button("u", "  Update plugins", ":PackerSync<CR>"),
-    dashboard.button("q", "  Quit", ":qa<CR>"),
+    dashboard.button("q", "  Quit", ":q<CR>"),
   },
   position = "center",
 }

@@ -62,8 +62,6 @@ require('packers.lsp_saga')
 --require('packers.image')
 require('packers.fidget_config')
 require('packers.leap-move')
-require('hologram').setup {
-  auto_display = false -- WIP automatic markdown image display, may be prone to breaking
-}
+require('packers.hologram')
 require('packers.lualine-config')
 require('packers.alpa-config')
