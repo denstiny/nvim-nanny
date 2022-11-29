@@ -3,7 +3,7 @@ if not has_ts then return end
 
 
 toggleterm.setup {
-  open_mapping = [[<C-\\>]],
+  open_mapping = nil,
   size = 7,
   shade_filetypes = {},
   shade_terminals = true,

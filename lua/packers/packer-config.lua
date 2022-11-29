@@ -84,7 +84,7 @@ local _use = function(use)
   use { 'mbbill/undotree' }
   use { 'lewis6991/gitsigns.nvim' }
   use { 'tpope/vim-surround' }
-  use { 'voldikss/vim-translator' }
+  --use { 'voldikss/vim-translator' }
   use { 'tibabit/vim-templates' }
   use { 'ahmedkhalf/project.nvim' }
   use {
@@ -123,13 +123,8 @@ local _use = function(use)
       "anuvyklack/middleclass",
       "anuvyklack/animation.nvim"
     },
-    config = function()
-      vim.o.winwidth = 10
-      vim.o.winminwidth = 10
-      vim.o.equalalways = false
-      require('windows').setup()
-    end
   }
+  --use { 'stolen-programmer/dev-nanny.nvim' }
 
 
 end
