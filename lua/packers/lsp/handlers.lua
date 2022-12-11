@@ -82,15 +82,14 @@ end
 
 local function lsp_keymaps(bufnr)
   local opts = { noremap = true, silent = true }
-  vim.api.nvim_buf_set_keymap(bufnr, "n", "gd", "<cmd>Trouble lsp_definitions<cr>", opts)
-  vim.api.nvim_buf_set_keymap(bufnr, "n", "gD", "<cmd>Telescope lsp_definitions<cr>", opts)
+  vim.api.nvim_buf_set_keymap(bufnr, "n", "gd", "<cmd>Telescope lsp_definitions<cr>", opts)
   vim.api.nvim_buf_set_keymap(bufnr, "n", "gh", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
   vim.api.nvim_buf_set_keymap(bufnr, "n", "mr", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
   vim.api.nvim_buf_set_keymap(bufnr, "n", "gr", "<cmd>TroubleToggle lsp_references<cr>", opts)
-  vim.api.nvim_buf_set_keymap(bufnr, "n", "<A-cr>", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)
-  vim.api.nvim_buf_set_keymap(bufnr, "n", "gp", "<cmd>lua vim.diagnostic.goto_prev()<CR>", opts)
-  vim.api.nvim_buf_set_keymap(bufnr, "n", "gn", "<cmd>lua vim.diagnostic.goto_next()<cr>", opts)
-  vim.api.nvim_buf_set_keymap(bufnr, "n", "gl", '<cmd>lua vim.diagnostic.open_float()<CR>', opts)
+  vim.api.nvim_buf_set_keymap(bufnr, "n", "<A-cr>", "<cmd>Lspsaga code_action<CR>", opts)
+  vim.api.nvim_buf_set_keymap(bufnr, "n", "gp", "<cmd>Lspsaga diagnostic_jump_prev<CR>", opts)
+  vim.api.nvim_buf_set_keymap(bufnr, "n", "gn", "<cmd>Lspsaga diagnostic_jump_next<cr>", opts)
+  vim.api.nvim_buf_set_keymap(bufnr, "n", "gl", '<cmd>Lspsaga show_line_diagnostics<CR>', opts)
   vim.api.nvim_buf_set_keymap(bufnr, "n", "da", '<Cmd>Trouble workspace_diagnostics<cr>', opts)
 end
 

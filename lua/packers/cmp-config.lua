@@ -169,7 +169,7 @@ cmp.setup {
           vim_item.kind = vim_item.kind .. ' ' .. '[ML]'
         end
       end
-      local maxwidth = 80
+      local maxwidth = 60
       vim_item.abbr = string.sub(vim_item.abbr, 1, maxwidth)
       return vim_item
     end
