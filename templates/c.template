@@ -6,11 +6,8 @@
  * @blog        : https://denstiny.github.io
  */
 
-#ifndef A_H
-
-#define A_H
-
-
-
-
-#endif /* end of include guard A_H */
+#include <stdio.h>
+int main(int argc, char **arg) {
+  {{CURSOR}}
+  return 0;
+}

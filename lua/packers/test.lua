@@ -78,14 +78,9 @@ competitest.setup {
   },
   multiple_testing = -1,
   maximum_time = 5000,
-  output_compare_method = "squish",
 
   testcases_directory = "./testCases/",
-  input_name = "input",
-  output_name = "output",
-  testcases_files_format = "$(FNOEXT)_$(INOUT)$(TCNUM).txt",
   testcases_use_single_file = false,
-  testcases_single_file_format = "$(FNOEXT).testcases",
   companion_port = 27121,
   receive_print_message = true,
 }

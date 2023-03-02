@@ -1,6 +1,7 @@
-require('other.bind-key')
-require('other.highlight')
-require('core.tree-term')
-require('other.autocmd')
-require('other.options')
-require('core.mdorg')
+require("other.autocmd")
+require("other.options")
+require("other.highlight")
+local asynrequire = require("core.utils").asynerquire
+--asynrequire("core.tree-term")
+asynrequire("other.bind-key")
+asynrequire("core.mdorg")

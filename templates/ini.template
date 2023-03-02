@@ -1,0 +1,23 @@
+# vim: set fenc=utf-8 ft=dosini:
+
+# define a new task named "file-build"
+[+]
+build_out_path=build/$(VIM_FILENOEXT)
+build_cpp=g++ $(VIM_FILEPATH) -g -w  -o $(+build_out_path)
+build_c=gcc $(VIM_FILEPATH) -g -w  -o $(+build_out_path)
+build_cmake=cd build && cmake ../ && cmake --build .
+build_rust=cargo check
+
+[file-build]
+command=$(+build_cmake)
+cwd=$(VIM_ROOT)
+output=terminal
+errorformat=%f:%l:%m
+save=1
+
+
+[file-run]
+command="{{CURSOR}}"
+output=terminal
+cwd=$(VIM_ROOT)
+save=2

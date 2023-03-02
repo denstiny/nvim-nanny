@@ -5,4 +5,5 @@
 -- @blog        : https://denstiny.github.io
 
 local M = {}
+{{CURSOR}}
 return M
