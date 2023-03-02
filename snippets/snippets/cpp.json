@@ -38,5 +38,26 @@
   "log":{
       "prefix":"log",
       "body":["std::cerr << \"log: \" << ${1:log} << endl;"]
+  },
+  "fun":{
+    "prefix": "fun",
+    "body": ["${1:type} ${2:fun_name} (${3:args}) {","  ${4}","}"]
+  },
+  "if ()":{
+    "prefix":"if",
+    "body":["if (${1:cond}) {","  ${2}","}"]
+  },
+  "for":{
+    "prefix":"for",
+    "body":["for (${1:init_statement}; ${2:condition};${3:inc-expression}) {","  ${4}","}"]
+  },
+  "for_range":{
+    "prefix":"for",
+    "body":["for (${1:range-declaration }: ${2:range-expression}) {","  ${3}","}"]
+  },
+  "while":{
+    "prefix":"while",
+    "body":["while (${1:condition}) {","  ${2}","}"]
   }
+
 }

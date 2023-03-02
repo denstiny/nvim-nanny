@@ -4,14 +4,17 @@
 -- @github      : https://github.com/denstiny
 -- @blog        : https://denstiny.github.io
 
-local M = {}
+local M = {
+	client = {},
+	formatter = {},
+}
 function M.on_list(options)
-  vim.fn.setqflist({}, ' ', options)
-  vim.api.nvim_command('cfirst')
+	vim.fn.setqflist({}, " ", options)
+	vim.api.nvim_command("cfirst")
 end
 
 function M.getSymbols()
-  vim.lsp.buf.workspace_symbol(nil, { on_list = M.on_list })
+	vim.lsp.buf.workspace_symbol(nil, { on_list = M.on_list })
 end
 
 return M

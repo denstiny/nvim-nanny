@@ -1,14 +1,16 @@
 /**
  * @author      : {{NAME}} ({{EMAIL}})
  * @file        : {{FILE}}
- * @created     : {{TIMESTAMP}}
+ * @created     : {{TIMESTAMP}} 
  * @github      : https://github.com/denstiny
  * @blog        : https://denstiny.github.io
  */
 
-#include <iostream>
+#ifndef A_H
 
-int main(int argc, char **argv) {
-  
-  return 0;
-}
+#define A_H
+
+{{CURSOR}}
+
+
+#endif /* end of include guard A_H */

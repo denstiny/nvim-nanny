@@ -6,6 +6,6 @@
 
 cmake_minimum_required(VERSION 2.8)
 set(CMAKE_EXPORT_COMPILE_COMMANDS TRUE)
-project({{CURSOR}} C)
+project({{CURSOR}} CXX)
 
 add_executable(main main.c)

@@ -1,0 +1,7 @@
+{
+  "--{}":{
+      "prefix": "--{}",
+      "body" : ["--{{ $1","$2","--}}"],
+      "description": "annotation"
+  }
+}

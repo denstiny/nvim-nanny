@@ -18,5 +18,13 @@
       "prefix" : "Ice cream",
       "body":"🎉",
       "description": "Ice cream"
+  },
+  "for":{
+    "prefix":"for",
+    "body":["for (${1:init_statement}; ${2:condition};${3:inc-expression}) {","  ${4}","}"]
+  },
+  "while":{
+    "prefix":"while",
+    "body":["while (${1:condition}) {","  ${2}","}"]
   }
 }
