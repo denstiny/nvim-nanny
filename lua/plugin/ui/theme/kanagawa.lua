@@ -12,6 +12,7 @@ require("kanagawa").setup({
 			WinBarNc = { bg = "none" },
 			VertSplit = { bg = "none" },
 			FloatBorder = { bg = "none" },
+			TelescopeBorder = { bg = "none" },
 		}
 	end,
 })

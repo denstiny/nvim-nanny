@@ -1,17 +1,4 @@
-# Nvim Config
-![root](https://user-images.githubusercontent.com/57088952/160252189-b96cbd52-9419-4a0b-907b-8d8336d20705.jpg)
+# My Neovim Configuration
 
-<details>
-<summary><font size=5><b>show screen</b></font></summary>
-
-## header screen
-![header](https://user-images.githubusercontent.com/57088952/222319309-03df7df2-060a-49e3-a5c4-b5df7adddd1a.png)
-
-## Lazy plugin
-![Lazy_plugin](https://user-images.githubusercontent.com/57088952/222319392-8972979e-b26a-4278-89c6-b58ca48a9028.png)
-## Staruptime
-![Staruptime](https://user-images.githubusercontent.com/57088952/226891909-8b8660d2-bb6b-4bab-bcef-0dd12b669b36.png)
-
-## cmp
-![cmp](https://user-images.githubusercontent.com/57088952/222320557-afbe5977-c06b-41e5-a8ed-daffb198906f.png)
-</details>
+Start Time: 12ms
+![](https://user-images.githubusercontent.com/57088952/226969463-96f822f3-f868-4e2b-b4f3-a307c60378cf.png)

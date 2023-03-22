@@ -78,17 +78,25 @@ autocmd({ "FileType" }, {
 })
 autocmd("UiEnter", {
 	callback = function()
-		vim.defer_fn(function()
-			require("basis.bind-key")
-			require("basis.hi")
-		end, 0)
+		vim.defer_fn(function() end, 0)
 	end,
 })
 
 autocmd("UiEnter", {
 	callback = function()
 		if vim.bo.filetype == "" and vim.fn.expand("%:p") == "" then
-			vim.cmd("Alpha")
+			vim.opt.cursorline = false
+			vim.defer_fn(function()
+				vim.cmd("Alpha")
+			end, 0)
+		end
+	end,
+})
+
+autocmd("BufLeave", {
+	callback = function()
+		if vim.bo.filetype then
+			vim.opt.cursorline = true
 		end
 	end,
 })

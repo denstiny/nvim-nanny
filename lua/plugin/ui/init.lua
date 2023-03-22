@@ -17,7 +17,8 @@ plugin.add({
 		{ "f3fora/cmp-spell" },
 		{ "hrsh7th/cmp-nvim-lsp" },
 	},
-	event = "InsertEnter",
+	--event = "InsertEnter",
+	event = "UiEnter",
 })
 
 plugin.add({
@@ -58,9 +59,7 @@ plugin.add({
 	"goolord/alpha-nvim",
 	desc = "启动界面",
 	config = function()
-		if vim.bo.filetype == "" and vim.fn.expand("%:p") == "" then
-			require("plugin.ui.alpha")
-		end
+		require("plugin.ui.alpha")
 	end,
 	dependencies = {
 		{ "nvim-lua/plenary.nvim" },
@@ -116,7 +115,10 @@ plugin.add({
 plugin.add({
 	"rebelot/kanagawa.nvim",
 	config = function()
+		--vim.defer_fn(function()
 		--require("plugin.ui.theme.kanagawa")
 		vim.cmd("colorscheme kanagawa")
+		--end, 0)
 	end,
+	--event = "UiEnter",
 })

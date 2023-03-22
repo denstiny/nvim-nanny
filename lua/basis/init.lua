@@ -1,2 +1,5 @@
 require("basis.option")
+require("basis.hi")
 require("basis.autocmd")
+require("basis.bind-key")
+--vim.cmd("colorscheme darkblue")

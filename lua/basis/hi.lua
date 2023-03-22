@@ -1,6 +1,12 @@
 vim.cmd([[
 hi @constructor gui=bold
 hi Normal guibg=None
+hi StatusLine guibg=bg
+hi EndOfBuffer guifg=bg
+hi LineNr      guibg=bg
+hi NormalFloat guibg=bg
+hi NormalNC    guibg=bg
+hi SignColumn  guibg=bg
 "hi FloatBorder guifg=#5B72AE
 hi TelescopeBorder guifg=#5B72AE
 hi IndentBlanklineContextStart guisp=#EA6962 gui=underline
