@@ -1,0 +1,12 @@
+{
+  "create table": {
+    "prefix": "]",
+     "body" :[
+       "[${1}]",
+       "command=${2}",
+       "output=terminal",
+       "cwd=$(VIM_ROOT)",
+       "save=2"
+     ]
+  }
+}

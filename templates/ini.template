@@ -6,10 +6,11 @@ build_out_path=build/$(VIM_FILENOEXT)
 build_cpp=g++ $(VIM_FILEPATH) -g -w  -o $(+build_out_path)
 build_c=gcc $(VIM_FILEPATH) -g -w  -o $(+build_out_path)
 build_cmake=cd build && cmake ../ && cmake --build .
+build_xmake=xmake build && xmake
 build_rust=cargo check
 
 [file-build]
-command=$(+build_cmake)
+command=$(+build_xmake)
 cwd=$(VIM_ROOT)
 output=terminal
 errorformat=%f:%l:%m
@@ -17,7 +18,7 @@ save=1
 
 
 [file-run]
-command="{{CURSOR}}"
+command=xmake run{{CURSOR}}
 output=terminal
 cwd=$(VIM_ROOT)
 save=2

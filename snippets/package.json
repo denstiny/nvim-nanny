@@ -343,6 +343,10 @@
       {
         "language": "yaml",
         "path": "./snippets/kubernetes.json"
+      },
+      {
+        "language": "dosini",
+        "path": "./snippets/dosini.json"
       }
     ]
   }

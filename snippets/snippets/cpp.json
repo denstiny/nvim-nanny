@@ -5,12 +5,12 @@
     "description": "ISO date time stamp"
   },
   "//":{
-      "prefix": "/**/",
+      "prefix": "/l",
       "body" : ["/* ${1:annotation} */"],
       "description": "annotation"
   },
   "/*":{
-      "prefix": "/**/",
+      "prefix": "/c",
       "body" : ["/*","  ${1:annotation}","*/"],
       "description": "annotation"
   },
@@ -43,21 +43,15 @@
     "prefix": "fun",
     "body": ["${1:type} ${2:fun_name} (${3:args}) {","  ${4}","}"]
   },
-  "if ()":{
-    "prefix":"if",
-    "body":["if (${1:cond}) {","  ${2}","}"]
-  },
-  "for":{
-    "prefix":"for",
-    "body":["for (${1:init_statement}; ${2:condition};${3:inc-expression}) {","  ${4}","}"]
-  },
-  "for_range":{
-    "prefix":"for",
-    "body":["for (${1:range-declaration }: ${2:range-expression}) {","  ${3}","}"]
-  },
-  "while":{
-    "prefix":"while",
-    "body":["while (${1:condition}) {","  ${2}","}"]
+  "Main function template": {
+    "prefix": "main",
+    "body": [
+      "int main (int argc, char *argv[])",
+      "{",
+      "\t$1",
+      "\treturn 0;",
+      "}"
+    ],
+    "description": "A standard main function for a C++ program"
   }
-
 }

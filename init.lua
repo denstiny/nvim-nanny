@@ -10,9 +10,9 @@
 --                                                                 |  $$$$$$/
 --                                                                 \______/
 --   Config files for NEOVIM. Created by Denstiny Aaro Urdaniz
-
 -- First Start
-vim.defer_fn(function()
-	require("core.utils")
-end, 0)
-require("core.firststart")
+require("basis")
+require("plugin.server")
+require("plugin.tool")
+require("plugin.ui")
+require("core.merage")

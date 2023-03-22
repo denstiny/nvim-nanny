@@ -5,12 +5,12 @@
     "description": "ISO date time stamp"
   },
   "//":{
-      "prefix": "/**/",
+      "prefix": "/l",
       "body" : ["/* ${1:annotation} */"],
       "description": "annotation"
   },
   "/*":{
-      "prefix": "/**/",
+      "prefix": "/c",
       "body" : ["/*","  ${1:annotation}","*/"],
       "description": "annotation"
   },
@@ -18,13 +18,5 @@
       "prefix" : "Ice cream",
       "body":"🎉",
       "description": "Ice cream"
-  },
-  "for":{
-    "prefix":"for",
-    "body":["for (${1:init_statement}; ${2:condition};${3:inc-expression}) {","  ${4}","}"]
-  },
-  "while":{
-    "prefix":"while",
-    "body":["while (${1:condition}) {","  ${2}","}"]
   }
 }

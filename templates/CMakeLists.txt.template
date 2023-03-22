@@ -8,4 +8,4 @@ cmake_minimum_required(VERSION 2.8)
 set(CMAKE_EXPORT_COMPILE_COMMANDS TRUE)
 project({{CURSOR}} CXX)
 
-add_executable(main main.c)
+add_executable(main main.cpp)
