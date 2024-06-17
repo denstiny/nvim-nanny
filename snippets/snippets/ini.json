@@ -1,0 +1,50 @@
+{
+  "inihome": {
+    "prefix": "home",
+    "body": [
+      "$(VIM_INIHOME)"
+    ]
+  },
+  "cwd": {
+    "prefix": "cwd",
+    "body": [
+      "$(VIM_CWD)"
+    ]
+  },
+  "root": {
+    "prefix": "root",
+    "body": [
+      "$(VIM_ROOT)"
+    ]
+  },
+  "ext": {
+    "prefix": "ext",
+    "body": [
+      "$(VIM_FILEEXT)"
+    ]
+  },
+  "dir": {
+    "prefix": "dir",
+    "body": [
+      "$(VIM_FILEDIR)"
+    ]
+  },
+  "filename": {
+    "prefix": "filename",
+    "body": [
+      "$(VIM_FILENAME)"
+    ]
+  },
+  "filetype": {
+    "prefix": "filetype",
+    "body": [
+      "$(VIM_FILETYPE"
+    ]
+  },
+  "filepath": {
+    "prefix": "filepath",
+    "body": [
+      "$(VIM_FILEPATH)"
+    ]
+  }
+}
