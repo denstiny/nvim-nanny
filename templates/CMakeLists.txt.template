@@ -6,11 +6,50 @@
 
 cmake_minimum_required(VERSION 3.6)
 set(CMAKE_EXPORT_COMPILE_COMMANDS TRUE)
+set(CMAKE_EXPORT_COMPILE_COMMANDS TRUE)
+set(CMAKE_INCLUDE_CURRENT_DIR ON)
+set(CMAKE_CXX_STANDARD 11)
+set(VCPKG_MANIFEST_INSTALL ON)
+set(VCPKG_INSTALLED_DIR vcpkg_installed)
+
 project({{CURSOR}} CXX)
+
+find_program(CCACHE_PROGRAM ccache)
 if(CCACHE_PROGRAM)
   set_property(GLOBAL PROPERTY RULE_LAUNCH_COMPILE ccache)
   set_property(GLOBAL PROPERTY RULE_LAUNCH_LINK ccache)
 endif()
 
-add_executable(main main.cpp)
+file(GLOB_RECURSE SRC
+  ${PROJECT_SOURCE_DIR}/src/*.cpp
+  ${PROJECT_SOURCE_DIR}/src/*.hpp
+)
+list(FILTER SRC EXCLUDE REGEX ".*src/main.cpp$")
+list(FILTER SRC EXCLUDE REGEX ".*src/test.cpp$")
 
+# copy asstes file
+file(GLOB ASSETS "./assets")
+file(COPY ${ASSETS} DESTINATION ${CMAKE_BINARY_DIR})
+
+
+if(BUILD_EXAMPLE)
+  message("example " ${BUILD_EXAMPLE})
+  file(GLOB_RECURSE EXAMPLE 
+    ${PROJECT_SOURCE_DIR}/example/${BUILD_EXAMPLE}/*
+  )
+  add_executable(${PROJECT_NAME} ${EXAMPLE} ${SRC})
+else()
+  message("MAIN ${PROJECT_NAME}")
+  add_executable(${PROJECT_NAME} ${SRC} "./src/main.cpp")
+  add_definitions(-DTEST)
+  add_executable(${PROJECT_NAME}_TEST ${SRC} "./src/test.cpp")
+endif()
+
+function (add_package app name package)
+  find_package(${name} CONFIG REQUIRED)
+  target_link_libraries(${app} PRIVATE ${package})
+endfunction()
+
+find_package(Catch2 CONFIG REQUIRED)
+target_link_libraries(${PROJECT_NAME} PRIVATE Catch2::Catch2 Catch2::Catch2WithMain)
+target_link_libraries(${PROJECT_NAME}_TEST PRIVATE Catch2::Catch2 Catch2::Catch2WithMain)

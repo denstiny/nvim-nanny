@@ -47,3 +47,4 @@ end
 
 opt.expandtab = true
 require("core.tabwidth").setup({})
+require("core.filetype").setup({})
