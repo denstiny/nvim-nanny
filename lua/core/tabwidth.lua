@@ -4,6 +4,7 @@ local define = 2
 
 M.config = {
 	glsl = 4,
+	rust = 4,
 }
 
 function M.get_width(filetype)

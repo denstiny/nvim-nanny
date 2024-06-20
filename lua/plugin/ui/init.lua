@@ -71,3 +71,11 @@ plugin.add({
 	"ray-x/lsp_signature.nvim",
 	lazy = true,
 })
+
+plugin.add({
+	"lewis6991/satellite.nvim",
+	config = function()
+		require("plugin.ui.scroll")
+	end,
+	event = "UiEnter",
+})

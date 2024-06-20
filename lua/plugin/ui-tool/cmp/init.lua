@@ -121,7 +121,8 @@ cmp.setup({
 			end
 		end, { "i", "s" }),
 	},
-	preselect = cmp.PreselectMode.None,
+
+	preselect = cmp.PreselectMode.Item,
 	sources = {
 		{ name = "nvim_lsp", priority = 8 },
 		{ name = "lazydev" },
@@ -150,11 +151,6 @@ cmp.setup({
 		},
 	},
 	formatting = {
-		fields = { "kind", "abbr", "menu" },
-		--format = lspkind.cmp_format({
-		--	with_text = false,
-		--	maxwidth = 80,
-		--}),
 		format = function(entry, vim_item)
 			vim_item.kind = lspkind.symbolic(vim_item.kind, { mode = "symbol" })
 			vim_item.menu = source_mapping[entry.source.name]
@@ -177,7 +173,7 @@ cmp.setup({
 
 			local maxwidth = 40
 			vim_item.abbr = string.sub(vim_item.abbr, 1, maxwidth)
-			return vim_item
+			return vim_item .. (entry.completion_item.data or {}).detail
 		end,
 	},
 	snippet = {
@@ -202,11 +198,11 @@ cmp.setup({
 	},
 })
 
-cmp.setup.filetype("gitcommit", {
-	sources = cmp.config.sources({
-		{ name = "cmp_git" }, -- You can specify the `cmp_git` source if you were installed it.
-	}, { { name = "buffer" } }),
-})
+-- cmp.setup.filetype("gitcommit", {
+-- 	sources = cmp.config.sources({
+-- 		{ name = "cmp_git" }, -- You can specify the `cmp_git` source if you were installed it.
+-- 	}, { { name = "buffer" } }),
+-- })
 
 -- `:` cmdline setup.
 -- cmp.setup.cmdline(":", {

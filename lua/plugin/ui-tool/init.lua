@@ -9,24 +9,24 @@ plugin.add({
 	end,
 })
 
-plugin.add({
-	"hrsh7th/nvim-cmp",
-	config = function()
-		require("plugin.ui-tool.cmp")
-	end,
-	dependencies = {
-		{ "hrsh7th/cmp-nvim-lua" },
-		{ "hrsh7th/cmp-cmdline" },
-		{ "onsails/lspkind-nvim" },
-		{ "hrsh7th/cmp-buffer", option = { keyword_pattern = [[\k\+]] } },
-		{ "hrsh7th/cmp-path" },
-		{ "saadparwaiz1/cmp_luasnip" },
-		{ "hrsh7th/cmp-calc" },
-		{ "f3fora/cmp-spell" },
-		{ "hrsh7th/cmp-nvim-lsp" },
-		{ "lukas-reineke/cmp-under-comparator" },
-	},
-})
+-- plugin.add({
+-- 	"hrsh7th/nvim-cmp",
+-- 	config = function()
+-- 		require("plugin.ui-tool.complete")
+-- 	end,
+-- 	dependencies = {
+-- 		{ "hrsh7th/cmp-nvim-lua" },
+-- 		{ "hrsh7th/cmp-cmdline" },
+-- 		{ "onsails/lspkind-nvim" },
+-- 		{ "hrsh7th/cmp-buffer", option = { keyword_pattern = [[\k\+]] } },
+-- 		{ "hrsh7th/cmp-path" },
+-- 		{ "saadparwaiz1/cmp_luasnip" },
+-- 		{ "hrsh7th/cmp-calc" },
+-- 		{ "f3fora/cmp-spell" },
+-- 		{ "hrsh7th/cmp-nvim-lsp" },
+-- 		{ "lukas-reineke/cmp-under-comparator" },
+-- 	},
+-- })
 
 plugin.add({
 	"glepnir/lspsaga.nvim",
@@ -101,4 +101,12 @@ plugin.add({
 plugin.add({
 	"SmiteshP/nvim-navbuddy",
 	lazy = true,
+})
+
+plugin.add({
+	"neoclide/coc.nvim",
+	build = "npm ci",
+	config = function()
+		require("plugin.ui-tool.coc")
+	end,
 })

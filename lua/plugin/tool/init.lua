@@ -64,6 +64,7 @@ plugin.add({
 		require("plugin.tool.autopairs")
 	end,
 	event = "InsertEnter",
+	cond = false,
 })
 
 plugin.add({
@@ -97,4 +98,14 @@ plugin.add({
 plugin.add({
 	"p00f/clangd_extensions.nvim",
 	ft = { "cpp", "c" },
+})
+
+plugin.add({
+	"vidocqh/auto-indent.nvim",
+	opts = {
+		indentexpr = function(lnum)
+			return require("nvim-treesitter.indent").get_indent(lnum)
+		end,
+	},
+	event = "InsertEnter",
 })
