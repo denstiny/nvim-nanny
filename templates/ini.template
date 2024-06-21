@@ -1,0 +1,58 @@
+# vim: set fenc=utf-8 ft=dosini:
+[+]
+build_out_path=build/$(VIM_FILENOEXT)
+build_cpp=clang++ $(VIM_FILEPATH) -g -w  -o $(+build_out_path)
+build_c=gcc $(VIM_FILEPATH) -g -w  -o $(+build_out_path)
+build_cmake=cd build && cmake ../ && cmake --build . --target all -- -j $(nproc)
+build_xmake=xmake build && xmake
+build_rust=cargo build
+
+[file-build]
+command:go=go build "$(VIM_FILEPATH)" 
+command:rust=cargo build
+command:c,cpp=mkdir -p build &&  clang++ $(VIM_FILEPATH) -g -w  -o build/$(VIM_FILENOEXT)
+
+cwd=$(VIM_ROOT)
+output=terminal
+errorformat=%f:%l:%m
+save=1
+
+
+[file-run]
+command=xmake run
+command:c,cpp="$(VIM_FILEDIR)/build/$(VIM_FILENOEXT)"
+command:go=go run "$(VIM_FILEPATH)" 
+command:python=python "$(VIM_FILEPATH)"
+command:javascript=node "$(VIM_FILEPATH)"
+command:sh=sh "$(VIM_FILEPATH)"
+command:lua=lua "$(VIM_FILEPATH)"
+command:perl=perl "$(VIM_FILEPATH)"
+command:ruby=ruby "$(VIM_FILEPATH)"
+command:rust=export RUST_BACKTRACE=1 && cargo run
+output=terminal
+cwd=$(VIM_ROOT)
+save=2
+
+[project-run]
+command=xmake run
+command:c,cpp="$(VIM_FILEDIR)/build/$(VIM_FILENOEXT)"
+command:go=go run "$(VIM_FILEPATH)" 
+command:python=python "$(VIM_FILEPATH)"
+command:javascript=node "$(VIM_FILEPATH)"
+command:sh=sh "$(VIM_FILEPATH)"
+command:lua=lua "$(VIM_FILEPATH)"
+command:perl=perl "$(VIM_FILEPATH)"
+command:ruby=ruby "$(VIM_FILEPATH)"
+command:rust=export RUST_BACKTRACE=1 && cargo run
+output=terminal
+cwd=$(VIM_ROOT)
+save=2
+ 
+
+
+[project-test]
+command:rust=cargo test -- --nocapture
+command:python=poetry run pytest
+output=terminal
+cwd=$(VIM_ROOT)
+save=2

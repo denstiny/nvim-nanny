@@ -1,0 +1,57 @@
+{
+  "date": {
+    "prefix": "date",
+    "body": ["${CURRENT_YEAR}-${CURRENT_MONTH}-${CURRENT_DATE}  ${CURRENT_HOUR}:${CURRENT_MINUTE}:${CURRENT_SECOND}"],
+    "description": "ISO date time stamp"
+  },
+  "//":{
+      "prefix": "/l",
+      "body" : ["/* ${1:annotation} */"],
+      "description": "annotation"
+  },
+  "/*":{
+      "prefix": "/c",
+      "body" : ["/*","  ${1:annotation}","*/"],
+      "description": "annotation"
+  },
+  "dv":{
+      "prefix":"--",
+      "body":["/* ------------ ${CURRENT_YEAR}-${CURRENT_MONTH}-${CURRENT_DATE} ----------- */",""]
+  },
+  "test":{
+      "prefix":"test",
+      "body":[
+          "std::vector<${1:type}> array;",
+          "${1:type} n;",
+          "",
+          "while (std::cin >> n) { ",
+          "    if(std::cin.get() == '\\n') ",
+          "        break; ",
+          "",
+          "    array.emplace_back(n); ",
+          "}",
+          "",
+          "for (auto i : array) { ",
+          "    std::cout << i << \" \"; ",
+          "}",""]
+  },
+  "log":{
+      "prefix":"log",
+      "body":["std::cerr << \"log: \" << ${1:log} << endl;"]
+  },
+  "fun":{
+    "prefix": "fun",
+    "body": ["${1:type} ${2:fun_name} (${3:args}) {","  ${4}","}"]
+  },
+  "Main function template": {
+    "prefix": "main",
+    "body": [
+      "int main (int argc, char *argv[])",
+      "{",
+      "\t$1",
+      "\treturn 0;",
+      "}"
+    ],
+    "description": "A standard main function for a C++ program"
+  }
+}

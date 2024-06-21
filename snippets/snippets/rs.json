@@ -1,0 +1,7 @@
+{
+  "allow": {
+    "prefix": "allow",
+    "body": ["#[allow(${1})]"],
+    "description": "#[allow(…)]"
+  },
+}
