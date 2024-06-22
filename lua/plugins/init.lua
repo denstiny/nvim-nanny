@@ -29,7 +29,28 @@ return {
         "bashls",
         "awk_ls",
       },
+      PATH = "prepend",
+      ui = {
+        icons = {
+          package_installed = "✓",
+          package_pending = "➜",
+          package_uninstalled = "✗",
+        },
+      },
+      pip = {
+        install_args = { "--proxy", "127.0.0.1:7890" },
+      },
     },
+    dependencies = {
+      "williamboman/mason-lspconfig.nvim",
+    },
+  },
+  {
+    "L3MON4D3/LuaSnip",
+    opts = require "configs.luasnip",
+    config = function()
+      require "configs.snip"
+    end,
   },
 
   {
@@ -84,7 +105,11 @@ return {
   },
   {
     "SmiteshP/nvim-navbuddy",
-    event = "LspAttach",
+    lazy = true,
+    dependencies = {
+      "SmiteshP/nvim-navic",
+      "MunifTanjim/nui.nvim",
+    },
   },
   {
     branch = "alpha",
@@ -251,5 +276,13 @@ return {
       require("nvim-dap-virtual-text").setup()
     end,
     requires = { "mfussenegger/nvim-dap" },
+  },
+  {
+    "danymat/neogen",
+    desc = "注释",
+    config = function()
+      require "configs.neogen"
+    end,
+    cmd = "Neogen",
   },
 }

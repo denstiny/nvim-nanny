@@ -68,4 +68,4 @@ vim.schedule(function()
   require("telescope").load_extension "persisted"
 end)
 
-vim.api.nvim_create_user_command("Session", "Telescope persisted", { bang = true })
+--vim.api.nvim_create_user_command("Session", "Telescope persisted", { bang = true })

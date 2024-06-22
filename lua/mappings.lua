@@ -1,8 +1,12 @@
 require "nvchad.mappings"
 local map = vim.keymap.set
+local del = vim.keymap.del
+del("i", "<C-j>")
+del("i", "<C-k>")
+del("n", "<leader>e")
+del("n", "<tab>")
 
 --map("n", ";", ":", { desc = "CMD enter command mode" })
-map("i", "jk", "<ESC>")
 map("n", "tr", "<cmd>NvimTreeToggle<cr>", { desc = "nvimtree toggle window" })
 map("n", ";d", "<Cmd>AsyncTask file-build<cr>", { desc = "task build project" })
 map("n", ";r", "<Cmd>AsyncTask file-run<cr>", { desc = "task run project" })
@@ -11,9 +15,12 @@ map("n", ";p", "<cmd>AsyncTask project-run<cr>", { desc = "task build project st
 
 map("n", "L", "<cmd>Telescope oldfiles<cr>", { desc = "Telescope oldfiles" })
 map("n", "<C-f>", "<cmd>Telescope find_files<cr>", { desc = "Telescope find files" })
+map("n", "<leader>pj", "<cmd>Telescope projects<cr>", { desc = "Telescope search project" })
+map("n", "<leader>ps", "<cmd>Telescope persisted<cr>", { desc = "Telescope search project session" })
+map("n", ";nf", "<Cmd>Neogen<CR>", { desc = "commint create" })
 
 map("n", "U", "<Cmd>UndotreeToggle<cr>", { desc = "undo tree" })
-map("n", "<A-f>", "za", { desc = "fold create code fold" })
+map("n", "<tab>", "za", { desc = "fold create code fold", silent = true })
 
 local function save_session()
   vim.cmd "SessionSave"

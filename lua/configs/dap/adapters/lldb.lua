@@ -1,4 +1,5 @@
 local M = {}
+--local path = vim.fn.stdpath "data" .. "/mason/bin/"
 
 M.adapter = {
   type = "executable",

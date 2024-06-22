@@ -10,7 +10,7 @@ vim.g.asyncrun_save = 2
 vim.g.asyncrun_bell = 1
 vim.g.asyncrun_trim = 1
 vim.g.asyncrun_open = 1
-vim.g.asynctasks_term_pos = "bottom"
+vim.g.asynctasks_term_pos = "tab"
 vim.g.asynctasks_term_reuse = 1
 
 local M = {

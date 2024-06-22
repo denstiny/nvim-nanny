@@ -13,3 +13,4 @@ o.viewdir = os.getenv "HOME" .. "/.vim_view/"
 o.wrap = true
 vim.opt.breakat:append { "，", "、", "。", "？" }
 o.showtabline = 0
+vim.opt.clipboard = ""
