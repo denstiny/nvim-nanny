@@ -14,3 +14,4 @@ o.wrap = true
 vim.opt.breakat:append { "，", "、", "。", "？" }
 o.showtabline = 0
 vim.opt.clipboard = ""
+vim.opt.clipboard:prepend "unnamed"
