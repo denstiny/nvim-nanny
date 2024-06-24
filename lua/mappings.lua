@@ -6,6 +6,7 @@ del("i", "<C-k>")
 del("n", "<leader>e")
 del("n", "<tab>")
 del("n", "<S-tab>")
+del("n", "<C-n>")
 
 --map("n", ";", ":", { desc = "CMD enter command mode" })
 map("n", "tr", "<cmd>NvimTreeToggle<cr>", { desc = "nvimtree toggle window" })
