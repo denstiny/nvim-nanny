@@ -1,7 +1,7 @@
 vim.g.asyncrun_open = 10
 vim.g.asynctask_template = vim.fn.stdpath "config" .. "/templates/task_template.ini"
 vim.g.asynctasks_config_name = { ".git/tasks.ini", ".svn/tasks.ini", "build/tasks.ini", ".tasks.ini" }
-vim.g.asyncrun_rootmarks = { ".git", ".svn", ".root", ".project", ".hg", "build", "target", ".gitignore", ".tasks.ini" }
+vim.g.asyncrun_rootmarks = { ".git", ".svn", ".root", ".project", ".hg", "build", ".tasks.ini" }
 vim.g.asynctasks_extra_config = { vim.fn.stdpath "config" .. "/templates/task_template.ini" }
 vim.g.asynctasks_confirm = 0
 vim.g.asynctasks_term_rows = 5

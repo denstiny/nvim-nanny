@@ -4,6 +4,21 @@ local cmp = require "cmp"
 
 nvchad_cmp.experimental = { ghost_text = true }
 
+nvchad_cmp.sorting = {
+  comparators = {
+    cmp.config.compare.exact,
+    cmp.config.compare.score,
+    cmp.config.compare.locality,
+    cmp.config.compare.recently_used,
+    require("cmp-under-comparator").under,
+    cmp.config.compare.order,
+    cmp.config.compare.offset,
+    cmp.config.compare.kind,
+    cmp.config.compare.sort_text,
+    --cmp.config.compare.length,
+  },
+}
+
 nvchad_cmp.mapping["<C-j>"] = cmp.mapping(function(fallback)
   if require("neogen").jumpable(-1) then
     require("neogen").jump_next()

@@ -1,7 +1,7 @@
 local nvchad_config = require "nvchad.configs.nvimtree"
 
 require("nvim-tree").setup {
-  root_dirs = { "build", ".git" },
+  root_dirs = { "build", ".git", ".tasks.ini" },
   prefer_startup_root = true,
   sync_root_with_cwd = true,
   reload_on_bufenter = true,

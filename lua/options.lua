@@ -15,3 +15,15 @@ vim.opt.breakat:append { "，", "、", "。", "？" }
 o.showtabline = 0
 vim.opt.clipboard = ""
 vim.opt.clipboard:prepend "unnamed"
+
+require("utils.filetype").setup {
+  vs = "glsl",
+  fs = "glsl",
+  qrc = "qrc",
+}
+
+require("utils.tabwidth").setup {
+  python = 4,
+  glsl = 4,
+  rust = 4,
+}

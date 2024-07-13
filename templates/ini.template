@@ -3,7 +3,7 @@
 build_out_path=build/$(VIM_FILENOEXT)
 build_cpp=clang++ $(VIM_FILEPATH) -g -w  -o $(+build_out_path)
 build_c=gcc $(VIM_FILEPATH) -g -w  -o $(+build_out_path)
-build_cmake=cd build && cmake ../ && cmake --build . --target all -- -j $(nproc)
+build_cmake=mkdir -p build && cd build && cmake ../ && cmake --build . --target all -- -j $(nproc)
 build_xmake=xmake build && xmake
 build_rust=cargo build
 

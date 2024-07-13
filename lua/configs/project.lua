@@ -1,9 +1,13 @@
 require("project_nvim").setup {
   patterns = {
-    ".git",
     ".tasks.ini",
+    ".git",
     "package.json",
   },
+  detection_methods = { "pattern" },
+  --ignore_lsp = {
+  --  "rust_analyzer",
+  --},
 }
 
 require("persisted").setup {
@@ -63,9 +67,5 @@ vim.api.nvim_create_autocmd({ "User" }, {
 --		vim.cmd("SessionSave")
 --	end,
 --})
-vim.schedule(function()
-  require("telescope").load_extension "projects"
-  require("telescope").load_extension "persisted"
-end)
 
 --vim.api.nvim_create_user_command("Session", "Telescope persisted", { bang = true })

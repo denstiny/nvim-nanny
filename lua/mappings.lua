@@ -7,6 +7,10 @@ del("n", "<leader>e")
 del("n", "<tab>")
 del("n", "<S-tab>")
 del("n", "<C-n>")
+del("n", "<C-J>")
+del("n", "<C-H>")
+del("n", "<C-L>")
+del("n", "<C-k>")
 
 --map("n", ";", ":", { desc = "CMD enter command mode" })
 map("n", "tr", "<cmd>NvimTreeToggle<cr>", { desc = "nvimtree toggle window" })
@@ -26,6 +30,29 @@ map("n", ";nf", "<Cmd>Neogen<CR>", { desc = "commint create" })
 
 map("n", "U", "<Cmd>UndotreeToggle<cr>", { desc = "undo tree" })
 map("n", "<tab>", "za", { desc = "fold create code fold", silent = true })
+map("i", "<C-k>", "<C-o>d$", { desc = "change text delete cursor after text to end" })
+map("i", "<C-u>", "<C-o>d^", { desc = "change text delete cursor front text to begin" })
+
+-- flash
+map({ "n", "x", "o" }, "s", function()
+  require("flash").jump()
+end, {
+  desc = "Flash move cursor",
+})
+
+map({ "n", "x", "o" }, "S", function()
+  require("flash").treesitter()
+end, {
+  desc = "Flash Treesitter",
+})
+
+map({ "n", "x", "o" }, "f", function()
+  require("flash").jump {
+    search = { multi_window = false },
+  }
+end, {
+  desc = "Flash Treesitter",
+})
 
 local function save_session()
   vim.cmd "SessionSave"

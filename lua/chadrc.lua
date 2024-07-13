@@ -35,6 +35,11 @@ M.ui = {
   tabufline = {
     enabled = false,
   },
+  term = {
+    float = {
+      border = { "🭽", "▔", "🭾", "▕", "🭿", "▁", "🭼", "▏" },
+    },
+  },
 }
 
 return M

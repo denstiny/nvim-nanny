@@ -24,9 +24,12 @@ return {
         "stylua",
         "html-lsp",
         "css-lsp",
+        "tsserver",
         "prettier",
+        "neocmake",
         "pyright",
         "bashls",
+        "rust_analyzer",
         "awk_ls",
       },
       PATH = "prepend",
@@ -46,7 +49,7 @@ return {
     },
   },
   {
-    "L3MON4D3/LuaSnip",
+    "L3MON4Config Change Detected. ReloadD3/LuaSnip",
     opts = require "configs.luasnip",
     config = function()
       require "configs.snip"
@@ -70,7 +73,6 @@ return {
     config = function()
       require "configs.lspsaga"
     end,
-    commit = "3654252",
     event = "LspAttach",
   },
   {
@@ -118,7 +120,7 @@ return {
       require "configs.winep"
     end,
     event = { "WinLeave" },
-    cond = false,
+    cond = true,
   },
   {
     "j-hui/fidget.nvim",
@@ -162,7 +164,7 @@ return {
       require "configs.hlslens"
     end,
     keys = { "n", "N" },
-    event = "CursorMoved",
+    event = { "SearchWrapped" },
   },
   {
     "lewis6991/satellite.nvim",
@@ -180,24 +182,7 @@ return {
         },
       },
     },
-    keys = {
-      {
-        "s",
-        mode = { "n", "x", "o" },
-        function()
-          require("flash").jump()
-        end,
-        desc = "Flash move cursor",
-      },
-      {
-        "S",
-        mode = { "n", "x", "o" },
-        function()
-          require("flash").treesitter()
-        end,
-        desc = "Flash Treesitter",
-      },
-    },
+    lazy = true,
   },
   {
     "tibabit/vim-templates",
@@ -239,6 +224,9 @@ return {
   },
   {
     "hrsh7th/nvim-cmp",
+    dependencies = {
+      { "lukas-reineke/cmp-under-comparator" },
+    },
     config = function()
       require "configs.cmp"
     end,
@@ -256,7 +244,8 @@ return {
     config = function()
       require "configs.dap"
     end,
-    event = "LspAttach",
+    --event = "LspAttach",
+    cmd = { "DapContinue", "DapNew", "DapLoadLaunchJSON", "DapToggleBreakpoint", "DapEval" },
   },
 
   {
@@ -284,5 +273,41 @@ return {
       require "configs.neogen"
     end,
     cmd = "Neogen",
+  },
+  {
+    "nvim-telescope/telescope.nvim",
+    dependencies = {
+      "prochri/telescope-all-recent.nvim",
+      "kkharji/sqlite.lua",
+    },
+    opts = function()
+      require "configs.telescope"
+    end,
+    cmd = "Telescope",
+  },
+  { "nvim-telescope/telescope-fzf-native.nvim", build = "make", lazy = true },
+  {
+    "denstiny/karasync.nvim",
+    config = function()
+      require("karasync").setup()
+    end,
+    event = "UiEnter",
+  },
+  {
+    "folke/which-key.nvim",
+    cond = false,
+  },
+  {
+    "chrisgrieser/nvim-lsp-endhints",
+    event = "LspAttach",
+    opts = {
+      autoEnableHints = true,
+    }, -- required, even if empty
+  },
+  {
+    "iamcco/markdown-preview.nvim",
+    cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+    build = "cd app && yarn install",
+    ft = { "markdown" },
   },
 }

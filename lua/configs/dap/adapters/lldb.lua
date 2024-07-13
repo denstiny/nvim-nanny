@@ -3,7 +3,7 @@ local M = {}
 
 M.adapter = {
   type = "executable",
-  command = "/usr/bin/lldb-vscode",
+  command = vim.fn.stdpath "data" .. "/mason/bin/codelldb",
   name = "lldb",
 }
 
