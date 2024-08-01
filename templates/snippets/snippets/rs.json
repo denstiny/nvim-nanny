@@ -1,0 +1,18 @@
+{
+  "allow": {
+    "prefix": "allow",
+    "body": ["#[allow(${1})]"],
+    "description": "#[allow(…)]"
+  }, 
+  "create_test": {
+    "prefix": "create_test",
+    "body": ["#[cfg(test)]",
+      "mod test {",
+      "    #[test]",
+      "    fn ${1:fun_name}() {",
+      "       ${2}",
+      "    }\n}"
+    ],
+    "description": "Quickly create test mod"
+  }
+}
