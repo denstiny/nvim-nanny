@@ -6,6 +6,12 @@ nvchad_cmp.experimental = { ghost_text = true }
 
 nvchad_cmp.sorting = {
   comparators = {
+    function(entry1, entry2)
+      if entry1.completion_item.preselect ~= entry2.completion_item.preselect then
+        return false
+      end
+      return nil
+    end,
     cmp.config.compare.exact,
     cmp.config.compare.score,
     cmp.config.compare.locality,
