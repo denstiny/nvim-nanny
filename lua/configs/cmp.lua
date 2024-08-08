@@ -4,6 +4,15 @@ local cmp = require "cmp"
 
 nvchad_cmp.experimental = { ghost_text = true }
 
+nvchad_cmp.sources = {
+  { name = "go_pkgs" },
+  { name = "nvim_lsp" },
+  { name = "luasnip" },
+  { name = "buffer" },
+  { name = "nvim_lua" },
+  { name = "path" },
+}
+
 nvchad_cmp.sorting = {
   comparators = {
     function(entry1, entry2)

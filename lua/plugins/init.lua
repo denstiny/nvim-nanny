@@ -226,6 +226,7 @@ return {
     "hrsh7th/nvim-cmp",
     dependencies = {
       { "lukas-reineke/cmp-under-comparator" },
+      { "Snikimonkd/cmp-go-pkgs" },
     },
     config = function()
       require "configs.cmp"
