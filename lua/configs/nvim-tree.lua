@@ -41,5 +41,7 @@ require("nvim-tree").setup {
     vim.keymap.set("n", "?", api.tree.toggle_help, opts "Help")
     vim.keymap.set("n", "<C-v>", api.node.open.vertical, opts "new vertical split")
     vim.keymap.set("n", "<C-s>", api.node.open.horizontal, opts "new vertical split")
+    vim.keymap.set('n', 'd', api.fs.trash, opts('trash'))
+    vim.keymap.set('n', 'D', api.fs.trash, opts('Trash'))
   end,
 }

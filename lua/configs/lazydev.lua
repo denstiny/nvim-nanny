@@ -7,14 +7,15 @@ require("lazydev").setup {
     "luvit-meta/library",
     -- It can also be a table with trigger words / mods
     -- Only load luvit types when the `vim.uv` word is found
-    { path = "luvit-meta/library", words = { "vim%.uv" } },
+    { path = "luvit-meta/library",        words = { "vim%.uv" } },
     -- always load the LazyVim library
     "LazyVim",
     -- Only load the lazyvim library when the `LazyVim` global is found
-    { path = "LazyVim", words = { "LazyVim" } },
+    { path = "LazyVim",                   words = { "LazyVim" } },
     -- Load the wezterm types when the `wezterm` module is required
     -- Needs `justinsgithub/wezterm-types` to be installed
-    { path = "wezterm-types", mods = { "wezterm" } },
+    { path = "wezterm-types",             mods = { "wezterm" } },
+    { path = "xmake-luals-addon/library", files = { "xmake.lua" } },
   },
   -- always enable unless `vim.g.lazydev_enabled = false`
   -- This is the default

@@ -12,10 +12,13 @@ nvchad_cmp.sources = {
   { name = "nvim_lua" },
   { name = "path" },
 }
--- nvchad_cmp.preselect = cmp.PreselectMode.None
+nvchad_cmp.preselect = cmp.PreselectMode.None
 nvchad_cmp.sorting = {
   comparators = {
     function(entry1, entry2)
+      if entry1.context.filetype == "rust" then
+        return nil
+      end
       if entry1.completion_item.preselect == true then
         return true
       elseif entry2.completion_item.preselect == true then
