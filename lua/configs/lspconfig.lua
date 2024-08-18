@@ -26,25 +26,24 @@ require("mason-lspconfig").setup_handlers {
   end,
 }
 
-
---local configs = require("lspconfig.configs")
---local nvim_lsp = require("lspconfig")
---if not configs.neocmake then
---  configs.neocmake = {
---    default_config = {
---      cmd = vim.lsp.rpc.connect('127.0.0.1', '9257'),
---      filetypes = { "cmake" },
---      root_dir = function(fname)
---        return nvim_lsp.util.find_git_ancestor(fname)
---      end,
---      single_file_support = true, -- suggested
---      on_attach = on_attach,      -- on_attach is the on_attach function you defined
---      init_options = {
---        format = {
---          enable = true
---        }
---      }
---    }
---  }
---  nvim_lsp.neocmake.setup({})
---end
+local configs = require "lspconfig.configs"
+local nvim_lsp = require "lspconfig"
+if not configs.neocmake then
+  configs.neocmake = {
+    default_config = {
+      cmd = vim.lsp.rpc.connect("127.0.0.1", "9257"),
+      filetypes = { "cmake" },
+      root_dir = function(fname)
+        return nvim_lsp.util.find_git_ancestor(fname)
+      end,
+      single_file_support = true, -- suggested
+      on_attach = on_attach, -- on_attach is the on_attach function you defined
+      init_options = {
+        format = {
+          enable = true,
+        },
+      },
+    },
+  }
+  nvim_lsp.neocmake.setup {}
+end
